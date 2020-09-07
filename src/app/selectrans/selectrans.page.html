@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+  <ion-title style="text-align: center" class="ion-text-uppercase">
+    Transporte a la Comunidad
+  </ion-title>
+  <ion-button slot=end color="primary" fill="clear"></ion-button>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<div class="row justify-content-center" >
+<ion-card class="col-xl-4 col-md-4 col-lg-block col-sm-block" style="padding: 0px">
+<ion-card-header color="blue" style="text-align: center;font-size:large">
+  Seleccione la comunidad
+</ion-card-header>
+<ion-card-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position='floating'>Comunidad</ion-label>
+      <ion-select (ionChange)="Cambio()" cancelText='Cancelar' [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Selecccione" [(ngModel)]="Dato">
+        <ion-select-option *ngFor="let comuni of Datos" value={{comuni.Id_Lugares}}>{{comuni.Municipio}} - {{comuni.Comunidad}}</ion-select-option>
+      </ion-select>
+  </ion-item>
+  </ion-list>
+  <ion-button class="ion-text-wrap" color="primary" expand="block" (click)="Comenzar()">Registrar Info Comunidad</ion-button>
+</ion-card-content>
+</ion-card>
+</div>
+</ion-content>

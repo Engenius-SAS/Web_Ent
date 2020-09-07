@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="Anterior()"><ion-icon slot="start" name="arrow-back"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Modificar Comunidad
+    </ion-title>
+    <ion-button slot=end fill="clear"><ion-icon></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        <ion-card>
+          <ion-card-header color="blue" style="text-align: center;font-size:large">
+              IDENTIFICACIÓN DE LA COMUNIDAD
+          </ion-card-header>
+          <ion-card-content  style="background: white!important">
+            <ion-list class="row justify-content-left">
+                  <ion-item-divider>
+                      <ion-label color=primary>
+                          Datos de la Comunidad
+                      </ion-label>
+                  </ion-item-divider>
+                    <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                      <ion-label color="blue" position="floating" class="ion-text-wrap">Departamento: </ion-label>
+                      <ion-input type=text [(ngModel)]="Departamento" placeholder="Escriba Aquí" readonly=true></ion-input>
+                    </ion-item>                    
+                    <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                      <ion-label color="blue" position="floating" class="ion-text-wrap">Codigo del Departamento: </ion-label>
+                      <ion-input type=text [(ngModel)]="Departamento" placeholder="Escriba Aquí" readonly=true></ion-input>
+                    </ion-item>
+                    <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                      <ion-label color="blue" position="floating" class="ion-text-wrap">Municipio: </ion-label>
+                      <ion-input type=text [(ngModel)]="Municipio" placeholder="Escriba Aquí"></ion-input>
+                    </ion-item>
+                    <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                      <ion-label color="blue" position="floating" class="ion-text-wrap">Codigo del Municipio: </ion-label>
+                      <ion-input type=text [(ngModel)]="Departamento" placeholder="Escriba Aquí" readonly=true></ion-input>
+                    </ion-item>                    
+                    <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                      <ion-label color="blue" position="floating" class="ion-text-wrap">Vereda: </ion-label>
+                      <ion-input type=text [(ngModel)]="Vereda" placeholder="Escriba Aquí"></ion-input>
+                    </ion-item>
+                    <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                      <ion-label color="blue" position="floating" class="ion-text-wrap">Comunidad: </ion-label>
+                      <ion-input type=text [(ngModel)]="Comuni" placeholder="Escriba Aquí"></ion-input>
+                    </ion-item>
+                    <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+                      <ion-label color="blue" position="floating" class="ion-text-wrap">Acueducto Domiciliario: </ion-label>
+                      <ion-input type=text [(ngModel)]="Comuni" placeholder="Escriba Aquí"></ion-input>
+                    </ion-item>
+            </ion-list>
+            <div class="row justify-content-center">
+                <ion-button color=blue >Guardar</ion-button> 
+            </div>
+          </ion-card-content>
+        </ion-card>   
+</ion-content>

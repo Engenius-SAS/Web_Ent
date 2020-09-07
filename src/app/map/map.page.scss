@@ -1,0 +1,20 @@
+.agm-map {
+    height: 100%;
+    min-height: 720px;
+  }
+  div#EmbedMap {
+    height: 570px!important;
+    width: 1368px!important;
+    position: relative;
+}
+:host {
+    .agm-map {
+        height: 720px;
+        min-height: 720px!important;
+      }
+      div#EmbedMap {
+        height: 570px!important;
+        width: 1368px!important;
+        position: relative;
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "IPSE",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

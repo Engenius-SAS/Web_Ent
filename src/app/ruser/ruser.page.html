@@ -1,0 +1,62 @@
+<ion-header>
+<ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Nuevo Funcionario
+    </ion-title>
+    <ion-button slot=end fill="clear"><ion-icon></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="row justify-content-center" >
+        <ion-card class="col-xl-5 col-md-5 col-lg-block col-sm-block" style="padding: 0px">
+        <ion-card-header color="primary" style="text-align: center;font-size:large">
+          Datos Funcionario
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Nombres: </ion-label>
+              <ion-input type=text [(ngModel)]="Nombre" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Apellidos: </ion-label>
+              <ion-input type=text [(ngModel)]="Apellido" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Documento: </ion-label>
+              <ion-input type=text [(ngModel)]="Documento" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Celular: </ion-label>
+              <ion-input type=text [(ngModel)]="celular" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Fijo: </ion-label>
+              <ion-input type=text [(ngModel)]="fijo" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Correo: </ion-label>
+              <ion-input type=text [(ngModel)]="correo" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Ciudad donde Vive: </ion-label>
+              <ion-input type=text [(ngModel)]="ciudadorigen" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Usuario: </ion-label>
+              <ion-input type=text [(ngModel)]="Usuario" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña: </ion-label>
+              <ion-input type=text [(ngModel)]="Contrasena" placeholder="Escriba Aquí"></ion-input>
+            </ion-item>
+          </ion-list>
+          <ion-button class="ion-text-wrap" color="blue" expand="block" (click)="Guardar()">Guardar Datos</ion-button>
+        </ion-card-content>
+      </ion-card>
+      </div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.navigateRoot('/home');">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Mapa de Usuarios
+    </ion-title>
+    <ion-button slot=end fill="clear">
+      <ion-icon></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <agm-map class="agm-map" [latitude]="latitude" [longitude]="longitude" [zoom]='zoom' [mapTypeId]='"hybrid"'>
+      <agm-marker *ngFor="let item of Pines" [latitude]="item[35]" [longitude]="item[36]"  [iconUrl]="'http://demo.engenius.co/Icons/Info.ico'">
+        <agm-info-window>
+          <div>
+            <div>
+              <h5><strong>Usuario: </strong>{{item[13]}}</h5>
+              <h5 style="color: gray;"><strong>Corregimiento:</strong> {{item[43]}}</h5>
+              <h5 style="color: gray;"><strong>Municipio: </strong>{{item[40]}}</h5>
+              <h5 style="color: lightgreen;"><strong>Departamento:</strong> {{item[38]}}</h5>
+            </div>
+          </div>
+        </agm-info-window>
+        </agm-marker>
+  </agm-map>    
+  </ion-card>
+  <ion-card>
+   
+  </ion-card>
+</ion-content>

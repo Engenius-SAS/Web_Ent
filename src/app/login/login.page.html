@@ -1,0 +1,46 @@
+<ion-content class="cont">
+  <div class="row justify-content-center" padding>
+  <ion-card class="col-xl-4 col-md-4 col-lg-block col-sm-block" style="--background: white!important;margin-top: 120px;padding: 0px">
+    <ion-card-header>
+      <img src="assets/imgs/man.png" style="width: 45%;margin: auto">
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item class="itemm">
+        <ion-label style="color:#023dbe"><ion-icon name="person"></ion-icon></ion-label>
+        <ion-input style="color:black" type=text [(ngModel)]="User" placeholder="Usuario"></ion-input>
+      </ion-item>
+      <ion-item class="itemm">
+        <ion-label style="color:#023dbe"><ion-icon name="key"></ion-icon></ion-label>
+        <ion-input style="color:black" type="password" [(ngModel)]="Pass" placeholder="Contraseña"></ion-input>
+      </ion-item>
+      <ion-item class="itemm">
+        <ion-label style="color:#023dbe"><ion-icon name="briefcase"></ion-icon> <a style="color:#858585"> Proyecto</a></ion-label>
+        <ion-select interface="popover" placeholder="Proyecto" [(ngModel)]="this.Id_Proyecto">
+        <ion-select-option *ngFor="let item of global.Proyectos" value="{{item.Id_Proyecto}}">{{item.nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="itemm">
+        <ion-label style="color:black">Recordarme</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="Recordarme" color=blue></ion-checkbox>
+      </ion-item>
+      <div class="row" style="margin-top: 5px;margin-bottom: 5px">
+        <ion-button style="margin:auto!important;--padding-bottom:5px;--padding-top:5px" color="primary" (click)="Login()"  shape="round" expand=block>Ingresar </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" *ngIf="false">
+    <ion-fab-button color=white >
+      <ion-img src="assets/imgs/down.png" style="width: 70%"></ion-img>
+    </ion-fab-button>
+  </ion-fab>
+  <!--
+  <ion-fab vertical="bottom" horizontal="start" *ngIf="true">
+      <ion-fab-button color=white (click)="NewUser()">
+        <ion-img src="assets/imgs/user2.png" style="width: 70%"></ion-img>
+      </ion-fab-button>
+    </ion-fab>-->
+</ion-content>
+
+

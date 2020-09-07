@@ -1,0 +1,18 @@
+:host{
+ .cont{
+    --background: linear-gradient(0deg,#00ccff 0%, #330867 100%);
+ }
+ ion-item.itemm.ion-pristine.ion-valid.item.md.ion-focusable.item-label.hydrated {
+    --border-color: transparent;
+}
+ion-item.itemm.item.md.item-checkbox{
+    --border-color: transparent;
+}
+ion-item.itemm.item.md.ion-focusable.item-label.hydrated.ion-untouched.ion-valid.ion-dirty {
+    --border-color: transparent;
+}
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
+    white-space: pre-wrap!important;
+    margin-bottom: 5px!important;
+}
+}

@@ -1,0 +1,35 @@
+Credenciales
+
+servidor
+demo.engenius.co
+dh_8xrmi2
+gZzEEFq4
+wheels.dreamhost.com
+
+
+
+Mysql
+Mytagger.mytagger.xyz
+dh_tvtih8
+@Engenius2018
+Puerto 3306
+
+'{"Cliente":"1784192","ibat":"0.00","vbat":"0.00","ipv":"0.00","vpv":"0.00","iload":"0.00","vload":"0.00"}'
+
+
+
+{"idChip":"1784192","ibat":"1.01","vbat":"35.43","ipv":"1.01","vpv":"115.23","iload":"-10.52","vload":"167.42"}
+
+
+connSQL("ff","bb","2018-09-12 10:31:51","2018-09-13 10:31:51", "8", "-63", "1", "HolaPython")
+
+
+,-59,7,183,idChip,VPN,VBAT,VLOAD,IPN,IBAT,ILOAD
+
+Logger
+
+Host:mytagger.mytagger.xyz
+user:tagger2017
+PW:TaggMe_2017$
+ode_logger (Base de datos)
+

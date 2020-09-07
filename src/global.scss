@@ -1,0 +1,128 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+:root{
+    .item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
+        white-space: pre-wrap!important;
+        margin-bottom: 30px;
+    }
+    .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background: rgb(14, 223, 14)!important;
+        height: 7px;
+    }
+    ion-item-divider.md.item.hydrated {
+        border-bottom: 2px solid #004085;
+    }
+    .swiper-pagination-progressbar {
+        height: 7px;
+    }
+    .alert-checkbox-label.sc-ion-alert-md {
+        white-space: pre-wrap!important;
+    }
+    .popover-content.sc-ion-popover-md {
+        max-width: 90%!important;
+        min-width: 80%!important;
+        top: 5%!important;
+        left: 10%!important;
+    }
+    /*
+    ion-select {
+        margin-top: 30px;
+    }
+
+    input.native-input.sc-ion-input-md {
+        margin-top: 30px;
+    }
+    */
+    .ion-color-blue {
+        --ion-color-base: var(--ion-color-blue) !important;
+        --ion-color-base-rgb: var(--ion-color-blue-rgb) !important;
+        --ion-color-contrast: var(--ion-color-blue-contrast) !important;
+        --ion-color-contrast-rgb: var(--ion-color-blue-contrast-rgb) !important;
+        --ion-color-shade: var(--ion-color-blue-shade) !important;
+        --ion-color-tint: var(--ion-color-blue-tint) !important;
+    }
+    canvas {
+        border: 2px solid gray;
+        border-radius: 25px;
+        margin-top: 10px;
+    }
+    .ion-color-white {
+        --ion-color-base: var(--ion-color-white) !important;
+        --ion-color-base-rgb: var(--ion-color-white-rgb) !important;
+        --ion-color-contrast: var(--ion-color-white-contrast) !important;
+        --ion-color-contrast-rgb: var(--ion-color-white-contrast-rgb) !important;
+        --ion-color-shade: var(--ion-color-white-shade) !important;
+        --ion-color-tint: var(--ion-color-white-tint) !important;
+    }
+    .ion-color-blanco {
+        --ion-color-base: var(--ion-color-blanco) !important;
+        --ion-color-base-rgb: var(--ion-color-blanco-rgb) !important;
+        --ion-color-contrast: var(--ion-color-blanco-contrast) !important;
+        --ion-color-contrast-rgb: var(--ion-color-blanco-contrast-rgb) !important;
+        --ion-color-shade: var(--ion-color-blanco-shade) !important;
+        --ion-color-tint: var(--ion-color-blanco-tint) !important;
+    }
+    .ion-color-morado {
+        --ion-color-base: var(--ion-color-morado) !important;
+        --ion-color-base-rgb: var(--ion-color-morado-rgb) !important;
+        --ion-color-contrast: var(--ion-color-morado-contrast) !important;
+        --ion-color-contrast-rgb: var(--ion-color-morado-contrast-rgb) !important;
+        --ion-color-shade: var(--ion-color-morado-shade) !important;
+        --ion-color-tint: var(--ion-color-morado-tint) !important;
+    }
+    .ion-color-new {
+        --ion-color-base: var(--ion-color-new) !important;
+        --ion-color-base-rgb: var(--ion-color-new-rgb) !important;
+        --ion-color-contrast: var(--ion-color-new-contrast) !important;
+        --ion-color-contrast-rgb: var(--ion-color-new-contrast-rgb) !important;
+        --ion-color-shade: var(--ion-color-new-shade) !important;
+        --ion-color-tint: var(--ion-color-new-tint) !important;
+    }
+    .ion-color-primary2 {
+        --ion-color-base: var(--ion-color-primary2) !important;
+        --ion-color-base-rgb: var(--ion-color-primary2-rgb) !important;
+        --ion-color-contrast: var(--ion-color-primary2-contrast) !important;
+        --ion-color-contrast-rgb: var(--ion-color-primary2-contrast-rgb) !important;
+        --ion-color-shade: var(--ion-color-primary2-shade) !important;
+        --ion-color-tint: var(--ion-color-primary2-tint) !important;
+    }
+    .ion-card-content{
+        --background: white!important;
+    }
+    .sc-ion-card-md-h {
+    box-shadow: 0 3px 1px -1px rgba(0,0,0,.2), 0 2px 20px 10px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+    .alert-wrapper.sc-ion-alert-md {
+        width: 100%!important;
+    }
+    .sc-ion-alert-md-h {
+        --background: var(--ion-overlay-background-color,var(--ion-background-color,#fff));
+        --max-width: 400px!important;
+        font-size: 14px;
+    }
+}

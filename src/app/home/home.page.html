@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="login"></ion-back-button>
+      </ion-buttons>
+  <ion-title style="text-align: center" class="ion-text-uppercase">
+    Home
+  </ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" >
+  <div class="row justify-content-center" >
+      <ion-card class="col-xl-3 col-md-4 col-lg-5 col-sm-5" style="padding: 0px" (click)="Registrar()">
+          <ion-card-header>
+             <ion-img src="assets/imgs/map.png" style="width: 30%;max-width: 30%;;margin: auto"></ion-img>
+          </ion-card-header>
+             <ion-button class="ion-text-wrap" color="blue" expand="full">Georeferenciación</ion-button>
+        </ion-card> 
+        <ion-card class="col-xl-3 col-md-4 col-lg-5 col-sm-5" style="padding: 0px" (click)="IElectrica()">
+            <ion-card-header>
+               <ion-img src="assets/imgs/list.png" style="width: 30%;max-width: 30%;;margin: auto"></ion-img>
+            </ion-card-header>
+               <ion-button class="ion-text-wrap" color="blue" expand="full">Listado de Encuestas</ion-button>
+          </ion-card> 
+  </div>
+</ion-content>
