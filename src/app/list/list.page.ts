@@ -37,9 +37,13 @@ Encuesta;
   }
 
   Descargar(item) {
+  try {
     console.log('PDF', item[0]);
     this.loading.LoadingNormal('Generando PDF....');
     setTimeout(() => {
+      let Lat = new Array();
+      let Lon = new Array();
+      let Alt = new Array();
       const pdata8 = {option: 'Dataen', Id_Encuesta: item[0]};
       this.global.consultar(pdata8, (err8, response8) => {
         console.log('Datos Encuesta', response8);
@@ -50,9 +54,15 @@ Encuesta;
         const Dia = item[4];
         const Mes = item[5];
         const Ano = item[6];
-        const Lat = item[35].split('.');
-        const Lon = item[36].split('.');
-        const Alt = item[37].split('.');
+        if (item[35] == '0' || item[35] == 0  || item[35] == null  || item[35] == 'null') {
+          Lat = ['0', '0'];
+          Lon = ['0', '0'];
+          Alt = ['0', '0'];
+        } else {
+          Lat = item[35].split('.');
+          Lon = item[36].split('.');
+          Alt = item[37].split('.');
+        }
         const Dept = item[38].toUpperCase();
         const Codept = item[39];
         const Mun = item[40].toUpperCase();
@@ -119,10 +129,11 @@ Encuesta;
           doc.lstext(Codept, 40, 240, 4.2);
           doc.lstext(Mun, 40, 250, 4.2);
           doc.lstext(Comun, 40, 261, 4.5);
-          doc.lstext(Ver, 40, 270, 4.1);
-          doc.lstext(Cor, 40, 281.5, 4.1);
+          doc.lstext(Ver, 40, 270, 4.2);
+          doc.lstext(Cor, 40, 281.5, 4.2);
           doc.lstext('X', 154, 312, 0);
           doc.addPage();
+          console.log('pagina2');
           doc.addImage(Pag2, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
@@ -163,6 +174,7 @@ Encuesta;
             doc.lstext('X', 119, 223, 0);
           }
           doc.addPage();
+          console.log('pagina3');
           doc.addImage(Pag3, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
@@ -332,42 +344,42 @@ Encuesta;
           if (this.Encuesta[194] == 'null') {
             doc.text('0', 135.5, 186, 'center');
           } else {
-            doc.text(this.Encuesta[194], 135.5, 186, 'center');
+            doc.text((parseInt(this.Encuesta[194]) * 1000).toString(), 135.5, 186, 'center');
           }
           if (this.Encuesta[195] == 'null') {
             doc.text('0', 135.5, 191, 'center');
           } else {
-            doc.text(this.Encuesta[195], 135.5, 191, 'center');
+            doc.text((parseInt(this.Encuesta[195]) * 1000).toString(), 135.5, 191, 'center');
           }
           if (this.Encuesta[196] == 'null') {
             doc.text('0', 135.5, 196, 'center');
           } else {
-            doc.text(this.Encuesta[196], 135.5, 196, 'center');
+            doc.text((parseInt(this.Encuesta[196]) * 1000).toString(), 135.5, 196, 'center');
           }
           if (this.Encuesta[197] == 'null') {
             doc.text('0', 135.5, 201, 'center');
           } else {
-            doc.text(this.Encuesta[197], 135.5, 201, 'center');
+            doc.text((parseInt(this.Encuesta[197]) * 1000).toString(), 135.5, 201, 'center');
           }
           if (this.Encuesta[198] == 'null') {
             doc.text('0', 135.5, 206, 'center');
           } else {
-            doc.text(this.Encuesta[198], 135.5, 206, 'center');
+            doc.text((parseInt(this.Encuesta[198]) * 1000).toString(), 135.5, 206, 'center');
           }
           if (this.Encuesta[199] == 'null') {
             doc.text('0', 135.5, 211, 'center');
           } else {
-            doc.text(this.Encuesta[199], 135.5, 211, 'center');
+            doc.text((parseInt(this.Encuesta[199]) * 1000).toString(), 135.5, 211, 'center');
           }
           if (this.Encuesta[200] == 'null') {
             doc.text('0', 135.5, 216, 'center');
           } else {
-            doc.text(this.Encuesta[200], 135.5, 216, 'center');
+            doc.text((parseInt(this.Encuesta[200]) * 1000).toString(), 135.5, 216, 'center');
           }
           if (this.Encuesta[201] == 'null') {
             doc.text('0', 135.5, 223, 'center');
           } else {
-            doc.text(this.Encuesta[201], 135.5, 223, 'center');
+            doc.text((parseInt(this.Encuesta[201]) * 1000).toString(), 135.5, 223, 'center');
           }
 
           if (this.Encuesta[202] == 'Domicilio') {
@@ -436,7 +448,7 @@ Encuesta;
           if (this.Encuesta[248] == 'null') {
             doc.text('0', 174, 277, 'center');
           } else {
-            doc.text(this.Encuesta[248], 174, 277, 'center');
+            doc.text((parseInt(this.Encuesta[248]) * 1000).toString(), 174, 277, 'center');
           }
 
 
@@ -457,6 +469,7 @@ Encuesta;
 
 
           doc.addPage();
+          console.log('pagina4');
           doc.addImage(Pag4, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
@@ -572,32 +585,324 @@ Encuesta;
             doc.text('X', 117, 257, 'center');
           }
 
+          if (this.Encuesta[74] == 'Residencial') {
+            doc.text('X', 155, 297, 'center');
+          } else if (this.Encuesta[74] == 'Negocio') {
+            doc.text('X', 155, 302, 'center');
+          } else if (this.Encuesta[74] == 'Mixto') {
+            doc.text('X', 155, 307, 'center');
+          } else if (this.Encuesta[74] == 'Institución' || this.Encuesta[284] == 'Institución') {
+            doc.text('X', 155, 312, 'center');
+          }
+
+
+
 
           doc.addPage();
+          console.log('pagina5');
           doc.addImage(Pag5, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+          doc.setFontSize(10);
+          if (this.Encuesta[73] == 'Estrato 1') {
+            doc.text('X', 92, 39.5, 'center');
+          } else if (this.Encuesta[73] == 'Estrato 2') {
+            doc.text('X', 101, 39.5, 'center');
+          } else if (this.Encuesta[73] == 'Estrato 3') {
+            doc.text('X', 111, 39.5, 'center');
+          } else if (this.Encuesta[73] == 'Estrato 4') {
+            doc.text('X', 120.5, 39.5, 'center');
+          } else if (this.Encuesta[73] == 'Estrato 5') {
+            doc.text('X', 130, 39.5, 'center');
+          } else if (this.Encuesta[73] == 'Estrato 6') {
+            doc.text('X', 139.5, 39.5, 'center');
+          }
+          doc.setFontSize(9);
+          if (this.Encuesta[103] == 'undefined' || this.Encuesta[103] == 'null') {
+            doc.lstext('No Aplica', 20, 76.5, 0);
+          } else {
+            doc.lstext(this.Encuesta[103].replace('-', ''), 20, 76.5, 0);
+          }
+
+          if (this.Encuesta[104] == 'Caserío') {
+            doc.text('X', 151.5, 115, 'center');
+          } else if (this.Encuesta[104] == 'Resguardo indígena') {
+            doc.text('X', 151.5, 120, 'center');
+          } else if (this.Encuesta[104] == 'Parcialidad o asentamiento indígena fuera del resguardo') {
+            doc.text('X', 151.5, 125, 'center');
+          } else if (this.Encuesta[104] == 'Territorio colectivo de comunidad negra') {
+            doc.text('X', 151.5, 130, 'center');
+          } else if (this.Encuesta[104] == 'Territorio de comunidad negra no titulada') {
+            doc.text('X', 151.5, 135, 'center');
+          } else if (this.Encuesta[104] == 'Territorio ancestral raizal del Archipiélago de San Andrés, Providencia y Santa Catalina') {
+            doc.text('X', 151.5, 140, 'center');
+          } else if (this.Encuesta[104] == 'Ranchería - Guajira') {
+            doc.text('X', 151.5, 146, 'center');
+          } else if (this.Encuesta[104] == 'Territorio Palenquero de San Basilio') {
+            doc.text('X', 151.5, 151, 'center');
+          } else if (this.Encuesta[104] == 'Territorio Gitano - ROM') {
+            doc.text('X', 151.5, 156, 'center');
+          } else if (this.Encuesta[104] == 'Zona rural') {
+            doc.text('X', 151.5, 161, 'center');
+          }
+
+          if (this.Encuesta[105] == 'Propia') {
+            doc.text('X', 130, 185.5, 'center');
+          } else if (this.Encuesta[105] == 'Arriendo') {
+            doc.text('X', 130, 190.5, 'center');
+          } else if (this.Encuesta[105] == 'Colectiva') {
+            doc.text('X', 130, 195.5, 'center');
+          }
+
+          if (this.Encuesta[106] == 'null' || this.Encuesta[106] == 'undefined') {
+            doc.lstext('00', 127, 218.5, 9.5);
+          } else {
+            doc.lstext(this.Encuesta[106], 127, 218.5, 9.5);
+          }
+
+          if (this.Encuesta[107] == 'null' || this.Encuesta[107] == 'undefined') {
+            doc.lstext('00', 127, 237, 9.5);
+          } else {
+            doc.lstext(this.Encuesta[107], 127, 237, 9.5);
+          }
+
+          if (this.Encuesta[108] == 'Bloque, ladrillo, piedra, madera pulida') {
+            doc.text('X', 158, 265, 'center');
+          } else if (this.Encuesta[108] == 'Concreto') {
+            doc.text('X', 158, 270, 'center');
+          } else if (this.Encuesta[108] == 'Tapia pisada, bahareque, adobe') {
+            doc.text('X', 158, 275, 'center');
+          } else if (this.Encuesta[108] == 'Madera burda, tabla, tablón') {
+            doc.text('X', 158, 280, 'center');
+          } else if (this.Encuesta[108] == 'Material prefabricado') {
+            doc.text('X', 158, 285, 'center');
+          } else if (this.Encuesta[108] == 'Guadua, caña, esterilla, otros vegetales') {
+            doc.text('X', 158, 290, 'center');
+          } else if (this.Encuesta[108] == 'Materiales de desecho (zinc, tela, cartón, latas, plásticos, otros)') {
+            doc.text('X', 158, 295, 'center');
+          } else if (this.Encuesta[108] == 'No tiene paredes') {
+            doc.text('X', 158, 300, 'center');
+          }
+
+
+
           doc.addPage();
+          console.log('pagina6');
           doc.addImage(Pag6, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+
+          if (this.Encuesta[109] == 'Paja, palma y otros vegetales') {
+            doc.text('X', 158, 30, 'center');
+          } else if (this.Encuesta[109] == 'Plancha de cemento, concreto y hormigón') {
+            doc.text('X', 158, 35, 'center');
+          } else if (this.Encuesta[109] == 'Tejas (barro, asbesto – cemento, metálica o lámina de zinc, plástica)') {
+            doc.text('X', 158, 40, 'center');
+          } else if (this.Encuesta[109] == 'Material de desecho (tela, cartón, latas, plástico, otros)') {
+            doc.text('X', 158, 45, 'center');
+          }
+
+          if (this.Encuesta[110] == 'Alfombra o tapete de pared a pared') {
+            doc.text('X', 155, 78, 'center');
+          } else if (this.Encuesta[110] == 'Mármol, parqué, madera pulida y lacada') {
+            doc.text('X', 155, 83, 'center');
+          } else if (this.Encuesta[110] == 'Baldosa, vinilo, tableta, ladrillo, laminado') {
+            doc.text('X', 155, 88, 'center');
+          } else if (this.Encuesta[110] == 'Cemento, gravilla') {
+            doc.text('X', 155, 93, 'center');
+          } else if (this.Encuesta[110] == 'Madera burda, tabla, tablón, otro vegetal') {
+            doc.text('X', 155, 98, 'center');
+          } else if (this.Encuesta[110] == 'Tierra, arena, barro') {
+            doc.text('X', 155, 103, 'center');
+          }
+
+          if (this.Encuesta[111] == 'Si') {
+            doc.text('X', 143.5, 125.5, 'center');
+          } else if (this.Encuesta[111] == 'No') {
+            doc.text('X', 162, 125.5, 'center');
+          }
+
+          if (this.Encuesta[112] == 'Si') {
+            doc.text('X', 143.5, 130.5, 'center');
+          } else if (this.Encuesta[112] == 'No') {
+            doc.text('X', 162, 130.5, 'center');
+          }
+
+          if (this.Encuesta[113] == 'Si') {
+            doc.text('X', 143.5, 135.5, 'center');
+          } else if (this.Encuesta[113] == 'No') {
+            doc.text('X', 162, 135.5, 'center');
+          }
+
+          if (this.Encuesta[114] == 'Si') {
+            doc.text('X', 143.5, 140.5, 'center');
+          } else if (this.Encuesta[113] == 'No') {
+            doc.text('X', 162, 140.5, 'center');
+          }
+          if (this.Encuesta[114] == 'Si') {
+            doc.text('X', 143.5, 145.5, 'center');
+          } else if (this.Encuesta[114] == 'No') {
+            doc.text('X', 162, 145.5, 'center');
+          }
+
+          if (this.Encuesta[115] == 'null' || this.Encuesta[115] == 'undefined' || this.Encuesta[115] == null) {
+            doc.lstext('00', 121, 163.5, 10);
+          } else {
+            doc.lstext(this.Encuesta[115], 121, 163.5, 10);
+          }
+          
+
+          if (this.Encuesta[255] == 'true') {
+            doc.text('X', 150.5, 199, 'center');
+          } else if (this.Encuesta[256] == 'true') {
+            doc.text('X', 150.5, 204, 'center');
+          } else if (this.Encuesta[257] == 'true') {
+            doc.text('X', 150.5, 209, 'center');
+          } else if (this.Encuesta[258] == 'true') {
+            doc.text('X', 150.5, 214, 'center');
+          } else if (this.Encuesta[259] == 'true') {
+            doc.text('X', 150.5, 219, 'center');
+          } else if (this.Encuesta[260] == 'true') {
+            doc.text('X', 150.5, 224, 'center');
+          }
+
+          if (this.Encuesta[261] == 'true') {
+            doc.text('X', 107.5, 254, 'center');
+          } else if (this.Encuesta[263] == 'true') {
+            doc.text('X', 107.5, 260, 'center');
+          } else if (this.Encuesta[264] == 'true') {
+            doc.text('X', 107.5, 265, 'center');
+          } else if (this.Encuesta[265] == 'true') {
+            doc.text('X', 107.5, 270, 'center');
+          } else if (this.Encuesta[266] == 'true') {
+            doc.text('X', 107.5, 275, 'center');
+          } else if (this.Encuesta[267] == 'true') {
+            doc.text('X', 107.5, 280, 'center');
+          } else if (this.Encuesta[268] == 'true') {
+            doc.text('X', 107.5, 285, 'center');
+          } else if (this.Encuesta[269] == 'true') {
+            doc.text('X', 107.5, 290, 'center');
+          }
+
+          if (this.Encuesta[262] == 'null' || this.Encuesta[262] == 'undefined') {
+            doc.text('X', 191, 254, 'center');
+          } else if (this.Encuesta[262] == 'true') {
+            doc.text('X', 176, 254, 'center');
+          } else if (this.Encuesta[262] == 'false') {
+            doc.text('X', 191, 254, 'center');
+          }
+
+          if (this.Encuesta[270] == 'true') {
+            doc.text('X', 150.5, 316, 'center');
+          } else if (this.Encuesta[271] == 'true') {
+            doc.text('X', 150.5, 321, 'center');
+          }
+
           doc.addPage();
+          console.log('pagina7');
           doc.addImage(Pag7, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+
+          if (this.Encuesta[272] == 'true') {
+            doc.text('X', 150.5, 31, 'center');
+          } else if (this.Encuesta[273] == 'true') {
+            doc.text('X', 150.5, 35, 'center');
+          } else if (this.Encuesta[274] == 'true') {
+            doc.text('X', 150.5, 40, 'center');
+          } else if (this.Encuesta[275] != '-') {
+            doc.text('X', 150.5, 45, 'center');
+          }
+
+          if (this.Encuesta[276] == 'Pipeta / Cilindro') {
+            doc.text('X', 152, 68, 'center');
+          } else if (this.Encuesta[276] == 'Gasoducto') {
+            doc.text('X', 152, 73, 'center');
+          } else if (this.Encuesta[276] == 'No tiene servicio de gas') {
+            doc.text('X', 152, 78, 'center');
+          }
+
+          if (this.Encuesta[15] == 'Permanente') {
+            doc.text('X', 145, 243, 'center');
+          } else if (this.Encuesta[15] == 'Temporal') {
+            doc.text('X', 145, 248, 'center');
+          }
+
+          if (this.Encuesta[18] == 'Si') {
+            doc.text('X', 118, 270.5, 'center');
+          } else if (this.Encuesta[18] == 'No') {
+            doc.text('X', 137, 270.5, 'center');
+          }
+
+          if (this.Encuesta[20] == 'Indígena') {
+            doc.text('X', 152, 298, 'center');
+          } else if (this.Encuesta[20] == 'Gitano (a) (ROM)') {
+            doc.text('X', 152, 303, 'center');
+          } else if (this.Encuesta[20] == 'Raizal de San Andrés, Providencia y Santa Catalina') {
+            doc.text('X', 152, 308, 'center');
+          } else if (this.Encuesta[20] == 'Palenquero (a) de San Basilio') {
+            doc.text('X', 152, 313, 'center');
+          } else if (this.Encuesta[20] == 'Negro (a), mulato (a), afrodescendiente, afrocolombiano (a)') {
+            doc.text('X', 152, 318, 'center');
+          } else if (this.Encuesta[20] == 'Ninguno de los anteriores') {
+            doc.text('X', 152, 323, 'center');
+          }
+
+
           doc.addPage();
+          console.log('pagina8');
           doc.addImage(Pag8, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+
+
+          if (this.Encuesta[22] == 'Si') {
+            doc.text('X', 117, 64.5, 'center');
+          } else if (this.Encuesta[22] == 'No') {
+            doc.text('X', 117, 69.5, 'center');
+          }
+
+          if (this.Encuesta[23] == 'undefined' || this.Encuesta[23] == 'null') {
+            doc.lstext('No Aplica', 20, 81, 0);
+          } else {
+            doc.lstext(this.Encuesta[23].replace('-', ''), 20, 81, 0);
+          }
+
+
+          if (this.Encuesta[24] == 'Si') {
+            doc.text('X', 118, 120, 'center');
+          } else if (this.Encuesta[24] == 'No') {
+            doc.text('X', 137, 120, 'center');
+          }
+
+          if (this.Encuesta[25] == 'Si') {
+            doc.text('X', 117, 144, 'center');
+          } else if (this.Encuesta[25] == 'No') {
+            doc.text('X', 117, 149, 'center');
+          }
+
+          if (this.Encuesta[26] == 'undefined' || this.Encuesta[26] == 'null') {
+            doc.lstext('No Aplica', 20, 166, 0);
+          } else {
+            doc.lstext(this.Encuesta[26].replace('-', ''), 20, 166, 0);
+          }
+
+          if (this.Encuesta[270] == 'true') {
+            doc.text('X', 150.5, 316, 'center');
+          } else if (this.Encuesta[271] == 'true') {
+            doc.text('X', 150.5, 321, 'center');
+          }
+
           doc.addPage();
+          console.log('pagina9');
           doc.addImage(Pag9, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
@@ -628,6 +933,12 @@ Encuesta;
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
           doc.addPage();
+          doc.addImage(Pag14, 'PNG', 5, 0, 205, 338);
+          doc.text(NumForm, 157, 11);
+          doc.lstext(Dia, 147, 16, 3.5);
+          doc.lstext(Mes, 164, 16, 3.5);
+          doc.lstext(Ano, 183, 16, 3);
+          doc.addPage();
           doc.addImage(Pag15, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
@@ -640,6 +951,10 @@ Encuesta;
         }, 200);
       });
     }, 300);
+  } catch (error) {
+    this.loading.HideLoading();
+    this.alert.AlertOneButton('Error', 'Error al Generar el Reporte', 'Ok');
+  }
   }
 
 }
