@@ -23,6 +23,7 @@ FotosP;
 Editadas;
 datodept;
 FamiliaGlobal;
+Id_busqueda;
   constructor() { }
 
   CheckInternet(respuesta) {

@@ -36,6 +36,12 @@ Encuesta;
 
   }
 
+
+  VerDetalles(item) {
+    this.global.Id_busqueda = item[0];
+    this.navCtrl.navigateRoot('/verencuesta');
+  }
+
   Descargar(item) {
   try {
     console.log('PDF', item[0]);
