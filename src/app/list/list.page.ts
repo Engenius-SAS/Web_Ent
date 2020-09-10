@@ -36,8 +36,8 @@ Encuesta;
 
   }
 
-
   VerDetalles(item) {
+    console.log('VERENCUESTA');
     this.global.Id_busqueda = item[0];
     this.navCtrl.navigateRoot('/verencuesta');
   }

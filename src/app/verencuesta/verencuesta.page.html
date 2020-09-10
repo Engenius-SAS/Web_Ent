@@ -1,1562 +1,1574 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>verencuesta</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.navigateRoot('/list');">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Información de la Encuesta
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      IDENTIFICACIÓN DE LA ENCUESTA
-    </ion-card-header>
-    <ion-card-content style="background: white!important">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            Datos de la Encuesta
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">No. de formulario: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="Num_formulario" readonly=true></ion-input>-->
-        </ion-item>
-
-        <ion-item-divider>
-          <ion-label color=primary>
-            Ubicación del Proyecto
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" text-wrap style="font-size:large">Localización:</ion-label>
-          <!--<p *ngIf="locacion!=undefined" style="color: dimgray">
-              {{locacion.latitud}},{{locacion.longitud}}
-            </p>
-          
-          <ion-button *ngIf="locacion==undefined" color="secondary" (click)="checkGPSPermission()">Obtener
-          </ion-button>
-          <ion-button *ngIf="locacion!=undefined" color="success" (click)="checkGPSPermission()">Re-calcular
-          </ion-button>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Latitud: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="locacion.latitud" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Longitud: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="locacion.longitud" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Altitud: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="locacion.altitud" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Departamento: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="U_depto" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Código departamento: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="U_codigo_depto" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Municipio: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="U_municipio" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Código municipio: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="U_codigo_municipio" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Vereda: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="U_vereda" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Corregimiento</ion-label>
-          <!--<ion-input type=text [(ngModel)]="U_corregimiento" readonly=true></ion-input>-->
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿Qué tipo de proyecto es?
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Tipo de proyecto: </ion-label>
-          <!--<ion-input type=text [(ngModel)]="Tipo_proyecto" readonly=true></ion-input>-->
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      TRATAMIENTO DATOS PERSONALES
-    </ion-card-header>
-    <ion-card-content style="background: white!important">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            Autorización
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Nos autoriza a realizarle la encuesta?
-          </ion-label>
-          <!--<ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="Autorizacion" (ionChange)="No_autoriza()">-->
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿La edificación corresponde a una?
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Qué tipo de institución es? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el uso de la vivienda /
-            institución? </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      1. MÓDULO ENERGÍA I
-    </ion-card-header>
-    <ion-card-content style="background: white!important">
-      <ion-list class="row justify-content-left">
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿La vivienda / institución cuenta con alguna
-            fuente de energía eléctrica?</ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿Qué fuente de energía o combustible utilizan principalmente para cocinar?
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Seleccione la(s) fuente(s) de energía o
-            combustible: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gas propano(libra):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gas propano($):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gas natural(M3):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gas natural($):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gasolina(Galón):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gasolina($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Kerosene(Galón):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Kerosene($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Petróleo(Galón):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Petróleo($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Alcohol(Galón):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Alcohol($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Carbón mineral(Kg):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Carbón mineral($):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Leña comprada/madera(Kg):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Leña comprada/madera($):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Leña auto
-            apropiada/madera(Kg): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Residuos del agro(Kg):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Residuos del agro($):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál? </ion-label>>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual</ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿Qué fuente de energía o combustible utilizan principalmente para iluminarse y uso de electrodomésticos en
-            la vivienda / institución?
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Seleccione la(s) fuente(s) de energía o
-            combustible: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Pilas o Baterias(Unidad):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de las Pilas o Baterias($):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Pilas o Baterias: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gasolina (planta
-            eléctrica)(Galón): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de la Gasolina (planta
-            eléctrica)($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Gasolina (planta eléctrica):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Kerosene(Galón):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Kerosene($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Kerosene: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Petróleo(Galón):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Petróleo($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Petróleo: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Alcohol(Galón):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Alcohol($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Alcohol: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Diésel (planta
-            eléctrica)(Galón): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo del Diésel (planta eléctrica)($):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Diésel (planta eléctrica):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Velas(Unidad):
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de las Velas($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Velas: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Localización</ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            De contar la vivienda / institución con el servicio de energía eléctrica y con ello dejar de consumir los
-            sustitutos energéticos antes mencionados para cocinar e iluminarse
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted estaría dispuesto a pagar una tarifa
-            mensual? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuánto estaría dispuesta (o) a pagar
-            mensualmente por el servicio de energía? </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      1. MÓDULO ENERGÍA II
-    </ion-card-header>
-    <ion-card-content style="background: white!important">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿Cuáles de los siguientes equipos tiene o necesita?
-          </ion-label>
-        </ion-item-divider>
-        <ion-grid>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Eléctricos y electrónicos
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              Tiene (Indique cantidad)
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              Necesita (Indique cantidad)
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Aire acondicionado
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_aire_acondicionado_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_aire_acondicionado_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Ventilador
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_ventilador_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_ventilador_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Radio
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_radio_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_radio_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Televisor
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_televisor_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_televisor_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              DVD- Blue ray
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_dvd_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_dvd_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Computador
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_computador_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_computador_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Impresora
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_impresora_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_impresora_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Celular
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_celular_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_celular_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Motobomba
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_motobomba_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_motobomba_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Licuadora
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_licuadora_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_licuadora_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Nevera
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_nevera_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_nevera_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Congelador
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_congelador_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_congelador_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Iluminación (bombillos)
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_iluminacion_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_iluminacion_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Equipos para emprendimientos
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_emprendimiento_tiene"></ion-checkbox>-->
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_emprendimiento_necesita"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      1. MÓDULO ENERGÍA III
-    </ion-card-header>
-    <ion-card-content style="background: white!important">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿En la vivienda / institución o localidad existen problemas de contaminación por uso de fuentes de energía?
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Exceso de ruido: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Malos olores: </ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            Implementación proyecto
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Planea implementar algún proyecto
-            productivo o emprendimiento? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál proyecto desea implementar?
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Se requiere energía eléctrica para el
-            desarrollo de su proyecto productivo que desea implementar?</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      2. MÓDULO PREDIO
-    </ion-card-header>
-    <ion-card-content style="background: white!important">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            Datos del Predio
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el uso del predio? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el estrato de este predio?
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      3. MÓDULO VIVIENDA
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-left">
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el nombre de la comunidad, pueblo,
-            etnia o territorio al que pertenece?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿La vivienda / institución se encuentra
-            ubicada al interior de? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el tipo de tenencia de esta
-            vivienda / institución?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <p style="color: gray">
-            Teniendo en cuenta que hogar se refiere a “una persona o grupo de personas, parientes o no, que: ocupan la
-            totalidad o parte de una vivienda; atiende necesidades básicas con cargo a un presupuesto común y
-            generalmente comparten las comidas”.
-          </p>
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántos hogares residen en esta vivienda
-            (familiares o no)?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántas personas habitan de manera
-            permanente en esta vivienda?</ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            Infraestructura predominante
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante de las
-            paredes exteriores de esta vivienda / institución? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante del techo
-            o cubierta de esta vivienda / institución? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante de los
-            pisos de esta vivienda / institución? </ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            En los últimos 12 meses, la vivienda / institución ha sido afectada por:
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Inundaciones, desbordamientos, crecientes,
-            arroyos: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Avalanchas, derrumbes o deslizamientos:
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Hundimiento del terreno: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Ventarrones, tormentas, vendavales:
-          </ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            Área de construcción
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el área aproximada de construcción?
-            (m2): </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      4. MÓDULO SERVICIOS PÚBLICOS DOMICILIARIOS
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            La vivienda / institución cuenta con servicios de:
-          </ion-label>
-        </ion-item-divider>
-        <ion-grid>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              La vivienda / institución cuenta con servicios de:
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Teléfono fijo propio
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Telefono_fijo_propio"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Teléfono fijo comunitario
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Telefono_fijo_comunitario"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Celular
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Celular"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Internet comunitario
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Internet_comunitario"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Internet propio
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Internet_propio"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Ninguna de las anteriores
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Ninguna_anteriores"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <!--<ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Cuenta con servicios de: </ion-label>
-          <ion-checkbox checked = "false" [(ngModel)]="Telefono_fijo_propio" value="1">Teléfono fijo propio</ion-checkbox>
-          <ion-checkbox checked = "false" [(ngModel)]="Telefono_fijo_comunitario" value="2">Teléfono fijo comunitario</ion-checkbox>
-          <ion-checkbox checked = "false" [(ngModel)]="Celular" value="3">Celular</ion-checkbox>
-          <ion-checkbox checked = "false" [(ngModel)]="Internet_comunitario" value="4">Internet comunitario</ion-checkbox>
-          <ion-checkbox checked = "false" [(ngModel)]="Internet_propio" value="5">Internet propio</ion-checkbox>
-          <ion-checkbox checked = "false" [(ngModel)]="Ninguna_anteriores" value="6">Ninguna de las anteriores</ion-checkbox>
-        </ion-item>-->
-        <ion-item-divider>
-          <ion-label color=primary>
-            El agua que se utiliza en la vivienda / institución para preparar los alimentos, la obtienen principalmente
-            de:
-          </ion-label>
-        </ion-item-divider>
-        <ion-grid>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Obtiene el agua de:
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Acueducto domiciliario público, comuna o vereda
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Acueducto_domiciliario_publico"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Medidor de agua
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Medidor_agua"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Pila con medidor de agua
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Pila_medidor_agua_publica"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Aljibe
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Aljibe"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Río, quebrada, manantial o nacimiento
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Rio_quebrada_manantial_nacimiento"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Pozo dentro de vivienda
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Pozo_dentro_vivienda"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Agua lluvia
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Agua_lluvia"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Carrotanque
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Carrotanque"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Aguatero / agua embotellada / o en bolsa
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Aguatero_embotellada_bolsa"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿Qué tipo de servicio sanitario (inodoro) tiene esta vivienda / institución?:
-          </ion-label>
-        </ion-item-divider>
-        <ion-grid>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Cuenta con servicio de:
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Inodoro conectado al alcantarillado
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Inodoro_conectado_alcantarillado"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Inodoro conectado a pozo séptico
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Inodoro_conectado_pozo_septico"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Inodoro sin conexión
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Inodoro_sin_conexion"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Letrina
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Letrina"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              No tiene servicio sanitario
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Vivienda_institucion_sin_servicio_sanitario"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Otro
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Sanitario_inodoro_otro_cual_ban"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-            <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          IDENTIFICACIÓN DE LA ENCUESTA
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos de la Encuesta
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">No. de formulario: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="Num_formulario" readonly=true></ion-input>-->
+            </ion-item>
+    
+            <ion-item-divider>
+              <ion-label color=primary>
+                Ubicación del Proyecto
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" text-wrap style="font-size:large">Localización:</ion-label>
+              <!--<p *ngIf="locacion!=undefined" style="color: dimgray">
+                  {{locacion.latitud}},{{locacion.longitud}}
+                </p>
+              
+              <ion-button *ngIf="locacion==undefined" color="secondary" (click)="checkGPSPermission()">Obtener
+              </ion-button>
+              <ion-button *ngIf="locacion!=undefined" color="success" (click)="checkGPSPermission()">Re-calcular
+              </ion-button>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Latitud: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="locacion.latitud" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Longitud: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="locacion.longitud" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Altitud: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="locacion.altitud" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Departamento: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="U_depto" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Código departamento: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="U_codigo_depto" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Municipio: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="U_municipio" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Código municipio: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="U_codigo_municipio" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Vereda: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="U_vereda" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Corregimiento</ion-label>
+              <!--<ion-input type=text [(ngModel)]="U_corregimiento" readonly=true></ion-input>-->
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué tipo de proyecto es?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Tipo de proyecto: </ion-label>
+              <!--<ion-input type=text [(ngModel)]="Tipo_proyecto" readonly=true></ion-input>-->
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          TRATAMIENTO DATOS PERSONALES
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Autorización
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Nos autoriza a realizarle la encuesta?
+              </ion-label>
+              <!--<ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="Autorizacion" (ionChange)="No_autoriza()">-->
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿La edificación corresponde a una?
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Qué tipo de institución es? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el uso de la vivienda /
+                institución? </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          1. MÓDULO ENERGÍA I
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿La vivienda / institución cuenta con alguna
+                fuente de energía eléctrica?</ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué fuente de energía o combustible utilizan principalmente para cocinar?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Seleccione la(s) fuente(s) de energía o
+                combustible: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gas propano(libra):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gas propano($):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gas natural(M3):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gas natural($):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gasolina(Galón):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gasolina($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Kerosene(Galón):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Kerosene($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Petróleo(Galón):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Petróleo($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Alcohol(Galón):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Alcohol($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Carbón mineral(Kg):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Carbón mineral($):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Leña comprada/madera(Kg):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Leña comprada/madera($):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Leña auto
+                apropiada/madera(Kg): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Residuos del agro(Kg):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Residuos del agro($):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál? </ion-label>>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual</ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué fuente de energía o combustible utilizan principalmente para iluminarse y uso de electrodomésticos en
+                la vivienda / institución?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Seleccione la(s) fuente(s) de energía o
+                combustible: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Pilas o Baterias(Unidad):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de las Pilas o Baterias($):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Pilas o Baterias: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gasolina (planta
+                eléctrica)(Galón): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de la Gasolina (planta
+                eléctrica)($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Gasolina (planta eléctrica):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Kerosene(Galón):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Kerosene($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Kerosene: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Petróleo(Galón):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Petróleo($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Petróleo: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Alcohol(Galón):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Alcohol($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Alcohol: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Diésel (planta
+                eléctrica)(Galón): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo del Diésel (planta eléctrica)($):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Diésel (planta eléctrica):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Velas(Unidad):
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de las Velas($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Velas: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización</ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                De contar la vivienda / institución con el servicio de energía eléctrica y con ello dejar de consumir los
+                sustitutos energéticos antes mencionados para cocinar e iluminarse
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted estaría dispuesto a pagar una tarifa
+                mensual? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuánto estaría dispuesta (o) a pagar
+                mensualmente por el servicio de energía? </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          1. MÓDULO ENERGÍA II
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Cuáles de los siguientes equipos tiene o necesita?
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Eléctricos y electrónicos
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  Tiene (Indique cantidad)
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  Necesita (Indique cantidad)
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Aire acondicionado
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_aire_acondicionado_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_aire_acondicionado_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Ventilador
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_ventilador_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_ventilador_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Radio
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_radio_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_radio_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Televisor
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_televisor_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_televisor_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  DVD- Blue ray
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_dvd_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_dvd_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Computador
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_computador_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_computador_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Impresora
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_impresora_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_impresora_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Celular
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_celular_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_celular_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Motobomba
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_motobomba_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_motobomba_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Licuadora
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_licuadora_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_licuadora_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Nevera
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_nevera_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_nevera_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Congelador
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_congelador_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_congelador_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Iluminación (bombillos)
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_iluminacion_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_iluminacion_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Equipos para emprendimientos
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_emprendimiento_tiene"></ion-checkbox>-->
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Equipos_emprendimiento_necesita"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          1. MÓDULO ENERGÍA III
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿En la vivienda / institución o localidad existen problemas de contaminación por uso de fuentes de energía?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Exceso de ruido: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Malos olores: </ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Implementación proyecto
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Planea implementar algún proyecto
+                productivo o emprendimiento? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál proyecto desea implementar?
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Se requiere energía eléctrica para el
+                desarrollo de su proyecto productivo que desea implementar?</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          2. MÓDULO PREDIO
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos del Predio
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el uso del predio? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el estrato de este predio?
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          3. MÓDULO VIVIENDA
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el nombre de la comunidad, pueblo,
+                etnia o territorio al que pertenece?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿La vivienda / institución se encuentra
+                ubicada al interior de? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el tipo de tenencia de esta
+                vivienda / institución?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <p style="color: gray">
+                Teniendo en cuenta que hogar se refiere a “una persona o grupo de personas, parientes o no, que: ocupan la
+                totalidad o parte de una vivienda; atiende necesidades básicas con cargo a un presupuesto común y
+                generalmente comparten las comidas”.
+              </p>
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántos hogares residen en esta vivienda
+                (familiares o no)?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántas personas habitan de manera
+                permanente en esta vivienda?</ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Infraestructura predominante
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante de las
+                paredes exteriores de esta vivienda / institución? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante del techo
+                o cubierta de esta vivienda / institución? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante de los
+                pisos de esta vivienda / institución? </ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                En los últimos 12 meses, la vivienda / institución ha sido afectada por:
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Inundaciones, desbordamientos, crecientes,
+                arroyos: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Avalanchas, derrumbes o deslizamientos:
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Hundimiento del terreno: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Ventarrones, tormentas, vendavales:
+              </ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Área de construcción
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el área aproximada de construcción?
+                (m2): </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          4. MÓDULO SERVICIOS PÚBLICOS DOMICILIARIOS
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                La vivienda / institución cuenta con servicios de:
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  La vivienda / institución cuenta con servicios de:
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Teléfono fijo propio
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Telefono_fijo_propio"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Teléfono fijo comunitario
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Telefono_fijo_comunitario"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Celular
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Celular"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Internet comunitario
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Internet_comunitario"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Internet propio
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Internet_propio"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Ninguna de las anteriores
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Ninguna_anteriores"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <!--<ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cuenta con servicios de: </ion-label>
+              <ion-checkbox checked = "false" [(ngModel)]="Telefono_fijo_propio" value="1">Teléfono fijo propio</ion-checkbox>
+              <ion-checkbox checked = "false" [(ngModel)]="Telefono_fijo_comunitario" value="2">Teléfono fijo comunitario</ion-checkbox>
+              <ion-checkbox checked = "false" [(ngModel)]="Celular" value="3">Celular</ion-checkbox>
+              <ion-checkbox checked = "false" [(ngModel)]="Internet_comunitario" value="4">Internet comunitario</ion-checkbox>
+              <ion-checkbox checked = "false" [(ngModel)]="Internet_propio" value="5">Internet propio</ion-checkbox>
+              <ion-checkbox checked = "false" [(ngModel)]="Ninguna_anteriores" value="6">Ninguna de las anteriores</ion-checkbox>
+            </ion-item>-->
+            <ion-item-divider>
+              <ion-label color=primary>
+                El agua que se utiliza en la vivienda / institución para preparar los alimentos, la obtienen principalmente
+                de:
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Obtiene el agua de:
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Acueducto domiciliario público, comuna o vereda
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Acueducto_domiciliario_publico"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Medidor de agua
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Medidor_agua"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Pila con medidor de agua
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Pila_medidor_agua_publica"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Aljibe
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Aljibe"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Río, quebrada, manantial o nacimiento
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Rio_quebrada_manantial_nacimiento"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Pozo dentro de vivienda
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Pozo_dentro_vivienda"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Agua lluvia
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Agua_lluvia"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Carrotanque
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Carrotanque"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Aguatero / agua embotellada / o en bolsa
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Aguatero_embotellada_bolsa"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué tipo de servicio sanitario (inodoro) tiene esta vivienda / institución?:
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Cuenta con servicio de:
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Inodoro conectado al alcantarillado
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Inodoro_conectado_alcantarillado"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Inodoro conectado a pozo séptico
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Inodoro_conectado_pozo_septico"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Inodoro sin conexión
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Inodoro_sin_conexion"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Letrina
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Letrina"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  No tiene servicio sanitario
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Vivienda_institucion_sin_servicio_sanitario"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Otro
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Sanitario_inodoro_otro_cual_ban"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+                <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
+              </ion-item>
+            </ion-grid>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿La vivienda / institución cuenta con servicio de gas?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Servicio de gas: </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL I
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-center" style="width: 100%!important;">
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿cuál es la relación o parentesco que usted tiene con relación al jefe(a) de hogar?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Parentesco: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántos años cumplidos tiene usted?
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es la temporalidad o permanencia que
+                usted tiene al interior de la vivienda?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Sexo / género: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es su principal ocupación?
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted contribuye con los ingresos de esta
+                vivienda?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es su nivel educativo más alto
+                alcanzado…? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">De acuerdo con su cultura, pueblo o rasgos
+                físicos… es o se reconoce como: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Está usted o algún miembro de la vivienda
+                inscrito en el registro único de víctimas?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Habla usted la lengua nativa de su pueblo?
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál lengua nativa habla?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Alguna persona de la vivienda presenta
+                actualmente problemas de salud por el uso de la leña? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted pertenece a alguna organización
+                comunitaria? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿A cuál organización usted pertenece?
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL II
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+            Avance al Siguiente Módulo.
           </ion-item>
-        </ion-grid>
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿La vivienda / institución cuenta con servicio de gas?
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Servicio de gas: </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL I
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-center" style="width: 100%!important;">
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿cuál es la relación o parentesco que usted tiene con relación al jefe(a) de hogar?
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Parentesco: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántos años cumplidos tiene usted?
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es la temporalidad o permanencia que
-            usted tiene al interior de la vivienda?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Sexo / género: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es su principal ocupación?
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted contribuye con los ingresos de esta
-            vivienda?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es su nivel educativo más alto
-            alcanzado…? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">De acuerdo con su cultura, pueblo o rasgos
-            físicos… es o se reconoce como: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Está usted o algún miembro de la vivienda
-            inscrito en el registro único de víctimas?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Habla usted la lengua nativa de su pueblo?
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál lengua nativa habla?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Alguna persona de la vivienda presenta
-            actualmente problemas de salud por el uso de la leña? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted pertenece a alguna organización
-            comunitaria? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿A cuál organización usted pertenece?
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL II
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-        Avance al Siguiente Módulo.
-      </ion-item>
-      <ion-item-divider>
-        <ion-label color=primary>
-          ¿En la vivienda, quienes realizan estas labores?
-        </ion-label>
-      </ion-item-divider>
-      <ion-grid>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Labores
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            Niñas
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            Niños
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            Mujeres
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            Hombres
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Labores domésticas:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Asume en mayor medida pagos y compras de la canasta familiar:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Labores finca:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Transporte:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Administración finca:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Comercia:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_comercia_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--ion-checkbox color="primary" [(ngModel)]="Labores_comercia_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_comercia_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_comercia_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Estudia:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Formación de hijos:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Cuidado adultos mayores o enfermos:
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col style="border: 0.2px solid gray">
-            Otras labores
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_ninas"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_ninos"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_mujeres"></ion-checkbox>-->
-          </ion-col>
-          <ion-col style="border: 0.2px solid gray">
-            <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_hombres"></ion-checkbox>-->
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      6. MÓDULO ECONOMÍA FAMIILIAR I
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-center" style="width: 100%!important;">
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿Cuáles de las siguientes actividades son fuentes de ingreso en el hogar / familia?
-          </ion-label>
-        </ion-item-divider>
-        <ion-grid>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Actividad
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              Son fuentes de ingreso en el hogar
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Ganadería, caza, silvicultura y pesca
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Ganaderia_caza_silvicultura_pesca"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Explotación de minas y canteras
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Explotacion_minas_canteras"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Fabricación de artículos textiles y prendas de vestir
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Fabricacion_articulos_textiles_prendas_vestir"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Construcción
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Construccion"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Venta de productos no fabricados en el hogar (tienda)
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Venta_productos_no_fabricados_hogar"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Elaboración o procesamiento de alimentos y bebidas
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Elaboracion_procesamiento_alimentos_bebidas"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Servicio de restaurante, bar y similares
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Servicio_restaurante_bar_similares"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Alojamiento
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Alojamiento"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Arrendamientos
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Arrendamientos"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Servicios por actividades de reparación y mantenimiento
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Servicios_actividades_reparacion_mantenimiento"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Servicios artísticos, peluquería
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Servicios_artisticos_peluqueria"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Elaboración de artesanías
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Elaboracion_artesanias"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Empleo de integrantes de la familia
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Empleo_integrantes_familia"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Agricultura
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Agricultura"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Otro
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Fuente_ingreso_otro_cual_ban"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
-        </ion-grid>
-
-        <ion-item-divider>
-          <ion-label color=primary>
-            ¿Qué cultivan?
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 1: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 2: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 3: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 4: </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      6. MÓDULO ECONOMÍA FAMIILIAR II
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-        Avance al Siguiente Módulo.
-      </ion-item>
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            Teniendo en cuenta el nivel de gastos en esta vivienda, podría decirme cuanto es el gasto mes en:
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Arriendo o cuota($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Acueducto($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Alcantarillado($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Gas($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Salud($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Transporte($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Educación($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Alimentación($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Recreación($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Vestuario($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Energía eléctrica($): </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál?: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Gasto mensual (otro): </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      7. MÓDULO USO RACIONAL DE LA ENERGÍA - URE
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-left">
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cree usted que usa adecuadamente la energía
-            eléctrica?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Ha escuchado sobre el uso racional de la
-            energía eléctrica?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Desearía conocer sobre las formas de
-            generación y uso de energía eléctrica?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuáles temas le gustaría conocer sobre las
-            formas de generación y el uso de energía eléctrica?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">¿A usted le gustaría hacer parte de un grupo
-            de personas que comparten saberes sobre las formas de generación y el uso de energía eléctrica?</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO I
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            Datos del posible beneficiario / usuario
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Nombre y apellido (o nombre de la
-            institución cuando aplique) del posible beneficario: </ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            Datos de quien contestó la encuesta (Encuestado)
-          </ion-label>
-        </ion-item-divider>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Nombre y apellido del encuestado:
-          </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Teléfono celular: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Teléfono fijo: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Número de identificación: </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Correo electrónico: </ion-label>
-        </ion-item>
-        <ion-item-divider>
-          <ion-label color=primary>
-            Consentimiento y aprobación del proyecto
-          </ion-label>
-        </ion-item-divider>
-        <ion-grid>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              Con mi firma doy constancia que:
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              1. Acepto el uso de mis datos para fines estadísticos del proyecto.
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Constancia_uso_datos"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              2. Me han informado y explicado en qué consiste la posible solución energética.
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Explicado_posible_solucion"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              3. Me han informado y explicado sus beneficios y limitaciones.
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Explicado_beneficio_limitacion"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              4. Apruebo y autorizo la formulación-estructuración y la implementación del proyecto en nuestro
-              territorio/vivienda/institución/zona, en caso de ser viable, ya que no causará impactos significativos al
-              entorno y a nuestra cultura.
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Aprobacion_proyecto"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col style="border: 0.2px solid gray">
-              5. Permito y autorizo la toma y uso de fotografía y videos por parte de Enterritorio_2.
-            </ion-col>
-            <ion-col style="border: 0.2px solid gray">
-              <!--<ion-checkbox color="primary" [(ngModel)]="Autorizacion_fotos_videos"></ion-checkbox>-->
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <ion-item-divider>
-          <p style="color: gray">
-            <b>Por lo tanto, estoy enterado y comprendo que es importante:</b>
-            • Pagar mensualmente por dicha solución, en caso de ser viable su implementación
-            • Asistir y participar en la socialización, formación y capacitación sobre el Uso Racional de Energía - URE.
-          </p>
-        </ion-item-divider>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO II
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            Firma:
-          </ion-label>
-          <!--<ion-button color=blue (click)="clear()">Limpiar</ion-button>-->
-        </ion-item-divider>
-
-        <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Cédula de ciudadanía: </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="width: 100%">
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO III
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-left">
-        <ion-item-divider>
-          <ion-label color=primary>
-            Datos Encuestador
-          </ion-label>
-        </ion-item-divider>
-
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Encuestador: ¿Cuál fue la reacción del
-            encuestado ante las preguntas realizadas? </ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Encuestador: ¿Cuál fue la reacción del
-            encuestado ante el proyecto?</ion-label>
-        </ion-item>
-        <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-          <ion-label color="blue" position="floating" class="ion-text-wrap">Comentarios: </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header color="blue" style="text-align: center;font-size:large">
-      9. MÓDULO FOTOGRAFIAS
-    </ion-card-header>
-    <ion-card-content style="background: white!important;">
-      <ion-list class="row justify-content-left">
-        
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+          <ion-item-divider>
+            <ion-label color=primary>
+              ¿En la vivienda, quienes realizan estas labores?
+            </ion-label>
+          </ion-item-divider>
+          <ion-grid>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Labores
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                Niñas
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                Niños
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                Mujeres
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                Hombres
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Labores domésticas:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_Lab_domesticas_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Asume en mayor medida pagos y compras de la canasta familiar:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_pagosycompras_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Labores finca:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_lab_finca_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Transporte:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_transporte_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Administración finca:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_admon_finca_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Comercia:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_comercia_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--ion-checkbox color="primary" [(ngModel)]="Labores_comercia_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_comercia_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_comercia_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Estudia:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_estudia_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Formación de hijos:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_formacion_hijos_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Cuidado adultos mayores o enfermos:
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_cuiado_mayores_enfermos_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Otras labores
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_ninas"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_ninos"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_mujeres"></ion-checkbox>-->
+              </ion-col>
+              <ion-col style="border: 0.2px solid gray">
+                <!--<ion-checkbox color="primary" [(ngModel)]="Labores_otro_cual_hombres"></ion-checkbox>-->
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          6. MÓDULO ECONOMÍA FAMIILIAR I
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-center" style="width: 100%!important;">
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Cuáles de las siguientes actividades son fuentes de ingreso en el hogar / familia?
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Actividad
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  Son fuentes de ingreso en el hogar
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Ganadería, caza, silvicultura y pesca
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Ganaderia_caza_silvicultura_pesca"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Explotación de minas y canteras
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Explotacion_minas_canteras"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Fabricación de artículos textiles y prendas de vestir
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Fabricacion_articulos_textiles_prendas_vestir"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Construcción
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Construccion"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Venta de productos no fabricados en el hogar (tienda)
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Venta_productos_no_fabricados_hogar"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Elaboración o procesamiento de alimentos y bebidas
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Elaboracion_procesamiento_alimentos_bebidas"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Servicio de restaurante, bar y similares
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Servicio_restaurante_bar_similares"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Alojamiento
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Alojamiento"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Arrendamientos
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Arrendamientos"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Servicios por actividades de reparación y mantenimiento
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Servicios_actividades_reparacion_mantenimiento"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Servicios artísticos, peluquería
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Servicios_artisticos_peluqueria"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Elaboración de artesanías
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Elaboracion_artesanias"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Empleo de integrantes de la familia
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Empleo_integrantes_familia"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Agricultura
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Agricultura"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Otro
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Fuente_ingreso_otro_cual_ban"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
+            </ion-grid>
+    
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué cultivan?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 1: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 2: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 3: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 4: </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          6. MÓDULO ECONOMÍA FAMIILIAR II
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+            Avance al Siguiente Módulo.
+          </ion-item>
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Teniendo en cuenta el nivel de gastos en esta vivienda, podría decirme cuanto es el gasto mes en:
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Arriendo o cuota($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Acueducto($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Alcantarillado($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Gas($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Salud($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Transporte($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Educación($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Alimentación($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Recreación($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Vestuario($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Energía eléctrica($): </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál?: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Gasto mensual (otro): </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          7. MÓDULO USO RACIONAL DE LA ENERGÍA - URE
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cree usted que usa adecuadamente la energía
+                eléctrica?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Ha escuchado sobre el uso racional de la
+                energía eléctrica?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Desearía conocer sobre las formas de
+                generación y uso de energía eléctrica?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuáles temas le gustaría conocer sobre las
+                formas de generación y el uso de energía eléctrica?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿A usted le gustaría hacer parte de un grupo
+                de personas que comparten saberes sobre las formas de generación y el uso de energía eléctrica?</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO I
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos del posible beneficiario / usuario
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Nombre y apellido (o nombre de la
+                institución cuando aplique) del posible beneficario: </ion-label>
+                <ion-input [(ngModel)] = "data[81]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos de quien contestó la encuesta (Encuestado)
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Nombre y apellido del encuestado:
+              </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Teléfono celular: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Teléfono fijo: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Número de identificación: </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Correo electrónico: </ion-label>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Consentimiento y aprobación del proyecto
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Con mi firma doy constancia que:
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  1. Acepto el uso de mis datos para fines estadísticos del proyecto.
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Constancia_uso_datos"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  2. Me han informado y explicado en qué consiste la posible solución energética.
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Explicado_posible_solucion"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  3. Me han informado y explicado sus beneficios y limitaciones.
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Explicado_beneficio_limitacion"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  4. Apruebo y autorizo la formulación-estructuración y la implementación del proyecto en nuestro
+                  territorio/vivienda/institución/zona, en caso de ser viable, ya que no causará impactos significativos al
+                  entorno y a nuestra cultura.
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Aprobacion_proyecto"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  5. Permito y autorizo la toma y uso de fotografía y videos por parte de Enterritorio_2.
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  <!--<ion-checkbox color="primary" [(ngModel)]="Autorizacion_fotos_videos"></ion-checkbox>-->
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-item-divider>
+              <p style="color: gray">
+                <b>Por lo tanto, estoy enterado y comprendo que es importante:</b>
+                • Pagar mensualmente por dicha solución, en caso de ser viable su implementación
+                • Asistir y participar en la socialización, formación y capacitación sobre el Uso Racional de Energía - URE.
+              </p>
+            </ion-item-divider>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO II
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Firma:
+              </ion-label>
+              <!--<ion-button color=blue (click)="clear()">Limpiar</ion-button>-->
+            </ion-item-divider>
+    
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cédula de ciudadanía: </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO III
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos Encuestador
+              </ion-label>
+            </ion-item-divider>
+    
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Encuestador: ¿Cuál fue la reacción del
+                encuestado ante las preguntas realizadas? </ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Encuestador: ¿Cuál fue la reacción del
+                encuestado ante el proyecto?</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Comentarios: </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          9. MÓDULO FOTOGRAFIAS
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
