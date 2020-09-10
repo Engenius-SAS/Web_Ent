@@ -27,3 +27,17 @@ export class VerencuestaPage implements OnInit {
   }
 
 }
+/*SELECT A.*,B.*,C.*,D.*,E.*,F.*,G.*,H.*,I.*,J.*,K.*,M.* FROM Enterritorio.encabezado A
+INNER JOIN Enterritorio.c_sociodemograficas B ON A.Id_Encuesta = B.Id_Encuesta
+INNER JOIN Enterritorio.caracteristicas_predio C ON A.Id_Encuesta = C.Id_Encuesta
+INNER JOIN Enterritorio.consentimiento D ON A.Id_Encuesta = D.Id_Encuesta
+INNER JOIN Enterritorio.datos_vivienda_I E ON A.Id_Encuesta = E.Id_Encuesta
+INNER JOIN Enterritorio.economia F ON A.Id_Encuesta = F.Id_Encuesta
+INNER JOIN Enterritorio.energia G ON A.Id_Encuesta = G.Id_Encuesta
+INNER JOIN Enterritorio.servicios_publicos H ON A.Id_Encuesta = H.Id_Encuesta
+INNER JOIN Enterritorio.tratamiento_DP I ON A.Id_Encuesta = I.Id_Encuesta
+INNER JOIN Enterritorio.ubicacion J ON A.Id_Encuesta = J.Id_Encuesta
+INNER JOIN Enterritorio.URE K ON A.Id_Encuesta = K.Id_Encuesta
+INNER JOIN Enterritorio.proyectos_funcionarios L ON A.Id_Proyecto_Funcionario = L.Id_Proyecto_Funcionario
+INNER JOIN Enterritorio.funcionarios M ON M.Id_Funcionario = L.Id_Funcionario
+WHERE A.isdelete = 0 AND A.Id_Encuesta = '234-1599533153335' */
