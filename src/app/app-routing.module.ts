@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'selectcomu', loadChildren: './selectcomu/selectcomu.module#SelectcomuPageModule' },
   { path: 'selectrans', loadChildren: './selectrans/selectrans.module#SelectransPageModule' },
   { path: 'map', loadChildren: './map/map.module#MapPageModule' },
-  { path: 'list', loadChildren: './list/list.module#ListPageModule' }
+  { path: 'list', loadChildren: './list/list.module#ListPageModule' },  { path: 'verencuesta', loadChildren: './verencuesta/verencuesta.module#VerencuestaPageModule' }
+
 
 
 ];
