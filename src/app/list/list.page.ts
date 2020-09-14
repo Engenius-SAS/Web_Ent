@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController, NavController } from '@ionic/angular';
+import { MenuController, NavController, PopoverController } from '@ionic/angular';
 import { LoadingService } from '../loading.service';
 import { GlobalService } from '../global.service';
 import { AlertService } from '../alert.service';
 import * as jsPDF from 'jspdfmifeheros';
 import 'jspdf-autotable-mifeheros';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ImageviewComponent } from '../imageview/imageview.component';
 
 @Component({
   selector: 'app-list',
@@ -20,7 +21,9 @@ Encuesta;
     public navCtrl: NavController,
     public loading: LoadingService,
     public global: GlobalService,
-    public alert: AlertService) { }
+    public alert: AlertService,
+    public popoverController: PopoverController) { }
+    
 
   ngOnInit() {
     this.Pines = new Array();
@@ -41,6 +44,18 @@ Encuesta;
     this.global.Id_busqueda = item[0];
     this.navCtrl.navigateRoot('/verencuesta');
   }
+
+
+
+  async VerFotos(item) {
+    this.global.Id_busqueda = item[0];
+    const popover = await this.popoverController.create({
+      component: ImageviewComponent,
+      translucent: true
+    });
+    return await popover.present();
+  }
+
 
   Descargar(item) {
   try {

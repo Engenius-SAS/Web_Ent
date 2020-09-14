@@ -5,7 +5,7 @@ import { SignaturePadModule } from 'angular2-signaturepad';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -29,7 +29,7 @@ import { AgmCoreModule } from '@agm/core';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [NgxPaginationModule, FilterPipeModule, BrowserModule, IonicModule.forRoot(),
-    AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(), SignaturePadModule,
+    AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(), SignaturePadModule, NgbModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDDNunlrlRApoo4bo5L8V5fMcBCTjZDbK8'
     })],

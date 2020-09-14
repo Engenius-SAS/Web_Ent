@@ -37,7 +37,7 @@
             <td>{{item[38]}}</td>
             <td>{{item[4]}}/{{item[5]}}/{{item[6]}}</td>
             <td>
-              <ion-button>
+              <ion-button (click)="VerFotos(item)">
                 <ion-icon slot="icon-only" name="images-outline"></ion-icon>
               </ion-button>
               <ion-button color="success" (click)="VerDetalles(item)">

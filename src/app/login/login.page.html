@@ -16,7 +16,7 @@
       </ion-item>
       <ion-item class="itemm">
         <ion-label style="color:#023dbe"><ion-icon name="briefcase"></ion-icon> <a style="color:#858585"> Proyecto</a></ion-label>
-        <ion-select interface="popover" placeholder="Proyecto" [(ngModel)]="this.Id_Proyecto">
+        <ion-select placeholder="Proyecto" [(ngModel)]="this.Id_Proyecto">
         <ion-select-option *ngFor="let item of global.Proyectos" value="{{item.Id_Proyecto}}">{{item.nombre}}</ion-select-option>
         </ion-select>
       </ion-item>
