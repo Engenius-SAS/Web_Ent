@@ -14,6 +14,13 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-item>
+    <ion-label>Encuestador: </ion-label>
+    <ion-select [(ngModel)]="usuario" (ionChange)="Buscar()">
+      <ion-select-option value="0" selected>Todos</ion-select-option>
+      <ion-select-option *ngFor="let item of Encuestadores" value={{item[0]}}>{{item[1]}}</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-header>
 
 <ion-content>
@@ -21,6 +28,7 @@
   <table class="table table-responsive-sm table-bordered table-striped text-center">
     <thead>
         <tr>
+            <th>N°</th>
             <th>Consecutivo</th>
             <th>Nombre del Beneficiario</th>
             <th>Municipio</th>
@@ -30,7 +38,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of Pines">
+        <tr *ngFor="let item of Pines; let i = index">
+            <td>{{i + 1}}</td>
             <td>{{item[0]}}</td>
             <td>{{item[13]}}</td>
             <td>{{item[40]}}</td>

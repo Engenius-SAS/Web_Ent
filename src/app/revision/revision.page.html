@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -2368,8 +2369,6 @@
               </ion-label>
               <ion-button color=blue (click)="clear()">Limpiar</ion-button>
             </ion-item-divider>
-            <signature-pad style="border: 2px solid gray;border-radius: 25px;margin-top: 10px;"
-              [options]="signaturePadOptions" (onBeginEvent)="drawStart()"></signature-pad>
           <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
             <ion-label color="blue" position="floating" class="ion-text-wrap">Cédula de ciudadanía: </ion-label>
             <ion-input type=number [(ngModel)]="Cedula_firma" placeholder="Escriba Aquí" required></ion-input>
