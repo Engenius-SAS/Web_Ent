@@ -46,17 +46,8 @@
             <td>{{item[38]}}</td>
             <td>{{item[4]}}/{{item[5]}}/{{item[6]}}</td>
             <td>
-              <ion-button (click)="VerFotos(item)">
-                <ion-icon slot="icon-only" name="images-outline"></ion-icon>
-              </ion-button>
-              <ion-button color="success" (click)="VerDetalles(item)">
-                <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
-              </ion-button>
-              <ion-button color="secondary" (click)="Descargar(item)">
-                <ion-icon slot="icon-only" name="cloud-download-outline"></ion-icon>
-              </ion-button>
-              <ion-button color="danger">
-                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              <ion-button color="warning" (click)="RevisionEnc(item)">
+                <ion-icon slot="icon-only" name="clipboard-outline"></ion-icon>
               </ion-button>
               
             </td>

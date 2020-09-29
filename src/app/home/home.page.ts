@@ -146,6 +146,13 @@ export class HomePage implements OnInit {
     }, 500);
   }
 
+  RevisionE() {
+    this.loading.LoadingNormal('Cargando...', 3);
+    setTimeout(() => {
+      this.navCtrl.navigateRoot('/listverifi');
+    }, 500);
+  }
+
   Continuar() {
     setTimeout(() => {
       this.navCtrl.navigateRoot('/conti');

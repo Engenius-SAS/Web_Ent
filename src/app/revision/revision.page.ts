@@ -93,7 +93,7 @@ Fin(){
     console.log(response, query);
     if (err == null && response == true) {
       this.alert.AlertOneButton('Información', 'Revisión exitosa', 'Ok', () => {
-        this.navCtrl.navigateRoot('/list');
+        this.navCtrl.navigateRoot('/listverifi');
       });
     } else {
       this.alert.AlertOneButton('Error', 'Error al subir registro');
@@ -109,7 +109,7 @@ Alert(){
     console.log(response, query);
     if (err == null && response == true) {
       this.alert.AlertOneButton('Información', 'Revisión exitosa, alerta enviada', 'Ok', () => {
-        this.navCtrl.navigateRoot('/list');
+        this.navCtrl.navigateRoot('/listverifi');
       });
     } else {
       this.alert.AlertOneButton('Error', 'Error al subir registro');
