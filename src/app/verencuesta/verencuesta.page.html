@@ -488,6 +488,9 @@
                   <ion-input type=text [(ngModel)]="data[210]" readonly=true></ion-input>
                 </ion-col>
                 <ion-col style="border: 0.2px solid gray">
+                  <ion-input type=text [(ngModel)]="data[193]" readonly=true></ion-input>
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
                   <ion-input type=text [(ngModel)]="data[201]" readonly=true></ion-input>
                 </ion-col>
                 <ion-col style="border: 0.2px solid gray">
@@ -1183,44 +1186,48 @@
           <ion-list class="row justify-content-center" style="width: 100%!important;">
             <ion-item-divider>
               <ion-label color=primary>
-                ¿cuál es la relación o parentesco que usted tiene con relación al jefe(a) de hogar?
+                ¿Quiénes conforman el hogar? 
+              </ion-label>
+            </ion-item-divider>
+            <ion-list class="row justify-content-center" style="width: 100%!important;">
+              <ion-item *ngIf="global.FamiliaGlobal.length < 10" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+                <!--<ion-button color=blue fill="outline" (click)="presentPopover('hi')">Añadir Integrante</ion-button>-->
+              </ion-item>
+              <ion-item-sliding *ngFor="let item of global.FamiliaGlobal;let i=index" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-item>
+                <ion-label text-wrap>
+                  <h2 style="color: gray">Parentesco: {{item.Parentesco}}</h2>
+                  <h2>Sexo/Género: {{item.Genero}}</h2>
+                  <p>Edad: {{item.Edad}}</p>
+                  <h2>Registro único de víctimas: {{item.Registro}}</h2>
+                  <h2>Escolaridad: {{item.Escolaridad}}</h2>
+                  <h2>Ocupación: {{item.Ocupacion}}</h2>
+                </ion-label>
+              </ion-item>
+              <!--<ion-item-options side="end">
+              <ion-item-option color="danger" (click)="eliminar(i)">Eliminar</ion-item-option>
+              </ion-item-options>-->
+            </ion-item-sliding>
+            </ion-list>    
+            <ion-item-divider>
+              <ion-label color=primary>
+                Información personal
               </ion-label>
             </ion-item-divider>
             <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-              <ion-label color="blue" position="floating" class="ion-text-wrap">Parentesco: </ion-label>
-            </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántos años cumplidos tiene usted?
-              </ion-label>
-            </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es la temporalidad o permanencia
                 que usted tiene al interior de la vivienda?</ion-label>
-            </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-              <ion-label color="blue" position="floating" class="ion-text-wrap">Sexo / género: </ion-label>
-            </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es su principal ocupación?
-              </ion-label>
+                <ion-input type=text [(ngModel)]="data[15]" readonly=true></ion-input>
             </ion-item>
             <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted contribuye con los ingresos de
                 esta vivienda?</ion-label>
-            </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es su nivel educativo más alto
-                alcanzado…? </ion-label>
+                <ion-input type=text [(ngModel)]="data[18]" readonly=true></ion-input>
             </ion-item>
             <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               <ion-label color="blue" position="floating" class="ion-text-wrap">De acuerdo con su cultura, pueblo o
                 rasgos físicos… es o se reconoce como: </ion-label>
                 <ion-input type=text [(ngModel)]="data[20]" readonly=true></ion-input>
-            </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
-              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Está usted o algún miembro de la
-                vivienda inscrito en el registro único de víctimas?</ion-label>
-                <ion-input type=text [(ngModel)]="data[21]" readonly=true></ion-input>
             </ion-item>
             <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Habla usted la lengua nativa de su pueblo?</ion-label>
@@ -1831,7 +1838,13 @@
             <ion-item-divider>
               <ion-label color=primary>
                 Firma:
-              </ion-label>              
+              </ion-label> 
+              <ion-list style="padding: 10px" *ngIf="ImagesF.length!=0" class="row justify-content-center">
+                <ion-img class="col-6" *ngFor="let item of ImagesF" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/{{item[1]}}.jpg' style="margin-top: 10px;"></ion-img>
+              </ion-list> 
+                  <div *ngIf="ImagesF.length==0" class="row justify-content-center">
+                    <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+                  </div>             
             </ion-item-divider>
             <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Cédula de ciudadanía: </ion-label>
@@ -1873,11 +1886,14 @@
           9. MÓDULO FOTOGRAFIAS
         </ion-card-header>
         <ion-card-content style="background: white!important;">
-          <ion-list class="row justify-content-left">
-
-          </ion-list>
+          <ion-list style="padding: 10px" *ngIf="Images.length!=0" class="row justify-content-center">
+            <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_enc/{{item[0]}}.jpg' style="margin-top: 10px;"></ion-img>
+          </ion-list> 
+              <div *ngIf="Images.length==0" class="row justify-content-center">
+                <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+              </div>          
         </ion-card-content>
-      </ion-card>
+      </ion-card>      
     </div>
   </div>
 </ion-content>

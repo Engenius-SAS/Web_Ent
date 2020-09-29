@@ -45,6 +45,11 @@ Encuesta;
     this.navCtrl.navigateRoot('/verencuesta');
   }
 
+  RevisionEnc(item) {
+    console.log('REVISION');
+    this.global.Id_busqueda = item[0];
+    this.navCtrl.navigateRoot('/revision');
+  }
 
 
   async VerFotos(item) {

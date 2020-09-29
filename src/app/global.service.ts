@@ -9,6 +9,7 @@ DescargaInicial = false;
 UserData;
 Id_Encuesta;
 Images;
+ImagesF;
 Proyectos;
 Id_Proyecto;
 // VARIABLES TABLAS
@@ -24,17 +25,18 @@ Editadas;
 datodept;
 FamiliaGlobal;
 Id_busqueda;
+data1 = new Array();
   constructor() { }
-
+ 
   CheckInternet(respuesta) {
     const pdata1 = {option: 'inter'};
     console.log(pdata1);
     ajax({data: pdata1,	cache: false,	dataType: 'json',	type:  'post',
     url: 'http://demo.engenius.co/DatabaseUIB.php',
-    success( data, textStatus, jQxhr ) {
+    success( data ) {
     console.log('Datos Recibidos:', data);
     },
-    error( jqXhr, textStatus, errorThrown ) {
+    error( errorThrown ) {
     console.log(JSON.stringify(errorThrown));
     }
     }).then((response) => {
@@ -55,10 +57,10 @@ Id_busqueda;
     ajax({data: datos,	cache: false,	dataType: 'json',	type:  'post',
     // url: 'https://modulovisitas.explorandoando.co/PHP/DatabaseUIB.php',
     url: 'https://www.php.engenius.com.co/DatabaseE.php',
-    success( data, textStatus, jQxhr ) {
+    success( data, textStatus ) {
       console.warn('bien', data, textStatus);
     },
-    error( jqXhr, textStatus, errorThrown ) {
+    error(  ) {
       console.warn('mal');
     }
     }).then((response) => {

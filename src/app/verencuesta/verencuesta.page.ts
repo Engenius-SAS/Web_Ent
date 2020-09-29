@@ -12,20 +12,40 @@ import { AlertService } from '../alert.service';
 export class VerencuestaPage implements OnInit {
   Ben = true;
   data = new Array();
+  Images = new Array();
+  ImagesF = new Array();
   constructor(
     public navCtrl: NavController,
     public loading: LoadingService,
     public global: GlobalService,
-    public alert: AlertService) { }
+    public alert: AlertService) {
+    this.global.FamiliaGlobal = new Array();
+     }
 
   ngOnInit() {
     const pdata8 = {option: 'Dataen', Id_Encuesta: this.global.Id_busqueda};
     this.global.consultar(pdata8, (err8, response8) => {
       console.log('Datos Encuesta', response8);
       this.data = response8[0];
+      this.global.FamiliaGlobal = JSON.parse(this.data[13]);
+    });
+    const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
+    this.global.consultar(pdata9, (err9, response9) => {
+      console.log('FOTOS Encuesta', response9);
+      this.Images = response9;
+      setTimeout(() => {
+        //this.slideWithNav.update();
+      }, 200);
+    });
+    const pdata7 = {option: 'fotosfirma', Id_Encuesta: this.global.Id_busqueda};
+    this.global.consultar(pdata7, (err7, response7) => {
+      console.log('FOTOS Firma', response7);
+      this.ImagesF = response7;
+      setTimeout(() => {
+        //this.slideWithNav.update();
+      }, 200);
     });
   }
-
 }
 /*SELECT A.*,B.*,C.*,D.*,E.*,F.*,G.*,H.*,I.*,J.*,K.*,M.* FROM Enterritorio.encabezado A
 INNER JOIN Enterritorio.c_sociodemograficas B ON A.Id_Encuesta = B.Id_Encuesta

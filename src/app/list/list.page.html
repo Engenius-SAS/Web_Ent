@@ -46,9 +46,13 @@
               <ion-button color="secondary" (click)="Descargar(item)">
                 <ion-icon slot="icon-only" name="cloud-download-outline"></ion-icon>
               </ion-button>
+              <ion-button color="warning" (click)="RevisionEnc(item)" *ngIf="global.UserData[6] == 5">
+                <ion-icon slot="icon-only" name="clipboard-outline"></ion-icon>
+              </ion-button>
               <ion-button color="danger">
                 <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
               </ion-button>
+              
             </td>
         </tr>
     </tbody>
