@@ -10,8 +10,6 @@ import { AlertService } from '../alert.service';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { AddComponent } from '../add/add.component';
-
 
 @Component({
   selector: 'app-revision',
@@ -127,14 +125,6 @@ Ninguna() {
     this.data[258] = false;
     this.data[259] = false;
   }
-}
-async presentPopover(ev: any) {
-  const popover = await this.popoverController.create({
-    component: AddComponent,
-    event: ev,
-    translucent: true
-  });
-  return await popover.present();
 }
 cocinar_prefiere(){
   if(this.bandera == 1){
