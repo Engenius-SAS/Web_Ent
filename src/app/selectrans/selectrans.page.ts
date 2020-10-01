@@ -15,14 +15,15 @@ export class SelectransPage implements OnInit {
   fecha;
   dept;
   muni;
-  ver;
+  ver = '';
   com;
   Departamentos;
   Municipios;
   Veredas;
   Comunidades;
-  Datos;
-  Dato;
+ 
+  Datos = new Array();
+  Images = new Array();
   customActionSheetOptions: any = {
     header: 'Comunidades'
   };
@@ -35,12 +36,26 @@ export class SelectransPage implements OnInit {
               public alert: AlertService) { }
 
   ngOnInit() {
-    this.Datos = this.global.Lugares;
-    console.log('DATOSLUGARES', this.Datos);
+    const pdata8 = {option: 'Datostranp', Id_Encuesta: this.global.Id_busqueda};
+    this.global.consultar(pdata8, (err8, response8) => {
+      console.log('Datos Transporte', response8);
+      this.Datos = response8[0];
+    });
+    const pdata9 = {option: 'fotostransp', Id_Encuesta: this.global.Id_busqueda};
+    console.log(pdata9);
+    this.global.consultar(pdata9, (err9, response9) => {
+      console.log('FOTOS Transporte', response9);
+      this.Images = response9;
+      setTimeout(() => {
+        //this.slideWithNav.update();
+      }, 200);
+    });
+    /*this.Datos = this.global.Lugares;
+    console.log('DATOSLUGARES', this.Datos);*/
   }
 
 
-  Cambio() {
+  /*Cambio() {
     console.log('DATOS', this.Dato);
     this.Datos.forEach(element => {
       if (element.Id_Lugares == this.Dato) {
@@ -68,5 +83,5 @@ export class SelectransPage implements OnInit {
         this.navCtrl.navigateRoot('/transporte');
       }
     }, 400);
-  }
+  }*/
 }

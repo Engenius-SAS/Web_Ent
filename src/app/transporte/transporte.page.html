@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.navigateRoot('/home');">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Listado de Transporte
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="ngOnInit()">
+        <ion-icon slot="start" name="reload-circle-outline" color="success"></ion-icon> Actualizar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-item>
+    <ion-label>Municipio: </ion-label>
+    <ion-select [(ngModel)]="municipio" (ionChange)="BuscarC()">
+      <!--<ion-select-option value="0" selected>Todos</ion-select-option>-->
+      <ion-select-option *ngFor="let item of Muni" value={{item[0]}}>{{item[1]}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Comunidad: </ion-label>
+    <ion-select [(ngModel)]="comunidad" (ionChange)="BuscarT()" *ngIf="municipio != ''">
+      <!--<ion-select-option value="0" selected>Todos</ion-select-option>-->
+      <ion-select-option *ngFor="let item of Comu" value={{item[0]}}>{{item[1]}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <table class="table table-responsive-sm table-bordered table-striped text-center">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>Consecutivo</th>
+            <th>Costo</th>
+            <th>Medio de Acceso</th>
+            <th>Tiempo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of Pines; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>
+              <ion-button (click)="VerFotosT(item)">
+                <ion-icon slot="icon-only" name="images-outline"></ion-icon>
+              </ion-button>
+              <ion-button color="success" (click)="VerDetalles(item)">
+                <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+              </ion-button>
+              <ion-button color="danger">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              </ion-button>
+              
+            </td>
+        </tr>
+    </tbody>
+</table>
+</ion-card>
+</ion-content>

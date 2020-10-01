@@ -166,7 +166,7 @@ export class HomePage implements OnInit {
 
   Transporte() {
     this.loading.LoadingNormal('Cargando...', 3);
-    this.navCtrl.navigateRoot('/selectrans');
+    this.navCtrl.navigateRoot('/transporte');
   }
 
   Comunidad() {

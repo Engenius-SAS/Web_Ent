@@ -5,13 +5,13 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
-  selector: 'app-imageview',
-  templateUrl: './imageview.component.html',
-  styleUrls: ['./imageview.component.scss']
+  selector: 'app-imagestview',
+  templateUrl: './imagestview.component.html',
+  styleUrls: ['./imagestview.component.scss'],
 })
-export class ImageviewComponent implements OnInit {
-  //@ViewChild('slideWithNav', { static: false }) slideWithNav: IonSlides;
-Images = new Array();
+export class ImagestviewComponent implements OnInit {
+
+  ImagesT = new Array();
   constructor(public global: GlobalService,
               private popoverController: PopoverController,
               public navCtrl: NavController,
@@ -19,18 +19,18 @@ Images = new Array();
               }
 
   ngOnInit() {
-    const pdata8 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
-    this.global.consultar(pdata8, (err8, response8) => {
-      console.log('FOTOS Encuesta', response8);
-      this.Images = response8;
+    const pdata9 = {option: 'fotostransp', Id_Encuesta: this.global.Id_busqueda};
+    this.global.consultar(pdata9, (err9, response9) => {
+      console.log('FOTOS Transporte', response9);
+      this.ImagesT = response9;
       setTimeout(() => {
         //this.slideWithNav.update();
       }, 200);
     });
-  }
+}
 
   Cerrar() {
-    this.Images = new Array();
+    this.ImagesT = new Array();
     //this.slideWithNav.update();
     //this.slideWithNav.update();
     this.popoverController.dismiss();

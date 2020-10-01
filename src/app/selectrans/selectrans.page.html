@@ -1,32 +1,65 @@
 <ion-header>
   <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-          <ion-back-button defaultHref="home"></ion-back-button>
-        </ion-buttons>
-  <ion-title style="text-align: center" class="ion-text-uppercase">
-    Transporte a la Comunidad
-  </ion-title>
-  <ion-button slot=end color="primary" fill="clear"></ion-button>
-</ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.navigateRoot('/transporte');">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Información del Transporte
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-<div class="row justify-content-center" >
-<ion-card class="col-xl-4 col-md-4 col-lg-block col-sm-block" style="padding: 0px">
-<ion-card-header color="blue" style="text-align: center;font-size:large">
-  Seleccione la comunidad
-</ion-card-header>
-<ion-card-content>
-  <ion-list>
-    <ion-item>
-      <ion-label position='floating'>Comunidad</ion-label>
-      <ion-select (ionChange)="Cambio()" cancelText='Cancelar' [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Selecccione" [(ngModel)]="Dato">
-        <ion-select-option *ngFor="let comuni of Datos" value={{comuni.Id_Lugares}}>{{comuni.Municipio}} - {{comuni.Comunidad}}</ion-select-option>
-      </ion-select>
-  </ion-item>
-  </ion-list>
-  <ion-button class="ion-text-wrap" color="primary" expand="block" (click)="Comenzar()">Registrar Info Comunidad</ion-button>
-</ion-card-content>
-</ion-card>
+<ion-content>
+  <div class="row justify-content-center">
+    <div class="col-8">
+    <ion-card>
+      <ion-card-header color="blue" style="text-align: center;font-size:large">
+        Datos
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Municipio: </ion-label>
+            <ion-input type=text [(ngModel)]="Datos[10]" readonly=true></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Comunidad: </ion-label>
+            <ion-input type=text [(ngModel)]="Datos[11]" readonly=true></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Costo de transporte por viaje hasta la comunidad: </ion-label>
+            <ion-input type=text [(ngModel)]="Datos[3]" readonly=true></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Tipo de acceso a la comunidad: </ion-label>
+            <ion-input type=text [(ngModel)]="Datos[4]" readonly=true></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuánto tiempo se demora en llegar desde la cabecera municipal hasta la comunidad?</ion-label>
+            <ion-input type=text [(ngModel)]="Datos[5]" readonly=true></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Fecha: </ion-label>
+            <ion-input type=text [(ngModel)]="Datos[6]" readonly=true></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header color="blue" style="text-align: center;font-size:large">
+        FOTOGRAFIAS
+      </ion-card-header>
+      <ion-card-content style="background: white!important;">
+        <ion-list style="padding: 10px" *ngIf="Images.length!=0" class="row justify-content-center">
+          <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_transporte/{{item[0]}}.jpg' style="margin-top: 10px;"></ion-img>
+        </ion-list> 
+            <div *ngIf="Images.length==0" class="row justify-content-center">
+              <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+            </div>          
+      </ion-card-content>
+    </ion-card>  
+  </div>
 </div>
 </ion-content>
