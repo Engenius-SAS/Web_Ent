@@ -83,6 +83,7 @@ Encuestadores = new Array();
       }, 300);
     }
   }
+  
   async VerFotos(item) {
     this.global.Id_busqueda = item[0];
     const popover = await this.popoverController.create({

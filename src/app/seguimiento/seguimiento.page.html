@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.navigateRoot('/home');">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Listado de Encuestadores
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="ngOnInit()">
+        <ion-icon slot="start" name="reload-circle-outline" color="success"></ion-icon> Actualizar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <table class="table table-responsive-sm table-bordered table-striped text-center">
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>N° Cédula</th>
+            <th>Nombre completo</th>
+            <th>N° Encuestas Realizadas</th>
+            <th>N° Registros Transporte</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of Encuestadores; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{item[6]}}</td>
+            <td>{{item[3]}} {{item[4]}}</td>
+            <td>{{item[0]}}</td>
+            <td>{{item[17]}}</td>
+            <td>              
+            </td>
+        </tr>
+    </tbody>
+</table>
+</ion-card>
+</ion-content>
+

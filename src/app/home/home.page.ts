@@ -153,6 +153,13 @@ export class HomePage implements OnInit {
     }, 500);
   }
 
+  Seguimiento() {
+    this.loading.LoadingNormal('Cargando...', 3);
+    setTimeout(() => {
+      this.navCtrl.navigateRoot('/seguimiento');
+    }, 500);
+  }
+
   Continuar() {
     setTimeout(() => {
       this.navCtrl.navigateRoot('/conti');

@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'revision', loadChildren: './revision/revision.module#RevisionPageModule' },
   { path: 'listverifi', loadChildren: './listverifi/listverifi.module#ListverifiPageModule' },
   { path: 'listverifi', loadChildren: './listverifi/listverifi.module#ListverifiPageModule' },
-  { path: 'transporte', loadChildren: './transporte/transporte.module#TransportePageModule' }
+  { path: 'transporte', loadChildren: './transporte/transporte.module#TransportePageModule' },
+  { path: 'seguimiento', loadChildren: './seguimiento/seguimiento.module#SeguimientoPageModule' }
 
 
 

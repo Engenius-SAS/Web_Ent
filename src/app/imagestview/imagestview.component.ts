@@ -20,6 +20,7 @@ export class ImagestviewComponent implements OnInit {
 
   ngOnInit() {
     const pdata9 = {option: 'fotostransp', Id_Encuesta: this.global.Id_busqueda};
+    console.log(pdata9);
     this.global.consultar(pdata9, (err9, response9) => {
       console.log('FOTOS Transporte', response9);
       this.ImagesT = response9;

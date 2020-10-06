@@ -15,6 +15,8 @@ import { ImagestviewComponent } from '../imagestview/imagestview.component';
 })
 export class TransportePage implements OnInit {
   Pines;
+  id;
+  txt;
   municipio = '';
   comunidad = '';
   Muni = new Array();
@@ -82,12 +84,31 @@ export class TransportePage implements OnInit {
       }, 300);
     }
 
-  async VerFotosT(item) {
-    this.global.Id_busqueda = item[0];
-    const popover = await this.popoverController.create({
-      component: ImagestviewComponent,
-      translucent: true
-    });
-    return await popover.present();
+  async VerFotosT() {
+    this.Pines = new Array();
+    this.id = new Array();
+    this.loading.LoadingNormal('Consultando');
+    setTimeout(() => {
+      const pdata8 = {option: 'transp', vereda: this.comunidad};
+      this.global.consultar(pdata8, async (err8, response8) => {
+        console.log('PINES TRANSPORTE', response8);
+        this.loading.HideLoading();
+        this.Pines = response8;
+        for(let i=0; i<1; i++){
+          this.txt = JSON.stringify(this.Pines[0]);
+          this.txt = this.txt.replace('["', '');
+          this.txt = this.txt.replace('"]', '');
+          this.id = this.txt.split('","');
+          this.global.Id_busqueda = this.id[0];
+        }
+        //this.global.Id_busqueda = this.id[0];
+        console.log('ID', this.global.Id_busqueda);
+        const popover = await this.popoverController.create({
+          component: ImagestviewComponent,
+          translucent: true
+        });
+        return await popover.present();
+      });
+    }, 300);
   }
 }
