@@ -53,7 +53,25 @@ export class TransportePage implements OnInit {
       });
     }, 300);*/
   }
-
+  Eliminar(item){
+    console.log('ELIMINAR');
+    this.global.Id_busqueda = item[0];
+    this.alert.AlertTowButtons('Alerta', '¿Desea eliminar el registro?', 'Si', () => {
+      const query = 'UPDATE Enterritorio.transporte SET IsDelete = 1 '
+      + ' WHERE (Id_Transporte =\'' + this.global.Id_busqueda + '\');';
+      const pdata1 = {option: 'insertar', texto: query};
+      this.global.consultar(pdata1, (err, response) => {
+        console.log(response, query);
+        if (err == null && response == true) {
+          this.alert.AlertOneButton('Información', 'Registro eliminado', 'Ok', () => {
+            this.navCtrl.navigateRoot('/transporte');
+          });
+        } else {
+          this.alert.AlertOneButton('Error', 'Error al subir registro');
+        }
+      });
+    });
+  }
   VerDetalles(item) {
     console.log('TRANSPORTE');
     this.global.Id_busqueda = item[0];

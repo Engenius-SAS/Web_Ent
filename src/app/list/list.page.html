@@ -13,19 +13,20 @@
         <ion-icon slot="start" name="reload-circle-outline" color="success"></ion-icon> Actualizar
       </ion-button>
     </ion-buttons>
-  </ion-toolbar>
+  </ion-toolbar>  
   <ion-item>
     <ion-label>Encuestador: </ion-label>
-    <ion-select [(ngModel)]="usuario" (ionChange)="Buscar()">
+    <ion-select [(ngModel)]="usuario" (ionChange)="BuscarE()">
       <ion-select-option value="0" selected>Todos</ion-select-option>
       <ion-select-option *ngFor="let item of Encuestadores" value={{item[0]}}>{{item[1]}}</ion-select-option>
     </ion-select>
-  </ion-item>
+  </ion-item>  
+  <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar" (ionInput)="getItems($event)" animated="true" color="secondary"></ion-searchbar>  
 </ion-header>
 
 <ion-content>
 <ion-card>
-  <table class="table table-responsive-sm table-bordered table-striped text-center">
+  <table id="Consultar" class="table table-responsive-sm table-bordered table-striped text-center">
     <thead>
         <tr>
             <th>N°</th>
@@ -55,13 +56,14 @@
               <ion-button color="secondary" (click)="Descargar(item)">
                 <ion-icon slot="icon-only" name="cloud-download-outline"></ion-icon>
               </ion-button>
-              <ion-button color="danger">
+              <ion-button color="danger" (click)="Eliminar(item)">
                 <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
               </ion-button>
               
             </td>
         </tr>
     </tbody>
+    
 </table>
 </ion-card>
 </ion-content>

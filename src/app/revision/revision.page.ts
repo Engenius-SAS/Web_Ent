@@ -47,6 +47,7 @@ export class RevisionPage implements OnInit {
   bandera = 0;
   Images = new Array();
   ImagesF = new Array();
+  
 
   constructor(public db: DatabaseService,
               public global: GlobalService,

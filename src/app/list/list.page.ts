@@ -7,6 +7,25 @@ import * as jsPDF from 'jspdfmifeheros';
 import 'jspdf-autotable-mifeheros';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ImageviewComponent } from '../imageview/imageview.component';
+import * as $ from 'jquery';
+import 'datatables.net-mifeheros';
+import 'datatables.net-bs4';
+import 'datatables.net-autofill-bs4';
+import 'datatables.net-buttons-bs4';
+import 'datatables.net-buttons/js/buttons.colVis.js';
+import 'datatables.net-buttons/js/buttons.flash.js';
+import 'datatables.net-buttons/js/buttons.html5.js';
+import 'datatables.net-buttons/js/buttons.print.js';
+import 'datatables.net-colreorder-bs4';
+import 'datatables.net-fixedcolumns-bs4';
+import 'datatables.net-fixedheader-bs4';
+import 'datatables.net-keytable-bs4';
+import 'datatables.net-responsive-bs4';
+import 'datatables.net-rowgroup-bs4';
+import 'datatables.net-rowreorder-bs4';
+import 'datatables.net-scroller-bs4';
+import 'datatables.net-searchpanes-bs4';
+import 'datatables.net-select-bs4';
 
 @Component({
   selector: 'app-list',
@@ -18,6 +37,12 @@ Pines;
 Encuesta;
 usuario = '0';
 Encuestadores = new Array();
+Municipios = new Array();
+Tables;
+users = new Array();
+searchQuery;
+filtro;
+municipio;
   constructor(
     public menuCtrl: MenuController,
     public navCtrl: NavController,
@@ -27,12 +52,6 @@ Encuestadores = new Array();
     public popoverController: PopoverController) { }
 
   ngOnInit() {
-    const pdata9 = {option: 'encu'};
-    this.global.consultar(pdata9, (err9, response9) => {
-      console.log('ENCUESTADORES', response9);
-      this.Encuestadores = response9;
-    });
-
     this.Pines = new Array();
     this.loading.LoadingNormal('Consultando');
     setTimeout(() => {
@@ -40,49 +59,134 @@ Encuestadores = new Array();
       this.global.consultar(pdata8, (err8, response8) => {
         console.log('PINES MAPA', response8);
         this.loading.HideLoading();
-        this.Pines = response8;
+        this.Pines = this.users = response8;
       });
     }, 300);
 
-  }
+    }
 
+    getItems(ev: any) {
+      this.initializeItems();
+      console.log('Buscando', ev.target.value);
+      const val = ev.target.value;
+      if (val && val.trim() != '') {
+        this.Pines = this.users.filter((item) => {
+          // tslint:disable-next-line: max-line-length
+          return (item[40].toLowerCase().indexOf(val.toLowerCase()) > -1||item[1].toLowerCase().indexOf(val.toLowerCase()) > -1||item[13].toLowerCase().indexOf(val.toLowerCase()) > -1||item[38].toLowerCase().indexOf(val.toLowerCase()) > -1);
+        });
+      }
+    }
+  
+    initializeItems() {
+      this.Pines = this.users;
+    }
+  /*Search(){
+    this.Tables = $('Consultar').DataTable({
+        'responsive': true,
+        'destroy': true,
+        'retrieve': true,
+        'paging': true,
+        'pagingType': 'numbers'
+      });
+  }*/
   VerDetalles(item) {
     console.log('VERENCUESTA');
     this.global.Id_busqueda = item[0];
     this.navCtrl.navigateRoot('/verencuesta');
   }
 
+Eliminar(item){
+  console.log('ELIMINAR');
+  this.global.Id_busqueda = item[0];
+  this.alert.AlertTowButtons('Alerta', '¿Desea eliminar la encuesta?', 'Si', () => {
+    //this.navCtrl.navigateRoot('/listverifi');  
+    const query = 'UPDATE Enterritorio.encabezado SET IsDelete = 1 '
+    + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
+    const pdata1 = {option: 'insertar', texto: query};
+    this.global.consultar(pdata1, (err, response) => {
+      console.log(response, query);
+      if (err == null && response == true) {
+        this.alert.AlertOneButton('Información', 'Encuesta eliminada', 'Ok', () => {
+          this.navCtrl.navigateRoot('/list');
+        });
+      } else {
+        this.alert.AlertOneButton('Error', 'Error al subir registro');
+      }
+    });
+  });
+}
   RevisionEnc(item) {
     console.log('REVISION');
     this.global.Id_busqueda = item[0];
     this.navCtrl.navigateRoot('/revision');
   }
-
-  Buscar() {
-    if(this.usuario == '0') {
+/*cargarMun(){  
+  const pdata10 = {option: 'muni'};
+  this.global.consultar(pdata10, (err10, response10) => {
+    console.log('MUNICIPIOS', response10);
+    this.Municipios = response10;
+  });
+}
+cargarEnc(){
+  const pdata9 = {option: 'encu'};
+  this.global.consultar(pdata9, (err9, response9) => {
+    console.log('ENCUESTADORES', response9);
+    this.Encuestadores = response9;
+  });
+}*/
+  BuscarE() {
+    if(this.usuario = "0"){
       this.Pines = new Array();
       this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
-        const pdata8 = {option: 'Mapa'};
-        this.global.consultar(pdata8, (err8, response8) => {
-          console.log('PINES MAPA', response8);
-          this.loading.HideLoading();
-          this.Pines = response8;
-        });
-      }, 300);
+      const pdata8 = {option: 'Mapa'};
+      this.global.consultar(pdata8, (err8, response8) => {
+        console.log('PINES MAPA', response8);
+        this.loading.HideLoading();
+        this.Pines = response8;
+      });
+    }, 300);
     } else {
       this.Pines = new Array();
       this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
         const pdata8 = {option: 'Mapa2', userpro: this.usuario};
+        console.log(pdata8);
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
           this.loading.HideLoading();
           this.Pines = response8;
         });
       }, 300);
+   } }
+    /*BuscarM() {
+      this.Pines = new Array();
+      this.loading.LoadingNormal('Consultando');
+      setTimeout(() => {
+        console.log(this.municipio);
+        const pdata8 = {option: 'encumun', municipio: this.municipio};
+        console.log(pdata8);
+        this.global.consultar(pdata8, (err8, response8) => {
+          console.log('PINES MUNICIPIO', response8);
+          this.loading.HideLoading();
+          this.Pines = response8;
+        });
+      }, 300);
     }
-  }
+    
+    BuscarME() {
+      this.Pines = new Array();
+      this.loading.LoadingNormal('Consultando');
+      setTimeout(() => {
+        const pdata8 = {option: 'encumun2', municipio: this.municipio, userpro: this.usuario};
+        console.log(pdata8);
+        this.global.consultar(pdata8, (err8, response8) => {
+          console.log('PINES MAPA', response8);
+          this.loading.HideLoading();
+          this.Pines = response8;
+        });
+      }, 300);
+    }*/
   
   async VerFotos(item) {
     this.global.Id_busqueda = item[0];
@@ -92,7 +196,6 @@ Encuestadores = new Array();
     });
     return await popover.present();
   }
-
 
   Descargar(item) {
   try {

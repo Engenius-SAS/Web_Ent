@@ -14,6 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SeguimientoPage implements OnInit {
   Encuestadores = new Array();
+
   constructor(public menuCtrl: MenuController,
     public navCtrl: NavController,
     public loading: LoadingService,
@@ -27,5 +28,5 @@ export class SeguimientoPage implements OnInit {
       console.log('ENCUESTADORES', response9);
       this.Encuestadores = response9;
     });
-  }
+  }    
 }

@@ -18,6 +18,8 @@ export class ListverifiPage implements OnInit {
   Encuesta;
   usuario = '0';
   Encuestadores = new Array();
+  users = new Array();
+  searchQuery;
     constructor(
       public menuCtrl: MenuController,
       public navCtrl: NavController,
@@ -40,10 +42,24 @@ export class ListverifiPage implements OnInit {
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
           this.loading.HideLoading();
-          this.Pines = response8;
+          this.Pines = this.users = response8;
         });
       }, 300);
 
+    }
+    getItems(ev: any) {
+      this.initializeItems();
+      console.log('Buscando', ev.target.value);
+      const val = ev.target.value;
+      if (val && val.trim() != '') {
+        this.Pines = this.users.filter((item) => {
+          return (item[40].toLowerCase().indexOf(val.toLowerCase()) > -1||item[3].toLowerCase().indexOf(val.toLowerCase()) > -1||item[13].toLowerCase().indexOf(val.toLowerCase()) > -1||item[38].toLowerCase().indexOf(val.toLowerCase()) > -1);
+        });
+      }
+    }
+  
+    initializeItems() {
+      this.Pines = this.users;
     }
 
     RevisionEnc(item) {

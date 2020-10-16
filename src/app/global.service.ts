@@ -32,7 +32,7 @@ data1 = new Array();
     const pdata1 = {option: 'inter'};
     console.log(pdata1);
     ajax({data: pdata1,	cache: false,	dataType: 'json',	type:  'post',
-    url: 'http://demo.engenius.co/DatabaseUIB.php',
+    url: 'http://.php.engenius.com.co/DatabaseUIB.php',
     success( data ) {
     console.log('Datos Recibidos:', data);
     },
