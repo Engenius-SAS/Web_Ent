@@ -107,10 +107,10 @@ Eliminar(item){
       console.log(response, query);
       if (err == null && response == true) {
         this.alert.AlertOneButton('Información', 'Encuesta eliminada', 'Ok', () => {
-          this.navCtrl.navigateRoot('/list');
+         this.ngOnInit();
         });
       } else {
-        this.alert.AlertOneButton('Error', 'Error al subir registro');
+        this.alert.AlertOneButton('Error', 'Error al Eliminar la encuesta');
       }
     });
   });
