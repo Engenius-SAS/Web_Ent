@@ -275,7 +275,7 @@ cargarEnc() {
         const Firma = new Image();
         this.global.Id_busqueda = item[0];
         Firma.crossOrigin = '';
-        Firma.src = 'https://php.engenius.com.co/Fotos_ENT/fotos_firma/' + this.global.Id_busqueda + '.jpg';
+        Firma.src = 'https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/' + this.global.Id_busqueda + '.jpg';
         setTimeout(() => {
           doc.addImage(Pag1, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
