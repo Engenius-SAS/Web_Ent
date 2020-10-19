@@ -1343,7 +1343,7 @@ cargarEnc() {
             doc.lstext(this.Encuesta[328], 20, 90, 0);
           }
           if (this.Encuesta[95] == 'Reactivo') {
-            doc.text('X', 121, 120.5, 'center');
+            doc.text('X', 121, 121, 'center');
           } else if (this.Encuesta[95] == 'Propositivo') {
             doc.text('X', 121, 116, 'center');
           }
