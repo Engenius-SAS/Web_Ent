@@ -1013,7 +1013,158 @@ cargarEnc() {
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+          console.log('Parentesco', this.Encuesta[13]);
+          doc.setFontSize(10);
+          let hijos = 0;
+          if (this.Encuesta[13] == '-' || this.Encuesta[13] == null || this.Encuesta[13] == 'null' || this.Encuesta[13] == 'NULL') {
 
+          } else {
+            let Parentesco = JSON.parse(this.Encuesta[13]);
+            for (let index = 0; index < Parentesco.length; index++) {
+              if (Parentesco[index].Parentesco == 'Jefe (a) de hogar') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 150, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 150, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 150, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 150, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 150, 0);
+              } else if (Parentesco[index].Parentesco == 'Pareja, esposo(a), cónyuge, compañero(a)') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 156, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 156, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 156, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 156, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 156, 0);
+              } else if (Parentesco[index].Parentesco == 'Hijo(a), hijastro(a)') {
+                if (hijos == 0) {
+                  doc.setFontSize(5);
+                  doc.lstext(Parentesco[index].Escolaridad, 141, 162, 0);
+                  doc.setFontSize(8);
+                  doc.lstext(Parentesco[index].Ocupacion, 162, 162, 0);
+                  doc.setFontSize(9);
+                  doc.lstext(Parentesco[index].Registro, 129, 162, 0);
+                  doc.lstext(Parentesco[index].Edad.toString(), 109, 162, 0);
+                  doc.lstext(Parentesco[index].Genero, 85, 162, 0);
+                } else if (hijos == 1) {
+                  doc.setFontSize(5);
+                  doc.lstext(Parentesco[index].Escolaridad, 141, 167, 0);
+                  doc.setFontSize(8);
+                  doc.lstext(Parentesco[index].Ocupacion, 162, 167, 0);
+                  doc.setFontSize(9);
+                  doc.lstext(Parentesco[index].Registro, 129, 167, 0);
+                  doc.lstext(Parentesco[index].Edad.toString(), 109, 167, 0);
+                  doc.lstext(Parentesco[index].Genero, 85, 167, 0);
+                } else if (hijos == 2) {
+                  doc.setFontSize(5);
+                  doc.lstext(Parentesco[index].Escolaridad, 141, 172, 0);
+                  doc.setFontSize(8);
+                  doc.lstext(Parentesco[index].Ocupacion, 162, 172, 0);
+                  doc.setFontSize(9);
+                  doc.lstext(Parentesco[index].Registro, 129, 172, 0);
+                  doc.lstext(Parentesco[index].Edad.toString(), 109, 172, 0);
+                  doc.lstext(Parentesco[index].Genero, 85, 172, 0);
+                } else if (hijos == 3) {
+                  doc.setFontSize(5);
+                  doc.lstext(Parentesco[index].Escolaridad, 141, 177, 0);
+                  doc.setFontSize(8);
+                  doc.lstext(Parentesco[index].Ocupacion, 162, 177, 0);
+                  doc.setFontSize(9);
+                  doc.lstext(Parentesco[index].Registro, 129, 177, 0);
+                  doc.lstext(Parentesco[index].Edad.toString(), 109, 177, 0);
+                  doc.lstext(Parentesco[index].Genero, 85, 177, 0);
+                } else if (hijos == 4) {
+                  doc.setFontSize(5);
+                  doc.lstext(Parentesco[index].Escolaridad, 141, 182, 0);
+                  doc.setFontSize(8);
+                  doc.lstext(Parentesco[index].Ocupacion, 162, 182, 0);
+                  doc.setFontSize(9);
+                  doc.lstext(Parentesco[index].Registro, 129, 182, 0);
+                  doc.lstext(Parentesco[index].Edad.toString(), 109, 182, 0);
+                  doc.lstext(Parentesco[index].Genero, 85, 182, 0);
+                } else if (hijos == 5) {
+                  doc.setFontSize(5);
+                  doc.lstext(Parentesco[index].Escolaridad, 141, 187, 0);
+                  doc.setFontSize(8);
+                  doc.lstext(Parentesco[index].Ocupacion, 162, 187, 0);
+                  doc.setFontSize(9);
+                  doc.lstext(Parentesco[index].Registro, 129, 187, 0);
+                  doc.lstext(Parentesco[index].Edad.toString(), 109, 187, 0);
+                  doc.lstext(Parentesco[index].Genero, 85, 187, 0);
+                }
+                hijos = hijos + 1;
+              } else if (Parentesco[index].Parentesco == 'Nieto(a)') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 192, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 192, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 192, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 192, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 192, 0);
+              } else if (Parentesco[index].Parentesco == 'Padre o madre, padrastro, madrastra') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 197, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 197, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 197, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 197, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 197, 0);
+              } else if (Parentesco[index].Parentesco == 'Suegro(a)') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 202, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 202, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 202, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 202, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 202, 0);
+              } else if (Parentesco[index].Parentesco == 'Hermano(a), hermanastro(a)') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 207, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 207, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 207, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 207, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 207, 0);
+              } else if (Parentesco[index].Parentesco == 'Yerno, nuera') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 212, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 212, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 212, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 212, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 212, 0);
+              } else if (Parentesco[index].Parentesco == 'Otro(a) pariente del (de la) jefe (a)') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 217, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 217, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 217, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 217, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 217, 0);
+              } else if (Parentesco[index].Parentesco == 'Otro(a) no pariente') {
+                doc.setFontSize(5);
+                doc.lstext(Parentesco[index].Escolaridad, 141, 222, 0);
+                doc.setFontSize(8);
+                doc.lstext(Parentesco[index].Ocupacion, 162, 222, 0);
+                doc.setFontSize(9);
+                doc.lstext(Parentesco[index].Registro, 129, 222, 0);
+                doc.lstext(Parentesco[index].Edad.toString(), 109, 222, 0);
+                doc.lstext(Parentesco[index].Genero, 85, 222, 0);
+              }
+            }
+          }
+
+
+          doc.setFontSize(10);
           if (this.Encuesta[272] == 'true') {
             doc.text('X', 150.5, 31, 'center');
           } else if (this.Encuesta[273] == 'true') {
@@ -1284,6 +1435,8 @@ cargarEnc() {
           } else {
 
           }
+
+
 
           doc.addPage();
           console.log('pagina9');
