@@ -1187,7 +1187,7 @@ cargarEnc() {
             doc.lstext(this.Encuesta[151], 130, 208, 0);
           }
           if (this.Encuesta[152] == 'null' || this.Encuesta[152] == '-') {
-            doc.lstext('No Registra', 130, 213, 0);
+            doc.lstext('0', 130, 213, 0);
           } else {
             doc.lstext(this.Encuesta[152], 130, 213, 0);
           }
