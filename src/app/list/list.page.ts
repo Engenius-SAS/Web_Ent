@@ -1065,12 +1065,178 @@ cargarEnc() {
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+          if (this.Encuesta[122] == 'true') {
+            doc.text('X', 150.5, 30, 'center');
+          }
+          if (this.Encuesta[123] == 'true') {
+            doc.text('X', 150.5, 35, 'center');
+          }
+          if (this.Encuesta[124] == 'true') {
+            doc.text('X', 150.5, 40, 'center');
+          }
+          if (this.Encuesta[125] == 'true') {
+            doc.text('X', 150.5, 45, 'center');
+          }
+          if (this.Encuesta[126] == 'true') {
+            doc.text('X', 150.5, 50, 'center');
+          }
+          if (this.Encuesta[127] == 'true') {
+            doc.text('X', 150.5, 55, 'center');
+          }
+          if (this.Encuesta[128] == 'true') {
+            doc.text('X', 150.5, 60, 'center');
+          }
+          if (this.Encuesta[129] == 'true') {
+            doc.text('X', 150.5, 65, 'center');
+          }
+          if (this.Encuesta[130] == 'true') {
+            doc.text('X', 150.5, 70, 'center');
+          }
+          if (this.Encuesta[131] == 'true') {
+            doc.text('X', 150.5, 75, 'center');
+          }
+          if (this.Encuesta[132] == 'true') {
+            doc.text('X', 150.5, 80, 'center');
+          }
+          if (this.Encuesta[133] == 'true') {
+            doc.text('X', 150.5, 85, 'center');
+          }
+          if (this.Encuesta[134] == 'true') {
+            doc.text('X', 150.5, 90, 'center');
+          }
+          if (this.Encuesta[135] == 'true') {
+            doc.text('X', 150.5, 95, 'center');
+          }
+          if (this.Encuesta[136] != '-' && this.Encuesta[136] != 'null') {
+            doc.text('X', 150.5, 100, 'center');
+            doc.lstext(this.Encuesta[136], 80, 100, 0);
+          }
+          if (this.Encuesta[137] == 'null' || this.Encuesta[137] == '-') {
+            doc.lstext('No Registra', 45, 115.5, 0);
+          } else {
+            doc.lstext(this.Encuesta[137], 45, 115.5, 0);
+          }
+          if (this.Encuesta[138] == 'null' || this.Encuesta[138] == '-') {
+            doc.lstext('No Registra', 45, 120.5, 0);
+          } else {
+            doc.lstext(this.Encuesta[138], 45, 120.5, 0);
+          }
+          if (this.Encuesta[139] == 'null' || this.Encuesta[139] == '-') {
+            doc.lstext('No Registra', 45, 125.5, 0);
+          } else {
+            doc.lstext(this.Encuesta[139], 45, 125.5, 0);
+          }
+          if (this.Encuesta[140] == 'null' || this.Encuesta[140] == '-') {
+            doc.lstext('No Registra', 45, 130.5, 0);
+          } else {
+            doc.lstext(this.Encuesta[140], 45, 130.5, 0);
+          }
+          if (this.Encuesta[141] == 'null' || this.Encuesta[141] == '-') {
+            doc.lstext('No Registra', 130, 158, 0);
+          } else {
+            doc.lstext(this.Encuesta[141], 130, 158, 0);
+          }
+          if (this.Encuesta[142] == 'null' || this.Encuesta[142] == '-') {
+            doc.lstext('No Registra', 130, 163, 0);
+          } else {
+            doc.lstext(this.Encuesta[142], 130, 163, 0);
+          }
+          if (this.Encuesta[143] == 'null' || this.Encuesta[143] == '-') {
+            doc.lstext('No Registra', 130, 168, 0);
+          } else {
+            doc.lstext(this.Encuesta[143], 130, 168, 0);
+          }
+          if (this.Encuesta[144] == 'null' || this.Encuesta[144] == '-') {
+            doc.lstext('No Registra', 130, 173, 0);
+          } else {
+            doc.lstext(this.Encuesta[144], 130, 173, 0);
+          }
+          if (this.Encuesta[145] == 'null' || this.Encuesta[145] == '-') {
+            doc.lstext('No Registra', 130, 178, 0);
+          } else {
+            doc.lstext(this.Encuesta[145], 130, 178, 0);
+          }
+          if (this.Encuesta[146] == 'null' || this.Encuesta[146] == '-') {
+            doc.lstext('No Registra', 130, 183, 0);
+          } else {
+            doc.lstext(this.Encuesta[146], 130, 183, 0);
+          }
+          if (this.Encuesta[147] == 'null' || this.Encuesta[147] == '-') {
+            doc.lstext('No Registra', 130, 188, 0);
+          } else {
+            doc.lstext(this.Encuesta[147], 130, 188, 0);
+          }
+          if (this.Encuesta[148] == 'null' || this.Encuesta[148] == '-') {
+            doc.lstext('No Registra', 130, 193, 0);
+          } else {
+            doc.lstext(this.Encuesta[148], 130, 193, 0);
+          }
+          if (this.Encuesta[149] == 'null' || this.Encuesta[149] == '-') {
+            doc.lstext('No Registra', 130, 198, 0);
+          } else {
+            doc.lstext(this.Encuesta[149], 130, 198, 0);
+          }
+          if (this.Encuesta[150] == 'null' || this.Encuesta[150] == '-') {
+            doc.lstext('No Registra', 130, 203, 0);
+          } else {
+            doc.lstext(this.Encuesta[150], 130, 203, 0);
+          }
+          if (this.Encuesta[151] == 'null' || this.Encuesta[151] == '-') {
+            doc.lstext('No Registra', 130, 208, 0);
+          } else {
+            doc.lstext(this.Encuesta[151], 130, 208, 0);
+          }
+          if (this.Encuesta[152] == 'null' || this.Encuesta[152] == '-') {
+            doc.lstext('No Registra', 130, 213, 0);
+          } else {
+            doc.lstext(this.Encuesta[152], 130, 213, 0);
+          }
+          if (this.Encuesta[154] == 'null' || this.Encuesta[154] == '-' || this.Encuesta[154] == 'undefined') {
+            doc.lstext('No Registra', 85, 213, 0);
+          } else {
+            doc.lstext(this.Encuesta[154], 85, 213, 0);
+          }
+          if (this.Encuesta[153] == 'null' || this.Encuesta[153] == '-') {
+            doc.lstext('No Registra', 130, 218, 0);
+          } else {
+            doc.lstext(this.Encuesta[153], 130, 218, 0);
+          }
+          if (this.Encuesta[310] == 'Si') {
+            doc.text('X', 121.5, 263, 'center');
+          } else if (this.Encuesta[310] == 'No') {
+            doc.text('X', 121.5, 268, 'center');
+          } else if (this.Encuesta[310] == 'No aplica') {
+            doc.text('X', 121.5, 273, 'center');
+          }
+          if (this.Encuesta[311] == 'Si') {
+            doc.text('X', 118.5, 307, 'center');
+          } else if (this.Encuesta[311] == 'No') {
+            doc.text('X', 137.5, 307, 'center');
+          }
+
+
           doc.addPage();
           doc.addImage(Pag10, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+          if (this.Encuesta[312] == 'Si') {
+            doc.text('X', 120, 41, 'center');
+          } else if (this.Encuesta[312] == 'No') {
+            doc.text('X', 120, 41, 'center');
+          }
+          if (this.Encuesta[313] == 'null' || this.Encuesta[313] == '-') {
+            doc.lstext('No Registra', 20, 65, 0);
+          } else {
+            doc.lstext(this.Encuesta[313], 20, 65, 0);
+          }
+          if (this.Encuesta[314] == 'Si') {
+            doc.text('X', 118.5, 111, 'center');
+          } else if (this.Encuesta[314] == 'No') {
+            doc.text('X', 137.5, 111, 'center');
+          }
+
           doc.addPage();
           doc.addImage(Pag11, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
@@ -1083,16 +1249,117 @@ cargarEnc() {
             doc.lstext(this.Encuesta[81], 20, 84, 0);
           }
           if (this.Encuesta[82] == 'null' || this.Encuesta[82] == '-') {
-            doc.lstext('No Registra', 20, 110, 0);
+            doc.lstext('No Registra', 20, 111, 0);
           } else {
-            doc.lstext(this.Encuesta[82], 20, 110, 0);
+            doc.lstext(this.Encuesta[82], 20, 111, 0);
           }
+          if (this.Encuesta[83] == 'null' || this.Encuesta[83] == '-') {
+            doc.lstext('No Registra', 111, 106, 0);
+          } else {
+            doc.lstext(this.Encuesta[83], 111, 106, 0);
+          }
+          if (this.Encuesta[84] == 'null' || this.Encuesta[84] == '-') {
+            doc.lstext('No Registra', 111, 117, 0);
+          } else {
+            doc.lstext(this.Encuesta[84], 111, 117, 0);
+          }
+          if (this.Encuesta[85] == 'null' || this.Encuesta[85] == '-') {
+            doc.lstext('No Registra', 20, 128, 0);
+          } else {
+            doc.lstext(this.Encuesta[85], 20, 128, 0);
+          }
+          if (this.Encuesta[86] == 'null' || this.Encuesta[86] == '-') {
+            doc.lstext('No Registra', 111, 128, 0);
+          } else {
+            doc.lstext(this.Encuesta[86], 111, 128, 0);
+          }
+          if (this.Encuesta[87] == 'true') {
+            doc.text('X', 159.5, 170.5, 'center');
+          } else {
+          doc.text('X', 185.5, 170.5, 'center');
+          }
+          if (this.Encuesta[88] == 'true') {
+            doc.text('X', 159.5, 180.4, 'center');
+          } else {
+          doc.text('X', 185.5, 180.4, 'center');
+          }
+          if (this.Encuesta[89] == 'true') {
+            doc.text('X', 159.5, 190, 'center');
+          } else {
+          doc.text('X', 185.5, 190, 'center');
+          }
+          if (this.Encuesta[90] == 'true') {
+            doc.text('X', 159.5, 200, 'center');
+          } else {
+          doc.text('X', 185.5, 200, 'center');
+          }
+          if (this.Encuesta[91] == 'true') {
+            doc.text('X', 159.5, 210, 'center');
+          } else {
+          doc.text('X', 185.5, 210, 'center');
+          }
+          doc.text('X', 180.5, 259.5, 'center');
+          if (this.Encuesta[85] == 'null' || this.Encuesta[85] == '-') {
+            doc.lstext('No Registra', 111, 290, 0);
+          } else {
+            doc.lstext(this.Encuesta[85], 111, 290, 0);
+          }
+
           doc.addPage();
           doc.addImage(Pag12, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+          if (this.Encuesta[319] == 'null' || this.Encuesta[319] == '-') {
+            doc.lstext('No Registra', 20, 64, 0);
+          } else {
+            doc.lstext(this.Encuesta[319], 20, 64, 0);
+          }
+          if (this.Encuesta[320] == 'null' || this.Encuesta[320] == '-') {
+            doc.lstext('', 20, 69, 0);
+          } else {
+            doc.lstext(this.Encuesta[320], 20, 69, 0);
+          }
+          if (this.Encuesta[326] == 'null' || this.Encuesta[326] == '-') {
+            doc.lstext('No Registra', 115, 60, 0);
+          } else {
+            doc.lstext(this.Encuesta[326], 115, 60, 0);
+          }
+          if (this.Encuesta[327] == 'null' || this.Encuesta[327] == '-') {
+            doc.lstext('No Registra', 115, 74, 0);
+          } else {
+            doc.lstext(this.Encuesta[327], 115, 74, 0);
+          }
+          //console.log(this.Encuesta[329]);
+          if (this.Encuesta[329] == null || this.Encuesta[329] == '-' || this.Encuesta[329] == 'NULL') {
+            doc.lstext('No Registra', 115, 90, 0);
+          } else {
+            doc.lstext(this.Encuesta[329], 115, 90, 0);
+          }
+          if (this.Encuesta[328] == 'null' || this.Encuesta[328] == '-' || this.Encuesta[328] == '--') {
+            doc.lstext('No Registra', 20, 90, 0);
+          } else {
+            doc.lstext(this.Encuesta[328], 20, 90, 0);
+          }
+          if (this.Encuesta[95] == 'Reactivo') {
+            doc.text('X', 121, 120.5, 'center');
+          } else if (this.Encuesta[95] == 'Propositivo') {
+            doc.text('X', 121, 116, 'center');
+          }
+          if (this.Encuesta[96] == 'Desconfiado') {
+            doc.text('X', 121, 145, 'center');
+          } else if (this.Encuesta[96] == 'Motivado') {
+            doc.text('X', 121, 149.5, 'center');
+          } else if (this.Encuesta[96] == 'Indiferente') {
+            doc.text('X', 121, 154.5, 'center');
+          }
+          if (this.Encuesta[94] == 'null' || this.Encuesta[94] == '-') {
+            doc.lstext('No Registra', 25, 173.5, 0);
+          } else {
+            doc.lstext(this.Encuesta[94], 25, 173.5, 0);
+          }
+
           doc.addPage();
           doc.addImage(Pag13, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
