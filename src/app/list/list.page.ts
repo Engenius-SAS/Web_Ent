@@ -1540,7 +1540,7 @@ cargarEnc() {
             
           }, 200);
           });          */
-          doc.addImage(Firma, 'JPG', 25, 285, 100, 90);
+          doc.addImage(Firma, 'JPG', 30, 235, 60, 80);
 
           doc.addPage();
           doc.addImage(Pag12, 'PNG', 5, 0, 205, 338);
