@@ -52,6 +52,7 @@ municipio;
     public popoverController: PopoverController) { }
 
   ngOnInit() {
+    this.cargarEnc();
     this.Pines = new Array();
     this.loading.LoadingNormal('Consultando');
     setTimeout(() => {
@@ -72,11 +73,11 @@ municipio;
       if (val && val.trim() != '') {
         this.Pines = this.users.filter((item) => {
           // tslint:disable-next-line: max-line-length
-          return (item[40].toLowerCase().indexOf(val.toLowerCase()) > -1||item[1].toLowerCase().indexOf(val.toLowerCase()) > -1||item[13].toLowerCase().indexOf(val.toLowerCase()) > -1||item[38].toLowerCase().indexOf(val.toLowerCase()) > -1);
+          return (item[40].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[1].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[13].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[38].toLowerCase().indexOf(val.toLowerCase()) > -1);
         });
       }
     }
-  
+
     initializeItems() {
       this.Pines = this.users;
     }
@@ -95,11 +96,11 @@ municipio;
     this.navCtrl.navigateRoot('/verencuesta');
   }
 
-Eliminar(item){
+Eliminar(item) {
   console.log('ELIMINAR');
   this.global.Id_busqueda = item[0];
   this.alert.AlertTowButtons('Alerta', '¿Desea eliminar la encuesta?', 'Si', () => {
-    //this.navCtrl.navigateRoot('/listverifi');  
+    // this.navCtrl.navigateRoot('/listverifi');
     const query = 'UPDATE Enterritorio.encabezado SET IsDelete = 1 '
     + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
     const pdata1 = {option: 'insertar', texto: query};
@@ -120,22 +121,17 @@ Eliminar(item){
     this.global.Id_busqueda = item[0];
     this.navCtrl.navigateRoot('/revision');
   }
-/*cargarMun(){  
-  const pdata10 = {option: 'muni'};
-  this.global.consultar(pdata10, (err10, response10) => {
-    console.log('MUNICIPIOS', response10);
-    this.Municipios = response10;
-  });
-}
-cargarEnc(){
+
+cargarEnc() {
   const pdata9 = {option: 'encu'};
   this.global.consultar(pdata9, (err9, response9) => {
     console.log('ENCUESTADORES', response9);
     this.Encuestadores = response9;
   });
-}*/
+}
+
   BuscarE() {
-    if(this.usuario = "0"){
+    if (this.usuario == '0') {
       this.Pines = new Array();
       this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
@@ -173,7 +169,7 @@ cargarEnc(){
         });
       }, 300);
     }
-    
+
     BuscarME() {
       this.Pines = new Array();
       this.loading.LoadingNormal('Consultando');
@@ -187,7 +183,7 @@ cargarEnc(){
         });
       }, 300);
     }*/
-  
+
   async VerFotos(item) {
     this.global.Id_busqueda = item[0];
     const popover = await this.popoverController.create({
@@ -915,7 +911,7 @@ cargarEnc(){
           } else {
             doc.lstext(this.Encuesta[115], 121, 163.5, 10);
           }
-          
+
 
           if (this.Encuesta[255] == 'true') {
             doc.text('X', 150.5, 199, 'center');
@@ -1081,6 +1077,16 @@ cargarEnc(){
           doc.lstext(Dia, 147, 16, 3.5);
           doc.lstext(Mes, 164, 16, 3.5);
           doc.lstext(Ano, 183, 16, 3);
+          if (this.Encuesta[81] == 'null' || this.Encuesta[81] == '-') {
+            doc.lstext('No Registra', 20, 84, 0);
+          } else {
+            doc.lstext(this.Encuesta[81], 20, 84, 0);
+          }
+          if (this.Encuesta[82] == 'null' || this.Encuesta[82] == '-') {
+            doc.lstext('No Registra', 20, 110, 0);
+          } else {
+            doc.lstext(this.Encuesta[82], 20, 110, 0);
+          }
           doc.addPage();
           doc.addImage(Pag12, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
