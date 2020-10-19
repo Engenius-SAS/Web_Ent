@@ -1052,10 +1052,190 @@ cargarEnc() {
             doc.lstext(this.Encuesta[26].replace('-', ''), 20, 166, 0);
           }
 
-          if (this.Encuesta[270] == 'true') {
-            doc.text('X', 150.5, 316, 'center');
-          } else if (this.Encuesta[271] == 'true') {
-            doc.text('X', 150.5, 321, 'center');
+          if (this.Encuesta[27] == 'true') {
+            doc.text('X', 135.3, 218, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[28] == 'true') {
+            doc.text('X', 135.3, 223, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[29] == 'true') {
+            doc.text('X', 135.3, 228, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[30] == 'true') {
+            doc.text('X', 135.3, 234, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[31] == 'true') {
+            doc.text('X', 135.3, 239, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[32] == 'true') {
+            doc.text('X', 135.3, 244, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[33] == 'true') {
+            doc.text('X', 135.3, 249, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[34] == 'true') {
+            doc.text('X', 135.3, 254, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[35] == 'true') {
+            doc.text('X', 135.3, 259, 'center');
+          } else {
+
+          }
+// ------------------------------------------------------------
+          if (this.Encuesta[37] == 'true') {
+            doc.text('X', 152, 218, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[38] == 'true') {
+            doc.text('X', 152, 223, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[39] == 'true') {
+            doc.text('X', 152, 228, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[40] == 'true') {
+            doc.text('X', 152, 234, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[41] == 'true') {
+            doc.text('X', 152, 239, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[42] == 'true') {
+            doc.text('X', 152, 244, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[43] == 'true') {
+            doc.text('X', 152, 249, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[44] == 'true') {
+            doc.text('X', 152, 254, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[45] == 'true') {
+            doc.text('X', 152, 259, 'center');
+          } else {
+
+          }
+
+          // ------------------------------------------------------------
+          if (this.Encuesta[47] == 'true') {
+            doc.text('X', 168, 218, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[48] == 'true') {
+            doc.text('X', 168, 223, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[49] == 'true') {
+            doc.text('X', 168, 228, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[50] == 'true') {
+            doc.text('X', 168, 234, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[51] == 'true') {
+            doc.text('X', 168, 239, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[52] == 'true') {
+            doc.text('X', 168, 244, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[53] == 'true') {
+            doc.text('X', 168, 249, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[54] == 'true') {
+            doc.text('X', 168, 254, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[55] == 'true') {
+            doc.text('X', 168, 259, 'center');
+          } else {
+
+          }
+
+          // ------------------------------------------------------------
+          if (this.Encuesta[57] == 'true') {
+            doc.text('X', 184, 218, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[58] == 'true') {
+            doc.text('X', 184, 223, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[59] == 'true') {
+            doc.text('X', 184, 228, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[60] == 'true') {
+            doc.text('X', 184, 234, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[61] == 'true') {
+            doc.text('X', 184, 239, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[62] == 'true') {
+            doc.text('X', 184, 244, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[63] == 'true') {
+            doc.text('X', 184, 249, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[64] == 'true') {
+            doc.text('X', 184, 254, 'center');
+          } else {
+
+          }
+          if (this.Encuesta[65] == 'true') {
+            doc.text('X', 184, 259, 'center');
+          } else {
+
           }
 
           doc.addPage();
