@@ -40,6 +40,7 @@ Encuestadores = new Array();
 Municipios = new Array();
 Tables;
 users = new Array();
+ImagesF = new Array();
 searchQuery;
 filtro;
 municipio;
@@ -271,6 +272,10 @@ cargarEnc() {
         const Pag15 = new Image();
         Pag15.crossOrigin = '';
         Pag15.src = 'assets/imgs/encuesta/p15.png';
+        const Firma = new Image();
+        this.global.Id_busqueda = item[0];
+        Firma.crossOrigin = '';
+        Firma.src = 'https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/'+ this.global.Id_busqueda +'.jpg';
         setTimeout(() => {
           doc.addImage(Pag1, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
@@ -1304,6 +1309,16 @@ cargarEnc() {
           } else {
             doc.lstext(this.Encuesta[85], 111, 290, 0);
           }
+          this.global.Id_busqueda = item[0];
+          const pdata7 = {option: 'fotosfirma', Id_Encuesta: this.global.Id_busqueda};
+          this.global.consultar(pdata7, (err7, response7) => {
+          console.log('FOTOS Firma', response7);
+          this.ImagesF = response7;
+          setTimeout(() => {
+           //this.slideWithNav.update();
+          }, 200);
+          });
+          doc.addImage(Firma, 'JPG', 25, 285, 100, 295);
 
           doc.addPage();
           doc.addImage(Pag12, 'PNG', 5, 0, 205, 338);
