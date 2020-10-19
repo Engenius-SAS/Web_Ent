@@ -275,7 +275,7 @@ cargarEnc() {
         const Firma = new Image();
         this.global.Id_busqueda = item[0];
         Firma.crossOrigin = '';
-        Firma.src = 'https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/'+ this.global.Id_busqueda +'.jpg';
+        Firma.src = 'https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/' + this.global.Id_busqueda + '.jpg';
         setTimeout(() => {
           doc.addImage(Pag1, 'PNG', 5, 0, 205, 338);
           doc.text(NumForm, 157, 11);
@@ -506,42 +506,79 @@ cargarEnc() {
           if (this.Encuesta[194] == 'null') {
             doc.text('0', 135.5, 186, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[194]) * 1000).toString(), 135.5, 186, 'center');
+            if (parseInt(this.Encuesta[194]) < 1000) {
+              doc.text((parseInt(this.Encuesta[194]) * 1000).toString(), 135.5, 186, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[194])).toString(), 135.5, 186, 'center');
+            }
           }
           if (this.Encuesta[195] == 'null') {
             doc.text('0', 135.5, 191, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[195]) * 1000).toString(), 135.5, 191, 'center');
+            if (parseInt(this.Encuesta[195]) < 1000) {
+              doc.text((parseInt(this.Encuesta[195]) * 1000).toString(), 135.5, 191, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[195])).toString(), 135.5, 191, 'center');
+            }
           }
           if (this.Encuesta[196] == 'null') {
             doc.text('0', 135.5, 196, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[196]) * 1000).toString(), 135.5, 196, 'center');
+            if (parseInt(this.Encuesta[196]) < 1000) {
+              doc.text((parseInt(this.Encuesta[196]) * 1000).toString(), 135.5, 196, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[196])).toString(), 135.5, 196, 'center');
+            }
           }
           if (this.Encuesta[197] == 'null') {
             doc.text('0', 135.5, 201, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[197]) * 1000).toString(), 135.5, 201, 'center');
+            if (parseInt(this.Encuesta[197]) < 1000) {
+              doc.text((parseInt(this.Encuesta[197]) * 1000).toString(), 135.5, 201, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[197])).toString(), 135.5, 201, 'center');
+            }
+            
           }
           if (this.Encuesta[198] == 'null') {
             doc.text('0', 135.5, 206, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[198]) * 1000).toString(), 135.5, 206, 'center');
+            if (parseInt(this.Encuesta[198]) < 1000) {
+              doc.text((parseInt(this.Encuesta[198]) * 1000).toString(), 135.5, 206, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[198])).toString(), 135.5, 206, 'center');
+            }
+            
           }
           if (this.Encuesta[199] == 'null') {
             doc.text('0', 135.5, 211, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[199]) * 1000).toString(), 135.5, 211, 'center');
+            if (parseInt(this.Encuesta[199]) < 1000) {
+              doc.text((parseInt(this.Encuesta[199]) * 1000).toString(), 135.5, 211, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[199])).toString(), 135.5, 211, 'center');
+            }
+            
           }
           if (this.Encuesta[200] == 'null') {
             doc.text('0', 135.5, 216, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[200]) * 1000).toString(), 135.5, 216, 'center');
+            if (parseInt(this.Encuesta[200]) < 1000) {
+              doc.text((parseInt(this.Encuesta[200]) * 1000).toString(), 135.5, 216, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[200])).toString(), 135.5, 216, 'center');
+            }
+            
           }
           if (this.Encuesta[201] == 'null') {
             doc.text('0', 135.5, 223, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[201]) * 1000).toString(), 135.5, 223, 'center');
+            if (parseInt(this.Encuesta[201]) < 1000) {
+              doc.text((parseInt(this.Encuesta[201]) * 1000).toString(), 135.5, 223, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[201])).toString(), 135.5, 223, 'center');
+            }
+            
           }
 
           if (this.Encuesta[202] == 'Domicilio') {
@@ -610,7 +647,12 @@ cargarEnc() {
           if (this.Encuesta[248] == 'null') {
             doc.text('0', 174, 277, 'center');
           } else {
-            doc.text((parseInt(this.Encuesta[248]) * 1000).toString(), 174, 277, 'center');
+            if (parseInt(this.Encuesta[248]) < 1000) {
+              doc.text((parseInt(this.Encuesta[248]) * 1000).toString(), 174, 277, 'center');
+            } else {
+              doc.text((parseInt(this.Encuesta[248])).toString(), 174, 277, 'center');
+            }
+            
           }
 
 
@@ -1495,7 +1537,7 @@ cargarEnc() {
           console.log('FOTOS Firma', response7);
           this.ImagesF = response7;
           setTimeout(() => {
-           //this.slideWithNav.update();
+           // this.slideWithNav.update();
           }, 200);
           });
           doc.addImage(Firma, 'JPG', 25, 285, 100, 295);
@@ -1526,7 +1568,7 @@ cargarEnc() {
           } else {
             doc.lstext(this.Encuesta[327], 115, 74, 0);
           }
-          //console.log(this.Encuesta[329]);
+          // console.log(this.Encuesta[329]);
           if (this.Encuesta[329] == null || this.Encuesta[329] == '-' || this.Encuesta[329] == 'NULL') {
             doc.lstext('No Registra', 115, 90, 0);
           } else {
