@@ -144,7 +144,7 @@ cocinar_prefiere(){
 }
 iluminar_usa(){
   if(this.bandera == 1){
-  const query = 'UPDATE Enterritorio.energia SET FE_cocinar_prefiere =\'' + this.data[184] + '\''
+  const query = 'UPDATE Enterritorio.energia SET FE_iluminar_usa =\'' + this.data[211] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
   this.global.consultar(pdata1, (err, response) => {
@@ -3604,7 +3604,7 @@ select_iluminar(){
   this.FE_iluminar_planta_diesel_select = false;
   this.FE_iluminar_velas_select = false;
   this.FE_iluminar_otro_select = false;
-
+  this.FE_iluminar_usa = new Array;;
   if (this.data[211] == undefined || this.data[211] == null) {
     this.data[211] = new Array;
   } else {
@@ -3620,7 +3620,7 @@ select_iluminar(){
     this.idx = this.txt.includes(',');
     console.log(this.idx);
     if(this.idx == false){
-      this.FE_iluminar_usa[0] = this.data[211];
+      this.FE_iluminar_usa[0] = this.txt;
     } else {
       this.FE_iluminar_usa = this.txt.split(',');
     }
