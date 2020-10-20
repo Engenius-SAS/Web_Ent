@@ -44,6 +44,7 @@ export class RevisionPage implements OnInit {
   Energia;
   idx;
   txt;
+  total = 0;
   bandera = 0;
   Images = new Array();
   ImagesF = new Array();
@@ -63,6 +64,8 @@ export class RevisionPage implements OnInit {
       console.log('Datos Encuesta', response8);
       this.data = response8[0];
       this.global.FamiliaGlobal = JSON.parse(this.data[13]);
+      // tslint:disable-next-line: max-line-length
+      this.total = JSON.parse(this.data[141]) + JSON.parse(this.data[142]) + JSON.parse(this.data[143]) + JSON.parse(this.data[144]) + JSON.parse(this.data[145]) + JSON.parse(this.data[146]) + JSON.parse(this.data[147]) + JSON.parse(this.data[148]) + JSON.parse(this.data[149]) + JSON.parse(this.data[150]) + JSON.parse(this.data[151]) + JSON.parse(this.data[152]);
       setTimeout(() => {
         this.bandera = 1;
       }, 500);
@@ -3132,6 +3135,13 @@ if(this.bandera == 1){
 gasto_arriendo(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[141]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[141] = this.data[141]*1000;
+    console.log(this.data[141]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_arriendo =\'' + this.data[141] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3148,6 +3158,13 @@ if(this.bandera == 1){
 gasto_acueducto(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[142]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[142] = this.data[142]*1000;
+    console.log(this.data[142]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_acueducto =\'' + this.data[142] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3164,6 +3181,13 @@ if(this.bandera == 1){
 gasto_alcantarillado(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[143]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[143] = this.data[143]*1000;
+    console.log(this.data[143]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_alcantarillado =\'' + this.data[143] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3178,8 +3202,15 @@ if(this.bandera == 1){
   }
 }
 gasto_gas(){
-  
+ 
 if(this.bandera == 1){
+   this.txt = JSON.stringify(this.data[144]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[144] = this.data[144]*1000;
+    console.log(this.data[144]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_gas =\'' + this.data[144] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3196,6 +3227,13 @@ if(this.bandera == 1){
 gasto_salud(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[145]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[145] = this.data[145]*1000;
+    console.log(this.data[145]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_salud =\'' + this.data[145] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3212,6 +3250,13 @@ if(this.bandera == 1){
 gasto_transporte(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[146]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[146] = this.data[146]*1000;
+    console.log(this.data[146]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_transporte =\'' + this.data[146] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3228,6 +3273,13 @@ if(this.bandera == 1){
 gasto_educacion(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[147]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[147] = this.data[147]*1000;
+    console.log(this.data[147]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_educacion =\'' + this.data[147] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3244,6 +3296,13 @@ if(this.bandera == 1){
 gasto_alimentacion(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[148]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[148] = this.data[148]*1000;
+    console.log(this.data[148]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_alimentacion =\'' + this.data[148] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3260,6 +3319,13 @@ if(this.bandera == 1){
 gasto_recreacion(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[149]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[149] = this.data[149]*1000;
+    console.log(this.data[149]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_recreacion =\'' + this.data[149] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3276,6 +3342,13 @@ if(this.bandera == 1){
 gasto_vestuario(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[150]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[150] = this.data[150]*1000;
+    console.log(this.data[150]);
+  }
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_vestuario =\'' + this.data[150] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3292,6 +3365,14 @@ if(this.bandera == 1){
 gasto_energia(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[151]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[151] = this.data[151]*1000;
+    console.log(this.data[151]);
+  }
+  this.total = this.data[153] = this.data[141] + this.data[142] + this.data[143] + this.data[144] + this.data[145] + this.data[146] + this.data[147] + this.data[148] + this.data[149] + this.data[150] + this.data[151] + this.data[152];
+  this.gasto_total();
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_energia_electrica =\'' + this.data[151] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
@@ -3309,17 +3390,18 @@ gasto_total(){
   
 if(this.bandera == 1){
   // tslint:disable-next-line: max-line-length
-  this.data[153] = this.data[141] + this.data[142] + this.data[143] + this.data[144] + this.data[145] + this.data[146] + this.data[147] + this.data[148] + this.data[149] + this.data[150] + this.data[151] + this.data[152];
-  const query = 'UPDATE Enterritorio.economia SET Gastos_mes_energia_electrica =\'' + this.data[151] + '\''
+  this.total = JSON.parse(this.data[141]) + JSON.parse(this.data[142]) + JSON.parse(this.data[143]) + JSON.parse(this.data[144]) + JSON.parse(this.data[145]) + JSON.parse(this.data[146]) + JSON.parse(this.data[147]) + JSON.parse(this.data[148]) + JSON.parse(this.data[149]) + JSON.parse(this.data[150]) + JSON.parse(this.data[151]) + JSON.parse(this.data[152]);
+  this.data[153] = this.total;
+  const query = 'UPDATE Enterritorio.economia SET Gastos_mes_total =\'' + this.data[153] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
   this.global.consultar(pdata1, (err, response) => {
     console.log(response, query);
-    if (err == null && response == true) {
+    /*if (err == null && response == true) {
       this.alert.AlertOneButton('Información', 'Registro actualizado');
     } else {
       this.alert.AlertOneButton('Error', 'Error al subir registro');
-    }
+    }*/
    });
   }
 }
@@ -3342,6 +3424,12 @@ if(this.bandera == 1){
 otro_gasto(){
   
 if(this.bandera == 1){
+  this.txt = JSON.stringify(this.data[152]);
+  console.log(this.txt.length);
+  if(this.txt.length<=3){
+    this.data[152] = this.data[152]*1000;
+    console.log(this.data[152]);
+  }
   const query = 'UPDATE Enterritorio.economia SET Gastos_mes_otro_cual =\'' + this.data[152] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};

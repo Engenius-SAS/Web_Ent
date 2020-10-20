@@ -996,14 +996,14 @@
                 <ion-select-option value="Colectiva">Colectiva</ion-select-option>
               </ion-select>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <p style="color: gray">
                 Teniendo en cuenta que hogar se refiere a “una persona o grupo de personas, parientes o no, que: ocupan la totalidad o parte de una vivienda; atiende necesidades básicas con cargo a un presupuesto común y generalmente comparten las comidas”.
               </p>
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántos hogares residen en esta vivienda (familiares o no)?</ion-label>
               <ion-input type=number [(ngModel)]="data[106]" placeholder="Escriba Aquí" (ionChange)="hogares()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántas personas habitan de manera permanente en esta vivienda?</ion-label>
               <ion-input type=number [(ngModel)]="data[107]" placeholder="Escriba Aquí" (ionChange)="personas()"></ion-input>
             </ion-item> 
@@ -1325,10 +1325,10 @@
           5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL I
         </ion-card-header>
         <ion-card-content style="background: white!important;">   
-          <ion-item *ngIf="Edificacion!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+          <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
             Avance al Siguiente Módulo.
           </ion-item>       
-          <ion-list class="row justify-content-center" style="width: 100%!important;" *ngIf="Edificacion=='Vivienda'">
+          <ion-list class="row justify-content-center" style="width: 100%!important;" *ngIf="data[284]=='Vivienda'">
             <ion-item-divider>
               <ion-label color=primary>
                 ¿Quiénes conforman el hogar? 
@@ -1359,21 +1359,21 @@
                 Información personal
               </ion-label>
             </ion-item-divider>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es la temporalidad o permanencia que usted tiene al interior de la vivienda?(vive ahí)</ion-label>
               <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[15]" (ionChange)="permanencia()">
                 <ion-select-option value="Permanente">Permanente</ion-select-option>
                 <ion-select-option value="Temporal">Temporal</ion-select-option>
               </ion-select>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted contribuye con los ingresos de esta vivienda?</ion-label>
               <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[18]" (ionChange)="ingresos()">
                 <ion-select-option value="Si">Si</ion-select-option>
                 <ion-select-option value="No">No</ion-select-option>
               </ion-select>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">De acuerdo con su cultura, pueblo o rasgos físicos… es o se reconoce como:</ion-label>
               <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[20]" (ionChange)="reconocimiento()">
                 <ion-select-option value="Indígena">Indígena</ion-select-option>
@@ -1385,14 +1385,14 @@
               </ion-select>
             </ion-item>
             
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Habla usted la lengua nativa de su pueblo?</ion-label>
               <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[22]" (ionChange)="lengua_nativa()">
                 <ion-select-option value="Si">Si</ion-select-option>
                 <ion-select-option value="No">No</ion-select-option>                
               </ion-select>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda' && data[22]=='Si'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[22]=='Si'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál lengua nativa habla?</ion-label>
               <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[23]" (ionChange)="nombre_lengua()">
                 <ion-select-option value="Kogui">Kogui</ion-select-option>
@@ -1402,21 +1402,21 @@
                 <ion-select-option value="Español">Español</ion-select-option>
             </ion-select>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Alguna persona de la vivienda presenta actualmente problemas de salud por el uso de la leña? </ion-label>
               <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[24]" (ionChange)="problemas_lena()">
                 <ion-select-option value="Si">Si</ion-select-option>
                 <ion-select-option value="No">No</ion-select-option>
               </ion-select>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted pertenece a alguna organización comunitaria? </ion-label>
               <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[25]" (ionChange)="organizacion()">
                 <ion-select-option value="Si">Si</ion-select-option>
                 <ion-select-option value="No">No</ion-select-option>
               </ion-select>
             </ion-item>
-            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda' && data[25]=='Si'">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[25]=='Si'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">¿A cuál organización usted pertenece?</ion-label>
               <ion-input type=text [(ngModel)]="data[26]" placeholder="Escriba Aquí" (ionChange)="nombre_organizacion()"></ion-input>
             </ion-item>
@@ -1428,15 +1428,15 @@
           5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL II
         </ion-card-header>
         <ion-card-content style="background: white!important;">
-          <ion-item *ngIf="Edificacion!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+          <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
             Avance al Siguiente Módulo.
           </ion-item>
-          <ion-item-divider *ngIf="Edificacion=='Vivienda'">
+          <ion-item-divider *ngIf="data[284]=='Vivienda'">
             <ion-label color=primary>
               ¿En la vivienda, quienes realizan estas labores?  
             </ion-label>
           </ion-item-divider>
-          <ion-grid *ngIf="Edificacion=='Vivienda'">
+          <ion-grid *ngIf="data[284]=='Vivienda'">
             <ion-row>
                 <ion-col style="border: 0.2px solid gray">
                   Labores 
@@ -1602,16 +1602,16 @@
           6. MÓDULO ECONOMÍA FAMIILIAR I
         </ion-card-header>
         <ion-card-content style="background: white!important;">
-          <ion-item *ngIf="Edificacion!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+          <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
             Avance al Siguiente Módulo.
           </ion-item>               
-            <ion-list class="row justify-content-center" style="width: 100%!important;" *ngIf="Edificacion=='Vivienda'">
+            <ion-list class="row justify-content-center" style="width: 100%!important;" *ngIf="data[284]=='Vivienda'">
             <ion-item-divider>
               <ion-label color=primary>
                 ¿Cuáles de las siguientes actividades son fuentes de ingreso en el hogar / familia?
               </ion-label>
             </ion-item-divider>
-            <ion-grid *ngIf="Edificacion=='Vivienda'">
+            <ion-grid *ngIf="data[284]=='Vivienda'">
               <ion-row>
                 <ion-col style="border: 0.2px solid gray">
                   Actividad   
@@ -1743,24 +1743,24 @@
             <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál?: </ion-label>
             <ion-input type=text [(ngModel)]="data[136]" placeholder="Escriba Aquí" (ionChange)="otra_actividad()"></ion-input>
           </ion-grid>
-            <ion-item-divider *ngIf="Edificacion=='Vivienda' && data[135]==true">
+            <ion-item-divider *ngIf="data[284]=='Vivienda' && data[135]==true">
               <ion-label color=primary>
                 ¿Qué cultivan?
               </ion-label>
             </ion-item-divider>
-            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda' && data[135]==true">
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 1: </ion-label>
               <ion-input type=text [(ngModel)]="data[137]" placeholder="Escriba Aquí" (ionChange)="cultivo1()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda' && data[135]==true">
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 2: </ion-label>
               <ion-input type=text [(ngModel)]="data[138]" placeholder="Escriba Aquí" (ionChange)="cultivo2()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda' && data[135]==true">
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 3: </ion-label>
               <ion-input type=text [(ngModel)]="data[139]" placeholder="Escriba Aquí" (ionChange)="cultivo3()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda' && data[135]==true">
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 4: </ion-label>
               <ion-input type=text [(ngModel)]="data[140]" placeholder="Escriba Aquí" (ionChange)="cultivo4()"></ion-input>
             </ion-item>
@@ -1772,70 +1772,70 @@
             6. MÓDULO ECONOMÍA FAMIILIAR II
           </ion-card-header>
           <ion-card-content style="background: white!important;">
-            <ion-item *ngIf="Edificacion!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+            <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
               Avance al Siguiente Módulo.
             </ion-item> 
             <ion-list class="row justify-content-left">
-            <ion-item-divider *ngIf="Edificacion=='Vivienda'">
+            <ion-item-divider *ngIf="data[284]=='Vivienda'">
               <ion-label color=primary>
                 Teniendo en cuenta el nivel de gastos en esta vivienda, podría decirme cuanto es el gasto mes en:
               </ion-label>
             </ion-item-divider>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Arriendo o cuota: </ion-label>
               <ion-input type=number [(ngModel)]="data[141]" placeholder="Escriba Aquí" (ionChange)="gasto_arriendo()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Acueducto: </ion-label>
               <ion-input type=number [(ngModel)]="data[142]" placeholder="Escriba Aquí" (ionChange)="gasto_acueducto()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Alcantarillado: </ion-label>
               <ion-input type=number [(ngModel)]="data[143]" placeholder="Escriba Aquí" (ionChange)="gasto_alcantarillado()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Gas: </ion-label>
               <ion-input type=number [(ngModel)]="data[144]" placeholder="Escriba Aquí" (ionChange)="gasto_gas()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Salud: </ion-label>
               <ion-input type=number [(ngModel)]="data[145]" placeholder="Escriba Aquí" (ionChange)="gasto_salud()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Transporte: </ion-label>
               <ion-input type=number [(ngModel)]="data[146]" placeholder="Escriba Aquí" (ionChange)="gasto_transporte()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Educación: </ion-label>
               <ion-input type=number [(ngModel)]="data[147]" placeholder="Escriba Aquí" (ionChange)="gasto_educacion()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Alimentación: </ion-label>
               <ion-input type=number [(ngModel)]="data[148]" placeholder="Escriba Aquí" (ionChange)="gasto_alimentacion()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Recreación: </ion-label>
               <ion-input type=number [(ngModel)]="data[149]" placeholder="Escriba Aquí" (ionChange)="gasto_recreacion()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Vestuario: </ion-label>
               <ion-input type=number [(ngModel)]="data[150]" placeholder="Escriba Aquí" (ionChange)="gasto_vestuario()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Energía eléctrica: </ion-label>
               <ion-input type=number [(ngModel)]="data[151]" placeholder="Escriba Aquí" (ionChange)="gasto_energia()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="Edificacion=='Vivienda'">
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál?: </ion-label>
               <ion-input type=text [(ngModel)]="data[154]" placeholder="Escriba Aquí" (ionChange)="otro_nombre()"></ion-input>
             </ion-item>
-            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="Edificacion=='Vivienda' && data[154]!='-'">
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda' && data[154]!='-'">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Gasto mensual (otro): </ion-label>
               <ion-input type=number [(ngModel)]="data[152]" placeholder="Escriba Aquí" (ionChange)="otro_gasto()"></ion-input>
             </ion-item>
             <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
               <ion-label color="blue" position="floating" class="ion-text-wrap">Gasto total: </ion-label>
-              <ion-input type=text [(ngModel)]="data[153]" readonly=true></ion-input>
+              <ion-input type=number [(ngModel)]="total" readonly=true></ion-input>
             </ion-item>
           </ion-list>
         </ion-card-content>
