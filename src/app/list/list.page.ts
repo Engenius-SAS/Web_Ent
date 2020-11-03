@@ -102,7 +102,7 @@ Eliminar(item) {
   this.global.Id_busqueda = item[0];
   this.alert.AlertTowButtons('Alerta', '¿Desea eliminar la encuesta?', 'Si', () => {
     // this.navCtrl.navigateRoot('/listverifi');
-    const query = 'UPDATE Enterritorio.encabezado SET IsDelete = 1 '
+    const query = 'UPDATE enterritoriobk.encabezado SET IsDelete = 1 '
     + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
     const pdata1 = {option: 'insertar', texto: query};
     this.global.consultar(pdata1, (err, response) => {

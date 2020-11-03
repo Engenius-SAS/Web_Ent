@@ -330,7 +330,7 @@ SincronizarFotos() {
         if (element.upload == 0) {
           var1++;
           console.log('Para Subir - Encabezado');
-          const query = 'INSERT INTO Enterritorio.encabezado (Id_Encabezado,Id_Encuesta,Id_Proyecto_Funcionario,Num_formulario,Dia,Mes,Año)' +
+          const query = 'INSERT INTO enterritoriobk.encabezado (Id_Encabezado,Id_Encuesta,Id_Proyecto_Funcionario,Num_formulario,Dia,Mes,Año)' +
           ' VALUES (\'' + element.Id_Encabezado + '\',\'' + element.Id_Encuesta + '\', \'' + element.Id_Proyecto_Funcionario + '\',\''
           + element.Num_formulario + '\',\'' + element.Dia + '\',\'' + element.Mes + '\',\'' + element.Año + '\');';
           const pdata1 = {option: 'insertar', texto: query};
@@ -378,12 +378,12 @@ SincronizarEncabezadoE(cb) {
     this.Encabezado.map(element => {
       if (element.edit == 1) {
         var1++;
-        const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.encabezado WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+        const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.encabezado WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
         this.global.consultar(pdata2, (err5, response5) => {
           console.log(response5, 'DELETE');
           if (err5 == null && response5 == true) {
             console.log('Para Subir - caracteristicas_predio'); // quiery remoto - en servidor
-            const query = 'INSERT INTO Enterritorio.encabezado (Id_Encabezado,Id_Encuesta,Id_Proyecto_Funcionario,Num_formulario,Dia,Mes,Año,upload,edit)' +
+            const query = 'INSERT INTO enterritoriobk.encabezado (Id_Encabezado,Id_Encuesta,Id_Proyecto_Funcionario,Num_formulario,Dia,Mes,Año,upload,edit)' +
             ' VALUES (\'' + element.Id_Encabezado + '\',\'' 
             + element.Id_Encuesta + '\', \''
             + element.Id_Proyecto_Funcionario + '\',\''
@@ -441,7 +441,7 @@ SincronizarEncabezadoE(cb) {
       if (element.upload == 0) {
         var1++;
         console.log('Para Subir - Ubicación'); // quiery remoto - en servidor
-        const query = 'INSERT INTO Enterritorio.ubicacion (Id_Ubicación, Id_Encuesta, Id_Proyecto_Funcionario, U_latitud, U_longitud, U_altitud, U_depto, U_codigo_depto, U_municipio, U_codigo_municipio,U_vereda,U_corregimiento,Tipo_proyecto)' +
+        const query = 'INSERT INTO enterritoriobk.ubicacion (Id_Ubicación, Id_Encuesta, Id_Proyecto_Funcionario, U_latitud, U_longitud, U_altitud, U_depto, U_codigo_depto, U_municipio, U_codigo_municipio,U_vereda,U_corregimiento,Tipo_proyecto)' +
         ' VALUES (\'' + element.Id_Ubicación + '\',\''
         + element.Id_Encuesta + '\', \''
         + element.Id_Proyecto_Funcionario + '\',\''
@@ -499,12 +499,12 @@ SincronizarUbicacionE(cb) {
   this.Ubicacion.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.ubicacion WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.ubicacion WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
         console.log(response5, 'DELETE');
         if (err5 == null && response5 == true) {
           console.log('Para Subir - Ubicación'); // quiery remoto - en servidor
-          const query = 'INSERT INTO Enterritorio.ubicacion (Id_Ubicación, Id_Encuesta, Id_Proyecto_Funcionario, U_latitud, U_longitud, U_altitud, U_depto, U_codigo_depto, U_municipio, U_codigo_municipio,U_vereda,U_corregimiento,Tipo_proyecto, upload, edit)' +
+          const query = 'INSERT INTO enterritoriobk.ubicacion (Id_Ubicación, Id_Encuesta, Id_Proyecto_Funcionario, U_latitud, U_longitud, U_altitud, U_depto, U_codigo_depto, U_municipio, U_codigo_municipio,U_vereda,U_corregimiento,Tipo_proyecto, upload, edit)' +
         ' VALUES (\'' + element.Id_Ubicación + '\',\''
         + element.Id_Encuesta + '\', \''
         + element.Id_Proyecto_Funcionario + '\',\''
@@ -567,7 +567,7 @@ SincronizarDatosper(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Tratamiento datos personales'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.tratamiento_DP (Id_TratamientoDP, Id_Encuesta, Id_Proyecto_Funcionario, Autorizacion, Edificacion, Tipo_institucion, Tipo_institucion_otro_cual, Uso_viv_inst)' +
+      const query = 'INSERT INTO enterritoriobk.tratamiento_DP (Id_TratamientoDP, Id_Encuesta, Id_Proyecto_Funcionario, Autorizacion, Edificacion, Tipo_institucion, Tipo_institucion_otro_cual, Uso_viv_inst)' +
       ' VALUES (\'' + element.Id_TratamientoDP + '\',\''
       + element.Id_Encuesta + '\', \''
       + element.Id_Proyecto_Funcionario + '\',\''
@@ -620,12 +620,12 @@ if (this.Datosper.length == 0) {
 this.Datosper.map(element => {
   if (element.edit == 1) {
     var1++;
-    const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.tratamiento_DP WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+    const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.tratamiento_DP WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
     this.global.consultar(pdata2, (err5, response5) => {
       console.log(response5, 'DELETE');
       if (err5 == null && response5 == true) {
         console.log('Para Subir - tratamiento_DP'); // quiery remoto - en servidor
-        const query = 'INSERT INTO Enterritorio.tratamiento_DP (Id_TratamientoDP, Id_Encuesta, Id_Proyecto_Funcionario, Autorizacion, Edificacion, Tipo_institucion, Tipo_institucion_otro_cual, Uso_viv_inst, upload, edit)' +
+        const query = 'INSERT INTO enterritoriobk.tratamiento_DP (Id_TratamientoDP, Id_Encuesta, Id_Proyecto_Funcionario, Autorizacion, Edificacion, Tipo_institucion, Tipo_institucion_otro_cual, Uso_viv_inst, upload, edit)' +
       ' VALUES (\'' + element.Id_TratamientoDP + '\',\''
       + element.Id_Encuesta + '\', \''
       + element.Id_Proyecto_Funcionario + '\',\''
@@ -683,7 +683,7 @@ SincronizarPredio(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Predio'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.caracteristicas_predio (Id_CaracteristicaP, Id_Encuesta, Id_Proyecto_Funcionario, Uso_predio, Estrato_predio)' +
+      const query = 'INSERT INTO enterritoriobk.caracteristicas_predio (Id_CaracteristicaP, Id_Encuesta, Id_Proyecto_Funcionario, Uso_predio, Estrato_predio)' +
       ' VALUES (\'' + element.Id_CaracteristicaP + '\',\''
       + element.Id_Encuesta + '\', \''
       + element.Id_Proyecto_Funcionario + '\',\''
@@ -733,12 +733,12 @@ if (this.Predio.length == 0) {
 this.Predio.map(element => {
   if (element.edit == 1) {
     var1++;
-    const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.caracteristicas_predio WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+    const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.caracteristicas_predio WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
     this.global.consultar(pdata2, (err5, response5) => {
       console.log(response5, 'DELETE');
       if (err5 == null && response5 == true) {
         console.log('Para Subir - caracteristicas_predio'); // quiery remoto - en servidor
-        const query = 'INSERT INTO Enterritorio.caracteristicas_predio (Id_CaracteristicaP, Id_Encuesta, Id_Proyecto_Funcionario, Uso_predio, Estrato_predio, upload, edit)' +
+        const query = 'INSERT INTO enterritoriobk.caracteristicas_predio (Id_CaracteristicaP, Id_Encuesta, Id_Proyecto_Funcionario, Uso_predio, Estrato_predio, upload, edit)' +
       ' VALUES (\'' + element.Id_CaracteristicaP + '\',\''
       + element.Id_Encuesta + '\', \''
       + element.Id_Proyecto_Funcionario + '\',\''
@@ -793,12 +793,12 @@ SincronizarViviendaE(cb) {
   this.Vivienda.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.datos_vivienda_I WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.datos_vivienda_I WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
         console.log(response5, 'DELETE');
         if (err5 == null && response5 == true) {
       console.log('Para Subir - Vivienda'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.datos_vivienda_I(Id_Dato_Vivienda , Id_Encuesta , Id_Proyecto_Funcionario, Nombre_comunidad , Territorialidad , Tenencia_posesion , Hogares_vivienda , Personas_vivienda , Paredes_exteriores , Techo_cubierta , Pisos , Afectacion_inundacion , Afectacion_avalancha , Afectacion_hundimiento , Afectacion_tormentas,upload,edit)' +
+      const query = 'INSERT INTO enterritoriobk.datos_vivienda_I(Id_Dato_Vivienda , Id_Encuesta , Id_Proyecto_Funcionario, Nombre_comunidad , Territorialidad , Tenencia_posesion , Hogares_vivienda , Personas_vivienda , Paredes_exteriores , Techo_cubierta , Pisos , Afectacion_inundacion , Afectacion_avalancha , Afectacion_hundimiento , Afectacion_tormentas,upload,edit)' +
       ' VALUES (\''
       +	element.Id_Dato_Vivienda 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -877,12 +877,12 @@ SincronizarRacionalE(cb) {
   this.Racional.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.URE WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.URE WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
         console.log(response5, 'DELETE');
         if (err5 == null && response5 == true) {
       console.log('Para Subir - Energia2'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.URE(Id_URE , Id_Encuesta , Id_Proyecto_Funcionario , Uso_adecuado_energia , Escuchado_uso_racional_energia , Conocer_generacionyuso_energia , Temas_generacionyuso_energia , Compartir_saberes , upload,edit)' +
+      const query = 'INSERT INTO enterritoriobk.URE(Id_URE , Id_Encuesta , Id_Proyecto_Funcionario , Uso_adecuado_energia , Escuchado_uso_racional_energia , Conocer_generacionyuso_energia , Temas_generacionyuso_energia , Compartir_saberes , upload,edit)' +
       ' VALUES (\''
       +	element.Id_URE 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -942,7 +942,7 @@ SincronizarVivienda(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Vivienda'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.datos_vivienda_I(Id_Dato_Vivienda , Id_Encuesta , Id_Proyecto_Funcionario, Nombre_comunidad , Territorialidad , Tenencia_posesion , Hogares_vivienda , Personas_vivienda , Paredes_exteriores , Techo_cubierta , Pisos , Afectacion_inundacion , Afectacion_avalancha , Afectacion_hundimiento , Afectacion_tormentas)' +
+      const query = 'INSERT INTO enterritoriobk.datos_vivienda_I(Id_Dato_Vivienda , Id_Encuesta , Id_Proyecto_Funcionario, Nombre_comunidad , Territorialidad , Tenencia_posesion , Hogares_vivienda , Personas_vivienda , Paredes_exteriores , Techo_cubierta , Pisos , Afectacion_inundacion , Afectacion_avalancha , Afectacion_hundimiento , Afectacion_tormentas)' +
       ' VALUES (\''
       +	element.Id_Dato_Vivienda 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1005,7 +1005,7 @@ SincronizarEconomia(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Economia'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.economia (Id_Economia, Id_Encuesta, Id_Proyecto_Funcionario, Ganaderia_caza_silvicultura_pesca, Explotacion_minas_canteras, Fabricacion_articulos_textiles_prendas_vestir, Construccion, Venta_productos_no_fabricados_hogar , Elaboracion_procesamiento_alimentos_bebidas, Servicio_restaurante_bar_similares, Alojamiento, Arrendamientos, Servicios_actividades_reparacion_mantenimiento, Servicios_artisticos_peluqueria, Elaboracion_artesanias, Empleo_integrantes_familia, Agricultura, Fuente_ingreso_otro_cual, Cultivo1, Cultivo2 , Cultivo3, Cultivo4, Gastos_mes_arriendo, Gastos_mes_acueducto, Gastos_mes_alcantarillado , Gastos_mes_gas, Gastos_mes_salud , Gastos_mes_transporte, Gastos_mes_educacion,Gastos_mes_alimentacion,Gastos_mes_recreacion,Gastos_mes_vestuario,Gastos_mes_energia_electrica,Gastos_mes_otro_cual,Gastos_mes_total,Gastos_mes_otro_ban )' +
+      const query = 'INSERT INTO enterritoriobk.economia (Id_Economia, Id_Encuesta, Id_Proyecto_Funcionario, Ganaderia_caza_silvicultura_pesca, Explotacion_minas_canteras, Fabricacion_articulos_textiles_prendas_vestir, Construccion, Venta_productos_no_fabricados_hogar , Elaboracion_procesamiento_alimentos_bebidas, Servicio_restaurante_bar_similares, Alojamiento, Arrendamientos, Servicios_actividades_reparacion_mantenimiento, Servicios_artisticos_peluqueria, Elaboracion_artesanias, Empleo_integrantes_familia, Agricultura, Fuente_ingreso_otro_cual, Cultivo1, Cultivo2 , Cultivo3, Cultivo4, Gastos_mes_arriendo, Gastos_mes_acueducto, Gastos_mes_alcantarillado , Gastos_mes_gas, Gastos_mes_salud , Gastos_mes_transporte, Gastos_mes_educacion,Gastos_mes_alimentacion,Gastos_mes_recreacion,Gastos_mes_vestuario,Gastos_mes_energia_electrica,Gastos_mes_otro_cual,Gastos_mes_total,Gastos_mes_otro_ban )' +
       ' VALUES (\''
       +	element.Id_Economia 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1089,7 +1089,7 @@ SincronizarServicios(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Servicios'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.servicios_publicos(Id_Servicio_Publico , Id_Encuesta , Id_Proyecto_Funcionario , Telefono_fijo_propio , Telefono_fijo_comunitario , Celular , Internet_comunitario , Internet_propio , Ninguna_anteriores , Acueducto_domiciliario_publico , Medidor_agua , Pila_medidor_agua_publica , Aljibe,Rio_quebrada_manantial_nacimiento,Pozo_dentro_vivienda,Agua_lluvia,Carrotanque,Aguatero_embotellada_bolsa,Inodoro_conectado_alcantarillado,Inodoro_conectado_pozo_septico,Inodoro_sin_conexion,Letrina,Vivienda_institucion_sin_servicio_sanitario,Sanitario_inodoro_otro_cual,Gas)' +
+      const query = 'INSERT INTO enterritoriobk.servicios_publicos(Id_Servicio_Publico , Id_Encuesta , Id_Proyecto_Funcionario , Telefono_fijo_propio , Telefono_fijo_comunitario , Celular , Internet_comunitario , Internet_propio , Ninguna_anteriores , Acueducto_domiciliario_publico , Medidor_agua , Pila_medidor_agua_publica , Aljibe,Rio_quebrada_manantial_nacimiento,Pozo_dentro_vivienda,Agua_lluvia,Carrotanque,Aguatero_embotellada_bolsa,Inodoro_conectado_alcantarillado,Inodoro_conectado_pozo_septico,Inodoro_sin_conexion,Letrina,Vivienda_institucion_sin_servicio_sanitario,Sanitario_inodoro_otro_cual,Gas)' +
       ' VALUES (\''
       +	element.Id_Servicio_Publico	+	'\',\''
       +	element.Id_Encuesta	+	'\',\''
@@ -1161,12 +1161,12 @@ SincronizarEconomiaE(cb) {
   this.Economia.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.economia WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.economia WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
       console.log(response5, 'DELETE');
       if (err5 == null && response5 == true) {
         console.log('Para Subir - Economia'); // quiery remoto - en servidor
-        const query = 'INSERT INTO Enterritorio.economia (Id_Economia, Id_Encuesta, Id_Proyecto_Funcionario, Ganaderia_caza_silvicultura_pesca, Explotacion_minas_canteras, Fabricacion_articulos_textiles_prendas_vestir, Construccion, Venta_productos_no_fabricados_hogar , Elaboracion_procesamiento_alimentos_bebidas, Servicio_restaurante_bar_similares, Alojamiento, Arrendamientos, Servicios_actividades_reparacion_mantenimiento, Servicios_artisticos_peluqueria, Elaboracion_artesanias, Empleo_integrantes_familia, Agricultura, Fuente_ingreso_otro_cual, Cultivo1, Cultivo2 , Cultivo3, Cultivo4, Gastos_mes_arriendo, Gastos_mes_acueducto, Gastos_mes_alcantarillado , Gastos_mes_gas, Gastos_mes_salud , Gastos_mes_transporte, Gastos_mes_educacion,Gastos_mes_alimentacion,Gastos_mes_recreacion,Gastos_mes_vestuario,Gastos_mes_energia_electrica,Gastos_mes_otro_cual,Gastos_mes_total,Gastos_mes_otro_ban )' +
+        const query = 'INSERT INTO enterritoriobk.economia (Id_Economia, Id_Encuesta, Id_Proyecto_Funcionario, Ganaderia_caza_silvicultura_pesca, Explotacion_minas_canteras, Fabricacion_articulos_textiles_prendas_vestir, Construccion, Venta_productos_no_fabricados_hogar , Elaboracion_procesamiento_alimentos_bebidas, Servicio_restaurante_bar_similares, Alojamiento, Arrendamientos, Servicios_actividades_reparacion_mantenimiento, Servicios_artisticos_peluqueria, Elaboracion_artesanias, Empleo_integrantes_familia, Agricultura, Fuente_ingreso_otro_cual, Cultivo1, Cultivo2 , Cultivo3, Cultivo4, Gastos_mes_arriendo, Gastos_mes_acueducto, Gastos_mes_alcantarillado , Gastos_mes_gas, Gastos_mes_salud , Gastos_mes_transporte, Gastos_mes_educacion,Gastos_mes_alimentacion,Gastos_mes_recreacion,Gastos_mes_vestuario,Gastos_mes_energia_electrica,Gastos_mes_otro_cual,Gastos_mes_total,Gastos_mes_otro_ban )' +
       ' VALUES (\''
       +	element.Id_Economia 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1251,12 +1251,12 @@ SincronizarServiciosE(cb) {
   this.Servicios.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.servicios_publicos WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.servicios_publicos WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
       console.log(response5, 'DELETE');
       if (err5 == null && response5 == true) {
         console.log('Para Subir - Servicios'); // quiery remoto - en servidor
-        const query = 'INSERT INTO Enterritorio.servicios_publicos(Id_Servicio_Publico , Id_Encuesta , Id_Proyecto_Funcionario , Telefono_fijo_propio , Telefono_fijo_comunitario , Celular , Internet_comunitario , Internet_propio , Ninguna_anteriores , Acueducto_domiciliario_publico , Medidor_agua , Pila_medidor_agua_publica , Aljibe,Rio_quebrada_manantial_nacimiento,Pozo_dentro_vivienda,Agua_lluvia,Carrotanque,Aguatero_embotellada_bolsa,Inodoro_conectado_alcantarillado,Inodoro_conectado_pozo_septico,Inodoro_sin_conexion,Letrina,Vivienda_institucion_sin_servicio_sanitario,Sanitario_inodoro_otro_cual,Gas , upload,edit)' +
+        const query = 'INSERT INTO enterritoriobk.servicios_publicos(Id_Servicio_Publico , Id_Encuesta , Id_Proyecto_Funcionario , Telefono_fijo_propio , Telefono_fijo_comunitario , Celular , Internet_comunitario , Internet_propio , Ninguna_anteriores , Acueducto_domiciliario_publico , Medidor_agua , Pila_medidor_agua_publica , Aljibe,Rio_quebrada_manantial_nacimiento,Pozo_dentro_vivienda,Agua_lluvia,Carrotanque,Aguatero_embotellada_bolsa,Inodoro_conectado_alcantarillado,Inodoro_conectado_pozo_septico,Inodoro_sin_conexion,Letrina,Vivienda_institucion_sin_servicio_sanitario,Sanitario_inodoro_otro_cual,Gas , upload,edit)' +
       ' VALUES (\''
       +	element.Id_Servicio_Publico	+	'\',\''
       +	element.Id_Encuesta	+	'\',\''
@@ -1332,12 +1332,12 @@ SincronizarSociodemoE(cb) {
   this.Sociodemo.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.c_sociodemograficas WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.c_sociodemograficas WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
       console.log(response5, 'DELETE');
       if (err5 == null && response5 == true) {
       console.log('Para Subir - Sociodemográficas'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.c_sociodemograficas(Id_CaracteristicaS , Id_Encuesta , Id_Proyecto_Funcionario , Parentesco , Anos_cumplidos , Permanencia_vivienda , Sexo , Ocupacion , Ingresos_vivienda , Nivel_educacion , Reconocimiento , Registro_victimas , Lengua_nativa , Nombre_lengua_nativa , Problemas_uso_lena , Organizacion , Nombre_organizacion , Labores_Lab_domesticas_ninas , Labores_pagosycompras_ninas , Labores_lab_finca_ninas , Labores_transporte_ninas , Labores_admon_finca_ninas , Labores_comercia_ninas , Labores_estudia_ninas , Labores_formacion_hijos_ninas , Labores_cuiado_mayores_enfermos_ninas , Labores_otro_cual_ninas , Labores_Lab_domesticas_ninos , Labores_pagosycompras_ninos,Labores_lab_finca_ninos,Labores_transporte_ninos,Labores_admon_finca_ninos,Labores_comercia_ninos,Labores_estudia_ninos,Labores_formacion_hijos_ninos,Labores_cuiado_mayores_enfermos_ninos,Labores_otro_cual_ninos,Labores_Lab_domesticas_mujeres,Labores_pagosycompras_mujeres,Labores_lab_finca_mujeres,Labores_transporte_mujeres,Labores_admon_finca_mujeres,Labores_comercia_mujeres,Labores_estudia_mujeres,Labores_formacion_hijos_mujeres,Labores_cuiado_mayores_enfermos_mujeres,Labores_otro_cual_mujeres,Labores_Lab_domesticas_hombres,Labores_pagosycompras_hombres,Labores_lab_finca_hombres,Labores_transporte_hombres,Labores_admon_finca_hombres,Labores_comercia_hombres,Labores_estudia_hombres,Labores_formacion_hijos_hombres,Labores_cuiado_mayores_enfermos_hombres,Labores_otro_cual_hombres , upload,edit)' +
+      const query = 'INSERT INTO enterritoriobk.c_sociodemograficas(Id_CaracteristicaS , Id_Encuesta , Id_Proyecto_Funcionario , Parentesco , Anos_cumplidos , Permanencia_vivienda , Sexo , Ocupacion , Ingresos_vivienda , Nivel_educacion , Reconocimiento , Registro_victimas , Lengua_nativa , Nombre_lengua_nativa , Problemas_uso_lena , Organizacion , Nombre_organizacion , Labores_Lab_domesticas_ninas , Labores_pagosycompras_ninas , Labores_lab_finca_ninas , Labores_transporte_ninas , Labores_admon_finca_ninas , Labores_comercia_ninas , Labores_estudia_ninas , Labores_formacion_hijos_ninas , Labores_cuiado_mayores_enfermos_ninas , Labores_otro_cual_ninas , Labores_Lab_domesticas_ninos , Labores_pagosycompras_ninos,Labores_lab_finca_ninos,Labores_transporte_ninos,Labores_admon_finca_ninos,Labores_comercia_ninos,Labores_estudia_ninos,Labores_formacion_hijos_ninos,Labores_cuiado_mayores_enfermos_ninos,Labores_otro_cual_ninos,Labores_Lab_domesticas_mujeres,Labores_pagosycompras_mujeres,Labores_lab_finca_mujeres,Labores_transporte_mujeres,Labores_admon_finca_mujeres,Labores_comercia_mujeres,Labores_estudia_mujeres,Labores_formacion_hijos_mujeres,Labores_cuiado_mayores_enfermos_mujeres,Labores_otro_cual_mujeres,Labores_Lab_domesticas_hombres,Labores_pagosycompras_hombres,Labores_lab_finca_hombres,Labores_transporte_hombres,Labores_admon_finca_hombres,Labores_comercia_hombres,Labores_estudia_hombres,Labores_formacion_hijos_hombres,Labores_cuiado_mayores_enfermos_hombres,Labores_otro_cual_hombres , upload,edit)' +
       ' VALUES (\''
       +	element.Id_CaracteristicaS 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1445,12 +1445,12 @@ SincronizarEnergiaE(cb) {
   this.Energia.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.energia WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.energia WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
       console.log(response5, 'DELETE');
       if (err5 == null && response5 == true) {
         console.log('Para Subir - Energia'); // quiery remoto - en servidor
-        const query = 'INSERT INTO Enterritorio.energia(Id_Energia , Id_Encuesta , Id_Proyecto_Funcionario , FE_electrica , FE_cocinar_gaspropano_consumo_mes , FE_cocinar_gasnatural_consumo_mes , FE_cocinar_gasolina_consumo_mes , FE_cocinar_kerosene_consumo_mes , FE_cocinar_petroleo_consumo_mes , FE_cocinar_alcohol_consumo_mes , FE_cocinar_carbon_mineral_consumo_mes , FE_cocinar_lena_comprada_consumo_mes , FE_cocinar_lena_auto_apropiada_consumo_mes , FE_cocinar_residuos_agro_consumo_mes , FE_cocinar_otro_consumo_mes , FE_cocinar_gaspropano_costo_mes , FE_cocinar_gasnatural_costo_mes , FE_cocinar_gasolina_costo_mes , FE_cocinar_kerosene_costo_mes , FE_cocinar_petroleo_costo_mes , FE_cocinar_alcohol_costo_mes , FE_cocinar_carbon_mineral_costo_mes , FE_cocinar_lena_comprada_costo_mes , FE_cocinar_lena_auto_apropiada_costo_mes , FE_cocinar_residuos_agro_costo_mes , FE_cocinar_otro_cual_costo_mes , FE_cocinar_prefiere, FE_cocinar_otros_ban, FE_iluminar_bateria_consumo_mes , FE_iluminar_planta_gasolina_consumo_mes , FE_iluminar_kerosene_consumo_mes , FE_iluminar_petroleo_consumo_mes , FE_iluminar_alcohol_consumo_mes , FE_iluminar_planta_diesel_consumo_mes , FE_iluminar_velas_consumo_mes , FE_iluminar_otro_consumo_mes , FE_iluminar_bateria_costo_mes , FE_iluminar_planta_gasolina_costo_mes , FE_iluminar_kerosene_costo_mes , FE_iluminar_petroleo_costo_mes , FE_iluminar_alcohol_costo_mes , FE_iluminar_planta_diesel_costo_mes , FE_iluminar_velas_costo_mes , FE_iluminar_otro_costo_mes , FE_iluminar_bateria_localizacion , FE_iluminar_planta_gasolina_localizacion , FE_iluminar_kerosene_localizacion , FE_iluminar_petroleo_localizacion , FE_iluminar_alcohol_localizacion,FE_iluminar_planta_diesel_localizacion,FE_iluminar_velas_localizacion,FE_iluminar_otro_localizacion, FE_iluminar_otro_ban, FE_iluminar_usa,Equipos_aire_acondicionado_tiene,Equipos_ventilador_tiene,Equipos_radio_tiene,Equipos_televisor_tiene,Equipos_dvd_tiene,Equipos_computador_tiene,Equipos_impresora_tiene,Equipos_celular_tiene,Equipos_motobomba_tiene,Equipos_licuadora_tiene,Equipos_nevera_tiene,Equipos_congelador_tiene,Equipos_iluminacion_tiene,Equipos_emprendimiento_tiene,Equipos_otros_tiene,Equipos_aire_acondicionado_necesita,Equipos_ventilador_necesita,Equipos_radio_necesita,Equipos_televisor_necesita,Equipos_dvd_necesita,Equipos_computador_necesita,Equipos_impresora_necesita,Equipos_celular_necesita,Equipos_motobomba_necesita,Equipos_licuadora_necesita,,Equipos_nevera_necesita,Equipos_congelador_necesita,Equipos_iluminacion_necesita,Equipos_emprendimiento_necesita,Equipos_otros_necesita,Contaminacion_ruido,Contaminacion_olores,Planea_implementar_proyecto,Cual_proyecto,Requiere_energia_proyecto, tarifa_mensual, Voluntad_de_pago)' +
+        const query = 'INSERT INTO enterritoriobk.energia(Id_Energia , Id_Encuesta , Id_Proyecto_Funcionario , FE_electrica , FE_cocinar_gaspropano_consumo_mes , FE_cocinar_gasnatural_consumo_mes , FE_cocinar_gasolina_consumo_mes , FE_cocinar_kerosene_consumo_mes , FE_cocinar_petroleo_consumo_mes , FE_cocinar_alcohol_consumo_mes , FE_cocinar_carbon_mineral_consumo_mes , FE_cocinar_lena_comprada_consumo_mes , FE_cocinar_lena_auto_apropiada_consumo_mes , FE_cocinar_residuos_agro_consumo_mes , FE_cocinar_otro_consumo_mes , FE_cocinar_gaspropano_costo_mes , FE_cocinar_gasnatural_costo_mes , FE_cocinar_gasolina_costo_mes , FE_cocinar_kerosene_costo_mes , FE_cocinar_petroleo_costo_mes , FE_cocinar_alcohol_costo_mes , FE_cocinar_carbon_mineral_costo_mes , FE_cocinar_lena_comprada_costo_mes , FE_cocinar_lena_auto_apropiada_costo_mes , FE_cocinar_residuos_agro_costo_mes , FE_cocinar_otro_cual_costo_mes , FE_cocinar_prefiere, FE_cocinar_otros_ban, FE_iluminar_bateria_consumo_mes , FE_iluminar_planta_gasolina_consumo_mes , FE_iluminar_kerosene_consumo_mes , FE_iluminar_petroleo_consumo_mes , FE_iluminar_alcohol_consumo_mes , FE_iluminar_planta_diesel_consumo_mes , FE_iluminar_velas_consumo_mes , FE_iluminar_otro_consumo_mes , FE_iluminar_bateria_costo_mes , FE_iluminar_planta_gasolina_costo_mes , FE_iluminar_kerosene_costo_mes , FE_iluminar_petroleo_costo_mes , FE_iluminar_alcohol_costo_mes , FE_iluminar_planta_diesel_costo_mes , FE_iluminar_velas_costo_mes , FE_iluminar_otro_costo_mes , FE_iluminar_bateria_localizacion , FE_iluminar_planta_gasolina_localizacion , FE_iluminar_kerosene_localizacion , FE_iluminar_petroleo_localizacion , FE_iluminar_alcohol_localizacion,FE_iluminar_planta_diesel_localizacion,FE_iluminar_velas_localizacion,FE_iluminar_otro_localizacion, FE_iluminar_otro_ban, FE_iluminar_usa,Equipos_aire_acondicionado_tiene,Equipos_ventilador_tiene,Equipos_radio_tiene,Equipos_televisor_tiene,Equipos_dvd_tiene,Equipos_computador_tiene,Equipos_impresora_tiene,Equipos_celular_tiene,Equipos_motobomba_tiene,Equipos_licuadora_tiene,Equipos_nevera_tiene,Equipos_congelador_tiene,Equipos_iluminacion_tiene,Equipos_emprendimiento_tiene,Equipos_otros_tiene,Equipos_aire_acondicionado_necesita,Equipos_ventilador_necesita,Equipos_radio_necesita,Equipos_televisor_necesita,Equipos_dvd_necesita,Equipos_computador_necesita,Equipos_impresora_necesita,Equipos_celular_necesita,Equipos_motobomba_necesita,Equipos_licuadora_necesita,,Equipos_nevera_necesita,Equipos_congelador_necesita,Equipos_iluminacion_necesita,Equipos_emprendimiento_necesita,Equipos_otros_necesita,Contaminacion_ruido,Contaminacion_olores,Planea_implementar_proyecto,Cual_proyecto,Requiere_energia_proyecto, tarifa_mensual, Voluntad_de_pago)' +
       ' VALUES (\''
       +	element.Id_Energia 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1591,7 +1591,7 @@ SincronizarRacional(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - URE'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.URE(Id_URE , Id_Encuesta , Id_Proyecto_Funcionario , Uso_adecuado_energia , Escuchado_uso_racional_energia , Conocer_generacionyuso_energia , Temas_generacionyuso_energia , Compartir_saberes)' +
+      const query = 'INSERT INTO enterritoriobk.URE(Id_URE , Id_Encuesta , Id_Proyecto_Funcionario , Uso_adecuado_energia , Escuchado_uso_racional_energia , Conocer_generacionyuso_energia , Temas_generacionyuso_energia , Compartir_saberes)' +
       ' VALUES (\''
       +	element.Id_URE 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1647,7 +1647,7 @@ SincronizarTerm(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Porcentaje'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.porcentaje(Id , Id_Encuesta , Id_Proyecto_Funcionario , Porcentaje , IsTerm , Fecha_Term)' +
+      const query = 'INSERT INTO enterritoriobk.porcentaje(Id , Id_Encuesta , Id_Proyecto_Funcionario , Porcentaje , IsTerm , Fecha_Term)' +
       ' VALUES (\''
       +	element.Id 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1701,7 +1701,7 @@ SincronizarTransporte(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Transporte'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.transporte(Id_Transporte,Id_Proyecto_Funcionario,Id_Lugares,Costo_viaje,Medio_viaje,Tiempo_viaje,Fecha)' +
+      const query = 'INSERT INTO enterritoriobk.transporte(Id_Transporte,Id_Proyecto_Funcionario,Id_Lugares,Costo_viaje,Medio_viaje,Tiempo_viaje,Fecha)' +
       ' VALUES (\''
       +	element.Id_Transporte 	+	'\',\''
       +	element.Id_Proyecto_Funcionario	+	'\',\''
@@ -1756,7 +1756,7 @@ SincronizarSociodemo(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Sociodemográficas'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.c_sociodemograficas(Id_CaracteristicaS , Id_Encuesta , Id_Proyecto_Funcionario , Parentesco , Anos_cumplidos , Permanencia_vivienda , Sexo , Ocupacion , Ingresos_vivienda , Nivel_educacion , Reconocimiento , Registro_victimas , Lengua_nativa , Nombre_lengua_nativa , Problemas_uso_lena , Organizacion , Nombre_organizacion , Labores_Lab_domesticas_ninas , Labores_pagosycompras_ninas , Labores_lab_finca_ninas , Labores_transporte_ninas , Labores_admon_finca_ninas , Labores_comercia_ninas , Labores_estudia_ninas , Labores_formacion_hijos_ninas , Labores_cuiado_mayores_enfermos_ninas , Labores_otro_cual_ninas , Labores_Lab_domesticas_ninos , Labores_pagosycompras_ninos,Labores_lab_finca_ninos,Labores_transporte_ninos,Labores_admon_finca_ninos,Labores_comercia_ninos,Labores_estudia_ninos,Labores_formacion_hijos_ninos,Labores_cuiado_mayores_enfermos_ninos,Labores_otro_cual_ninos,Labores_Lab_domesticas_mujeres,Labores_pagosycompras_mujeres,Labores_lab_finca_mujeres,Labores_transporte_mujeres,Labores_admon_finca_mujeres,Labores_comercia_mujeres,Labores_estudia_mujeres,Labores_formacion_hijos_mujeres,Labores_cuiado_mayores_enfermos_mujeres,Labores_otro_cual_mujeres,Labores_Lab_domesticas_hombres,Labores_pagosycompras_hombres,Labores_lab_finca_hombres,Labores_transporte_hombres,Labores_admon_finca_hombres,Labores_comercia_hombres,Labores_estudia_hombres,Labores_formacion_hijos_hombres,Labores_cuiado_mayores_enfermos_hombres,Labores_otro_cual_hombres)' +
+      const query = 'INSERT INTO enterritoriobk.c_sociodemograficas(Id_CaracteristicaS , Id_Encuesta , Id_Proyecto_Funcionario , Parentesco , Anos_cumplidos , Permanencia_vivienda , Sexo , Ocupacion , Ingresos_vivienda , Nivel_educacion , Reconocimiento , Registro_victimas , Lengua_nativa , Nombre_lengua_nativa , Problemas_uso_lena , Organizacion , Nombre_organizacion , Labores_Lab_domesticas_ninas , Labores_pagosycompras_ninas , Labores_lab_finca_ninas , Labores_transporte_ninas , Labores_admon_finca_ninas , Labores_comercia_ninas , Labores_estudia_ninas , Labores_formacion_hijos_ninas , Labores_cuiado_mayores_enfermos_ninas , Labores_otro_cual_ninas , Labores_Lab_domesticas_ninos , Labores_pagosycompras_ninos,Labores_lab_finca_ninos,Labores_transporte_ninos,Labores_admon_finca_ninos,Labores_comercia_ninos,Labores_estudia_ninos,Labores_formacion_hijos_ninos,Labores_cuiado_mayores_enfermos_ninos,Labores_otro_cual_ninos,Labores_Lab_domesticas_mujeres,Labores_pagosycompras_mujeres,Labores_lab_finca_mujeres,Labores_transporte_mujeres,Labores_admon_finca_mujeres,Labores_comercia_mujeres,Labores_estudia_mujeres,Labores_formacion_hijos_mujeres,Labores_cuiado_mayores_enfermos_mujeres,Labores_otro_cual_mujeres,Labores_Lab_domesticas_hombres,Labores_pagosycompras_hombres,Labores_lab_finca_hombres,Labores_transporte_hombres,Labores_admon_finca_hombres,Labores_comercia_hombres,Labores_estudia_hombres,Labores_formacion_hijos_hombres,Labores_cuiado_mayores_enfermos_hombres,Labores_otro_cual_hombres)' +
       ' VALUES (\''
       +	element.Id_CaracteristicaS 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -1861,7 +1861,7 @@ SincronizarEnergia(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Energia'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.energia(Id_Energia , Id_Encuesta , Id_Proyecto_Funcionario , FE_electrica , FE_cocinar_gaspropano_consumo_mes , FE_cocinar_gasnatural_consumo_mes , FE_cocinar_gasolina_consumo_mes , FE_cocinar_kerosene_consumo_mes , FE_cocinar_petroleo_consumo_mes , FE_cocinar_alcohol_consumo_mes , FE_cocinar_carbon_mineral_consumo_mes , FE_cocinar_lena_comprada_consumo_mes , FE_cocinar_lena_auto_apropiada_consumo_mes , FE_cocinar_residuos_agro_consumo_mes , FE_cocinar_otro_consumo_mes , FE_cocinar_gaspropano_costo_mes , FE_cocinar_gasnatural_costo_mes , FE_cocinar_gasolina_costo_mes , FE_cocinar_kerosene_costo_mes , FE_cocinar_petroleo_costo_mes , FE_cocinar_alcohol_costo_mes , FE_cocinar_carbon_mineral_costo_mes , FE_cocinar_lena_comprada_costo_mes , FE_cocinar_lena_auto_apropiada_costo_mes , FE_cocinar_residuos_agro_costo_mes , FE_cocinar_otro_cual_costo_mes , FE_cocinar_prefiere, FE_cocinar_otros_ban, FE_iluminar_bateria_consumo_mes , FE_iluminar_planta_gasolina_consumo_mes , FE_iluminar_kerosene_consumo_mes , FE_iluminar_petroleo_consumo_mes , FE_iluminar_alcohol_consumo_mes , FE_iluminar_planta_diesel_consumo_mes , FE_iluminar_velas_consumo_mes , FE_iluminar_otro_consumo_mes , FE_iluminar_bateria_costo_mes , FE_iluminar_planta_gasolina_costo_mes , FE_iluminar_kerosene_costo_mes , FE_iluminar_petroleo_costo_mes , FE_iluminar_alcohol_costo_mes , FE_iluminar_planta_diesel_costo_mes , FE_iluminar_velas_costo_mes , FE_iluminar_otro_costo_mes , FE_iluminar_bateria_localizacion , FE_iluminar_planta_gasolina_localizacion , FE_iluminar_kerosene_localizacion , FE_iluminar_petroleo_localizacion , FE_iluminar_alcohol_localizacion,FE_iluminar_planta_diesel_localizacion,FE_iluminar_velas_localizacion,FE_iluminar_otro_localizacion, FE_iluminar_otro_ban, FE_iluminar_usa,Equipos_aire_acondicionado_tiene,Equipos_ventilador_tiene,Equipos_radio_tiene,Equipos_televisor_tiene,Equipos_dvd_tiene,Equipos_computador_tiene,Equipos_impresora_tiene,Equipos_celular_tiene,Equipos_motobomba_tiene,Equipos_licuadora_tiene,Equipos_nevera_tiene,Equipos_congelador_tiene,Equipos_iluminacion_tiene,Equipos_emprendimiento_tiene,Equipos_otros_tiene,Equipos_aire_acondicionado_necesita,Equipos_ventilador_necesita,Equipos_radio_necesita,Equipos_televisor_necesita,Equipos_dvd_necesita,Equipos_computador_necesita,Equipos_impresora_necesita,Equipos_celular_necesita,Equipos_motobomba_necesita,Equipos_licuadora_necesita,Equipos_nevera_necesita,Equipos_congelador_necesita,Equipos_iluminacion_necesita,Equipos_emprendimiento_necesita,Equipos_otros_necesita,Contaminacion_ruido,Contaminacion_olores,Planea_implementar_proyecto,Cual_proyecto,Requiere_energia_proyecto, tarifa_mensual, Voluntad_de_pago)' +
+      const query = 'INSERT INTO enterritoriobk.energia(Id_Energia , Id_Encuesta , Id_Proyecto_Funcionario , FE_electrica , FE_cocinar_gaspropano_consumo_mes , FE_cocinar_gasnatural_consumo_mes , FE_cocinar_gasolina_consumo_mes , FE_cocinar_kerosene_consumo_mes , FE_cocinar_petroleo_consumo_mes , FE_cocinar_alcohol_consumo_mes , FE_cocinar_carbon_mineral_consumo_mes , FE_cocinar_lena_comprada_consumo_mes , FE_cocinar_lena_auto_apropiada_consumo_mes , FE_cocinar_residuos_agro_consumo_mes , FE_cocinar_otro_consumo_mes , FE_cocinar_gaspropano_costo_mes , FE_cocinar_gasnatural_costo_mes , FE_cocinar_gasolina_costo_mes , FE_cocinar_kerosene_costo_mes , FE_cocinar_petroleo_costo_mes , FE_cocinar_alcohol_costo_mes , FE_cocinar_carbon_mineral_costo_mes , FE_cocinar_lena_comprada_costo_mes , FE_cocinar_lena_auto_apropiada_costo_mes , FE_cocinar_residuos_agro_costo_mes , FE_cocinar_otro_cual_costo_mes , FE_cocinar_prefiere, FE_cocinar_otros_ban, FE_iluminar_bateria_consumo_mes , FE_iluminar_planta_gasolina_consumo_mes , FE_iluminar_kerosene_consumo_mes , FE_iluminar_petroleo_consumo_mes , FE_iluminar_alcohol_consumo_mes , FE_iluminar_planta_diesel_consumo_mes , FE_iluminar_velas_consumo_mes , FE_iluminar_otro_consumo_mes , FE_iluminar_bateria_costo_mes , FE_iluminar_planta_gasolina_costo_mes , FE_iluminar_kerosene_costo_mes , FE_iluminar_petroleo_costo_mes , FE_iluminar_alcohol_costo_mes , FE_iluminar_planta_diesel_costo_mes , FE_iluminar_velas_costo_mes , FE_iluminar_otro_costo_mes , FE_iluminar_bateria_localizacion , FE_iluminar_planta_gasolina_localizacion , FE_iluminar_kerosene_localizacion , FE_iluminar_petroleo_localizacion , FE_iluminar_alcohol_localizacion,FE_iluminar_planta_diesel_localizacion,FE_iluminar_velas_localizacion,FE_iluminar_otro_localizacion, FE_iluminar_otro_ban, FE_iluminar_usa,Equipos_aire_acondicionado_tiene,Equipos_ventilador_tiene,Equipos_radio_tiene,Equipos_televisor_tiene,Equipos_dvd_tiene,Equipos_computador_tiene,Equipos_impresora_tiene,Equipos_celular_tiene,Equipos_motobomba_tiene,Equipos_licuadora_tiene,Equipos_nevera_tiene,Equipos_congelador_tiene,Equipos_iluminacion_tiene,Equipos_emprendimiento_tiene,Equipos_otros_tiene,Equipos_aire_acondicionado_necesita,Equipos_ventilador_necesita,Equipos_radio_necesita,Equipos_televisor_necesita,Equipos_dvd_necesita,Equipos_computador_necesita,Equipos_impresora_necesita,Equipos_celular_necesita,Equipos_motobomba_necesita,Equipos_licuadora_necesita,Equipos_nevera_necesita,Equipos_congelador_necesita,Equipos_iluminacion_necesita,Equipos_emprendimiento_necesita,Equipos_otros_necesita,Contaminacion_ruido,Contaminacion_olores,Planea_implementar_proyecto,Cual_proyecto,Requiere_energia_proyecto, tarifa_mensual, Voluntad_de_pago)' +
       ' VALUES (\''
       +	element.Id_Energia 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -2005,7 +2005,7 @@ SincronizarEncuestadores(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - Encuestadores');
-      const query = 'INSERT INTO Enterritorio.encuestadores (Id_Encuestador,Id_Proyecto_Funcionario,Id_Encuesta,Nombre_encuestador,Telefono_celular_encuestador,Telefono_fijo_encuestador,Correo_encuestador,Ciudad_vive_encuestador)' +
+      const query = 'INSERT INTO enterritoriobk.encuestadores (Id_Encuestador,Id_Proyecto_Funcionario,Id_Encuesta,Nombre_encuestador,Telefono_celular_encuestador,Telefono_fijo_encuestador,Correo_encuestador,Ciudad_vive_encuestador)' +
       ' VALUES (\'' + element.Id_Encuestador + '\',\'' 
       + element.Id_Proyecto_Funcionario + '\', \'' 
       + element.Id_Encuesta + '\',\''
@@ -2059,12 +2059,12 @@ if (this.Encuestadores.length == 0) {
 this.Encuestadores.map(element => {
   if (element.edit == 1) {
     var1++;
-    const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.encuestadores WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+    const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.encuestadores WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
     this.global.consultar(pdata2, (err5, response5) => {
     console.log(response5, 'DELETE');
     if (err5 == null && response5 == true) {
       console.log('Para Subir - Energia'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.encuestadores (Id_Encuestador,Id_Proyecto_Funcionario,Id_Encuesta,Nombre_encuestador,Telefono_celular_encuestador,Telefono_fijo_encuestador,Correo_encuestador,Ciudad_vive_encuestador,upload,edit)' +
+      const query = 'INSERT INTO enterritoriobk.encuestadores (Id_Encuestador,Id_Proyecto_Funcionario,Id_Encuesta,Nombre_encuestador,Telefono_celular_encuestador,Telefono_fijo_encuestador,Correo_encuestador,Ciudad_vive_encuestador,upload,edit)' +
       ' VALUES (\'' + element.Id_Encuestador + '\',\'' 
       + element.Id_Proyecto_Funcionario + '\', \'' 
       + element.Id_Encuesta + '\',\''
@@ -2122,7 +2122,7 @@ SincronizarConsentimiento(cb) {
     if (element.upload == 0) {
       var1++;
       console.log('Para Subir - consentimiento');
-      const query = 'INSERT INTO Enterritorio.consentimiento (Id_Consentimiento,Id_Encuesta,Id_Proyecto_Funcionario,Nombre_beneficiario_usuario,Nombre_encuestado,Telefono_celular_encuestado,Telefono_fijo_encuestado,Cedula_encuestado,Correo_encuestado,Constancia_uso_datos,Explicado_posible_solucion,Explicado_beneficio_limitacion,Aprobacion_proyecto,Autorizacion_fotos_videos,Firma,Cedula_firma,Comentarios_encuestador,Reaccion_preguntas,Reaccion_proyecto)' +
+      const query = 'INSERT INTO enterritoriobk.consentimiento (Id_Consentimiento,Id_Encuesta,Id_Proyecto_Funcionario,Nombre_beneficiario_usuario,Nombre_encuestado,Telefono_celular_encuestado,Telefono_fijo_encuestado,Cedula_encuestado,Correo_encuestado,Constancia_uso_datos,Explicado_posible_solucion,Explicado_beneficio_limitacion,Aprobacion_proyecto,Autorizacion_fotos_videos,Firma,Cedula_firma,Comentarios_encuestador,Reaccion_preguntas,Reaccion_proyecto)' +
       ' VALUES (\'' + element.Id_Consentimiento + '\',\'' 
       + element.Id_Encuesta + '\', \'' 
       + element.Id_Proyecto_Funcionario + '\',\''
@@ -2187,12 +2187,12 @@ if (this.Consentimiento.length == 0) {
 this.Consentimiento.map(element => {
   if (element.edit == 1) {
     var1++;
-    const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.consentimiento WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+    const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.consentimiento WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
     this.global.consultar(pdata2, (err5, response5) => {
     console.log(response5, 'DELETE');
     if (err5 == null && response5 == true) {
       console.log('Para Subir - Energia'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.consentimiento (Id_Consentimiento,Id_Encuesta,Id_Proyecto_Funcionario,Nombre_beneficiario_usuario,Nombre_encuestado,Telefono_celular_encuestado,Telefono_fijo_encuestado,Cedula_encuestado,Correo_encuestado,Constancia_uso_datos,Explicado_posible_solucion,Explicado_beneficio_limitacion,Aprobacion_proyecto,Autorizacion_fotos_videos,Firma,Cedula_firma,Comentarios_encuestador,Reaccion_preguntas,Reaccion_proyecto,upload,edit)' +
+      const query = 'INSERT INTO enterritoriobk.consentimiento (Id_Consentimiento,Id_Encuesta,Id_Proyecto_Funcionario,Nombre_beneficiario_usuario,Nombre_encuestado,Telefono_celular_encuestado,Telefono_fijo_encuestado,Cedula_encuestado,Correo_encuestado,Constancia_uso_datos,Explicado_posible_solucion,Explicado_beneficio_limitacion,Aprobacion_proyecto,Autorizacion_fotos_videos,Firma,Cedula_firma,Comentarios_encuestador,Reaccion_preguntas,Reaccion_proyecto,upload,edit)' +
       ' VALUES (\'' + element.Id_Consentimiento + '\',\'' 
       + element.Id_Encuesta + '\', \'' 
       + element.Id_Proyecto_Funcionario + '\',\''
@@ -2261,13 +2261,13 @@ SincronizarTermiE(cb) {
   this.Termi.map(element => {
     if (element.edit == 1) {
       var1++;
-      const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.porcentaje WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
+      const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.porcentaje WHERE Id_Encuesta = \'' + element.Id_Encuesta + '\''};
       this.global.consultar(pdata2, (err5, response5) => {
       console.log(response5, 'DELETE');
       if (err5 == null && response5 == true) {
         console.log('Para Subir - Porcentaje'); // quiery remoto - en servidor
         console.log('Para Subir - Porcentaje'); // quiery remoto - en servidor
-      const query = 'INSERT INTO Enterritorio.porcentaje(Id , Id_Encuesta , Id_Proyecto_Funcionario , Porcentaje , IsTerm , Fecha_Term)' +
+      const query = 'INSERT INTO enterritoriobk.porcentaje(Id , Id_Encuesta , Id_Proyecto_Funcionario , Porcentaje , IsTerm , Fecha_Term)' +
       ' VALUES (\''
       +	element.Id 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -2324,13 +2324,13 @@ SincronizarTransporteE(cb) {
     this.MTransporte.map(element => {
       if (element.edit == 1) {
         var1++;
-        const pdata2 = {option: 'insertar', texto: 'DELETE FROM Enterritorio.transporte WHERE Id_Transporte = \'' + element.Id_Transporte + '\''};
+        const pdata2 = {option: 'insertar', texto: 'DELETE FROM enterritoriobk.transporte WHERE Id_Transporte = \'' + element.Id_Transporte + '\''};
         this.global.consultar(pdata2, (err5, response5) => {
         console.log(response5, 'DELETE');
         if (err5 == null && response5 == true) {
           console.log('Para Subir - Transporte'); // quiery remoto - en servidor
           console.log('Para Subir - Transporte'); // quiery remoto - en servidor
-          const query = 'INSERT INTO Enterritorio.transporte(Id_Transporte,Id_Proyecto_Funcionario,Id_Lugares,Costo_viaje,Medio_viaje,Tiempo_viaje,Fecha)' +
+          const query = 'INSERT INTO enterritoriobk.transporte(Id_Transporte,Id_Proyecto_Funcionario,Id_Lugares,Costo_viaje,Medio_viaje,Tiempo_viaje,Fecha)' +
           ' VALUES (\''
           +	element.Id_Transporte 	+	'\',\''
           +	element.Id_Proyecto_Funcionario	+	'\',\''
@@ -2412,7 +2412,7 @@ Backup() {
             console.log('respuesta foto', state, resultado);
             if (state) {
               console.log('Para Subir - Fotos_Elect');
-              const query = 'INSERT INTO Enterritorio.fotos_elec (idfoto,idpro_funcionario,idelemento,rutalocal,rutaserver,estado,fecha,upload)' +
+              const query = 'INSERT INTO enterritoriobk.fotos_elec (idfoto,idpro_funcionario,idelemento,rutalocal,rutaserver,estado,fecha,upload)' +
               ' VALUES (\'' + element.idfoto + '\',\'' + element.idpro_funcionario + '\', \'' + element.idelemento + '\',\''
               + element.rutalocal + '\',\'' + resultado + '\',\'' + element.estado + '\',\'' + element.fecha + '\','
               + 1 + ');';
@@ -2470,7 +2470,7 @@ Backup() {
             console.log('respuesta foto', state, resultado);
             if (state) {
               console.log('Para Subir - Fotos_AMB');
-              const query = 'INSERT INTO Enterritorio.fotos_amb (idfoto,idpro_funcionario,idambiental,rutalocal,rutaserver,estado,fecha,upload)' +
+              const query = 'INSERT INTO enterritoriobk.fotos_amb (idfoto,idpro_funcionario,idambiental,rutalocal,rutaserver,estado,fecha,upload)' +
               ' VALUES (\'' + element.idfoto + '\',\'' + element.idpro_funcionario + '\', \'' + element.idambiental + '\',\''
               + element.rutalocal + '\',\'' + resultado + '\',\'' + element.estado + '\',\'' + element.fecha + '\','
               + 1 + ');';
@@ -2529,7 +2529,7 @@ Backup() {
           console.log('respuesta foto', state, resultado);
           if (state) {
             console.log('Para Subir - Fotos_Firma');
-            const query = 'INSERT INTO Enterritorio.fotos_firma(Id_Foto_Firma , Id_Encuesta , Id_Proyecto_Funcionario , documento , rutalocal , rutaserver , estado , fecha , upload , edit)' +
+            const query = 'INSERT INTO enterritoriobk.fotos_firma(Id_Foto_Firma , Id_Encuesta , Id_Proyecto_Funcionario , documento , rutalocal , rutaserver , estado , fecha , upload , edit)' +
       ' VALUES (\''
       +	element.Id_Foto_Firma 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -2595,7 +2595,7 @@ SincFotos_Encuesta(cb) {
           console.log('respuesta foto', state, resultado);
           if (state) {
             console.log('Para Subir - Fotos_Encuesta');
-            const query = 'INSERT INTO Enterritorio.fotos_encuesta(Id_Foto_Encuesta , Id_Encuesta , Id_Proyecto_Funcionario , rutalocal , rutaserver , estado , fecha , upload , edit)' +
+            const query = 'INSERT INTO enterritoriobk.fotos_encuesta(Id_Foto_Encuesta , Id_Encuesta , Id_Proyecto_Funcionario , rutalocal , rutaserver , estado , fecha , upload , edit)' +
       ' VALUES (\''
       +	element.Id_Foto_Encuesta 	+	'\',\''
       +	element.Id_Encuesta 	+	'\',\''
@@ -2682,7 +2682,7 @@ SincFotos_Transporte(cb) {
           console.log('respuesta foto', state, resultado);
           if (state) {
             console.log('Para Subir - Fotos_Encuesta');
-            const query = 'INSERT INTO Enterritorio.fotos_transporte(idfoto , Id_Proyecto_Funcionario, idlugar , rutalocal , rutaserver , estado , fecha , upload , edit)' +
+            const query = 'INSERT INTO enterritoriobk.fotos_transporte(idfoto , Id_Proyecto_Funcionario, idlugar , rutalocal , rutaserver , estado , fecha , upload , edit)' +
       ' VALUES (\''
       +	element.idfoto 	+	'\',\''
       +	element.Id_Proyecto_Funcionario 	+	'\',\''

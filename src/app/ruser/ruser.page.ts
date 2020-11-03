@@ -31,7 +31,7 @@ export class RuserPage implements OnInit {
         this.loading.HideLoading();
         this.alert.AlertOneButton('Información', 'Campos Vacios');
       } else {
-        const query = 'INSERT INTO Enterritorio.funcionarios (nombre,apellido,username,celular,fijo,correo,ciudad_origen,documento,password,estado,IsDelete,fecha_creacion)' +
+        const query = 'INSERT INTO enterritoriobk.funcionarios (nombre,apellido,username,celular,fijo,correo,ciudad_origen,documento,password,estado,IsDelete,fecha_creacion)' +
         ' VALUES (\'' +
         this.Nombre + '\',\'' +
         this.Apellido + '\', \'' +
@@ -50,7 +50,7 @@ export class RuserPage implements OnInit {
             this.global.consultar(pdata3, (err3, response3) => {
               console.log(response3);
               if (err3 == null && response3.length != 0) {
-                const query2 = 'INSERT INTO Enterritorio.proyectos_funcionarios (Id_Funcionario, Id_Proyecto, IsDelete)' +
+                const query2 = 'INSERT INTO enterritoriobk.proyectos_funcionarios (Id_Funcionario, Id_Proyecto, IsDelete)' +
             ' VALUES (\''+response3[0][0]+'\',\'1\',\'0\');';
                 const pdata2 = {option: 'insertar', texto: query2};
                 this.global.consultar(pdata2, (err2, response2) => {

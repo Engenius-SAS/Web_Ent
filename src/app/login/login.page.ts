@@ -83,7 +83,7 @@ Id_Proyecto;
         this.loading.LoadingNormal('Autenticando...');
         setTimeout(() => {
           const contrasena = Md5.hashStr(this.Pass);
-          const query = 'SELECT *,(SELECT Id_Proyecto_Funcionario FROM Enterritorio.proyectos_funcionarios B Where A.Id_Funcionario=B.Id_Funcionario AND B.Id_Proyecto=\'' + this.Id_Proyecto + '\') as Id_Proyecto_Funcionario FROM Enterritorio.funcionarios A WHERE username=\'' + this.User + '\' AND password=\'' + contrasena + '\';';
+          const query = 'SELECT *,(SELECT Id_Proyecto_Funcionario FROM enterritoriobk.proyectos_funcionarios B Where A.Id_Funcionario=B.Id_Funcionario AND B.Id_Proyecto=\'' + this.Id_Proyecto + '\') as Id_Proyecto_Funcionario FROM enterritoriobk.funcionarios A WHERE username=\'' + this.User + '\' AND password=\'' + contrasena + '\';';
           const pdata1 = {option: 'select', texto: query};
           this.global.consultar(pdata1, (err, response) => {
             console.log(response, query);

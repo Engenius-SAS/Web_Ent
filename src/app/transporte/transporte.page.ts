@@ -57,7 +57,7 @@ export class TransportePage implements OnInit {
     console.log('ELIMINAR');
     this.global.Id_busqueda = item[0];
     this.alert.AlertTowButtons('Alerta', '¿Desea eliminar el registro?', 'Si', () => {
-      const query = 'UPDATE Enterritorio.transporte SET IsDelete = 1 '
+      const query = 'UPDATE enterritoriobk.transporte SET IsDelete = 1 '
       + ' WHERE (Id_Transporte =\'' + this.global.Id_busqueda + '\');';
       const pdata1 = {option: 'insertar', texto: query};
       this.global.consultar(pdata1, (err, response) => {
