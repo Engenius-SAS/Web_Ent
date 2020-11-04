@@ -14,7 +14,7 @@ import { ImagestviewComponent } from '../imagestview/imagestview.component';
   styleUrls: ['./transporte.page.scss'],
 })
 export class TransportePage implements OnInit {
-  Pines;
+  Pines = new Array();
   id;
   txt;
   municipio = '';

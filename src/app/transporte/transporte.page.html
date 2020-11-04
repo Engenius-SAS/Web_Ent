@@ -28,14 +28,22 @@
       <ion-select-option *ngFor="let item of Comu" value={{item[0]}}>{{item[1]}}</ion-select-option>
     </ion-select>
   </ion-item>
-  <ion-button (click)="VerFotosT()" >
-    <ion-icon slot="icon-only" name="images-outline"></ion-icon>
-  </ion-button>
+  <div class="row justify-content-center" *ngIf="Pines.length != 0">
+    <div class="col-3">
+      <ion-button (click)="VerFotosT()" >
+        <ion-icon slot="icon-only" name="images-outline"> </ion-icon> Ver Imagenes de la Comunidad
+      </ion-button>
+    </div>
+  </div>
+  
 </ion-header>
 
 <ion-content>
 <ion-card>
-  <table class="table table-responsive-sm table-bordered table-striped text-center">
+  <div class="row justify-content-center"  *ngIf="Pines.length == 0">
+No se encuentran registros para la comunidad seleccionada
+  </div>
+  <table class="table table-responsive-sm table-bordered table-striped text-center" *ngIf="Pines.length != 0">
     <thead>
         <tr>
             <th>N°</th>
