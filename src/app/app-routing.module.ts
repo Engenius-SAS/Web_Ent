@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'listverifi', loadChildren: './listverifi/listverifi.module#ListverifiPageModule' },
   { path: 'listverifi', loadChildren: './listverifi/listverifi.module#ListverifiPageModule' },
   { path: 'transporte', loadChildren: './transporte/transporte.module#TransportePageModule' },
-  { path: 'seguimiento', loadChildren: './seguimiento/seguimiento.module#SeguimientoPageModule' }
+  { path: 'seguimiento', loadChildren: './seguimiento/seguimiento.module#SeguimientoPageModule' },
+  { path: 'list-cienaga', loadChildren: './list-cienaga/list-cienaga.module#ListCienagaPageModule' }
 
 
 

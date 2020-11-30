@@ -145,6 +145,12 @@ export class HomePage implements OnInit {
       this.navCtrl.navigateRoot('/list');
     }, 500);
   }
+  Cienaga() {
+    this.loading.LoadingNormal('Cargando...', 3);
+    setTimeout(() => {
+      this.navCtrl.navigateRoot('/list-cienaga');
+    }, 500);
+  }
 
   RevisionE() {
     this.loading.LoadingNormal('Cargando...', 3);
