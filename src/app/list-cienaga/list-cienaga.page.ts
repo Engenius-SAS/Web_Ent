@@ -201,7 +201,7 @@ export class ListCienagaPage implements OnInit {
         let Lat = new Array();
         let Lon = new Array();
         let Alt = new Array();
-        const pdata8 = {option: 'Dataen', Id_Encuesta: item[0]};
+        const pdata8 = {option: 'DataenC', Id_Encuesta: item[0]};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('Datos Encuesta', response8);
           this.Encuesta = response8[0];
