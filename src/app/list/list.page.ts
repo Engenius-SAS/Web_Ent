@@ -773,9 +773,9 @@ cargarEnc() {
             doc.text('1', 130, 96.5, 'center');
           }
 
-          if (this.Encuesta[244] == 'Si') {
+          if (this.Encuesta[242] == 'Si') {
             doc.text('X', 117, 189.5, 'center');
-          } else if (this.Encuesta[244] == 'No') {
+          } else if (this.Encuesta[242] == 'No') {
             doc.text('X', 117, 194.5, 'center');
           }
           if (this.Encuesta[245] == 'undefined' || this.Encuesta[245] == 'null') {
@@ -783,9 +783,9 @@ cargarEnc() {
           } else {
             doc.lstext(this.Encuesta[245], 20, 209.5, 0);
           }
-          if (this.Encuesta[246] == 'undefined' || this.Encuesta[246] == 'null' || this.Encuesta[246] == 'No Aplica') {
+          if (this.Encuesta[246] == 'undefined' || this.Encuesta[246] == 'null' || this.Encuesta[246] == 'No Aplica'|| this.Encuesta[246] == 'No') {
             doc.text('X', 137, 257, 'center');
-          } else if (this.Encuesta[246] == 'No') {
+          } else if (this.Encuesta[246] == 'Si') {
             doc.text('X', 117, 257, 'center');
           }
 
