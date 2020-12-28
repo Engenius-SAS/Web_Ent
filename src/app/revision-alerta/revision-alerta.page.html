@@ -2050,12 +2050,12 @@
               <div *ngIf="Images.length==0" class="row justify-content-center">
                 <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
               </div>
-          <div class="row justify-content-center">
-            <ion-button color=blue (click)="Fin()">Terminar Encuesta</ion-button>
-          </div>
-          <div class="row justify-content-center">
-            <ion-button color=blue (click)="Alert()">Terminar Encuesta y Enviar Alerta</ion-button>
-          </div>
+              <div class="row justify-content-center">
+                <ion-button color="success" (click)="Fin()"> Aprobar </ion-button>
+              </div>
+              <div class="row justify-content-center">
+                <ion-button color="danger" (click)="Descartar()"> Descartar </ion-button>
+              </div>
         </ion-card-content>
       </ion-card>      
     </div>
