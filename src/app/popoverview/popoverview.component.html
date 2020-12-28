@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="Cerrar()">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+     Enviar Alerta
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+    <ion-label color="blue" position="floating" class="ion-text-wrap">Descripción de la alerta: </ion-label>
+    <ion-input type="text" [(ngModel)]="Descripcion" placeholder="Escriba Aquí">
+    </ion-input>
+  </ion-item>
+  <div class="row justify-content-center">
+  <ion-button color=blue (click)="Alert()">Terminar Revisión</ion-button>
+</div>
+</ion-content>

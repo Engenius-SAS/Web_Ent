@@ -10,6 +10,7 @@ import { AlertService } from '../alert.service';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { PopoverviewComponent } from '../popoverview/popoverview.component';
 
 @Component({
   selector: 'app-revision',
@@ -87,6 +88,14 @@ export class RevisionPage implements OnInit {
       }, 200);
     });
    }
+
+   async EnviarAlerta() {
+    this.global.parametroPopover = this.data[2];
+    const popover = await this.popoverController.create({
+      component: PopoverviewComponent
+    });
+    return await popover.present();
+  }
 
 Fin(){
   const query = 'UPDATE enterritoriobk.porcentaje SET Verificacion = 1, '

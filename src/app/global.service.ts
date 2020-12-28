@@ -25,6 +25,7 @@ Editadas;
 datodept;
 FamiliaGlobal;
 Id_busqueda;
+parametroPopover;
 data1 = new Array();
   constructor() { }
  
