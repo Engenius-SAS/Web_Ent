@@ -41,11 +41,17 @@
             </ion-card-header>
                <ion-button class="ion-text-wrap" color="blue" expand="full">Transporte</ion-button>
           </ion-card>  
-          <ion-card class="col-xl-3 col-md-4 col-lg-5 col-sm-5" style="padding: 0px" (click)="Cienaga()">
+          <ion-card class="col-xl-3 col-md-4 col-lg-5 col-sm-5" style="padding: 0px" (click)="RevisionA()" *ngIf="global.UserData[6] == 5">
+            <ion-card-header>
+               <ion-img src="assets/imgs/alerta.png" style="width: 30%;max-width: 30%;;margin: auto"></ion-img>
+            </ion-card-header>
+               <ion-button class="ion-text-wrap" color="blue" expand="full">Revisión Alertas</ion-button>
+          </ion-card> 
+          <!--<ion-card class="col-xl-3 col-md-4 col-lg-5 col-sm-5" style="padding: 0px" (click)="Cienaga()">
             <ion-card-header>
                <ion-img src="assets/imgs/list.png" style="width: 30%;max-width: 30%;;margin: auto"></ion-img>
             </ion-card-header>
                <ion-button class="ion-text-wrap" color="blue" expand="full">Listado de Encuestas Ciénaga</ion-button>
-          </ion-card> 
+          </ion-card> -->
   </div>
 </ion-content>
