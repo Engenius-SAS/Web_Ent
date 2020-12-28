@@ -91,20 +91,70 @@ export class RevisionAlertaPage implements OnInit {
    }
 
 Fin(){
-  const query = 'UPDATE enterritoriobk.porcentaje SET Verificacion = 1, '
-  +'Id_Usuario =\'' + this.data[318] + '\''
-  + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
-  const pdata1 = {option: 'insertar', texto: query};
+  const query = 'UPDATE enterritoriobk.alertas SET IsDelete = 1 '
+    + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
+  const pdata1 = { option: 'insertar', texto: query };
   this.global.consultar(pdata1, (err, response) => {
     console.log(response, query);
     if (err == null && response == true) {
-      this.alert.AlertOneButton('Información', 'Revisión exitosa', 'Ok', () => {
-        this.navCtrl.navigateRoot('/listverifi');
+      const query2 = 'UPDATE enterritoriobk.porcentaje SET IsAlert = 0 '
+    + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
+    const pdata2 = { option: 'insertar', texto: query2 };
+    this.global.consultar(pdata2, (err2, response2) => {
+      console.log(response2, query2);
+      if (err2 == null && response2 == true) {  
+            //this.loading.HideLoading();        
+             this.alert.AlertOneButton('Información', 'Revisión exitosa', 'Ok', () => {
+                this.navCtrl.navigateRoot('/listalerta');
+              });
+        } else {
+          //this.loading.HideLoading();
+          this.alert.AlertOneButton('Error', 'Error al subir registro');
+        }
       });
     } else {
+     // this.loading.HideLoading();
       this.alert.AlertOneButton('Error', 'Error al subir registro');
     }
-   });
+  });
+}
+Descartar(){
+  const query = 'UPDATE enterritoriobk.alertas SET IsDelete = 1 '
+    + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
+  const pdata1 = { option: 'insertar', texto: query };
+  this.global.consultar(pdata1, (err, response) => {
+    console.log(response, query);
+    if (err == null && response == true) {
+      const query2 = 'UPDATE enterritoriobk.porcentaje SET IsAlert = 0 '
+    + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
+    const pdata2 = { option: 'insertar', texto: query2 };
+    this.global.consultar(pdata2, (err2, response2) => {
+      console.log(response2, query2);
+      if (err2 == null && response2 == true) {           
+        const query3 = 'UPDATE enterritoriobk.encabezado SET IsDelete = 1 '
+        + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
+        const pdata3 = { option: 'insertar', texto: query3 };
+        this.global.consultar(pdata3, (err3, response3) => {
+          console.log(response3, query3);
+          if (err3 == null && response3 == true) {  
+            //this.loading.HideLoading();        
+             this.alert.AlertOneButton('Información', 'Revisión exitosa', 'Ok', () => {
+                this.navCtrl.navigateRoot('/listalerta');
+              });
+            } else {
+              this.alert.AlertOneButton('Error', 'Error al subir registro');
+            }
+          });
+        } else {
+          //this.loading.HideLoading();
+          this.alert.AlertOneButton('Error', 'Error al subir registro');
+        }
+      });
+    } else {
+      //this.loading.HideLoading();
+      this.alert.AlertOneButton('Error', 'Error al subir registro');
+    }
+  });
 }
 Alert(){
   const query = 'UPDATE enterritoriobk.porcentaje SET Verificacion = 1, IsAlert = 1, '
