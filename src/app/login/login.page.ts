@@ -71,6 +71,7 @@ Id_Proyecto;
   }
 
   Login() {
+    this.global.Id_Proyecto = this.Id_Proyecto;
     console.log('Proyecto Seleccionado', this.Id_Proyecto);
     console.log('PROYECTOOOOO', this.Id_Proyecto);
     if (this.User == '' || this.User == undefined || this.Pass == '' || this.Pass == undefined || this.Id_Proyecto == '' || this.Id_Proyecto == undefined) {
