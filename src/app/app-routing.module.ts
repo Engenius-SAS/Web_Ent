@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'transporte', loadChildren: './transporte/transporte.module#TransportePageModule' },
   { path: 'seguimiento', loadChildren: './seguimiento/seguimiento.module#SeguimientoPageModule' },
   { path: 'list-cienaga', loadChildren: './list-cienaga/list-cienaga.module#ListCienagaPageModule' },
-  { path: 'revision-alerta', loadChildren: './revision-alerta/revision-alerta.module.ts' }
+  { path: 'listalerta', loadChildren: './listalerta/listalerta.module#ListalertaPage' },
+  { path: 'revision-alerta', loadChildren: './revision-alerta/revision-alerta.module#RevisionAlertaPageModule' }
 
 
 

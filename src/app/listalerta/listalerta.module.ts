@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ListalertaPage } from './listalerta.page';
-import { NgxSpinnerModule } from 'ngx-spinner';
+/* import { NgxSpinnerModule } from 'ngx-spinner'; */
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    NgxSpinnerModule
+  /*   NgxSpinnerModule */
   ],
   declarations: [ListalertaPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
