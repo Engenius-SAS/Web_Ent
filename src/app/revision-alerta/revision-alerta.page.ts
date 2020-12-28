@@ -13,11 +13,11 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Component({
   selector: 'app-revision',
-  templateUrl: './revision.page.html',
-  styleUrls: ['./revision.page.scss'],
+  templateUrl: './revision-alerta.page.html',
+  styleUrls: ['./revision-alerta.page.scss'],
 })
 
-export class RevisionPage implements OnInit {
+export class RevisionAlertaPage implements OnInit {
   FE_cocinar_gaspropano_consumo_select = false;
   FE_cocinar_gasnatural_consumo_select = false;
   FE_cocinar_gasolina_consumo_select = false;

@@ -11,13 +11,15 @@ const routes: Routes = [
   { path: 'selectcomu', loadChildren: './selectcomu/selectcomu.module#SelectcomuPageModule' },
   { path: 'selectrans', loadChildren: './selectrans/selectrans.module#SelectransPageModule' },
   { path: 'map', loadChildren: './map/map.module#MapPageModule' },
-  { path: 'list', loadChildren: './list/list.module#ListPageModule' },  { path: 'verencuesta', loadChildren: './verencuesta/verencuesta.module#VerencuestaPageModule' },
+  { path: 'list', loadChildren: './list/list.module#ListPageModule' },
+  { path: 'verencuesta', loadChildren: './verencuesta/verencuesta.module#VerencuestaPageModule' },
   { path: 'revision', loadChildren: './revision/revision.module#RevisionPageModule' },
   { path: 'listverifi', loadChildren: './listverifi/listverifi.module#ListverifiPageModule' },
   { path: 'listverifi', loadChildren: './listverifi/listverifi.module#ListverifiPageModule' },
   { path: 'transporte', loadChildren: './transporte/transporte.module#TransportePageModule' },
   { path: 'seguimiento', loadChildren: './seguimiento/seguimiento.module#SeguimientoPageModule' },
-  { path: 'list-cienaga', loadChildren: './list-cienaga/list-cienaga.module#ListCienagaPageModule' }
+  { path: 'list-cienaga', loadChildren: './list-cienaga/list-cienaga.module#ListCienagaPageModule' },
+  { path: 'revision-alerta', loadChildren: './revision-alerta/revision-alerta.module.ts' }
 
 
 
