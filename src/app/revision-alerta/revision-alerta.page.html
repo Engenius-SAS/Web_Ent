@@ -2,7 +2,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-button (click)="this.navCtrl.navigateRoot('/listverifi');">
+      <ion-button (click)="this.navCtrl.navigateRoot('/listalerta');">
         <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
       </ion-button>
     </ion-buttons>
@@ -14,7 +14,7 @@
 
 <ion-content>
   <div class="row justify-content-center">
-    <div class="col-8">
+    <div class="col-9">
       <ion-card>
         <ion-card-header color="blue" style="text-align: center;font-size:large">
           IDENTIFICACIÓN DE LA ENCUESTA
@@ -1327,6 +1327,9 @@
                 ¿Quiénes conforman el hogar? 
               </ion-label>
             </ion-item-divider>
+            <ion-item *ngIf="global.FamiliaGlobal.length < 16">
+              <ion-button color=blue fill="outline" (click)="presentPopover('hi')">Añadir Integrante</ion-button>
+            </ion-item>
             <ion-list class="row justify-content-center" style="width: 100%!important;">
               <ion-item *ngIf="global.FamiliaGlobal.length < 10" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
                 <!--<ion-button color=blue fill="outline" (click)="presentPopover('hi')">Añadir Integrante</ion-button>-->

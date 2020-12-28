@@ -43,6 +43,7 @@ export class ListalertaPage implements OnInit {
 
   ngOnInit() {
    this.spinner.show();
+   setTimeout(() => {
     const pdata8 = {option: 'encu'};
     this.global.consultar(pdata8, (err8, response8) => {
       console.log('ENCUESTADORES', response8);
@@ -60,6 +61,8 @@ export class ListalertaPage implements OnInit {
         });
       });
     });
+   }, 1500);
+
   }
 
   Buscar() {

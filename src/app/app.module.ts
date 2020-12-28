@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { SQLite } from '@ionic-native/sqlite/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
@@ -24,12 +24,12 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { AgmCoreModule } from '@agm/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [NgxPaginationModule, FilterPipeModule, BrowserModule, IonicModule.forRoot(),
-    AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(), SignaturePadModule, NgbModule,
+  imports: [NgxPaginationModule, FilterPipeModule, BrowserModule, IonicModule.forRoot(), BrowserAnimationsModule,
+    AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(), SignaturePadModule, NgbModule,  NgxSpinnerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDDNunlrlRApoo4bo5L8V5fMcBCTjZDbK8'
     })],

@@ -10,6 +10,7 @@ import { AlertService } from '../alert.service';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Add2Component } from '../add2/add2.component';
 
 @Component({
   selector: 'app-revision',
@@ -59,6 +60,7 @@ export class RevisionAlertaPage implements OnInit {
   }
 
   ngOnInit() {
+    console.log( 'DATA[103] Nombre comunidad', this.data[103] );
     const pdata8 = {option: 'Dataen', Id_Encuesta: this.global.Id_busqueda};
     this.global.consultar(pdata8, (err8, response8) => {
       console.log('Datos Encuesta', response8);
@@ -120,7 +122,14 @@ Alert(){
     }
    });
 }
-
+async presentPopover(ev: any) {
+  const popover = await this.popoverController.create({
+    component: Add2Component,
+    event: ev,
+    translucent: true
+  });
+  return await popover.present();
+}
 Ninguna() {
   if(this.data[260] == true){
     this.data[255] = false;
