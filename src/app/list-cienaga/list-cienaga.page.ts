@@ -1565,13 +1565,13 @@ export class ListCienagaPage implements OnInit {
             } else {
               doc.lstext(this.Encuesta[151], 130, 208, 0);
             }
-            if (this.Encuesta[152] == 'null' || this.Encuesta[152] == '-' || this.Encuesta[154] == 'undefined') {
+            if (this.Encuesta[152] == 'null' || this.Encuesta[152] == '-' || this.Encuesta[152] == 'undefined') {
               doc.lstext('0', 130, 213, 0);
             } else {
               doc.lstext(this.Encuesta[152], 130, 213, 0);
             }
             if (this.Encuesta[154] == 'null' || this.Encuesta[154] == '-' || this.Encuesta[154] == 'undefined') {
-              doc.lstext('No Registra', 85, 213, 0);
+              doc.lstext('-', 85, 213, 0);
             } else {
               doc.lstext(this.Encuesta[154], 85, 213, 0);
             }
