@@ -1,0 +1,2070 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.navigateRoot('/listverifi');">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Información de la Encuesta
+    </ion-title>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          IDENTIFICACIÓN DE LA ENCUESTA
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos de la Encuesta
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">No. de formulario: </ion-label>
+              <ion-input type=text [(ngModel)]="data[3]" readonly=true></ion-input>
+            </ion-item>
+            
+            <ion-item-divider>
+              <ion-label color=primary>
+                Ubicación del Proyecto
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" text-wrap style="font-size:large">Localización:</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Latitud: </ion-label>
+              <ion-input type=text [(ngModel)]="data[294]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Longitud: </ion-label>
+              <ion-input type=text [(ngModel)]="data[295]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Altitud: </ion-label>
+              <ion-input type=text [(ngModel)]="data[296]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Departamento: </ion-label>
+              <ion-input type=text [(ngModel)]="data[297]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Código departamento: </ion-label>
+              <ion-input type=text [(ngModel)]="data[298]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Municipio: </ion-label>
+              <ion-input type=text [(ngModel)]="data[299]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Código municipio: </ion-label>
+              <ion-input type=text [(ngModel)]="data[300]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Vereda: </ion-label>
+              <ion-input type=text [(ngModel)]="data[301]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Corregimiento</ion-label>
+              <ion-input type=text [(ngModel)]="data[302]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué tipo de proyecto es?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Tipo de proyecto: </ion-label>
+              <ion-input type=text [(ngModel)]="data[303]" readonly=true></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          TRATAMIENTO DATOS PERSONALES
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Autorización
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Nos autoriza a realizarle la encuesta?
+              </ion-label>
+              <ion-input type=text [(ngModel)]="data[283]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿La edificación corresponde a una?
+              </ion-label>
+              <ion-input type=text [(ngModel)]="data[284]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Qué tipo de institución es?
+              </ion-label>
+              <ion-input type=text [(ngModel)]="data[285]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
+              <ion-input type=text [(ngModel)]="data[286]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el uso de la vivienda /
+                institución? </ion-label>
+              <ion-input type=text [(ngModel)]="data[287]" readonly=true></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          1. MÓDULO ENERGÍA I
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿La vivienda / institución cuenta con alguna fuente de energía eléctrica?</ion-label>
+              <ion-input type=text [(ngModel)]="data[161]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué fuente de energía o combustible utilizan principalmente para cocinar?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Seleccione la(s) fuente(s) de energía o combustible: </ion-label>
+              <ion-select multiple="true" interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[184]" (ionChange)="select_fuente()">
+                <ion-select-option value="Gas Propano">Gas Propano</ion-select-option>
+                <ion-select-option value="Gas Natural">Gas Natural</ion-select-option>
+                <ion-select-option value="Gasolina">Gasolina</ion-select-option>
+                <ion-select-option value="Kerosene">Kerosene</ion-select-option>
+                <ion-select-option value="Petróleo">Petróleo</ion-select-option>
+                <ion-select-option value="Alcohol">Alcohol</ion-select-option>
+                <ion-select-option value="Carbón Mineral">Carbón Mineral</ion-select-option>
+                <ion-select-option value="Leña Comprada">Leña Comprada</ion-select-option>                
+                <ion-select-option value="Leña Auto Apropiada">Leña Auto Apropiada</ion-select-option>
+                <ion-select-option value="Residuos del Agro">Residuos del Agro</ion-select-option>
+                <ion-select-option value="Otro">Otro</ion-select-option>
+              </ion-select>
+            </ion-item>          
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_gaspropano_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gas propano(libra): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[162]" (ionChange)="consumo_gas_propano()">
+                <ion-select-option value="10">10</ion-select-option>
+                <ion-select-option value="20">20</ion-select-option>
+                <ion-select-option value="33">33</ion-select-option>
+                <ion-select-option value="40">40</ion-select-option>                
+                <ion-select-option value="77">77</ion-select-option>
+                <ion-select-option value="100">100</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_gaspropano_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gas propano($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[173]" (ionChange)="costo_gas_propano()">
+                <ion-select-option value="10000">0-10.000</ion-select-option>
+                <ion-select-option value="20000">10.000-20.000</ion-select-option>
+                <ion-select-option value="30000">20.000-30.000</ion-select-option>
+                <ion-select-option value="40000">30.000-40.000</ion-select-option> 
+                <ion-select-option value="50000">40.000-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option> 
+                <ion-select-option value="125000">100.000-125.000</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_gasnatural_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gas natural(M3): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[163]" (ionChange)="consumo_gas_natural()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option>                
+                <ion-select-option value="25">21-25</ion-select-option>
+                <ion-select-option value="30">26-30</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_gasnatural_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gas natural($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[174]" (ionChange)="costo_gas_natural()">
+                <ion-select-option value="10000">0-10.000</ion-select-option>
+                <ion-select-option value="20000">10.000-20.000</ion-select-option>
+                <ion-select-option value="30000">20.000-30.000</ion-select-option>
+                <ion-select-option value="40000">30.000-40.000</ion-select-option> 
+                <ion-select-option value="50000">40.000-50.000</ion-select-option>
+                <ion-select-option value="60000">50.000-60.000</ion-select-option>  
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_gasolina_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Gasolina(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[164]" (ionChange)="consumo_gasolina()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_gasolina_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Gasolina($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[175]" (ionChange)="costo_gasolina()">
+                <ion-select-option value="10000">0-10000</ion-select-option>
+                <ion-select-option value="20000">10.000-20.000</ion-select-option>
+                <ion-select-option value="30000">20.000-30.000</ion-select-option>
+                <ion-select-option value="40000">30.000-40.000</ion-select-option> 
+                <ion-select-option value="50000">40.000-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option> 
+                <ion-select-option value="150000">100.000-150.000</ion-select-option> 
+                <ion-select-option value="200000">150.000-200.000</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_kerosene_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Kerosene(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[165]" (ionChange)="consumo_kerosene()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_kerosene_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Kerosene($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[176]" (ionChange)="costo_kerosene()">
+                <ion-select-option value="10000">0-10.000</ion-select-option>
+                <ion-select-option value="20000">10.000-20.000</ion-select-option>
+                <ion-select-option value="30000">20.000-30.000</ion-select-option>
+                <ion-select-option value="40000">30.000-40.000</ion-select-option> 
+                <ion-select-option value="50000">40.000-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option> 
+                <ion-select-option value="150000">100.000-150.000</ion-select-option> 
+                <ion-select-option value="200000">150.000-200.000</ion-select-option>  
+                <ion-select-option value="250000">200.000-250.000</ion-select-option>
+                <ion-select-option value="300000">250.000-300.000</ion-select-option> 
+                <ion-select-option value="350000">300.000-350.000</ion-select-option> 
+                <ion-select-option value="400000">350.000-400.000</ion-select-option>                
+                <ion-select-option value="480000">400.000-480.000</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_petroleo_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Petróleo(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[166]" (ionChange)="consumo_petroleo()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_petroleo_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Petróleo($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[177]" (ionChange)="costo_petroleo()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_alcohol_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Alcohol(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[167]" (ionChange)="consumo_alcohol()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_alcohol_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Alcohol($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[178]" (ionChange)="costo_alcohol()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100000</ion-select-option> 
+                <ion-select-option value="150000">100.000-150.000</ion-select-option> 
+                <ion-select-option value="200000">150000-200000</ion-select-option>  
+                <ion-select-option value="250000">200.000-250.000</ion-select-option>
+                <ion-select-option value="300000">250.000-300.000</ion-select-option> 
+                <ion-select-option value="350000">300.000-350.000</ion-select-option> 
+                <ion-select-option value="400000">350.000-400.000</ion-select-option>                
+                <ion-select-option value="450000">400.000-450.000</ion-select-option> 
+                <ion-select-option value="500000">450.000-500.000</ion-select-option> 
+                <ion-select-option value="550000">500.000-550.000</ion-select-option>                
+                <ion-select-option value="600000">550.000-600.000</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_carbon_mineral_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Carbón mineral(Kg): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[168]" (ionChange)="consumo_carbonM()">
+                <ion-select-option value="50">0-50</ion-select-option>
+                <ion-select-option value="100">51-100</ion-select-option>
+                <ion-select-option value="150">101-150</ion-select-option>
+                <ion-select-option value="200">151-200</ion-select-option> 
+                <ion-select-option value="250">201-250</ion-select-option>
+                <ion-select-option value="300">251-300</ion-select-option>
+                <ion-select-option value="350">301-350</ion-select-option>
+                <ion-select-option value="400">351-400</ion-select-option> 
+                <ion-select-option value="450">401-450</ion-select-option>
+                <ion-select-option value="500">451-500</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_carbon_mineral_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Carbón mineral($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[179]" (ionChange)="costo_carbonM()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option> 
+                <ion-select-option value="150000">100.000-150.000</ion-select-option> 
+                <ion-select-option value="200000">150.000-200.000</ion-select-option>  
+                <ion-select-option value="250000">200.000-250.000</ion-select-option>
+                <ion-select-option value="300000">250.000-300.000</ion-select-option> 
+                <ion-select-option value="350000">300.000-350.000</ion-select-option> 
+                <ion-select-option value="400000">350.000-400.000</ion-select-option>                
+                <ion-select-option value="450000">400.000-450.000</ion-select-option> 
+                <ion-select-option value="500000">450.000-500.000</ion-select-option> 
+                <ion-select-option value="550000">500.000-550.000</ion-select-option>                
+                <ion-select-option value="600000">550.000-600.000</ion-select-option>                 
+                <ion-select-option value="650000">600.000-650.000</ion-select-option>                
+                <ion-select-option value="700000">650.000-700.000</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_lena_comprada_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Leña comprada(Kg): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[169]" (ionChange)="consumo_lenaC()">
+                <ion-select-option value="50">0-50</ion-select-option>
+                <ion-select-option value="100">51-100</ion-select-option>
+                <ion-select-option value="150">101-150</ion-select-option>
+                <ion-select-option value="200">151-200</ion-select-option> 
+                <ion-select-option value="250">201-250</ion-select-option>
+                <ion-select-option value="300">251-300</ion-select-option>
+                <ion-select-option value="350">301-350</ion-select-option>
+                <ion-select-option value="400">351-400</ion-select-option> 
+                <ion-select-option value="450">401-450</ion-select-option>
+                <ion-select-option value="500">451-500</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_lena_comprada_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Leña comprada($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[180]" (ionChange)="costo_lenaC()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option> 
+                <ion-select-option value="150000">100.000-150.000</ion-select-option> 
+                <ion-select-option value="200000">150.000-200.000</ion-select-option>  
+                <ion-select-option value="250000">200.000-250.000</ion-select-option>
+                <ion-select-option value="300000">250.000-300.000</ion-select-option> 
+                <ion-select-option value="350000">300.000-350.000</ion-select-option> 
+                <ion-select-option value="400000">350.000-400.000</ion-select-option>                
+                <ion-select-option value="450000">400.000-450.000</ion-select-option> 
+                <ion-select-option value="500000">450.000-500.000</ion-select-option> 
+                <ion-select-option value="550000">500.000-550.000</ion-select-option>                
+                <ion-select-option value="600000">550.000-600.000</ion-select-option>                 
+                <ion-select-option value="650000">600.000-650.000</ion-select-option>                
+                <ion-select-option value="700000">650.000-700.000</ion-select-option>                               
+                <ion-select-option value="750000">700.000-750.000</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_lena_auto_apropiada_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Leña auto apropiada(Kg): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[170]" (ionChange)="consumo_lenaA()">
+                <ion-select-option value="50">0-50</ion-select-option>
+                <ion-select-option value="100">51-100</ion-select-option>
+                <ion-select-option value="150">101-150</ion-select-option>
+                <ion-select-option value="200">151-200</ion-select-option> 
+                <ion-select-option value="250">201-250</ion-select-option>
+                <ion-select-option value="300">251-300</ion-select-option>
+                <ion-select-option value="350">301-350</ion-select-option>
+                <ion-select-option value="400">351-400</ion-select-option> 
+                <ion-select-option value="450">401-450</ion-select-option>
+                <ion-select-option value="500">451-500</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <!--<ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_lena_auto_apropiada_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Leña auto apropiada($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="FE_cocinar_lena_auto_apropiada_costo_mes">
+                <ion-select-option value="50000">50000</ion-select-option>
+                <ion-select-option value="100000">100000</ion-select-option> 
+              </ion-select>
+            </ion-item>-->
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_residuos_agro_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Residuos del agro(Kg): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[171]" (ionChange)="consumo_residuosA()">
+                <ion-select-option value="50">0-50</ion-select-option>
+                <ion-select-option value="100">51-100</ion-select-option>
+                <ion-select-option value="150">101-150</ion-select-option>
+                <ion-select-option value="200">151-200</ion-select-option> 
+                <ion-select-option value="250">201-250</ion-select-option>
+                <ion-select-option value="300">251-300</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_residuos_agro_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de Residuos del agro($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[182]" (ionChange)="costo_residuosA()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_otro_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál? </ion-label>
+               <ion-input type=text [(ngModel)]="data[185]" placeholder="Escriba Aquí" (ionChange)="nombre_otro()"></ion-input>
+             </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_otro_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual</ion-label>
+              <ion-input type=text [(ngModel)]="data[172]" placeholder="Escriba Aquí" (ionChange)="consumo_otro()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_cocinar_otro_consumo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual</ion-label>
+              <ion-input type=text [(ngModel)]="data[183]" placeholder="Escriba Aquí" (ionChange)="costo_otro()"></ion-input>
+            </ion-item>            
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué fuente de energía o combustible utilizan principalmente para iluminarse y uso de electrodomésticos en la vivienda / institución? 
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Seleccione la(s) fuente(s) de energía o combustible: </ion-label>
+              <ion-select multiple="true" interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[211]" (ionChange)="select_iluminar()">
+                <ion-select-option value="Baterias">Baterias</ion-select-option>
+                <ion-select-option value="Planta eléctrica a gasolina">Planta eléctrica a gasolina</ion-select-option>
+                <ion-select-option value="Kerosene">Kerosene</ion-select-option>
+                <ion-select-option value="Petróleo">Petróleo</ion-select-option>
+                <ion-select-option value="Alcohol">Alcohol</ion-select-option>
+                <ion-select-option value="Planta eléctrica diesel">Planta eléctrica diesel</ion-select-option>
+                <ion-select-option value="Velas">Velas</ion-select-option>            
+                <ion-select-option value="Otro">Otro</ion-select-option>
+                <ion-select-option value="No usa iluminación">No usa iluminación</ion-select-option>  
+              </ion-select>
+            </ion-item>          
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_bateria_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Baterias(Unidad): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[186]" (ionChange)="consumo_baterias()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option>                
+                <ion-select-option value="25">21-25</ion-select-option>
+                <ion-select-option value="30">26-30</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_bateria_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de las Baterias($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[194]" (ionChange)="costo_baterias()">
+                <ion-select-option value="5000">0-5.000</ion-select-option>
+                <ion-select-option value="10000">6.000-10.000</ion-select-option>
+                </ion-select>            
+              </ion-item>
+              <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_bateria_select==true">
+                <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Baterias: </ion-label>
+                <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[202]" (ionChange)="localizacion_baterias()">
+                  <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+                </ion-select>
+              </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_planta_gasolina_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Planta eléctrica a gasolina(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[187]" (ionChange)="consumo_plantaG()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option>                
+                <ion-select-option value="25">21-25</ion-select-option>
+                <ion-select-option value="30">26-30</ion-select-option>                
+                <ion-select-option value="35">31-35</ion-select-option>
+                <ion-select-option value="40">36-40</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_planta_gasolina_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de la Planta eléctrica a gasolina($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[195]" (ionChange)="costo_plantaG()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option>
+                <ion-select-option value="150000">100.000-150.000</ion-select-option>
+                <ion-select-option value="200000">150.000-200.000</ion-select-option>
+                <ion-select-option value="250000">200.000-250.000</ion-select-option>
+                <ion-select-option value="300000">250.000-300.000</ion-select-option>
+                <ion-select-option value="350000">300.000-350.000</ion-select-option>
+                <ion-select-option value="400000">350.000-400.000</ion-select-option>
+                </ion-select> 
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_planta_gasolina_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Planta eléctrica a gasolina: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[203]">
+                <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_kerosene_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Kerosene(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[188]" (ionChange)="consumo_keroseneI()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_kerosene_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Kerosene($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[196]" (ionChange)="costo_keroseneI()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option>
+                <ion-select-option value="150000">100.000-150.000</ion-select-option>
+                <ion-select-option value="200000">150.000-200.000</ion-select-option>
+                <ion-select-option value="250000">200.000-240.000</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_kerosene_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Kerosene: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[204]" (ionChange)="localizacion_keroseneI()">
+                <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_petroleo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Petróleo(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[189]" (ionChange)="consumo_petroleoI()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_petroleo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Petróleo($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[197]" (ionChange)="costo_petroleoI()">
+                <ion-select-option value="5000">0-5.000</ion-select-option>
+                <ion-select-option value="10000">6.000-10.000</ion-select-option>
+                </ion-select> 
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_petroleo_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Petróleo: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[205]" (ionChange)="localizacion_petroleoI()">
+                <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_alcohol_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Alcohol(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[190]" (ionChenge)="consumo_alcoholI()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_alcohol_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual del Alcohol($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[198]" (ionChange)="costo_alcoholI()">
+                <ion-select-option value="0-50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option>
+                <ion-select-option value="150000">100.000-150.000</ion-select-option>
+                <ion-select-option value="200000">150.000-200.000</ion-select-option>
+                <ion-select-option value="250000">200.000-250.000</ion-select-option>
+                <ion-select-option value="300000">250.000-300.000</ion-select-option>
+                </ion-select> 
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_alcohol_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Alcohol: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[206]" (ionChange)="localizacion_alcoholI()">
+                <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_planta_diesel_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Planta eléctrica diesel(Galón): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[191]" (ionChange)="consumo_plantaD()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option>                
+                <ion-select-option value="25">21-25</ion-select-option>
+                <ion-select-option value="30">26-30</ion-select-option>                
+                <ion-select-option value="35">31-35</ion-select-option>
+                <ion-select-option value="40">36-40</ion-select-option>                
+                <ion-select-option value="45">41-45</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_planta_diesel_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo de la Planta eléctrica diesel($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[199]" (ionChange)="costo_plantaD()">
+                <ion-select-option value="50000">0-50.000</ion-select-option>
+                <ion-select-option value="100000">50.000-100.000</ion-select-option>
+                <ion-select-option value="150000">100.000-150.000</ion-select-option>
+                <ion-select-option value="200000">150.000-200.000</ion-select-option>
+                <ion-select-option value="250000">200.000-250.000</ion-select-option>
+                <ion-select-option value="300000">250.000-300.000</ion-select-option>
+                <ion-select-option value="350000">300.000-350.000</ion-select-option>
+                <ion-select-option value="400000">350.000-400.000</ion-select-option>
+                <ion-select-option value="450000">400.000-450.000</ion-select-option>
+                </ion-select> 
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_planta_diesel_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Planta eléctrica diesel: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[207]" (ionChange)="localizacion_plantaD()">
+                <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_velas_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual de Velas(Unidad): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[192]" (ionChange)="consumo_velas()">
+                <ion-select-option value="05">0-05</ion-select-option>
+                <ion-select-option value="10">06-10</ion-select-option>
+                <ion-select-option value="15">11-15</ion-select-option>
+                <ion-select-option value="20">16-20</ion-select-option>                
+                <ion-select-option value="25">21-25</ion-select-option>
+                <ion-select-option value="30">26-30</ion-select-option>                
+                <ion-select-option value="35">31-35</ion-select-option>
+                <ion-select-option value="40">36-40</ion-select-option>                
+                <ion-select-option value="45">41-45</ion-select-option>
+                <ion-select-option value="50">46-50</ion-select-option>                
+                <ion-select-option value="55">51-55</ion-select-option>
+                <ion-select-option value="60">56-60</ion-select-option>                
+                <ion-select-option value="65">61-65</ion-select-option>
+                <ion-select-option value="70">66-70</ion-select-option> 
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_velas_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual de las Velas($): </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[200]" (ionChange)="costo_velas()">
+                <ion-select-option value="5000">0-5.000</ion-select-option>
+                <ion-select-option value="10000">5.000-10.000</ion-select-option>
+                <ion-select-option value="15000">10.000-15.000</ion-select-option>
+                <ion-select-option value="20000">15.000-20.000</ion-select-option>
+                <ion-select-option value="25000">20.000-25.000</ion-select-option>
+                <ion-select-option value="30000">25.000-30.000</ion-select-option>
+                <ion-select-option value="35000">30.000-35.000</ion-select-option>
+                <ion-select-option value="40000">35.000-40.000</ion-select-option>
+                <ion-select-option value="45000">40.000-45.000</ion-select-option>
+                <ion-select-option value="50000">45.000-50.000</ion-select-option>
+                <ion-select-option value="55000">50.000-55.000</ion-select-option>
+                <ion-select-option value="60000">55.000-60.000</ion-select-option>
+                <ion-select-option value="65000">60.000-65.000</ion-select-option>
+                <ion-select-option value="70000">65.000-70.000</ion-select-option>
+                <ion-select-option value="75000">70.000-75.000</ion-select-option>
+                <ion-select-option value="80000">75.000-80.000</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_velas_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización Velas: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[208]" (ionChange)="localizacion_velas()">
+                <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_otro_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál? </ion-label>
+               <ion-input type=text [(ngModel)]="data[210]" placeholder="Escriba Aquí" (ionChange)="nombre_otroI()"></ion-input>
+             </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_otro_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Consumo mensual</ion-label>
+              <ion-input type=text [(ngModel)]="data[193]" placeholder="Escriba Aquí" (ionChange)="consumo_otroI()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_otro_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Costo mensual</ion-label>
+              <ion-input type=text [(ngModel)]="data[201]" placeholder="Escriba Aquí" (ionChange)="costo_otroI()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="FE_iluminar_otro_select==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Localización</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[209]" (ionChange)="localizacion_otro()">
+                <ion-select-option value="Cabecera municipal">Cabecera municipal</ion-select-option>
+                  <ion-select-option value="Vereda">Vereda</ion-select-option>
+                  <ion-select-option value="Domicilio">Domicilio</ion-select-option>
+              </ion-select>
+            </ion-item> 
+            <ion-item-divider>
+              <ion-label color=primary>
+                De contar la vivienda / institución con el servicio de energía eléctrica y con ello dejar de consumir los sustitutos energéticos antes mencionados para cocinar e iluminarse
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted estaría dispuesto a pagar una tarifa mensual? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[247]" (ionChange)="tarifa()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item> 
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[247]=='Si'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuánto estaría dispuesta (o) a pagar mensualmente por el servicio de energía? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[248]" (ionChange)="voluntad_pago()">
+                <ion-select-option value="10000">10.000</ion-select-option>
+                <ion-select-option value="20000">20.000</ion-select-option>
+                <ion-select-option value="30000">30.000</ion-select-option>
+                <ion-select-option value="40000">40.000</ion-select-option>
+                <ion-select-option value="50000">50.000</ion-select-option>                
+                <ion-select-option value="60000">60.000</ion-select-option>                
+                <ion-select-option value="70000">70.000</ion-select-option>
+                <ion-select-option value="80000">80.000</ion-select-option>
+              </ion-select>
+            </ion-item>        
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          1. MÓDULO ENERGÍA II
+        </ion-card-header>
+        <ion-card-content style="background: white!important">          
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+                <ion-label color=primary>
+                  ¿Cuáles de los siguientes equipos tiene o necesita? 
+                </ion-label>
+              </ion-item-divider>
+              <ion-grid>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Eléctricos y electrónicos 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                          Tiene 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                          Necesita
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Aire acondicionado 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[212]" (ionChange)="aire_acondicionadoT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[227]" (ionChange)="aire_acondicionadoN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Ventilador 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[213]" (ionChange)="ventiladorT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[228]" (ionChange)="ventiladorN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Radio 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[214]" (ionChange)="radioT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[229]" (ionChange)="radioN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Televisor 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[215]" (ionChange)="televisorT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[230]" (ionChange)="televisorN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          DVD- Blue ray 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[216]" (ionChange)="dvdT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[231]" (ionChange)="dvdN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Computador 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[217]" (ionChange)="computadorT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[232]" (ionChange)="computadorN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Impresora 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[218]" (ionChange)="impresoraT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[233]" (ionChange)="impresoraN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Celular 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[219]" (ionChange)="celularT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[234]" (ionChange)="celularN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Motobomba 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[220]" (ionChange)="motobombaT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[235]" (ionChange)="motobombaN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Licuadora
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[221]" (ionChange)="licuadoraT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[236]" (ionChange)="licuadoraN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Nevera
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[222]" (ionChange)="neveraT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[237]" (ionChange)="neveraN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Congelador
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[223]" (ionChange)="congeladorT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[238]" (ionChange)="congeladorN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                        Iluminación (bombillos)	
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[224]" (ionChange)="iluminacionT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[239]" (ionChange)="iluminacionN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col style="border: 0.2px solid gray">
+                          Equipos para emprendimientos 
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[225]" (ionChange)="equipo_EmprendimientoT()"></ion-checkbox>
+                      </ion-col> 
+                      <ion-col style="border: 0.2px solid gray">
+                        <ion-checkbox color="primary" [(ngModel)]="data[240]" (ionChange)="equipo_EmprendimientoN()"></ion-checkbox>
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          1. MÓDULO ENERGÍA III
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿En la vivienda / institución o localidad existen problemas de contaminación por uso de fuentes de energía? 
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Contaminación por ruido: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[242]" (ionChange)="ruido()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Contaminación por olores: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[243]" (ionChange)="olores()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Implementación proyecto
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Planea implementar algún proyecto productivo o emprendimiento? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[244]" (ionChange)="implementar_proyecto()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[244]=='Si'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál proyecto desea implementar?</ion-label>
+              <ion-input type=text [(ngModel)]="data[245]" placeholder="Escriba Aquí" (ionChange)="nombre_proyecto()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[244]=='Si'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Se requiere energía eléctrica para el desarrollo de su proyecto productivo que desea implementar?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[246]" (ionChange)="energia_proyecto()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>            
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          2. MÓDULO PREDIO
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos del Predio
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el uso del predio? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[74]" (ionChange)="uso_predio()">
+                <ion-select-option value="Residencial">Residencial</ion-select-option>
+                <ion-select-option value="Negocio">Negocio</ion-select-option>
+                <ion-select-option value="Mixto">Mixto: residencial y un modo de producción o negocio</ion-select-option>
+                <ion-select-option value="Institución">Institución</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el estrato de este predio? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[73]" (ionChange)="estrato()">
+                <ion-select-option value="Estrato 1" selected="true">Estrato 1</ion-select-option>
+                <ion-select-option value="Estrato 2">Estrato 2</ion-select-option>
+                <ion-select-option value="Estrato 3">Estrato 3</ion-select-option>
+                <ion-select-option value="Estrato 4">Estrato 4</ion-select-option>
+                <ion-select-option value="Estrato 5">Estrato 5</ion-select-option>
+                <ion-select-option value="Estrato 6">Estrato 6</ion-select-option>
+              </ion-select>
+            </ion-item>            
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          3. MÓDULO VIVIENDA
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el nombre de la comunidad étnica a la que pertenece?</ion-label>
+              <ion-input type=text [(ngModel)]="data[103]" placeholder="Escriba Aquí" (ionChange)="nombre_comunidad()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿La vivienda / institución se encuentra ubicada al interior de? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[104]" (ionChange)="territorialidad()">
+                <ion-select-option value="Zona rural">Zona rural</ion-select-option>
+                <ion-select-option value="Caserío">Caserío</ion-select-option>
+                <ion-select-option value="Resguardo indígena">Resguardo indígena</ion-select-option>
+                <ion-select-option value="Parcialidad o asentamiento indígena fuera del resguardo">Parcialidad o asentamiento indígena fuera del resguardo</ion-select-option>
+                <ion-select-option value="Territorio colectivo de comunidad negra">Territorio colectivo de comunidad negra</ion-select-option>
+                <ion-select-option value="Territorio de comunidad negra no titulada">Territorio de comunidad negra no titulada</ion-select-option>
+                <ion-select-option value="Territorio ancestral raizal del Archipiélago de San Andrés, Providencia y Santa Catalina">Territorio ancestral raizal del Archipiélago de San Andrés, Providencia y Santa Catalina</ion-select-option>
+                <ion-select-option value="Ranchería - Guajira">Ranchería - Guajira</ion-select-option>
+                <ion-select-option value="Territorio Palenquero de San Basilio">Territorio Palenquero de San Basilio</ion-select-option>
+                <ion-select-option value="Territorio Gitano - ROM">Territorio Gitano - ROM</ion-select-option>                
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el tipo de tenencia de esta vivienda / institución?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[105]" (ionChange)="tenencia()">
+                <ion-select-option value="Propia">Propia</ion-select-option>
+                <ion-select-option value="Arriendo">Arriendo</ion-select-option>
+                <ion-select-option value="Colectiva">Colectiva</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <p style="color: gray">
+                Teniendo en cuenta que hogar se refiere a “una persona o grupo de personas, parientes o no, que: ocupan la totalidad o parte de una vivienda; atiende necesidades básicas con cargo a un presupuesto común y generalmente comparten las comidas”.
+              </p>
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántos hogares residen en esta vivienda (familiares o no)?</ion-label>
+              <ion-input type=number [(ngModel)]="data[106]" placeholder="Escriba Aquí" (ionChange)="hogares()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuántas personas habitan de manera permanente en esta vivienda?</ion-label>
+              <ion-input type=number [(ngModel)]="data[107]" placeholder="Escriba Aquí" (ionChange)="personas()"></ion-input>
+            </ion-item> 
+            <ion-item-divider>
+              <ion-label color=primary>
+                Infraestructura predominante
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante de las paredes exteriores de esta vivienda / institución? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[108]" (ionChange)="paredes()">
+                <ion-select-option value="Bloque, ladrillo, piedra, madera pulida">Bloque, ladrillo, piedra, madera pulida</ion-select-option>
+                <ion-select-option value="Concreto">Concreto</ion-select-option>
+                <ion-select-option value="Tapia pisada, bahareque, adobe">Tapia pisada, bahareque, adobe</ion-select-option>
+                <ion-select-option value="Madera burda, tabla, tablón">Madera burda, tabla, tablón</ion-select-option>
+                <ion-select-option value="Material prefabricado">Material prefabricado</ion-select-option>
+                <ion-select-option value="Guadua, caña, esterilla, otros vegetales">Guadua, caña, esterilla, otros vegetales</ion-select-option>
+                <ion-select-option value="Materiales de desecho (zinc, tela, cartón, latas, plásticos, otros)">Materiales de desecho (zinc, tela, cartón, latas, plásticos, otros)</ion-select-option>
+                <ion-select-option value="No tiene paredes">No tiene paredes</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante del techo o cubierta de esta vivienda / institución? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[109]" (ionChange)="techo()">
+                <ion-select-option value="Paja, palma y otros vegetales">Paja, palma y otros vegetales</ion-select-option>
+                <ion-select-option value="Plancha de cemento, concreto y hormigón">Plancha de cemento, concreto y hormigón</ion-select-option>
+                <ion-select-option value="Tejas (barro, asbesto – cemento, metálica o lámina de zinc, plástica)">Tejas (barro, asbesto – cemento, metálica o lámina de zinc, plástica)</ion-select-option>
+                <ion-select-option value="Material de desecho (tela, cartón, latas, plástico, otros)">Material de desecho (tela, cartón, latas, plástico, otros)</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el material predominante de los pisos de esta vivienda / institución? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[110]" (ionChange)="pisos()">
+                <ion-select-option value="Alfombra o tapete de pared a pared">Alfombra o tapete de pared a pared</ion-select-option>
+                <ion-select-option value="Mármol, parqué, madera pulida y lacada">Mármol, parqué, madera pulida y lacada</ion-select-option>
+                <ion-select-option value="Baldosa, vinilo, tableta, ladrillo, laminado">Baldosa, vinilo, tableta, ladrillo, laminado</ion-select-option>
+                <ion-select-option value="Cemento, gravilla">Cemento, gravilla</ion-select-option>
+                <ion-select-option value="Madera burda, tabla, tablón, otro vegetal">Madera burda, tabla, tablón, otro vegetal</ion-select-option>
+                <ion-select-option value="Tierra, arena, barro">Tierra, arena, barro</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item-divider *ngIf="true">
+              <ion-label color=primary>
+                En los últimos 12 meses, la vivienda / institución ha sido afectada por:
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Inundaciones, desbordamientos, crecientes, arroyos: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[111]" (ionChange)="inundaciones()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Avalanchas, derrumbes o deslizamientos: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[112]" (ionChange)="avalanchas()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Hundimiento del terreno: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[113]" (ionChange)="hundimiento()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Ventarrones, tormentas, vendavales: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[114]" (ionChange)="tormentas()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>              
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Área de construcción
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el área aproximada de construcción?(m2) (frente x profundidad): </ion-label>
+               <ion-input type=text [(ngModel)]="data[115]" placeholder="Escriba Aquí" (ionChange)="area()"></ion-input>
+             </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          4. MÓDULO SERVICIOS PÚBLICOS DOMICILIARIOS
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                La vivienda / institución cuenta con servicios de:
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid (ionChange)="Ninguna()">
+              <ion-row>
+                  <ion-col style="border: 0.2px solid gray">
+                    La vivienda / institución cuenta con servicios de: 
+                  </ion-col> 
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                    Teléfono fijo propio 
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[255]" (ionChange)="telefono_fijoP()"></ion-checkbox>
+                </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                  Teléfono fijo comunitario
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[256]" (ionChange)="telefono_fijoC()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Celular
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[257]" (ionchange)="celular()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>            
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Internet comunitario
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[258]" (ionChange)="internetC()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>                        
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Internet propio
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[259]" (ionChange)="internetP()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>                        
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Ninguna de las anteriores
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[260]" (ionChange)="ninguna_anteriores()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+          </ion-grid>
+            <ion-item-divider>
+              <ion-label color=primary>
+                El agua que se utiliza en la vivienda / institución para preparar los alimentos, la obtienen principalmente de:
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Obtiene el agua de:   
+                </ion-col> 
+                </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Acueducto domiciliario público, comuna o vereda
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[261]" (ionChange)="acueducto_domiciliario()"></ion-checkbox>
+                </ion-col> 
+              </ion-row>
+              <ion-row *ngIf="data[261]==true">
+                <ion-col style="border: 0.2px solid gray">
+                  Medidor de agua
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[262]" (ionChange)="medidor()"></ion-checkbox>
+                </ion-col> 
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Pila con medidor de agua
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[263]" (ionChange)="pila()"></ion-checkbox>
+                </ion-col> 
+            </ion-row>            
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Aljibe
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[264]" (ionChange)="aljibe()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>                        
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Río, quebrada, manantial o nacimiento
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[265]" (ionChange)="rio()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>                        
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Pozo dentro de vivienda
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[266]" (ionChange)="pozo()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Agua lluvia
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[267]" (ionChange)="agua_lluvia()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Carrotanque
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[268]" (ionChange)="carrotanque()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Aguatero / agua embotellada / o en bolsa
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[269]" (ionChange)="aguatero()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+          </ion-grid>            
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué tipo de servicio sanitario (inodoro) tiene esta vivienda / institución?:
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid>
+              <ion-row>
+                  <ion-col style="border: 0.2px solid gray">
+                    Cuenta con servicio de:  
+                  </ion-col> 
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                    Inodoro conectado al alcantarillado 
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[270]"></ion-checkbox>
+                </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                  Inodoro conectado a pozo séptico
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[271]"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Inodoro sin conexión
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[272]"></ion-checkbox>
+              </ion-col> 
+            </ion-row>            
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Letrina
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[273]"></ion-checkbox>
+              </ion-col> 
+            </ion-row>                        
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                No tiene servicio sanitario
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[274]"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray" *ngIf="data[275]!=''">
+                Otro
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" value=true></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" >
+             <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
+              <ion-input type=text [(ngModel)]="data[275]" placeholder="Escriba Aquí" (ionChange)="otro_sanitario()"></ion-input>
+            </ion-item>
+          </ion-grid>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿La vivienda / institución cuenta con servicio de gas? 
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Servicio de gas: </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[276]" (ionChange)="gas()">
+                <ion-select-option value="Pipeta / Cilindro">Pipeta / Cilindro</ion-select-option>
+                <ion-select-option value="Gasoducto">Gasoducto</ion-select-option>
+                <ion-select-option value="No tiene servicio de gas">No tiene servicio de gas</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          </ion-card-content>
+        </ion-card>   
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL I
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">   
+          <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+            Avance al Siguiente Módulo.
+          </ion-item>       
+          <ion-list class="row justify-content-center" style="width: 100%!important;" *ngIf="data[284]=='Vivienda'">
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Quiénes conforman el hogar? 
+              </ion-label>
+            </ion-item-divider>
+            <ion-list class="row justify-content-center" style="width: 100%!important;">
+              <ion-item *ngIf="global.FamiliaGlobal.length < 10" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+                <!--<ion-button color=blue fill="outline" (click)="presentPopover('hi')">Añadir Integrante</ion-button>-->
+              </ion-item>
+              <ion-item-sliding *ngFor="let item of global.FamiliaGlobal;let i=index" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-item>
+                <ion-label text-wrap>
+                  <h2 style="color: gray">Parentesco: {{item.Parentesco}}</h2>
+                  <h2>Sexo/Género: {{item.Genero}}</h2>
+                  <p>Edad: {{item.Edad}}</p>
+                  <h2>Registro único de víctimas: {{item.Registro}}</h2>
+                  <h2>Escolaridad: {{item.Escolaridad}}</h2>
+                  <h2>Ocupación: {{item.Ocupacion}}</h2>
+                </ion-label>
+              </ion-item>
+              <!--<ion-item-options side="end">
+              <ion-item-option color="danger" (click)="eliminar(i)">Eliminar</ion-item-option>
+              </ion-item-options>-->
+            </ion-item-sliding>
+            </ion-list>    
+            <ion-item-divider>
+              <ion-label color=primary>
+                Información personal
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es la temporalidad o permanencia que usted tiene al interior de la vivienda?(vive ahí)</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[15]" (ionChange)="permanencia()">
+                <ion-select-option value="Permanente">Permanente</ion-select-option>
+                <ion-select-option value="Temporal">Temporal</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted contribuye con los ingresos de esta vivienda?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[18]" (ionChange)="ingresos()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">De acuerdo con su cultura, pueblo o rasgos físicos… es o se reconoce como:</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[20]" (ionChange)="reconocimiento()">
+                <ion-select-option value="Indígena">Indígena</ion-select-option>
+                <ion-select-option value="Gitano (a) (ROM)">Gitano (a) (ROM)</ion-select-option>
+                <ion-select-option value="Raizal de San Andrés, Providencia y Santa Catalina">Raizal de San Andrés, Providencia y Santa Catalina</ion-select-option>
+                <ion-select-option value="Palenquero (a) de San Basilio">Palenquero (a) de San Basilio</ion-select-option>
+                <ion-select-option value="Negro (a), mulato (a), afrodescendiente, afrocolombiano (a)">Negro (a), mulato (a), afrodescendiente, afrocolombiano (a)</ion-select-option>
+                <ion-select-option value="Ninguno de los anteriores">Ninguno de los anteriores</ion-select-option>
+              </ion-select>
+            </ion-item>
+            
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Habla usted la lengua nativa de su pueblo?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[22]" (ionChange)="lengua_nativa()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>                
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[22]=='Si'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál lengua nativa habla?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[23]" (ionChange)="nombre_lengua()">
+                <ion-select-option value="Kogui">Kogui</ion-select-option>
+                <ion-select-option value="Damaca">Damaca</ion-select-option>
+                <ion-select-option value="Kogui">Iku</ion-select-option>
+                <ion-select-option value="Damaca">Arhuaco</ion-select-option>
+                <ion-select-option value="Español">Español</ion-select-option>
+            </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Alguna persona de la vivienda presenta actualmente problemas de salud por el uso de la leña? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[24]" (ionChange)="problemas_lena()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Usted pertenece a alguna organización comunitaria? </ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[25]" (ionChange)="organizacion()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[25]=='Si'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿A cuál organización usted pertenece?</ion-label>
+              <ion-input type=text [(ngModel)]="data[26]" placeholder="Escriba Aquí" (ionChange)="nombre_organizacion()"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          5. MÓDULO SOCIODEMOGRÁFICO Y CULTURAL II
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+            Avance al Siguiente Módulo.
+          </ion-item>
+          <ion-item-divider *ngIf="data[284]=='Vivienda'">
+            <ion-label color=primary>
+              ¿En la vivienda, quienes realizan estas labores?  
+            </ion-label>
+          </ion-item-divider>
+          <ion-grid *ngIf="data[284]=='Vivienda'">
+            <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Labores 
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  Niñas
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  Niños
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  Mujeres
+                </ion-col>
+                <ion-col style="border: 0.2px solid gray">
+                  Hombres
+                </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Labores domésticas:  
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[27]" (ionChange)="labores_dom_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[37]" (ionChange)="labores_dom_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[47]" (ionChange)="labores_dom_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[57]" (ionChange)="labores_dom_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Asume en mayor medida pagos y compras de la canasta familiar:   
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[28]" (ionChange)="pagos_compras_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[38]" (ionChange)="pagos_compras_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[48]" (ionChange)="pagos_compras_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[58]" (ionChange)="pagos_compras_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Labores finca:   
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[29]" (ionChange)="labores_finca_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[39]" (ionChange)="labores_finca_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[49]" (ionChange)="labores_finca_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[59]" (ionChange)="labores_finca_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Transporte:    
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[30]" (ionChange)="transporte_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[40]" (ionChange)="transporte_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[50]" (ionChange)="transporte_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[60]" (ionChange)="transporte_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Administración finca:    
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[31]" (ionChange)="admon_finca_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[41]" (ionChange)="admon_finca_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[51]" (ionChange)="admon_finca_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[61]" (ionChange)="admon_finca_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Comercia: 
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[32]" (ionChange)="comercia_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[42]" (ionChange)="comercia_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[52]" (ionChange)="comercia_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[62]" (ionChange)="comercia_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Estudia: 
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[33]" (ionChange)="estudia_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[43]" (ionChange)="estudia_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[53]" (ionChange)="estudia_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[63]" (ionChange)="estudia_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Formación hijos: 
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[34]" (ionChange)="formacion_hijos_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[44]" (ionChange)="formacion_hijos_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[54]" (ionChange)="formacion_hijos_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[64]" (ionChange)="formacion_hijos_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Cuidado adultos mayores o enfermos: 
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[35]" (ionChange)="cuidado_mayores_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[45]" (ionChange)="cuidado_mayores_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[55]" (ionChange)="cuidado_mayores_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[65]" (ionChange)="cuidado_mayores_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Otras labores
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[36]" (ionChange)="otra_lab_ninas()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[46]" (ionChange)="otra_lab_ninos()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[56]" (ionChange)="otra_lab_mujeres()"></ion-checkbox>
+              </ion-col><ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[66]" (ionChange)="otra_lab_hombres()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          6. MÓDULO ECONOMÍA FAMIILIAR I
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+            Avance al Siguiente Módulo.
+          </ion-item>               
+            <ion-list class="row justify-content-center" style="width: 100%!important;" *ngIf="data[284]=='Vivienda'">
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Cuáles de las siguientes actividades son fuentes de ingreso en el hogar / familia?
+              </ion-label>
+            </ion-item-divider>
+            <ion-grid *ngIf="data[284]=='Vivienda'">
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Actividad   
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  Son fuentes de ingreso en el hogar 
+                </ion-col> 
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Ganadería, caza, silvicultura y pesca
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[122]" (ionChange)="ganaderia()"></ion-checkbox>
+                </ion-col> 
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Explotación de minas y canteras
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[123]" (ionChange)="explotacion_minas()"></ion-checkbox>
+                </ion-col> 
+              </ion-row>
+              <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Fabricación de artículos textiles y prendas de vestir
+                </ion-col> 
+                <ion-col style="border: 0.2px solid gray">
+                  <ion-checkbox color="primary" [(ngModel)]="data[124]" (ionChange)="articulos_textiles()"></ion-checkbox>
+                </ion-col> 
+            </ion-row>            
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Construcción
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[125]" (ionChange)="construccion()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>                        
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Venta de productos no fabricados en el hogar (tienda)
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[126]" (ionChange)="venta_no_fabricados()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>                        
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Elaboración o procesamiento de alimentos y bebidas
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[127]" (ionChange)="procesamiento_alimentos()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Servicio de restaurante, bar y similares
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[128]" (ionChange)="restaurante()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Alojamiento
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[129]" (ionChange)="alojamiento()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Arrendamientos
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[130]"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Servicios por actividades de reparación y mantenimiento
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[131]" (ionChange)="reparacion_mantenimiento()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Servicios artísticos, peluquería
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[132]" (ionChange)="peluqueria()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Elaboración de artesanías
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[133]" (ionChange)="elaboracion_artesanias()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Empleo de integrantes de la familia
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[134]" (ionChange)="empleo_familia()"></ion-checkbox>
+              </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Agricultura
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[135]" (ionChange)="agricultura()"></ion-checkbox>
+              </ion-col> 
+            </ion-row> 
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                Otro
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray" *ngIf="data[136]!=''">
+                <ion-checkbox color="primary" [(ngModel)]="data[138]"></ion-checkbox>
+              </ion-col> 
+            </ion-row>           
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál?: </ion-label>
+            <ion-input type=text [(ngModel)]="data[136]" placeholder="Escriba Aquí" (ionChange)="otra_actividad()"></ion-input>
+          </ion-grid>
+            <ion-item-divider *ngIf="data[284]=='Vivienda' && data[135]==true">
+              <ion-label color=primary>
+                ¿Qué cultivan?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 1: </ion-label>
+              <ion-input type=text [(ngModel)]="data[137]" placeholder="Escriba Aquí" (ionChange)="cultivo1()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 2: </ion-label>
+              <ion-input type=text [(ngModel)]="data[138]" placeholder="Escriba Aquí" (ionChange)="cultivo2()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 3: </ion-label>
+              <ion-input type=text [(ngModel)]="data[139]" placeholder="Escriba Aquí" (ionChange)="cultivo3()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda' && data[135]==true">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Cultivo 4: </ion-label>
+              <ion-input type=text [(ngModel)]="data[140]" placeholder="Escriba Aquí" (ionChange)="cultivo4()"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+          <ion-card-header color="blue" style="text-align: center;font-size:large">
+            6. MÓDULO ECONOMÍA FAMIILIAR II
+          </ion-card-header>
+          <ion-card-content style="background: white!important;">
+            <ion-item *ngIf="data[284]!='Vivienda'" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              Avance al Siguiente Módulo.
+            </ion-item> 
+            <ion-list class="row justify-content-left">
+            <ion-item-divider *ngIf="data[284]=='Vivienda'">
+              <ion-label color=primary>
+                Teniendo en cuenta el nivel de gastos en esta vivienda, podría decirme cuanto es el gasto mes en:
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Arriendo o cuota: </ion-label>
+              <ion-input type=number [(ngModel)]="data[141]" placeholder="Escriba Aquí" (ionChange)="gasto_arriendo()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Acueducto: </ion-label>
+              <ion-input type=number [(ngModel)]="data[142]" placeholder="Escriba Aquí" (ionChange)="gasto_acueducto()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Alcantarillado: </ion-label>
+              <ion-input type=number [(ngModel)]="data[143]" placeholder="Escriba Aquí" (ionChange)="gasto_alcantarillado()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Gas: </ion-label>
+              <ion-input type=number [(ngModel)]="data[144]" placeholder="Escriba Aquí" (ionChange)="gasto_gas()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Salud: </ion-label>
+              <ion-input type=number [(ngModel)]="data[145]" placeholder="Escriba Aquí" (ionChange)="gasto_salud()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Transporte: </ion-label>
+              <ion-input type=number [(ngModel)]="data[146]" placeholder="Escriba Aquí" (ionChange)="gasto_transporte()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Educación: </ion-label>
+              <ion-input type=number [(ngModel)]="data[147]" placeholder="Escriba Aquí" (ionChange)="gasto_educacion()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Alimentación: </ion-label>
+              <ion-input type=number [(ngModel)]="data[148]" placeholder="Escriba Aquí" (ionChange)="gasto_alimentacion()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Recreación: </ion-label>
+              <ion-input type=number [(ngModel)]="data[149]" placeholder="Escriba Aquí" (ionChange)="gasto_recreacion()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Vestuario: </ion-label>
+              <ion-input type=number [(ngModel)]="data[150]" placeholder="Escriba Aquí" (ionChange)="gasto_vestuario()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Energía eléctrica: </ion-label>
+              <ion-input type=number [(ngModel)]="data[151]" placeholder="Escriba Aquí" (ionChange)="gasto_energia()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12" *ngIf="data[284]=='Vivienda'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál?: </ion-label>
+              <ion-input type=text [(ngModel)]="data[154]" placeholder="Escriba Aquí" (ionChange)="otro_nombre()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6" *ngIf="data[284]=='Vivienda' && data[154]!='-'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Gasto mensual (otro): </ion-label>
+              <ion-input type=number [(ngModel)]="data[152]" placeholder="Escriba Aquí" (ionChange)="otro_gasto()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Gasto total: </ion-label>
+              <ion-input type=number [(ngModel)]="total" readonly=true></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          7. MÓDULO USO RACIONAL DE LA ENERGÍA - URE
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cree usted que usa adecuadamente la energía eléctrica?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[310]" (ionChange)="uso_adecuado()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+                <ion-select-option value="No aplica">No aplica</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Ha escuchado sobre el uso racional de la energía eléctrica?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[311]" (ionChange)="escuchado()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Desearía conocer sobre las formas de generación y uso de energía eléctrica?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[312]" (ionChange)="conocer()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuáles temas le gustaría conocer sobre las formas de generación y el uso de energía eléctrica?</ion-label>
+              <ion-input type=text [(ngModel)]="data[313]" placeholder="Escriba Aquí" (ionChange)="temas()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿A usted le gustaría hacer parte de un grupo de personas que comparten saberes sobre las formas de generación y el uso de energía eléctrica?</ion-label>
+              <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[314]" (ionChange)="compartir()">
+                <ion-select-option value="Si">Si</ion-select-option>
+                <ion-select-option value="No">No</ion-select-option>
+              </ion-select>
+            </ion-item>            
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO I
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos del posible beneficiario / usuario
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Nombre y apellido del beneficario: </ion-label>
+              <ion-input type=text [(ngModel)]="data[81]" placeholder="Escriba Aquí" (ionChange)="beneficiario()"></ion-input>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos de quien contestó la encuesta (Encuestado)
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Nombre y apellido del encuestado: </ion-label>
+              <ion-input type=text [(ngModel)]="data[82]" placeholder="Escriba Aquí" (ionChange)="nombre_encuestado()"></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <p style="color: gray">
+                Indique un número de contacto puede ser propio o comunitario.
+              </p>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Teléfono celular: </ion-label>
+              <ion-input type=number [(ngModel)]="data[83]" placeholder="Escriba Aquí" (ionChange)="celular_encuestado()"></ion-input>
+            </ion-item>
+          <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Teléfono fijo: </ion-label>
+            <ion-input type=number [(ngModel)]="data[84]" placeholder="Escriba Aquí" (ionChange)="fijo_encuestado()"></ion-input>
+          </ion-item>
+          <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Cédula de ciudadanía: </ion-label>
+            <ion-input type=number [(ngModel)]="data[85]" placeholder="Escriba Aquí" (ionChange)="cedula_encuestado()"></ion-input>
+          </ion-item>
+          <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Correo electrónico: </ion-label>
+            <ion-input type=text [(ngModel)]="data[86]" placeholder="Escriba Aquí" (ionChange)="correo_encuestado()"></ion-input>
+          </ion-item>
+          <ion-item-divider>
+            <ion-label color=primary>
+              Consentimiento y aprobación del proyecto
+            </ion-label>
+          </ion-item-divider>          
+          <ion-grid>
+            <ion-row>
+                <ion-col style="border: 0.2px solid gray">
+                  Con mi firma doy constancia que:  
+                </ion-col> 
+            </ion-row>
+            <ion-row>
+              <ion-col style="border: 0.2px solid gray">
+                1. Acepto el uso de mis datos para fines estadísticos del proyecto.
+              </ion-col> 
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="data[87]"></ion-checkbox>
+              </ion-col> 
+          </ion-row>
+          <ion-row>
+            <ion-col style="border: 0.2px solid gray">
+              2. Me han informado y explicado en qué consiste la posible solución energética.
+            </ion-col> 
+            <ion-col style="border: 0.2px solid gray">
+              <ion-checkbox color="primary" [(ngModel)]="data[88]"></ion-checkbox>
+            </ion-col> 
+          </ion-row>
+          <ion-row>
+            <ion-col style="border: 0.2px solid gray">
+              3. Me han informado y explicado sus beneficios y limitaciones.
+            </ion-col> 
+            <ion-col style="border: 0.2px solid gray">
+              <ion-checkbox color="primary" [(ngModel)]="data[89]"></ion-checkbox>
+            </ion-col> 
+          </ion-row>            
+          <ion-row>
+            <ion-col style="border: 0.2px solid gray">
+              4. Apruebo y autorizo la formulación-estructuración y la implementación del proyecto en nuestro territorio/vivienda/institución/zona, en caso de ser viable, ya que no causará impactos significativos al entorno y a nuestra cultura.
+            </ion-col> 
+            <ion-col style="border: 0.2px solid gray">
+              <ion-checkbox color="primary" [(ngModel)]="data[90]"></ion-checkbox>
+            </ion-col> 
+          </ion-row>                        
+          <ion-row>
+            <ion-col style="border: 0.2px solid gray">
+              5. Permito y autorizo la toma y uso de fotografía y videos por parte de enterritoriobk.
+            </ion-col> 
+            <ion-col style="border: 0.2px solid gray">
+              <ion-checkbox color="primary" [(ngModel)]="data[91]"></ion-checkbox>
+            </ion-col> 
+          </ion-row> 
+        </ion-grid> 
+        <ion-item-divider>
+          <p style="color: gray">
+            Por lo tanto, estoy enterado y comprendo que es importante:            
+            •	Pagar mensualmente por dicha solución, en caso de ser viable su implementación
+            •	Asistir y participar en la socialización, formación y capacitación sobre el Uso Racional de Energía - URE.
+          </p>
+        </ion-item-divider>              
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card style="width: 100%">
+      <ion-card-header color="blue" style="text-align: center;font-size:large">
+        8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO II
+      </ion-card-header>
+      <ion-card-content style="background: white!important;">
+        <ion-list class="row justify-content-left">
+          <ion-item-divider>
+              <ion-label color=primary>
+                Firma:
+              </ion-label>
+            </ion-item-divider>
+            <ion-list style="padding: 10px" *ngIf="ImagesF.length!=0" class="row justify-content-center">
+              <ion-img class="col-6" *ngFor="let item of ImagesF" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/{{item[1]}}.jpg' style="margin-top: 10px;"></ion-img>
+            </ion-list> 
+                <div *ngIf="ImagesF.length==0" class="row justify-content-center">
+                  <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+                </div>  
+          <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Cédula de ciudadanía: </ion-label>
+            <ion-input type=number [(ngModel)]="data[93]" placeholder="Escriba Aquí" (ionChange)="cedulaF()"></ion-input>
+          </ion-item>         
+          </ion-list>          
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          8. MÓDULO CONSENTIMIENTO Y APROBACIÓN DEL PROYECTO III
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos Encuestador
+              </ion-label>
+            </ion-item-divider>            
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Encuestador: ¿Cuál fue la reacción del encuestado ante las preguntas realizadas? </ion-label>
+            <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[95]" (ionChange)="reaccion_preguntas()">
+              <ion-select-option value="Propositivo">Propositivo</ion-select-option>
+              <ion-select-option value="Reactivo">Reactivo</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+            <ion-label color="blue" position="floating" class="ion-text-wrap">Encuestador: ¿Cuál fue la reacción del encuestado ante el proyecto?</ion-label>
+            <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="data[96]" (ionChange)="reaccion_proyecto()">
+              <ion-select-option value="Desconfiado">Desconfiado</ion-select-option>
+              <ion-select-option value="Motivado">Motivado</ion-select-option>
+              <ion-select-option value="Indiferente">Indiferente</ion-select-option>
+            </ion-select>
+          </ion-item>  
+          <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Comentarios: </ion-label>
+              <ion-input type=text [(ngModel)]="data[94]" placeholder="Escriba Aquí" (ionChange)="comentarios_encuestador()"></ion-input>
+            </ion-item>  
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    <ion-card>
+    <ion-card-header color="blue" style="text-align: center;font-size:large">
+          9. MÓDULO FOTOGRAFIAS
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list style="padding: 10px" *ngIf="Images.length!=0" class="row justify-content-center">
+            <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_enc/{{item[0]}}.jpg' style="margin-top: 10px;"></ion-img>
+          </ion-list> 
+              <div *ngIf="Images.length==0" class="row justify-content-center">
+                <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+              </div>
+          <div class="row justify-content-center">
+            <ion-button color=blue (click)="Fin()">Terminar Encuesta</ion-button>
+          </div>
+          <div class="row justify-content-center">
+            <ion-button color=blue (click)="Alert()">Terminar Encuesta y Enviar Alerta</ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>      
+    </div>
+  </div>
+</ion-content>
