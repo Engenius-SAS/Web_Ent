@@ -9,6 +9,7 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
 import { File } from '@ionic-native/file/ngx';
 import * as moment from 'moment';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -45,6 +46,7 @@ export class HomePage implements OnInit {
               public global: GlobalService,
               public alert: AlertService,
               private file: File,
+              private spinner: NgxSpinnerService,
               private androidPermissions: AndroidPermissions) {
     this.statusbar.backgroundColorByHexString('003566');
     this.global.CheckInternet(() => {
@@ -152,8 +154,9 @@ export class HomePage implements OnInit {
     }, 500);
   }
   RevisionA() {
-    this.loading.LoadingNormal('Cargando...', 3);
+    this.spinner.show();
     setTimeout(() => {
+      this.spinner.hide();
       this.navCtrl.navigateRoot('/listalerta');
     }, 500);
   }

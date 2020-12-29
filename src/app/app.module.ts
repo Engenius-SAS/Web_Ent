@@ -29,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [NgxPaginationModule, FilterPipeModule, BrowserModule, IonicModule.forRoot(), BrowserAnimationsModule,
-    AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(), SignaturePadModule, NgbModule,  NgxSpinnerModule,
+    AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(), SignaturePadModule, NgbModule,  
+    NgxSpinnerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDDNunlrlRApoo4bo5L8V5fMcBCTjZDbK8'
     })],

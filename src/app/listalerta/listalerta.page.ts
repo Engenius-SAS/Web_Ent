@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController, PopoverController } from '@ionic/angular';
-import { LoadingService } from '../loading.service';
 import { GlobalService } from '../global.service';
 import { AlertService } from '../alert.service';
 import * as jsPDF from 'jspdfmifeheros';
@@ -30,11 +29,11 @@ export class ListalertaPage implements OnInit {
   users = new Array();
   searchQuery;
   Alertt;
+  flag=false;
   Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
   constructor(
     public menuCtrl: MenuController,
     public navCtrl: NavController,
-    public loading: LoadingService,
     /* private excelService: ExcelService, */
     public global: GlobalService,
     private spinner: NgxSpinnerService, 
@@ -57,7 +56,8 @@ export class ListalertaPage implements OnInit {
         this.global.consultar(pdata10, (err10, response10) => {
           console.log('ALERTAS EXCEL', response10);
           this.Alertt = response10;
-           this.spinner.hide();
+          this.flag = true;
+          this.spinner.hide();
         });
       });
     });
@@ -66,18 +66,18 @@ export class ListalertaPage implements OnInit {
   }
 
   Buscar() {
+    this.spinner.show(); 
     if(this.usuario == '0') {
       this.Pines = new Array();
-      //this.loading.LoadingNormal('Consultando');
-       this.spinner.show(); 
       setTimeout(() => {
         const pdata8 = {option: 'MapaA', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
-          this.spinner.hide(); 
           this.Pines = response8;
         });
-      }, 300);
+        this.spinner.hide();
+      }, 1500);
+      this.spinner.hide(); 
     } else {
       this.Pines = new Array();
        this.spinner.show();
@@ -85,17 +85,21 @@ export class ListalertaPage implements OnInit {
         const pdata8 = {option: 'MapaA2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
-           this.spinner.hide(); 
           this.Pines = response8;
         });
-      }, 300);
+        this.spinner.hide();
+      }, 1500);
     }
   }
 
   RevisionA(item){
-    console.log('REVISIÓN');
+    this.spinner.show();
+    setTimeout(() => {
     this.global.Id_busqueda = item[1];
     this.navCtrl.navigateRoot('/revision-alerta');
+    this.spinner.hide();
+    }, 2000);
+
   }
 
   getItems(ev: any) {

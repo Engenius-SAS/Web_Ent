@@ -54,7 +54,7 @@
     </tbody>
 </table>
 </ion-card>
-<div class="noView"  *ngIf="Pines.length == 0">
+<div class="noView"  *ngIf="Pines.length == 0 && this.flag == true">
   <p>No hay alertas para mostrar</p>
 </div>
 </ion-content>
@@ -63,4 +63,4 @@
     <ion-button color="success" (click)="exportAsXLSX()">Exportar a Excel</ion-button>
   </div>
 </ion-footer>
-<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true" [zIndex] = "1999999"><p style="color: white" > Cargando... </p></ngx-spinner>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true" [zIndex]="1999999"><p style="color: white" > Cargando... </p></ngx-spinner>

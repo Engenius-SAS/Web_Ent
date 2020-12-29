@@ -27,7 +27,7 @@ FamiliaGlobal;
 Id_busqueda;
 parametroPopover;
 data1 = new Array();
-  constructor() { }
+  constructor( ) { }
  
   CheckInternet(respuesta) {
     const pdata1 = {option: 'inter'};
@@ -54,7 +54,8 @@ data1 = new Array();
   }
 
   consultar(datos, respuesta) {
-    console.log('Consultando');
+    setTimeout(() => {
+      console.log('Consultando');
     ajax({data: datos,	cache: false,	dataType: 'json',	type:  'post',
     // url: 'https://modulovisitas.explorandoando.co/PHP/DatabaseUIB.php',
     url: 'https://www.php.engenius.com.co/DatabaseE.php',
@@ -69,5 +70,6 @@ data1 = new Array();
     }).catch((err) => {
       respuesta(err);
     });
+    }, 2000);
   }
 }
