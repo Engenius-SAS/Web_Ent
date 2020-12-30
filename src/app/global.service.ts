@@ -33,7 +33,7 @@ data1 = new Array();
     const pdata1 = {option: 'inter'};
     console.log(pdata1);
     ajax({data: pdata1,	cache: false,	dataType: 'json',	type:  'post',
-    url: 'https://www.php.engenius.com.co/DatabaseUIB.php',
+    url: 'https://www.php.engenius.com.co/DatabaseUIBE.php',
     success( data ) {
     console.log('Datos Recibidos:', data);
     },

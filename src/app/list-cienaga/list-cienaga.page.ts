@@ -184,14 +184,14 @@ export class ListCienagaPage implements OnInit {
         }, 300);
       }*/
   
-      /*async VerFotos(item) {
+     async VerFotos(item) {/*
       this.global.Id_busqueda = item[0];
       const popover = await this.popoverController.create({
         component: ImageviewComponent,
         translucent: true
       });
-      return await popover.present();
-    }*/
+      return await popover.present();*/
+    }
   
     Descargar(item) {
     try {
