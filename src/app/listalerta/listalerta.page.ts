@@ -5,8 +5,8 @@ import { AlertService } from '../alert.service';
 import * as jsPDF from 'jspdfmifeheros';
 import 'jspdf-autotable-mifeheros';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ExcelService } from '../excel.service';
 import { ImagestviewComponent } from '../imagestview/imagestview.component';
-/* import { ExcelService } from '../excel.service'; */
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
@@ -34,7 +34,7 @@ export class ListalertaPage implements OnInit {
   constructor(
     public menuCtrl: MenuController,
     public navCtrl: NavController,
-    /* private excelService: ExcelService, */
+    private excelService: ExcelService,
     public global: GlobalService,
     private spinner: NgxSpinnerService, 
     public alert: AlertService,
@@ -119,12 +119,13 @@ export class ListalertaPage implements OnInit {
 
   exportAsXLSX() {
     this.spinner.show(); 
+    console.log('Excel', this.Alertt);
     this.Toexcel =  [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
     for (let p = 0; p < this.Alertt.length; p++) {
       this.Toexcel.push(this.Alertt[p]);
     }
-    setTimeout(() => {/* 
-      this.excelService.exportAsExcelFile2(this.Toexcel, 'Alertas', 'Alertas Registradas'); */
+    setTimeout(() => {
+      this.excelService.exportAsExcelFile2(this.Toexcel, 'Alertas', 'Alertas Registradas');
       setTimeout(() => {
         this.Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
          this.spinner.hide(); 
