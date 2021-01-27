@@ -1,66 +1,66 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-button (click)="this.navCtrl.navigateRoot('/home');">
-        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
-      </ion-button>
-    </ion-buttons>
-    <ion-title style="text-align: center" class="ion-text-uppercase">
-      Listado de Alertas
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="ngOnInit()">
-        <ion-icon slot="start" name="reload-circle-outline" color="success"></ion-icon> Actualizar
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-  <ion-item>
-    <ion-label>Encuestador: </ion-label>
-    <ion-select [(ngModel)]="usuario" (ionChange)="Buscar()">
-      <ion-select-option value="0" selected>Todos</ion-select-option>
-      <ion-select-option *ngFor="let item of Encuestadores" value={{item[0]}}>{{item[1]}}</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar" (ionInput)="getItems($event)" animated="true" color="secondary"></ion-searchbar>
-</ion-header>
 
-<ion-content>
-<ion-card *ngIf="Pines.length != 0">
-  <table class="table table-responsive-sm table-bordered table-striped text-center">
-    <thead>
-        <tr>
-            <th>N°</th>
-            <th>Consecutivo</th>
-            <th>Descripción</th>
-            <th>Fecha</th>
-            <th>Telefono Encuestado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of Pines; let i = index">
-            <td>{{i + 1}}</td>
-            <td>{{item[1]}}</td>
-            <td>{{item[4]}}</td>
-            <td>{{item[3]}}</td>
-            <td>{{item[8]}}</td>
-            <td>
-              <ion-button color="warning" (click)="RevisionA(item)">
-                <ion-icon slot="icon-only" name="clipboard-outline"></ion-icon>
-              </ion-button>
-              
-            </td>
-        </tr>
-    </tbody>
-</table>
-</ion-card>
-<div class="noView"  *ngIf="Pines.length == 0 && this.flag == true">
-  <p>No hay alertas para mostrar</p>
-</div>
-</ion-content>
-<ion-footer *ngIf = "Alertt != undefined">
-  <div class="row justify-content-center" style="padding: 0% 5%">
-    <ion-button color="success" (click)="exportAsXLSX()">Exportar a Excel</ion-button>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="this.navCtrl.navigateRoot('/home');">
+          <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+        </ion-button>
+      </ion-buttons>
+      <ion-title style="text-align: center" class="ion-text-uppercase">
+        Listado de Alertas
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="ngOnInit()">
+          <ion-icon slot="start" name="reload-circle-outline" color="success"></ion-icon> Actualizar
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-item>
+      <ion-label>Encuestador: </ion-label>
+      <ion-select [(ngModel)]="usuario" (ionChange)="Buscar()">
+        <ion-select-option value="0" selected>Todos</ion-select-option>
+        <ion-select-option *ngFor="let item of Encuestadores" value={{item[0]}}>{{item[1]}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar" (ionInput)="getItems($event)" animated="true" color="secondary"></ion-searchbar>
+  </ion-header>
+  <ion-content>
+  <ion-card *ngIf="Pines.length != 0">
+    <table class="table table-responsive-sm table-bordered table-striped text-center">
+      <thead>
+          <tr>
+              <th>N°</th>
+              <th>Consecutivo</th>
+              <th>Descripción</th>
+              <th>Fecha</th>
+              <th>Telefono Encuestado</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of Pines; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{item[1]}}</td>
+              <td>{{item[4]}}</td>
+              <td>{{item[3]}}</td>
+              <td>{{item[8]}}</td>
+              <td>
+                <ion-button color="warning" (click)="RevisionA(item)">
+                  <ion-icon slot="icon-only" name="clipboard-outline"></ion-icon>
+                </ion-button>
+                
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </ion-card>
+  <div class="noView"  *ngIf="Pines.length == 0 && this.flag == true">
+    <p>No hay alertas para mostrar</p>
   </div>
-</ion-footer>
+  </ion-content>
+  <ion-footer *ngIf="Alertt != undefined">
+    <div class="row justify-content-center" style="padding: 0% 5%">
+      <ion-button color="success" (click)="exportAsXLSX()">Exportar a Excel</ion-button>
+    </div>
+  </ion-footer>
 <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true" [zIndex]="1999999"><p style="color: white" > Cargando... </p></ngx-spinner>

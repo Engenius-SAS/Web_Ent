@@ -88,8 +88,6 @@ export class HomePage implements OnInit {
       err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
     );
     this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
-    
-    
     this.spinner.hide();
     }, 500);
     
