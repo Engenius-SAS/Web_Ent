@@ -19,6 +19,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class HomePage implements OnInit {
   fileTransfer: FileTransferObject = this.transfer.create();
   Predio;
+  nombreProyecto;
   Consentimiento;
   Porcentaje;
   MTransporte;
@@ -54,8 +55,24 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
+    this.spinner.show();
     console.log('USUARIO INFO', this.global.UserData);
-    this.menuCtrl.enable(true);
+    if(this.global.UserData == undefined || this.global.UserData == [] || this.global.UserData == null){
+      this.loading.LoadingNormal('Cargando...', 3);
+    setTimeout(() => {
+      this.navCtrl.navigateRoot('/login');
+    }, 500);
+    }else{
+    for (let i = 0; i < this.global.Proyectos.length; i++) {
+       if(this.global.Id_Proyecto == this.global.Proyectos[i].Id_Proyecto){
+        this.nombreProyecto = this.global.Proyectos[i].nombre;
+      }else{
+        continue;
+      }  
+    }
+    setTimeout(() => {
+      this.menuCtrl.enable(true);
+      
     this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE).then(
       result => console.log('Has permission?', result.hasPermission),
       err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.WRITE_EXTERNAL_STORAGE)
@@ -71,6 +88,11 @@ export class HomePage implements OnInit {
       err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
     );
     this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
+    
+    
+    this.spinner.hide();
+    }, 500);
+    
     /*
     this.loading.LoadingNormal('Cargando Información...');
     setTimeout(() => {
@@ -132,6 +154,7 @@ export class HomePage implements OnInit {
         });
       });
     }, 200);*/
+  }
   }
 
   Registrar() {
