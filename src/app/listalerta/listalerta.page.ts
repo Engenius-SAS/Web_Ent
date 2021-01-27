@@ -41,7 +41,7 @@ export class ListalertaPage implements OnInit {
     public popoverController: PopoverController) { }
 
   ngOnInit() {
-   this.spinner.show();
+   this.mostrarSpinner();
     if( this.global.Id_Proyecto == undefined){
       this.navCtrl.navigateRoot('/home');
     }else{
@@ -60,7 +60,7 @@ export class ListalertaPage implements OnInit {
               console.log('ALERTAS EXCEL', response10);
               this.Alertt = response10;
               this.flag = true;
-              this.spinner.hide();
+              
             });
           });
         });
@@ -69,7 +69,6 @@ export class ListalertaPage implements OnInit {
   }
 
   Buscar() {
-    this.spinner.show(); 
     if(this.usuario == '0') {
       this.Pines = new Array();
       setTimeout(() => {
@@ -78,29 +77,30 @@ export class ListalertaPage implements OnInit {
           console.log('PINES MAPA', response8);
           this.Pines = response8;
         });
-        this.spinner.hide();
       }, 1500);
-      this.spinner.hide(); 
     } else {
       this.Pines = new Array();
-       this.spinner.show();
       setTimeout(() => {
         const pdata8 = {option: 'MapaA2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
           this.Pines = response8;
         });
-        this.spinner.hide();
       }, 1500);
     }
   }
 
-  RevisionA(item){
+  mostrarSpinner(){
     this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 500);
+  }
+
+  RevisionA(item){
     setTimeout(() => {
     this.global.Id_busqueda = item[1];
     this.navCtrl.navigateRoot('/revision-alerta');
-    this.spinner.hide();
     }, 2000);
 
   }
@@ -121,7 +121,6 @@ export class ListalertaPage implements OnInit {
 
 
   exportAsXLSX() {
-    this.spinner.show(); 
     console.log('Excel', this.Alertt);
     this.Toexcel =  [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
     for (let p = 0; p < this.Alertt.length; p++) {
@@ -131,7 +130,7 @@ export class ListalertaPage implements OnInit {
       this.excelService.exportAsExcelFile2(this.Toexcel, 'Alertas', 'Alertas Registradas');
       setTimeout(() => {
         this.Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
-         this.spinner.hide(); 
+        
       }, 1000);
     }, 1500);
   }
