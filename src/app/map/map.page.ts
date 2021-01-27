@@ -25,7 +25,7 @@ export class MapPage implements OnInit {
               public alert: AlertService) { }
 
   ngOnInit() {
-    const pdata8 = {option: 'Mapa'};
+    const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
     this.global.consultar(pdata8, (err8, response8) => {
       console.log('PINES MAPA', response8);
       this.Pines = response8;

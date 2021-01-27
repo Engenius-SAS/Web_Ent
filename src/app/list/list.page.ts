@@ -57,7 +57,7 @@ municipio;
     this.Pines = new Array();
     this.loading.LoadingNormal('Consultando');
     setTimeout(() => {
-      const pdata8 = {option: 'Mapa'};
+      const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata8, (err8, response8) => {
         console.log('PINES MAPA', response8);
         this.loading.HideLoading();
@@ -124,7 +124,7 @@ Eliminar(item) {
   }
 
 cargarEnc() {
-  const pdata9 = {option: 'encu'};
+  const pdata9 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
   this.global.consultar(pdata9, (err9, response9) => {
     console.log('ENCUESTADORES', response9);
     this.Encuestadores = response9;
@@ -136,7 +136,7 @@ cargarEnc() {
       this.Pines = new Array();
       this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
-      const pdata8 = {option: 'Mapa'};
+      const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata8, (err8, response8) => {
         console.log('PINES MAPA', response8);
         this.loading.HideLoading();
@@ -147,7 +147,7 @@ cargarEnc() {
       this.Pines = new Array();
       this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
-        const pdata8 = {option: 'Mapa2', userpro: this.usuario};
+        const pdata8 = {option: 'Mapa2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
         console.log(pdata8);
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);

@@ -23,7 +23,7 @@ export class SeguimientoPage implements OnInit {
     public popoverController: PopoverController) { }
 
   ngOnInit() {
-    const pdata9 = {option: 'encuestadores'};
+    const pdata9 = {option: 'encuestadores', Id_Proyecto: this.global.Id_Proyecto};
     this.global.consultar(pdata9, (err9, response9) => {
       console.log('ENCUESTADORES', response9);
       this.Encuestadores = response9;

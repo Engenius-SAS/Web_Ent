@@ -43,16 +43,16 @@ export class ListalertaPage implements OnInit {
   ngOnInit() {
    this.spinner.show();
    setTimeout(() => {
-    const pdata8 = {option: 'encu'};
+    const pdata8 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
     this.global.consultar(pdata8, (err8, response8) => {
       console.log('ENCUESTADORES', response8);
       this.Encuestadores = response8;
-      const pdata9 = {option: 'MapaA'};
+      const pdata9 = {option: 'MapaA', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata9, (err9, response9) => {
         console.log('ALERTAS', response9);
         this.Pines = this.users = response9;
         console.log('id EXCEL', this.global.Id_Proyecto);
-        const pdata10 = {option: 'excela', usuario: this.global.Id_Proyecto};
+        const pdata10 = {option: 'excela', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata10, (err10, response10) => {
           console.log('ALERTAS EXCEL', response10);
           this.Alertt = response10;

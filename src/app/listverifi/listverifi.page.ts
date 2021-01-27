@@ -29,7 +29,7 @@ export class ListverifiPage implements OnInit {
       public popoverController: PopoverController) { }
   
     ngOnInit() {
-      const pdata9 = {option: 'encu'};
+      const pdata9 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata9, (err9, response9) => {
         console.log('ENCUESTADORES', response9);
         this.Encuestadores = response9;
@@ -38,7 +38,7 @@ export class ListverifiPage implements OnInit {
       this.Pines = new Array();
       this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
-        const pdata8 = {option: 'MapaR'};
+        const pdata8 = {option: 'MapaR', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
           this.loading.HideLoading();
@@ -73,7 +73,7 @@ export class ListverifiPage implements OnInit {
         this.Pines = new Array();
         this.loading.LoadingNormal('Consultando');
         setTimeout(() => {
-          const pdata8 = {option: 'MapaR'};
+          const pdata8 = {option: 'MapaR', Id_Proyecto: this.global.Id_Proyecto};
           this.global.consultar(pdata8, (err8, response8) => {
             console.log('PINES MAPA', response8);
             this.loading.HideLoading();
@@ -84,7 +84,7 @@ export class ListverifiPage implements OnInit {
         this.Pines = new Array();
         this.loading.LoadingNormal('Consultando');
         setTimeout(() => {
-          const pdata8 = {option: 'MapaR2', userpro: this.usuario};
+          const pdata8 = {option: 'MapaR2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
           this.global.consultar(pdata8, (err8, response8) => {
             console.log('PINES MAPA', response8);
             this.loading.HideLoading();
