@@ -153,7 +153,7 @@ export class RevisionPage implements OnInit {
           data.append('nombre', imageName);
           data.append('ruta', this.photoName);
           $.ajax({
-            url: 'https://www.php.engenius.com.co/FOT/subir_foto_encuestas.php',
+            url: 'https://www.php.engenius.com.co/FOT/subir_foto_encuestas_ent.php',
             type: 'post',
             dataType: 'json',
             data,
