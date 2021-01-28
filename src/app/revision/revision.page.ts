@@ -11,6 +11,7 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { PopoverviewComponent } from '../popoverview/popoverview.component';
+import { AddComponent } from '../add/add.component';
 
 @Component({
   selector: 'app-revision',
@@ -47,6 +48,10 @@ export class RevisionPage implements OnInit {
   txt;
   total = 0;
   bandera = 0;
+  srcImg=[];
+  isFull =false;
+  imgsUrls=[];
+  photoName;
   Images = new Array();
   ImagesF = new Array();
   
@@ -88,13 +93,134 @@ export class RevisionPage implements OnInit {
       }, 200);
     });
    }
-
+   async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: AddComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
+   eliminar(pos) {
+    this.global.FamiliaGlobal.splice(pos, 1);
+  }
    async EnviarAlerta() {
     this.global.parametroPopover = this.data[2];
     const popover = await this.popoverController.create({
       component: PopoverviewComponent
     });
     return await popover.present();
+  }
+  dataURItoBlob(dataURI) {
+    const byteString = window.atob(dataURI);
+    const arrayBuffer = new ArrayBuffer(byteString.length);
+    const int8Array = new Uint8Array(arrayBuffer);
+    for (let i = 0; i < byteString.length; i++) {
+      int8Array[i] = byteString.charCodeAt(i);
+    }
+    const blob = new Blob([int8Array], { type: 'image/jpeg' });
+    return blob;
+  }
+  loadPhoto(){
+    try{
+      console.log( this.global.Id_busqueda);
+      console.log( this.global.UserData[0]);
+      
+      if (this.srcImg == null || this.srcImg == undefined || this.srcImg == []){
+        console.log('Empty photos array');
+      }  else {
+        let con1 = 0;
+        let con2 = 0;
+        let ids = new Array(this.srcImg.length);
+        for (let i = 0; i < ids.length; i++){
+          ids[i]= this.global.UserData[0] + '-' + moment().unix() +i;
+        }
+        for (let i = 0; i < this.srcImg.length; i++) {
+          con1++;
+          const FOTOO = this.srcImg[i].slice(23, this.srcImg[i].length);
+          this.photoName = this.global.UserData[0] + '-' + moment().unix() +i;
+          console.log(this.photoName);
+          const imageName = this.photoName+'.jpg';
+          const imageBlob = this.dataURItoBlob(FOTOO);
+          const imageFile = FOTOO;
+          const data = new FormData();
+          console.log('IMG BLOB -----', imageBlob);
+          console.log('IMG FILE -----',imageFile);
+          console.log('image', imageFile);
+          console.log('nombre', imageName);
+          console.log('ruta', this.photoName);
+          data.append('image', imageFile);
+          data.append('nombre', imageName);
+          data.append('ruta', this.photoName);
+          $.ajax({
+            url: 'https://www.php.engenius.com.co/FOT/subir_foto_encuestas.php',
+            type: 'post',
+            dataType: 'json',
+            data,
+            processData: false,
+            contentType: false
+          }).then((data1) => {
+            console.log(data, data1);
+            this.imgsUrls[i] = data1;
+            con2++;
+            console.log(imageName);
+            console.log(data1);
+            if (this.imgsUrls[i] == 'BADEXT' || this.imgsUrls[i] == null || this.imgsUrls[i] == undefined || this.imgsUrls[i] == '' || this.imgsUrls[i] == 'NULL') {
+              console.log('No hay imagenes');
+            } else {
+              const query = 'INSERT INTO suncosurvey.fotos_encuesta (Id_Foto_Encuesta,Id_Encuesta,Id_Proyecto_Funcionario,rutalocal,rutaserver,estado,fecha,upload)' +
+                ' VALUES (\'' +
+                ids[i] + '\',\'' +
+                this.global.Id_busqueda + '\',\'' +
+                this.global.UserData[0] + '\',\'' +
+                imageName + '\',\'' +
+                data1 + '\',\'' +
+                1 + '\',\'' +
+                moment().format('YYYY-MM-DD HH:mm:ss') + '\',\'' +
+                1 + '\');';
+              const pdata1 = { option: 'insertar', texto: query };
+              this.global.consultar(pdata1, (err, response) => {
+                console.log(response, query);
+                if (err == null && response == true) {
+                  // alertFunctions.UserSuccess();
+                  //this.alerta.formTicketValid();
+                } else {
+                 console.log(err);
+                }
+              });
+              if (con1 == con2 && con2 == this.srcImg.length) {
+                this.ngOnInit();
+                this.srcImg =[];
+                this.imgsUrls = [];
+                this.isFull = false;
+              }
+            }
+          });
+        }
+  
+      }
+    }catch(e) {console.log(e)}
+    
+  }
+  onFileSelected(event) {
+    console.log(event);
+     const selectedFiles = event.target.files;
+    console.log(selectedFiles);
+    for (let i = 0; i < selectedFiles.length; i++) {
+      const reader = new FileReader();
+      reader.onload = (event: any) => {
+        const imagen = new Image();
+        imagen.src = event.target.result;
+        this.srcImg[i] = imagen.src;
+        console.log(imagen.src);
+      };
+      reader.readAsDataURL(event.target.files[i]);
+    }
+    this.isFull =true;
+  }
+  exploreImg(){
+    let elem:HTMLElement = document.querySelector('#explorePhoto');
+    elem.click();
   }
 
 Fin(){

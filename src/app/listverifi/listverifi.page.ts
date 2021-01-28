@@ -7,6 +7,7 @@ import * as jsPDF from 'jspdfmifeheros';
 import 'jspdf-autotable-mifeheros';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ImageviewComponent } from '../imageview/imageview.component';
+import { ExcelService } from '../excel.service';
 
 @Component({
   selector: 'app-listverifi',
@@ -20,15 +21,18 @@ export class ListverifiPage implements OnInit {
   Encuestadores = new Array();
   users = new Array();
   searchQuery;
+  Alertt;
+Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Telefono Encuestado']];
     constructor(
       public menuCtrl: MenuController,
       public navCtrl: NavController,
       public loading: LoadingService,
+      private excelService: ExcelService,
       public global: GlobalService,
       public alert: AlertService,
       public popoverController: PopoverController) { }
   
-    ngOnInit() {
+    ngOnInit() {      
       const pdata9 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata9, (err9, response9) => {
         console.log('ENCUESTADORES', response9);
@@ -43,10 +47,16 @@ export class ListverifiPage implements OnInit {
           console.log('PINES MAPA', response8);
           this.loading.HideLoading();
           this.Pines = this.users = response8;
+          const pdata10 = {option: 'excelr', Id_Proyecto: this.global.Id_Proyecto};
+        this.global.consultar(pdata10, (err10, response10) => {
+          console.log('REVISIÓN EXCEL', response10);
+          this.Alertt = response10;
+        });
         });
       }, 300);
 
     }
+    
     getItems(ev: any) {
       this.initializeItems();
       console.log('Buscando', ev.target.value);
@@ -57,7 +67,20 @@ export class ListverifiPage implements OnInit {
         });
       }
     }
-  
+    exportAsXLSX() {
+      ///this.spinner.show();
+      this.Toexcel =  [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Telefono Encuestado']];
+      for (let p = 0; p < this.Alertt.length; p++) {
+        this.Toexcel.push(this.Alertt[p]);
+      }
+      setTimeout(() => {
+        this.excelService.exportAsExcelFile2(this.Toexcel, 'Revisón', 'Encuestas por Revisar');
+        setTimeout(() => {
+          this.Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Telefono Encuestado']];
+          //this.spinner.hide();
+        }, 1000);
+      }, 1500);
+    }
     initializeItems() {
       this.Pines = this.users;
     }
