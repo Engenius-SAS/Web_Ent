@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { RevisionPage } from './revision.page';
 import { PopoverviewComponent } from '../popoverview/popoverview.component';
+import { AddComponent } from '../add/add.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RevisionPage, PopoverviewComponent],
-  entryComponents: [PopoverviewComponent]
+  declarations: [RevisionPage, PopoverviewComponent, AddComponent],
+  entryComponents: [PopoverviewComponent,AddComponent]
 })
 export class RevisionPageModule {}
