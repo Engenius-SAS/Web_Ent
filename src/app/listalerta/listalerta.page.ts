@@ -8,6 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ExcelService } from '../excel.service';
 import { ImagestviewComponent } from '../imagestview/imagestview.component';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-listalerta',
@@ -38,10 +39,11 @@ export class ListalertaPage implements OnInit {
     public global: GlobalService,
     private spinner: NgxSpinnerService, 
     public alert: AlertService,
+    public loading: LoadingService,
     public popoverController: PopoverController) { }
 
   ngOnInit() {
-   this.mostrarSpinner();
+   this.loading.LoadingNormal('Cargando', 60);
     if( this.global.Id_Proyecto == undefined){
       this.navCtrl.navigateRoot('/home');
     }else{
@@ -57,6 +59,7 @@ export class ListalertaPage implements OnInit {
             console.log('id EXCEL', this.global.Id_Proyecto);
             const pdata10 = {option: 'excela', Id_Proyecto: this.global.Id_Proyecto};
             this.global.consultar(pdata10, (err10, response10) => {
+              this.loading.HideLoading();
               console.log('ALERTAS EXCEL', response10);
               this.Alertt = response10;
               this.flag = true;
