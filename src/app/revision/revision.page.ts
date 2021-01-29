@@ -20,6 +20,7 @@ import { AddComponent } from '../add/add.component';
 })
 
 export class RevisionPage implements OnInit {
+  noinitban = 0;
   FE_cocinar_gaspropano_consumo_select = false;
   FE_cocinar_gasnatural_consumo_select = false;
   FE_cocinar_gasolina_consumo_select = false;
@@ -65,33 +66,35 @@ export class RevisionPage implements OnInit {
   }
 
   ngOnInit() {
-    const pdata8 = {option: 'Dataen', Id_Encuesta: this.global.Id_busqueda};
-    this.global.consultar(pdata8, (err8, response8) => {
-      console.log('Datos Encuesta', response8);
-      this.data = response8[0];
-      this.global.FamiliaGlobal = JSON.parse(this.data[13]);
-      // tslint:disable-next-line: max-line-length
-      this.total = JSON.parse(this.data[141]) + JSON.parse(this.data[142]) + JSON.parse(this.data[143]) + JSON.parse(this.data[144]) + JSON.parse(this.data[145]) + JSON.parse(this.data[146]) + JSON.parse(this.data[147]) + JSON.parse(this.data[148]) + JSON.parse(this.data[149]) + JSON.parse(this.data[150]) + JSON.parse(this.data[151]) + JSON.parse(this.data[152]);
-      setTimeout(() => {
-        this.bandera = 1;
-      }, 500);
-    });
-    const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
-    this.global.consultar(pdata9, (err9, response9) => {
-      console.log('FOTOS Encuesta', response9);
-      this.Images = response9;
-      setTimeout(() => {
-        //this.slideWithNav.update();
-      }, 200);
-    });
-    const pdata7 = {option: 'fotosfirma', Id_Encuesta: this.global.Id_busqueda};
-    this.global.consultar(pdata7, (err7, response7) => {
-      console.log('FOTOS Firma', response7);
-      this.ImagesF = response7;
-      setTimeout(() => {
-        //this.slideWithNav.update();
-      }, 200);
-    });
+    if(this.noinitban == 0){
+      this.noinitban++;
+      const pdata8 = {option: 'Dataen', Id_Encuesta: this.global.Id_busqueda};
+      this.global.consultar(pdata8, (err8, response8) => {
+        console.log('Datos Encuesta', response8);
+        this.data = response8[0];
+        this.global.FamiliaGlobal = JSON.parse(this.data[13]);
+        // tslint:disable-next-line: max-line-length
+        this.total = JSON.parse(this.data[141]) + JSON.parse(this.data[142]) + JSON.parse(this.data[143]) + JSON.parse(this.data[144]) + JSON.parse(this.data[145]) + JSON.parse(this.data[146]) + JSON.parse(this.data[147]) + JSON.parse(this.data[148]) + JSON.parse(this.data[149]) + JSON.parse(this.data[150]) + JSON.parse(this.data[151]) + JSON.parse(this.data[152]);
+        const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
+          this.global.consultar(pdata9, (err9, response9) => {
+            console.log('FOTOS Encuesta', response9);
+            this.Images = response9;
+            setTimeout(() => {
+              const pdata7 = {option: 'fotosfirma', Id_Encuesta: this.global.Id_busqueda};
+              this.global.consultar(pdata7, (err7, response7) => {
+                console.log('FOTOS Firma', response7);
+                this.ImagesF = response7;
+                setTimeout(() => {
+                  setTimeout(() => {
+                    this.bandera = 1;
+                  }, 500);
+                }, 200);
+              });
+            }, 200);
+          });
+      });
+    }
+    
    }
    async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
@@ -116,6 +119,7 @@ export class RevisionPage implements OnInit {
        const query = 'UPDATE enterritoriobk.c_sociodemograficas SET Parentesco =\'' + JSON.stringify(this.global.FamiliaGlobal) + '\''
         + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
       const pdata1 = { option: 'insertar', texto: query };
+      console.log('QUERY', query);
       this.global.consultar(pdata1, (err, response) => {
         console.log(response, query);
         if (err == null && response == true) {
@@ -136,6 +140,7 @@ export class RevisionPage implements OnInit {
     const blob = new Blob([int8Array], { type: 'image/jpeg' });
     return blob;
   }
+
   loadPhoto(){
     try{
       console.log( this.global.Id_busqueda);
@@ -204,6 +209,7 @@ export class RevisionPage implements OnInit {
                 }
               });
               if (con1 == con2 && con2 == this.srcImg.length) {
+                this.noinitban = 0;
                 this.ngOnInit();
                 this.srcImg =[];
                 this.imgsUrls = [];
