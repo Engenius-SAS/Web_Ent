@@ -19,6 +19,7 @@ import { Add2Component } from '../add2/add2.component';
 })
 
 export class RevisionAlertaPage implements OnInit {
+  noinitban = 0;
   FE_cocinar_gaspropano_consumo_select = false;
   FE_cocinar_gasnatural_consumo_select = false;
   FE_cocinar_gasolina_consumo_select = false;
@@ -64,6 +65,8 @@ export class RevisionAlertaPage implements OnInit {
   }
 
   ngOnInit() {
+    if(this.noinitban == 0){
+      this.noinitban++;
     console.log( 'DATA[103] Nombre comunidad', this.data[103] );
     const pdata8 = {option: 'Dataen', Id_Encuesta: this.global.Id_busqueda};
     this.global.consultar(pdata8, (err8, response8) => {
@@ -93,6 +96,7 @@ export class RevisionAlertaPage implements OnInit {
       }, 200);
     });
    }
+  }
 
 Fin(){
   const query = 'UPDATE enterritoriobk.alertas SET IsDelete = 1 '
@@ -200,6 +204,7 @@ loadPhoto(){
               }
             });
             if (con1 == con2 && con2 == this.srcImg.length) {
+              this.noinitban = 0;
               this.ngOnInit();
               this.srcImg =[];
               this.imgsUrls = [];
