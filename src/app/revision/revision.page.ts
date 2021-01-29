@@ -111,6 +111,21 @@ export class RevisionPage implements OnInit {
     });
     return await popover.present();
   }
+  guardarParientes(){
+    if (this.bandera == 1) {
+       const query = 'UPDATE enterritoriobk.c_sociodemograficas SET Parentesco =\'' + JSON.stringify(this.global.FamiliaGlobal) + '\''
+        + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
+      const pdata1 = { option: 'insertar', texto: query };
+      this.global.consultar(pdata1, (err, response) => {
+        console.log(response, query);
+        if (err == null && response == true) {
+          this.alert.AlertOneButton('Información', 'Registro actualizado');
+        } else {
+          this.alert.AlertOneButton('Error', 'Error al subir registro');
+        }
+      });
+    } 
+  }
   dataURItoBlob(dataURI) {
     const byteString = window.atob(dataURI);
     const arrayBuffer = new ArrayBuffer(byteString.length);
@@ -3961,4 +3976,5 @@ select_fuente(){
     });
   this.cocinar_prefiere();
 }
+
 }
