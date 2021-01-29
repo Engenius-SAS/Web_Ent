@@ -1338,9 +1338,9 @@
               <ion-button color=blue fill="outline" (click)="presentPopover('hi')">Añadir Integrante</ion-button>
             </ion-item>
             <ion-list class="row justify-content-center" style="width: 100%!important;">
-              <ion-item *ngIf="global.FamiliaGlobal.length < 16" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-item *ngIf="global.FamiliaGlobal.length < 16" class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               </ion-item>
-              <ion-item-sliding *ngFor="let item of global.FamiliaGlobal;let i=index" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-item-sliding *ngFor="let item of global.FamiliaGlobal;let i=index" class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               <ion-item>
                 <ion-label text-wrap>
                   <h2 style="color: gray">Parentesco: {{item.Parentesco}}</h2>
