@@ -118,11 +118,9 @@ Id_Proyecto;
     console.log('Estoy Online');
     // this.Sincronizar();
   }
-
   FueraDeLinea() {
     console.log('Sin internet :(');
   }
-
   NewUser() {
     this.loading.LoadingNormal('Cargando...', 3);
     this.navCtrl.navigateRoot('/ruser');
