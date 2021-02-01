@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { MapPage } from './map.page';
 import { AgmCoreModule } from '@agm/core';
+import { NgxSpinnerModule } from 'ngx-spinner';
 const routes: Routes = [
   {
     path: '',
@@ -18,6 +19,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    NgxSpinnerModule,
     IonicModule,
     RouterModule.forChild(routes),
     AgmCoreModule

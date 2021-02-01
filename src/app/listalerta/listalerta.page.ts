@@ -8,7 +8,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ExcelService } from '../excel.service';
 import { ImagestviewComponent } from '../imagestview/imagestview.component';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-listalerta',
@@ -39,15 +38,35 @@ export class ListalertaPage implements OnInit {
     public global: GlobalService,
     private spinner: NgxSpinnerService, 
     public alert: AlertService,
-    public loading: LoadingService,
     public popoverController: PopoverController) { }
 
   ngOnInit() {
-   this.loading.LoadingNormal('Cargando', 60);
+    this.spinner.show();
     if( this.global.Id_Proyecto == undefined){
-      this.navCtrl.navigateRoot('/home');
+      this.navCtrl.navigateRoot('/login');
     }else{
       setTimeout(() => {
+        const pdata8 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
+        this.global.consultar(pdata8, (err8, response8) => {
+          console.log('ENCUESTADORES', response8);
+          this.Encuestadores = response8;
+        });
+        const pdata9 = {option: 'MapaA', Id_Proyecto: this.global.Id_Proyecto};
+        this.global.consultar(pdata9, (err9, response9) => {
+          console.log('ALERTAS', response9);
+          this.Pines = this.users = response9;
+          console.log('id EXCEL', this.global.Id_Proyecto);
+          this.flag = true;
+          this.spinner.hide();
+        });
+        const pdata10 = {option: 'excela', Id_Proyecto: this.global.Id_Proyecto};
+        this.global.consultar(pdata10, (err10, response10) => {
+          console.log('ALERTAS EXCEL', response10);
+          this.Alertt = response10;
+        });
+       }, 1000);
+    }
+      /* setTimeout(() => {
         const pdata8 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('ENCUESTADORES', response8);
@@ -63,12 +82,11 @@ export class ListalertaPage implements OnInit {
               console.log('ALERTAS EXCEL', response10);
               this.Alertt = response10;
               this.flag = true;
-              
             });
           });
         });
-       }, 5500);
-    }
+       }, 500);
+    } */
   }
 
   Buscar() {
@@ -93,18 +111,12 @@ export class ListalertaPage implements OnInit {
     }
   }
 
-  mostrarSpinner(){
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 500);
-  }
 
   RevisionA(item){
     setTimeout(() => {
     this.global.Id_busqueda = item[1];
     this.navCtrl.navigateRoot('/revision-alerta');
-    }, 2000);
+    }, 500);
 
   }
 
@@ -133,7 +145,6 @@ export class ListalertaPage implements OnInit {
       this.excelService.exportAsExcelFile2(this.Toexcel, 'Alertas', 'Alertas Registradas');
       setTimeout(() => {
         this.Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
-        
       }, 1000);
     }, 1500);
   }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
-import { LoadingService } from '../loading.service';
 import { GlobalService } from '../global.service';
 import { AlertService } from '../alert.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-map',
@@ -20,16 +20,24 @@ export class MapPage implements OnInit {
   constructor(
               public menuCtrl: MenuController,
               public navCtrl: NavController,
-              public loading: LoadingService,
+              private spinner: NgxSpinnerService,
               public global: GlobalService,
               public alert: AlertService) { }
 
   ngOnInit() {
+    this.spinner.show();
+    if(this.global.Id_Proyecto == undefined){
+      this.spinner.hide();
+      this.navCtrl.navigateRoot('/login');
+    }
+    setTimeout(() => {
     const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
     this.global.consultar(pdata8, (err8, response8) => {
       console.log('PINES MAPA', response8);
       this.Pines = response8;
+      this.spinner.hide();
     });
+    }, 500);
   }
 
 }

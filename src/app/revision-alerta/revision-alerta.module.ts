@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { RevisionAlertaPage } from './revision-alerta.page';
 import { Add2Component } from '../add2/add2.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    NgxSpinnerModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)

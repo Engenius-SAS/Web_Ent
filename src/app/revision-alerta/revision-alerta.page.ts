@@ -5,12 +5,12 @@ import { GlobalService } from '../global.service';
 import * as moment from 'moment';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
-import { LoadingService } from '../loading.service';
 import { AlertService } from '../alert.service';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Add2Component } from '../add2/add2.component';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-revision',
@@ -59,11 +59,16 @@ export class RevisionAlertaPage implements OnInit {
               public global: GlobalService,
               public popoverController: PopoverController,
               public alert: AlertService,
+              private spinner: NgxSpinnerService,
               public navCtrl: NavController,) {
       this.global.FamiliaGlobal = new Array();
   }
 
   ngOnInit() {
+    this.spinner.show();
+    if( this.global.Id_Proyecto == undefined){
+      this.navCtrl.navigateRoot('/login');
+    }else{
     console.log( 'DATA[103] Nombre comunidad', this.data[103] );
     const pdata8 = {option: 'Dataen', Id_Encuesta: this.global.Id_busqueda};
     this.global.consultar(pdata8, (err8, response8) => {
@@ -74,6 +79,7 @@ export class RevisionAlertaPage implements OnInit {
       this.total = JSON.parse(this.data[141]) + JSON.parse(this.data[142]) + JSON.parse(this.data[143]) + JSON.parse(this.data[144]) + JSON.parse(this.data[145]) + JSON.parse(this.data[146]) + JSON.parse(this.data[147]) + JSON.parse(this.data[148]) + JSON.parse(this.data[149]) + JSON.parse(this.data[150]) + JSON.parse(this.data[151]) + JSON.parse(this.data[152]);
       setTimeout(() => {
         this.bandera = 1;
+        this.spinner.hide();
       }, 500);
     });
     const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
@@ -90,8 +96,10 @@ export class RevisionAlertaPage implements OnInit {
       this.ImagesF = response7;
       setTimeout(() => {
         //this.slideWithNav.update();
+
       }, 200);
     });
+    }
    }
 
 Fin(){

@@ -4,9 +4,10 @@ import { GlobalService } from '../global.service';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DatabaseService } from '../database.service';
 import { AlertService } from '../alert.service';
-import { LoadingService } from '../loading.service';
 import {Md5} from 'ts-md5/dist/md5';
 import { Storage } from '@ionic/storage';
+
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -24,8 +25,8 @@ Id_Proyecto;
               public menuCtrl: MenuController,
               public navCtrl: NavController,
               public global: GlobalService,
+              private spinner: NgxSpinnerService,
               public alert: AlertService,
-              public loading: LoadingService,
               private storage: Storage,
               ) {
     this.statusBar.backgroundColorByHexString('330867');
@@ -81,7 +82,7 @@ Id_Proyecto;
         }
        );
       } else {
-        this.loading.LoadingNormal('Autenticando...');
+        this.spinner.show();
         setTimeout(() => {
           const contrasena = Md5.hashStr(this.Pass);
           const query = 'SELECT *,(SELECT Id_Proyecto_Funcionario FROM enterritoriobk.proyectos_funcionarios B Where A.Id_Funcionario=B.Id_Funcionario AND B.Id_Proyecto=\'' + this.Id_Proyecto + '\') as Id_Proyecto_Funcionario FROM enterritoriobk.funcionarios A WHERE username=\'' + this.User + '\' AND password=\'' + contrasena + '\';';
@@ -104,10 +105,10 @@ Id_Proyecto;
                 this.storage.set('Recordarme', true);
               }
               this.navCtrl.navigateRoot('/home');
-              this.loading.HideLoading();
+              this.spinner.hide();
             } else {
               this.alert.AlertOneButton('Información', 'Usuario Contraseña o Proyecto Incorrectos');
-              this.loading.HideLoading();
+              this.spinner.hide();
             }
           });
         }, 300);
@@ -122,8 +123,10 @@ Id_Proyecto;
     console.log('Sin internet :(');
   }
   NewUser() {
-    this.loading.LoadingNormal('Cargando...', 3);
+    this.spinner.show();
+    setTimeout(() => {
     this.navCtrl.navigateRoot('/ruser');
+    }, 500);
   }
 
 /*

@@ -5,7 +5,6 @@ import { GlobalService } from '../global.service';
 import * as moment from 'moment';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
-import { LoadingService } from '../loading.service';
 import { AlertService } from '../alert.service';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
@@ -65,6 +64,9 @@ export class RevisionPage implements OnInit {
   }
 
   ngOnInit() {
+    if( this.global.Id_Proyecto == undefined){
+      this.navCtrl.navigateRoot('/login');
+    }else{
     const pdata8 = {option: 'Dataen', Id_Encuesta: this.global.Id_busqueda};
     this.global.consultar(pdata8, (err8, response8) => {
       console.log('Datos Encuesta', response8);
@@ -92,6 +94,7 @@ export class RevisionPage implements OnInit {
         //this.slideWithNav.update();
       }, 200);
     });
+    }
    }
    async presentPopover(ev: any) {
     const popover = await this.popoverController.create({

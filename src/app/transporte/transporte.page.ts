@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController, PopoverController } from '@ionic/angular';
-import { LoadingService } from '../loading.service';
 import { GlobalService } from '../global.service';
 import { AlertService } from '../alert.service';
 import * as jsPDF from 'jspdfmifeheros';
 import 'jspdf-autotable-mifeheros';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ImagestviewComponent } from '../imagestview/imagestview.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-transporte',
@@ -25,17 +25,24 @@ export class TransportePage implements OnInit {
   constructor(
     public menuCtrl: MenuController,
     public navCtrl: NavController,
-    public loading: LoadingService,
     public global: GlobalService,
     public alert: AlertService,
+    private spinner : NgxSpinnerService,
     public popoverController: PopoverController) { }
 
   ngOnInit() {
+    this.spinner.show();
+    if(this.global.Id_Proyecto == undefined){
+      this.navCtrl.navigateRoot('/login');
+      this.spinner.hide();
+    }else{
     const pdata9 = {option: 'muni'};
     this.global.consultar(pdata9, (err9, response9) => {
       console.log('MUNICIPIOS', response9);
       this.Muni = response9;
+      this.spinner.hide();
     });
+    }
     
     /*const pdata7 = {option: 'comu'};
     this.global.consultar(pdata7, (err7, response7) => {
@@ -90,28 +97,28 @@ export class TransportePage implements OnInit {
   }
 
   BuscarT() {
+    this.spinner.show();
       this.Pines = new Array();
-      this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
         const pdata8 = {option: 'transp', vereda: this.comunidad};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES TRANSPORTE', response8);
-          this.loading.HideLoading();
           this.Pines = response8;
+          this.spinner.hide();
         });
       }, 300);
     }
 
   async VerFotosT() {
+    this.spinner.show();
     this.Pines = new Array();
     this.id = new Array();
-    this.loading.LoadingNormal('Consultando');
     setTimeout(() => {
       const pdata8 = {option: 'transp', vereda: this.comunidad};
       this.global.consultar(pdata8, async (err8, response8) => {
         console.log('PINES TRANSPORTE', response8);
-        this.loading.HideLoading();
         this.Pines = response8;
+        this.spinner.hide();
         for(let i=0; i<1; i++){
           this.txt = JSON.stringify(this.Pines[0]);
           this.txt = this.txt.replace('["', '');
