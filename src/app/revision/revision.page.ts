@@ -186,7 +186,7 @@ export class RevisionPage implements OnInit {
             if (this.imgsUrls[i] == 'BADEXT' || this.imgsUrls[i] == null || this.imgsUrls[i] == undefined || this.imgsUrls[i] == '' || this.imgsUrls[i] == 'NULL') {
               console.log('No hay imagenes');
             } else {
-              const query = 'INSERT INTO suncosurvey.fotos_encuesta (Id_Foto_Encuesta,Id_Encuesta,Id_Proyecto_Funcionario,rutalocal,rutaserver,estado,fecha,upload)' +
+              const query = 'INSERT INTO enterritoriobk.fotos_encuesta (Id_Foto_Encuesta,Id_Encuesta,Id_Proyecto_Funcionario,rutalocal,rutaserver,estado,fecha,upload)' +
                 ' VALUES (\'' +
                 ids[i] + '\',\'' +
                 this.global.Id_busqueda + '\',\'' +
