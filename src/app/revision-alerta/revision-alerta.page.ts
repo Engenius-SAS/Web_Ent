@@ -11,6 +11,7 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Add2Component } from '../add2/add2.component';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-revision',
@@ -183,7 +184,7 @@ loadPhoto(){
           if (this.imgsUrls[i] == 'BADEXT' || this.imgsUrls[i] == null || this.imgsUrls[i] == undefined || this.imgsUrls[i] == '' || this.imgsUrls[i] == 'NULL') {
             console.log('No hay imagenes');
           } else {
-            const query = 'INSERT INTO suncosurvey.fotos_encuesta (Id_Foto_Encuesta,Id_Encuesta,Id_Proyecto_Funcionario,rutalocal,rutaserver,estado,fecha,upload)' +
+            const query = 'INSERT INTO enterritoriobk.fotos_encuesta (Id_Foto_Encuesta,Id_Encuesta,Id_Proyecto_Funcionario,rutalocal,rutaserver,estado,fecha,upload)' +
               ' VALUES (\'' +
               ids[i] + '\',\'' +
               this.global.Id_busqueda + '\',\'' +
@@ -205,7 +206,9 @@ loadPhoto(){
             });
             if (con1 == con2 && con2 == this.srcImg.length) {
               this.noinitban = 0;
+              setTimeout(() => {
               this.ngOnInit();
+              }, 400);
               this.srcImg =[];
               this.imgsUrls = [];
               this.isFull = false;
@@ -220,7 +223,7 @@ loadPhoto(){
 }
 onFileSelected(event) {
   console.log(event);
-   const selectedFiles = event.target.files;
+  const selectedFiles = event.target.files;
   console.log(selectedFiles);
   for (let i = 0; i < selectedFiles.length; i++) {
     const reader = new FileReader();

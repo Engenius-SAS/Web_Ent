@@ -12,6 +12,7 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { PopoverviewComponent } from '../popoverview/popoverview.component';
 import { AddComponent } from '../add/add.component';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-revision',
@@ -188,7 +189,7 @@ export class RevisionPage implements OnInit {
             if (this.imgsUrls[i] == 'BADEXT' || this.imgsUrls[i] == null || this.imgsUrls[i] == undefined || this.imgsUrls[i] == '' || this.imgsUrls[i] == 'NULL') {
               console.log('No hay imagenes');
             } else {
-              const query = 'INSERT INTO suncosurvey.fotos_encuesta (Id_Foto_Encuesta,Id_Encuesta,Id_Proyecto_Funcionario,rutalocal,rutaserver,estado,fecha,upload)' +
+              const query = 'INSERT INTO enterritoriobk.fotos_encuesta (Id_Foto_Encuesta,Id_Encuesta,Id_Proyecto_Funcionario,rutalocal,rutaserver,estado,fecha,upload)' +
                 ' VALUES (\'' +
                 ids[i] + '\',\'' +
                 this.global.Id_busqueda + '\',\'' +
@@ -210,7 +211,9 @@ export class RevisionPage implements OnInit {
               });
               if (con1 == con2 && con2 == this.srcImg.length) {
                 this.noinitban = 0;
-                this.ngOnInit();
+                setTimeout(() => {
+                  this.ngOnInit();
+                }, 300);
                 this.srcImg =[];
                 this.imgsUrls = [];
                 this.isFull = false;
