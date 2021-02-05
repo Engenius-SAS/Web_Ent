@@ -123,7 +123,7 @@ export class ListCienagaPage implements OnInit {
     }
   
   cargarEnc() {
-    const pdata9 = {option: 'encu'};
+    const pdata9 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
     this.global.consultar(pdata9, (err9, response9) => {
       console.log('ENCUESTADORES', response9);
       this.Encuestadores = response9;

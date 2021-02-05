@@ -25,6 +25,7 @@ import { File } from '@ionic-native/file/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddComponent } from './add/add.component';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -47,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     File,
     SQLitePorter,
     Base64ToGallery,
+    AddComponent,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

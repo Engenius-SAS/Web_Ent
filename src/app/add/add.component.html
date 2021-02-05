@@ -1,0 +1,72 @@
+<ion-card style="width: 100%; margin:0px!important">
+  <ion-card-header color="blue" style="text-align: center;font-size:large">
+    Añadir Integrante de la Familia
+  </ion-card-header>
+  <ion-card-content style="background: white!important;">
+    <ion-list class="row justify-content-left">
+      <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+        <ion-label color="blue" position="floating" class="ion-text-wrap">Parentesco en la Familia</ion-label>
+        <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="Parentesco">
+          <ion-select-option value="Jefe (a) de hogar">Jefe (a) de hogar</ion-select-option>
+          <ion-select-option value="Pareja, esposo(a), cónyuge, compañero(a)">Pareja, esposo(a), cónyuge, compañero(a)</ion-select-option>
+          <ion-select-option value="Hijo(a), hijastro(a)">Hijo(a), hijastro(a)</ion-select-option>
+          <ion-select-option value="Nieto(a)">Nieto(a)</ion-select-option>
+          <ion-select-option value="Padre o madre, padrastro, madrastra">Padre o madre, padrastro, madrastra</ion-select-option>
+          <ion-select-option value="Suegro(a)">Suegro(a)</ion-select-option>
+          <ion-select-option value="Hermano(a), hermanastro(a)">Hermano(a), hermanastro(a)</ion-select-option>
+          <ion-select-option value="Yerno, nuera">Yerno, nuera</ion-select-option>
+          <ion-select-option value="Otro(a) pariente del (de la) jefe (a)">Otro(a) pariente del (de la) jefe (a)</ion-select-option>
+          <ion-select-option value="Otro(a) no pariente">Otro(a) no pariente</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="true">
+        <ion-label color="blue" position="floating" class="ion-text-wrap">Sexo/Género</ion-label>
+        <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="Genero">
+          <ion-select-option value="Hombre">Hombre</ion-select-option>
+          <ion-select-option value="Mujer">Mujer</ion-select-option>
+          <ion-select-option value="Otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+        <ion-label color="blue" position="floating" class="ion-text-wrap">Edad</ion-label>
+        <ion-input type=number [(ngModel)]="Edad" placeholder="Escriba Aquí"></ion-input>
+      </ion-item>
+      <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+        <ion-label color="blue" position="floating" class="ion-text-wrap">¿Está inscrito en el registro único de víctimas?</ion-label>
+        <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="Registro">
+          <ion-select-option value="Si">Si</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+        <ion-label color="blue" position="floating" class="ion-text-wrap">Escolaridad: </ion-label>
+        <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="Escolaridad">
+          <ion-select-option value="Preescolar">Preescolar</ion-select-option>
+          <ion-select-option value="Básica primaria (1° a 5°)">Básica primaria (1° a 5°)</ion-select-option>
+          <ion-select-option value="Básica secundaria (6° a 9°)">Básica secundaria (6° a 9°)</ion-select-option>
+          <ion-select-option value="Básica media (10° a 13°)">Básica media (10° a 13°)</ion-select-option>
+          <ion-select-option value="Superior">Superior</ion-select-option>
+          <ion-select-option value="Ninguna">Ninguna</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+        <ion-label color="blue" position="floating" class="ion-text-wrap">Ocupación: </ion-label>
+        <ion-select interface="popover" placeholder="Seleccione Aquí" [(ngModel)]="Ocupacion">
+          <ion-select-option value="Estudiante">Estudiante</ion-select-option>
+          <ion-select-option value="Empleado (a) en la vivienda / institución">Empleado (a) en la vivienda / institución</ion-select-option>
+          <ion-select-option value="Empleado (a) de empresa partícular o del gobierno">Empleado (a) de empresa partícular o del gobierno</ion-select-option>
+          <ion-select-option value="Desempleado (a)">Desempleado (a)</ion-select-option>
+          <ion-select-option value="Jubilado (a)">Jubilado (a)</ion-select-option>
+          <ion-select-option value="Independiente">Independiente</ion-select-option>
+          <ion-select-option value="Independiente con empleados">Independiente con empleados</ion-select-option>
+          <ion-select-option value="Ninguna de las anteriores">Ninguna de las anteriores</ion-select-option>
+        </ion-select>
+      </ion-item>       
+    </ion-list>
+    <div class="row justify-content-center">
+      <ion-button color=blue (click)="Atras()">Atras</ion-button>
+      <ion-button color=blue (click)="Guardar()">Guardar</ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>
+s

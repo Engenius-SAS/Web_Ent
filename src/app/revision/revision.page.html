@@ -1334,11 +1334,13 @@
                 ¿Quiénes conforman el hogar? 
               </ion-label>
             </ion-item-divider>
+            <ion-item *ngIf="global.FamiliaGlobal.length < 16">
+              <ion-button color=blue fill="outline" (click)="presentPopover('hi')">Añadir Integrante</ion-button>
+            </ion-item>
             <ion-list class="row justify-content-center" style="width: 100%!important;">
-              <ion-item *ngIf="global.FamiliaGlobal.length < 10" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
-                <!--<ion-button color=blue fill="outline" (click)="presentPopover('hi')">Añadir Integrante</ion-button>-->
+              <ion-item *ngIf="global.FamiliaGlobal.length < 16" class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               </ion-item>
-              <ion-item-sliding *ngFor="let item of global.FamiliaGlobal;let i=index" class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-item-sliding *ngFor="let item of global.FamiliaGlobal;let i=index" class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
               <ion-item>
                 <ion-label text-wrap>
                   <h2 style="color: gray">Parentesco: {{item.Parentesco}}</h2>
@@ -1349,11 +1351,14 @@
                   <h2>Ocupación: {{item.Ocupacion}}</h2>
                 </ion-label>
               </ion-item>
-              <!--<ion-item-options side="end">
+              <ion-item-options side="end">
               <ion-item-option color="danger" (click)="eliminar(i)">Eliminar</ion-item-option>
-              </ion-item-options>-->
+              </ion-item-options>
             </ion-item-sliding>
             </ion-list>    
+            <ion-item>
+              <ion-button color=blue fill="outline" (click)="guardarParientes()">Guardar información</ion-button>
+            </ion-item>
             <ion-item-divider>
               <ion-label color=primary>
                 Información personal
@@ -2051,6 +2056,19 @@
           9. MÓDULO FOTOGRAFIAS
         </ion-card-header>
         <ion-card-content style="background: white!important;">
+          <ion-item class="col-12">
+            <button class="btn btn-success col-12" (click)="exploreImg()"> Buscar fotos para subir </button>
+              <input type="file" name="explorePhoto" style="display: none;" accept="image/jpeg" multiple="multiple"  id="explorePhoto"  (change)="onFileSelected($event)"> 
+            </ion-item>
+            <ion-item>
+                <div class="layerImg" *ngIf="isFull==true">
+                  <div class="layerImg_title" >FOTOS PENDIENTES POR SUBIR</div>
+                  <div class="layerImg_img" *ngFor="let link of srcImg ">
+                    <img [src]="link" >
+                  </div>
+                  <button class="btn btn-warning layerImg_btn " (click)="loadPhoto()">Aceptar y subir Fotos</button>
+                </div>
+            </ion-item>
           <ion-list style="padding: 10px" *ngIf="Images.length!=0" class="row justify-content-center">
             <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_enc/{{item[0]}}.jpg' style="margin-top: 10px;"></ion-img>
           </ion-list> 
