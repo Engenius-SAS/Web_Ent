@@ -26,6 +26,7 @@ import 'datatables.net-rowreorder-bs4';
 import 'datatables.net-scroller-bs4';
 import 'datatables.net-searchpanes-bs4';
 import 'datatables.net-select-bs4';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-list',
@@ -47,23 +48,28 @@ municipio;
   constructor(
     public menuCtrl: MenuController,
     public navCtrl: NavController,
-    public loading: LoadingService,
     public global: GlobalService,
     public alert: AlertService,
+    private spinner: NgxSpinnerService,
     public popoverController: PopoverController) { }
 
   ngOnInit() {
+    this.spinner.show();
+    if(this.global.Id_Proyecto == undefined){
+      this.navCtrl.navigateRoot('/login');
+      this.spinner.hide();
+    }else{
     this.cargarEnc();
     this.Pines = new Array();
-    this.loading.LoadingNormal('Consultando');
     setTimeout(() => {
       const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata8, (err8, response8) => {
         console.log('PINES MAPA', response8);
-        this.loading.HideLoading();
         this.Pines = this.users = response8;
+        this.spinner.hide();
       });
-    }, 300);
+    }, 300); 
+    }
 
     }
 
@@ -132,27 +138,26 @@ cargarEnc() {
 }
 
   BuscarE() {
+    this.spinner.show();
     if (this.usuario == '0') {
       this.Pines = new Array();
-      this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
       const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata8, (err8, response8) => {
         console.log('PINES MAPA', response8);
-        this.loading.HideLoading();
         this.Pines = response8;
+        this.spinner.hide();
       });
     }, 300);
     } else {
       this.Pines = new Array();
-      this.loading.LoadingNormal('Consultando');
       setTimeout(() => {
         const pdata8 = {option: 'Mapa2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
         console.log(pdata8);
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
-          this.loading.HideLoading();
           this.Pines = response8;
+          this.spinner.hide();
         });
       }, 300);
    } }
@@ -197,7 +202,7 @@ cargarEnc() {
   Descargar(item) {
   try {
     console.log('PDF', item[0]);
-    this.loading.LoadingNormal('Generando PDF....');
+    this.spinner.show();
     setTimeout(() => {
       let Lat = new Array();
       let Lon = new Array();
@@ -1770,13 +1775,14 @@ cargarEnc() {
           doc.lstext(Ano, 183, 16, 3);
           setTimeout(() => {
             doc.save('ZNI-' + item[0] + '.pdf');
-            this.loading.HideLoading();
+            
+          this.spinner.hide();
           }, 200);
         }, 200);
       });
     }, 300);
   } catch (error) {
-    this.loading.HideLoading();
+    this.spinner.hide();
     this.alert.AlertOneButton('Error', 'Error al Generar el Reporte', 'Ok');
   }
   }

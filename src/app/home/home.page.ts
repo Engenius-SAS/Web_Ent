@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
-import { LoadingService } from '../loading.service';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { DatabaseService } from '../database.service';
 import { GlobalService } from '../global.service';
@@ -38,10 +37,10 @@ export class HomePage implements OnInit {
   Transportev;
   Ubicacion;
   Termi;
+  isTransporte = false;
   constructor(public statusbar: StatusBar,
               public menuCtrl: MenuController,
               public navCtrl: NavController,
-              public loading: LoadingService,
               public db: DatabaseService,
               private transfer: FileTransfer,
               public global: GlobalService,
@@ -58,10 +57,8 @@ export class HomePage implements OnInit {
     this.spinner.show();
     console.log('USUARIO INFO', this.global.UserData);
     if(this.global.UserData == undefined || this.global.UserData == [] || this.global.UserData == null){
-      this.loading.LoadingNormal('Cargando...', 3);
-    setTimeout(() => {
+      this.spinner.hide();
       this.navCtrl.navigateRoot('/login');
-    }, 500);
     }else{
     for (let i = 0; i < this.global.Proyectos.length; i++) {
        if(this.global.Id_Proyecto == this.global.Proyectos[i].Id_Proyecto){
@@ -69,6 +66,7 @@ export class HomePage implements OnInit {
       }else{
         continue;
       }  
+      
     }
     setTimeout(() => {
       this.menuCtrl.enable(true);
@@ -91,8 +89,7 @@ export class HomePage implements OnInit {
     this.spinner.hide();
     }, 500);
     
-    /*
-    this.loading.LoadingNormal('Cargando Información...');
+    /* this.loading.LoadingNormal('Cargando Información...');
     setTimeout(() => {
       this.db.ContarEncuestas();
       this.db.ContarEncuestasE();
@@ -155,46 +152,15 @@ export class HomePage implements OnInit {
   }
   }
 
-  Registrar() {
-    this.loading.LoadingNormal('Cargando...', 3);
-    setTimeout(() => {
-      this.navCtrl.navigateRoot('/map');
-    }, 500);
-  }
 
-  IElectrica() {
-    this.loading.LoadingNormal('Cargando...', 3);
-    setTimeout(() => {
-      this.navCtrl.navigateRoot('/list');
-    }, 500);
-  }
-  Cienaga() {
+ /*  Cienaga() {
     this.loading.LoadingNormal('Cargando...', 3);
     setTimeout(() => {
       this.navCtrl.navigateRoot('/list-cienaga');
     }, 500);
-  }
-  RevisionA() {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-      this.navCtrl.navigateRoot('/listalerta');
-    }, 500);
-  }
+  } */
 
-  RevisionE() {
-    this.loading.LoadingNormal('Cargando...', 3);
-    setTimeout(() => {
-      this.navCtrl.navigateRoot('/listverifi');
-    }, 500);
-  }
 
-  Seguimiento() {
-    this.loading.LoadingNormal('Cargando...', 3);
-    setTimeout(() => {
-      this.navCtrl.navigateRoot('/seguimiento');
-    }, 500);
-  }
 
   Continuar() {
     setTimeout(() => {
@@ -203,13 +169,7 @@ export class HomePage implements OnInit {
   }
 
   NewUser() {
-    this.loading.LoadingNormal('Cargando...', 3);
     this.navCtrl.navigateRoot('/ruser');
-  }
-
-  Transporte() {
-    this.loading.LoadingNormal('Cargando...', 3);
-    this.navCtrl.navigateRoot('/transporte');
   }
 
   Comunidad() {
@@ -219,7 +179,6 @@ export class HomePage implements OnInit {
   }
 
   ActualizarP() {
-    this.loading.LoadingNormal('Actualizandooo...', 3);
     setTimeout(() => {
       /*
       this.db.ContarEncuestas();
@@ -230,7 +189,6 @@ export class HomePage implements OnInit {
 
 
   IAmbiental() {
-    this.loading.LoadingNormal('Cargando...', 3);
     setTimeout(() => {
       this.navCtrl.navigateRoot('/amb');
     }, 500);
@@ -2412,7 +2370,6 @@ SincronizarTransporteE(cb) {
     }
 */
 Backup() {
-  this.loading.LoadingNormal('Generando Archivo');
   /*
   this.db.ExportDababase((data) => {
     data = data.toString();

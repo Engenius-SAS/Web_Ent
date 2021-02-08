@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { TransportePage } from './transporte.page';
 import { ImagestviewComponent } from '../imagestview/imagestview.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    NgxSpinnerModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

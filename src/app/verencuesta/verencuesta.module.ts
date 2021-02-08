@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { VerencuestaPage } from './verencuesta.page';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    NgxSpinnerModule,
     RouterModule.forChild(routes)
   ],
   declarations: [VerencuestaPage]

@@ -2063,7 +2063,7 @@
                 </div>
             </ion-item>
           <ion-list style="padding: 10px" *ngIf="Images.length!=0" class="row justify-content-center">
-            <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_enc/{{item[0]}}.jpg' style="margin-top: 10px;"></ion-img>
+            <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co{{item[4]}}' style="margin-top: 10px;"></ion-img>
           </ion-list> 
               <div *ngIf="Images.length==0" class="row justify-content-center">
                 <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
@@ -2079,3 +2079,5 @@
     </div>
   </div>
 </ion-content>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true" [zIndex]="1999999"><p style="color: white" > Cargando... </p></ngx-spinner>
