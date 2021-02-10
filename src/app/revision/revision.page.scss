@@ -1,3 +1,26 @@
+.layerImg{
+    display: flex;
+    width: 100%;
+    border: solid 8px red;
+    padding: 1em;
+    &_title{
+        font-size: large;
+        font-weight: bold;
+    }
+    &_img{
+        margin: .5em;
+        display: flex;
+        flex-direction: row;
+        max-width: 221px;
+        border: 2px outset;
+    }
+    &_btn{
+        font-weight: bold;
+        height: 50%;
+        margin: 4em 0;
+    }
+}
+
 .closeLayer{
     display: grid;
     width: 100%;

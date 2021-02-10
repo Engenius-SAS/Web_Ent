@@ -11,6 +11,7 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { PopoverviewComponent } from '../popoverview/popoverview.component';
 import { AddComponent } from '../add/add.component';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-revision',
@@ -96,6 +97,7 @@ export class RevisionPage implements OnInit {
     });
     }
    }
+   
    async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
       component: AddComponent,
@@ -3988,13 +3990,22 @@ eliminarFoto(data){
       console.log(response, query);
       if (err == null && response == true) {
         this.alert.AlertOneButton('Información', 'Foto Eliminada');
+        const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
+        this.global.consultar(pdata9, (err9, response9) => {
+          console.log('FOTOS Encuesta', response9);
+          this.Images = response9;
+          setTimeout(() => {
+            //this.slideWithNav.update();
+          }, 200);
+        });
       } else {
         this.alert.AlertOneButton('Error', 'Error al eliminar la foto');
       }
      });
     });
-  }
- 
+  } 
 }
+
+
 
 }
