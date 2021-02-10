@@ -3980,7 +3980,18 @@ select_fuente(){
   this.cocinar_prefiere();
 }
 eliminarFoto(data){
- 
+  if(this.bandera == 1){
+    const query = 'UPDATE enterritoriobk.fotos_encuesta SET IsDelete = 1 WHERE (Id_Foto_Encuesta =\'' + data + '\');';
+    const pdata1 = {option: 'insertar', texto: query};
+    this.global.consultar(pdata1, (err, response) => {
+      console.log(response, query);
+      if (err == null && response == true) {
+        this.alert.AlertOneButton('Información', 'Foto Eliminada');
+      } else {
+        this.alert.AlertOneButton('Error', 'Error al eliminar la foto');
+      }
+     });
+    }
 }
 
 }
