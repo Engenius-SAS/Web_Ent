@@ -3979,5 +3979,8 @@ select_fuente(){
     });
   this.cocinar_prefiere();
 }
+eliminarFoto(data){
+ 
+}
 
 }
