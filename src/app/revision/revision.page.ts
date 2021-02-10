@@ -3981,6 +3981,7 @@ select_fuente(){
 }
 eliminarFoto(data){
   if(this.bandera == 1){
+    this.alert.AlertTowButtons('Alerta', '¿Desea eliminar la foto?', 'Si', () => {      
     const query = 'UPDATE enterritoriobk.fotos_encuesta SET IsDelete = 1 WHERE (Id_Foto_Encuesta =\'' + data + '\');';
     const pdata1 = {option: 'insertar', texto: query};
     this.global.consultar(pdata1, (err, response) => {
@@ -3991,7 +3992,9 @@ eliminarFoto(data){
         this.alert.AlertOneButton('Error', 'Error al eliminar la foto');
       }
      });
-    }
+    });
+  }
+ 
 }
 
 }
