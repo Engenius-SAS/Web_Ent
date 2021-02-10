@@ -4005,6 +4005,13 @@ eliminarFoto(data){
     });
   } 
 }
+actualizarFirma(data, id){
+  console.log(data, id);
+
+}
+agregarFirma(){
+
+}
 
 
 

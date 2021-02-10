@@ -2006,11 +2006,17 @@
               </ion-label>
             </ion-item-divider>
             <ion-list style="padding: 10px" *ngIf="ImagesF.length!=0" class="row justify-content-center">
-              <ion-img class="col-6" *ngFor="let item of ImagesF" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/{{item[1]}}.jpg' style="margin-top: 10px;"></ion-img>
+              <div *ngFor="let item of ImagesF">
+                
+                <ion-img class="col-6" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/{{item[1]}}.jpg' style="margin-top: 10px;"></ion-img>
+                <button *ngIf="item[5]=='NO ENCONTRADO ARCHIVO LOCAL'" class="btn btn-success" (click)="actualizarFirma(item[5], item[1])"> Agregar firma </button>
+                </div>
             </ion-list> 
                 <div *ngIf="ImagesF.length==0" class="row justify-content-center">
                   <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+                  <button class="btn btn-success" (click)="agregarFirma()"> Agregar firma </button>
                 </div>  
+                
           <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
             <ion-label color="blue" position="floating" class="ion-text-wrap">Cédula de ciudadanía: </ion-label>
             <ion-input type=number [(ngModel)]="data[93]" placeholder="Escriba Aquí" (ionChange)="cedulaF()"></ion-input>
