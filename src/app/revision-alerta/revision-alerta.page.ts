@@ -11,6 +11,7 @@ import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Add2Component } from '../add2/add2.component';
 import { NgxSpinnerService } from "ngx-spinner";
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-revision',
@@ -4025,5 +4026,29 @@ guardarParientes(){
       }
     });
   }
+}
+eliminarFoto(data){
+  if(this.bandera == 1){
+    this.alert.AlertTowButtons('Alerta', '¿Desea eliminar la foto?', 'Si', () => {      
+    const query = 'UPDATE enterritoriobk.fotos_encuesta SET IsDelete = 1 WHERE (Id_Foto_Encuesta =\'' + data + '\');';
+    const pdata1 = {option: 'insertar', texto: query};
+    this.global.consultar(pdata1, (err, response) => {
+      console.log(response, query);
+      if (err == null && response == true) {
+        this.alert.AlertOneButton('Información', 'Foto Eliminada');
+        const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
+        this.global.consultar(pdata9, (err9, response9) => {
+          console.log('FOTOS Encuesta', response9);
+          this.Images = response9;
+          setTimeout(() => {
+            //this.slideWithNav.update();
+          }, 200);
+        });
+      } else {
+        this.alert.AlertOneButton('Error', 'Error al eliminar la foto');
+      }
+     });
+    });
+  } 
 }
 }
