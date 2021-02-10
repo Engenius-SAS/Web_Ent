@@ -98,6 +98,7 @@ export class RevisionPage implements OnInit {
     });
     }
    }
+   
    async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
       component: AddComponent,
@@ -3986,5 +3987,38 @@ select_fuente(){
     });
   this.cocinar_prefiere();
 }
+eliminarFoto(data){
+  if(this.bandera == 1){
+    this.alert.AlertTowButtons('Alerta', '¿Desea eliminar la foto?', 'Si', () => {      
+    const query = 'UPDATE enterritoriobk.fotos_encuesta SET IsDelete = 1 WHERE (Id_Foto_Encuesta =\'' + data + '\');';
+    const pdata1 = {option: 'insertar', texto: query};
+    this.global.consultar(pdata1, (err, response) => {
+      console.log(response, query);
+      if (err == null && response == true) {
+        this.alert.AlertOneButton('Información', 'Foto Eliminada');
+        const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
+        this.global.consultar(pdata9, (err9, response9) => {
+          console.log('FOTOS Encuesta', response9);
+          this.Images = response9;
+          setTimeout(() => {
+            //this.slideWithNav.update();
+          }, 200);
+        });
+      } else {
+        this.alert.AlertOneButton('Error', 'Error al eliminar la foto');
+      }
+     });
+    });
+  } 
+}
+actualizarFirma(data, id){
+  console.log(data, id);
+
+}
+agregarFirma(){
+
+}
+
+
 
 }
