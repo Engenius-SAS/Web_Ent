@@ -68,7 +68,12 @@ municipio;
         this.Pines = this.users = response8;
         this.spinner.hide();
       });
-    }, 300); 
+      const pdata10 = {option: 'excell', Id_Proyecto: this.global.Id_Proyecto};
+        this.global.consultar(pdata10, (err10, response10) => {
+          console.log('LISTADO EXCEL', response10);
+          this.Alertt = response10;
+        });
+       }, 1000);
     }
 
     }
