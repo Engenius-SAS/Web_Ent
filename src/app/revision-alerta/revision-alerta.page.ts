@@ -12,7 +12,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Add2Component } from '../add2/add2.component';
 import * as $ from 'jquery';
 import { NgxSpinnerService } from "ngx-spinner";
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-revision',
