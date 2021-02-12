@@ -27,6 +27,7 @@ import 'datatables.net-scroller-bs4';
 import 'datatables.net-searchpanes-bs4';
 import 'datatables.net-select-bs4';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ExcelService } from '../excel.service';
 
 @Component({
   selector: 'app-list',
@@ -44,11 +45,14 @@ users = new Array();
 ImagesF = new Array();
 searchQuery;
 filtro;
+Alertt;
+Toexcel;
 municipio;
   constructor(
     public menuCtrl: MenuController,
     public navCtrl: NavController,
     public global: GlobalService,
+    private excelService: ExcelService,
     public alert: AlertService,
     private spinner: NgxSpinnerService,
     public popoverController: PopoverController) { }
@@ -1785,6 +1789,20 @@ cargarEnc() {
     this.spinner.hide();
     this.alert.AlertOneButton('Error', 'Error al Generar el Reporte', 'Ok');
   }
+  }
+  
+  exportAsXLSX() {
+    console.log('Excel', this.Alertt);
+    this.Toexcel =  [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestado', 'Municipio', 'Vereda', 'Telefono Encuestado', 'Nombre Encuestador', 'Nombre Encuestador']];
+    for (let p = 0; p < this.Alertt.length; p++) {
+      this.Toexcel.push(this.Alertt[p]);
+    }
+    setTimeout(() => {
+      this.excelService.exportAsExcelFile2(this.Toexcel, 'Listado encuestas', 'Listado encuestas aprobadas');
+      setTimeout(() => {
+        this.Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestado', 'Municipio', 'Vereda', 'Telefono Encuestado', 'Nombre Encuestador', 'Nombre Encuestador']];
+      }, 1000);
+    }, 1500);
   }
 
 }
