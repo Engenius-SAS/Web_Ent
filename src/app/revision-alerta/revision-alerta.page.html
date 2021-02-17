@@ -1734,8 +1734,8 @@
               <ion-col style="border: 0.2px solid gray">
                 Otro
               </ion-col> 
-              <ion-col style="border: 0.2px solid gray" *ngIf="data[136]!=''">
-                <ion-checkbox color="primary" checked="true"></ion-checkbox>
+              <ion-col style="border: 0.2px solid gray">
+                <ion-checkbox color="primary" [(ngModel)]="otroFi"></ion-checkbox>
               </ion-col> 
             </ion-row>           
             <ion-label color="blue" position="floating" class="ion-text-wrap">Otro, ¿Cuál?: </ion-label>

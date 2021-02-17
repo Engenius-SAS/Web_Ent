@@ -41,6 +41,7 @@ export class RevisionAlertaPage implements OnInit {
   FE_iluminar_planta_diesel_select = false;
   FE_iluminar_velas_select = false;
   FE_iluminar_otro_select = false;
+  otroFi = false;
   Edificacion;
   data = new Array();
   Energia;
@@ -1661,7 +1662,7 @@ if(this.bandera == 1){
 uso_predio(){
   
 if(this.bandera == 1){
-  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Uso_predio =\'' + this.data[74] + '\''
+  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Uso_predio =\'' + this.data[73] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
   this.global.consultar(pdata1, (err, response) => {
@@ -1677,7 +1678,7 @@ if(this.bandera == 1){
 estrato(){
   
 if(this.bandera == 1){
-  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Estrato_predio =\'' + this.data[73] + '\''
+  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Estrato_predio =\'' + this.data[74] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
   this.global.consultar(pdata1, (err, response) => {
@@ -3253,6 +3254,15 @@ if(this.bandera == 1){
     }
    });
   }
+}
+otrofi(){
+  if(this.data[136]=='-' || this.data[136]==''){
+    this.otroFi=false;
+  } else {
+    this.otroFi=true;
+  }
+console.log(this.data[136]);
+console.log(this.otroFi);
 }
 cultivo1(){
   

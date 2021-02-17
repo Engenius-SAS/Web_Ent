@@ -42,6 +42,7 @@ export class RevisionPage implements OnInit {
   FE_iluminar_velas_select = false;
   FE_iluminar_otro_select = false;
   Edificacion;
+  otroFi = false;
   data = new Array();
   Energia;
   idx;
@@ -76,7 +77,8 @@ export class RevisionPage implements OnInit {
       // tslint:disable-next-line: max-line-length
       this.total = JSON.parse(this.data[141]) + JSON.parse(this.data[142]) + JSON.parse(this.data[143]) + JSON.parse(this.data[144]) + JSON.parse(this.data[145]) + JSON.parse(this.data[146]) + JSON.parse(this.data[147]) + JSON.parse(this.data[148]) + JSON.parse(this.data[149]) + JSON.parse(this.data[150]) + JSON.parse(this.data[151]) + JSON.parse(this.data[152]);
       setTimeout(() => {
-        this.bandera = 1;
+        this.bandera = 1;        
+    this.otrofi();
       }, 500);
     });
     const pdata9 = {option: 'fotosen', Id_Encuesta: this.global.Id_busqueda};
@@ -1630,7 +1632,7 @@ if(this.bandera == 1){
 uso_predio(){
   
 if(this.bandera == 1){
-  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Uso_predio =\'' + this.data[74] + '\''
+  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Uso_predio =\'' + this.data[73] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
   this.global.consultar(pdata1, (err, response) => {
@@ -1643,10 +1645,19 @@ if(this.bandera == 1){
    });
   }
 }
+otrofi(){
+  if(this.data[136]=='-' || this.data[136]==''){
+    this.otroFi=false;
+  } else {
+    this.otroFi=true;
+  }
+console.log(this.data[136]);
+console.log(this.otroFi);
+}
 estrato(){
   
 if(this.bandera == 1){
-  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Estrato_predio =\'' + this.data[73] + '\''
+  const query = 'UPDATE enterritoriobk.caracteristicas_predio SET Estrato_predio =\'' + this.data[74] + '\''
   + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
   const pdata1 = {option: 'insertar', texto: query};
   this.global.consultar(pdata1, (err, response) => {
