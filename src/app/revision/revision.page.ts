@@ -20,6 +20,7 @@ import * as $ from 'jquery';
 })
 
 export class RevisionPage implements OnInit {
+  noinitban = 0;
   FE_cocinar_gaspropano_consumo_select = false;
   FE_cocinar_gasnatural_consumo_select = false;
   FE_cocinar_gasolina_consumo_select = false;
@@ -123,6 +124,7 @@ export class RevisionPage implements OnInit {
        const query = 'UPDATE enterritoriobk.c_sociodemograficas SET Parentesco =\'' + JSON.stringify(this.global.FamiliaGlobal) + '\''
         + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
       const pdata1 = { option: 'insertar', texto: query };
+      console.log('QUERY', query);
       this.global.consultar(pdata1, (err, response) => {
         console.log(response, query);
         if (err == null && response == true) {
@@ -143,6 +145,7 @@ export class RevisionPage implements OnInit {
     const blob = new Blob([int8Array], { type: 'image/jpeg' });
     return blob;
   }
+
   loadPhoto(){
     try{
       console.log( this.global.Id_busqueda);
@@ -211,7 +214,10 @@ export class RevisionPage implements OnInit {
                 }
               });
               if (con1 == con2 && con2 == this.srcImg.length) {
-                this.ngOnInit();
+                this.noinitban = 0;
+                setTimeout(() => {
+                  this.ngOnInit();
+                }, 300);
                 this.srcImg =[];
                 this.imgsUrls = [];
                 this.isFull = false;

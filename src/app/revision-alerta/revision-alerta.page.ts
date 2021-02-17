@@ -10,8 +10,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Add2Component } from '../add2/add2.component';
-import { NgxSpinnerService } from "ngx-spinner";
 import * as $ from 'jquery';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-revision',
@@ -20,6 +20,7 @@ import * as $ from 'jquery';
 })
 
 export class RevisionAlertaPage implements OnInit {
+  noinitban = 0;
   FE_cocinar_gaspropano_consumo_select = false;
   FE_cocinar_gasnatural_consumo_select = false;
   FE_cocinar_gasolina_consumo_select = false;
@@ -103,7 +104,7 @@ export class RevisionAlertaPage implements OnInit {
     });
     }
    }
-
+  
 Fin(){
   const query = 'UPDATE enterritoriobk.alertas SET IsDelete = 1 '
     + ' WHERE (Id_Encuesta =\'' + this.global.Id_busqueda + '\');';
@@ -210,7 +211,10 @@ loadPhoto(){
               }
             });
             if (con1 == con2 && con2 == this.srcImg.length) {
+              this.noinitban = 0;
+              setTimeout(() => {
               this.ngOnInit();
+              }, 400);
               this.srcImg =[];
               this.imgsUrls = [];
               this.isFull = false;
@@ -225,7 +229,7 @@ loadPhoto(){
 }
 onFileSelected(event) {
   console.log(event);
-   const selectedFiles = event.target.files;
+  const selectedFiles = event.target.files;
   console.log(selectedFiles);
   for (let i = 0; i < selectedFiles.length; i++) {
     const reader = new FileReader();
