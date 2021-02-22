@@ -49,20 +49,20 @@ export class ListalertaPage implements OnInit {
         const pdata8 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('ENCUESTADORES', response8);
-          this.Encuestadores = response8;
-        });
-        const pdata9 = {option: 'MapaA', Id_Proyecto: this.global.Id_Proyecto};
-        this.global.consultar(pdata9, (err9, response9) => {
-          console.log('ALERTAS', response9);
-          this.Pines = this.users = response9;
-          console.log('id EXCEL', this.global.Id_Proyecto);
-          this.flag = true;
-          this.spinner.hide();
-        });
-        const pdata10 = {option: 'excela', Id_Proyecto: this.global.Id_Proyecto};
-        this.global.consultar(pdata10, (err10, response10) => {
-          console.log('ALERTAS EXCEL', response10);
-          this.Alertt = response10;
+          this.Encuestadores = response8;        
+          const pdata9 = {option: 'MapaA', Id_Proyecto: this.global.Id_Proyecto};
+          this.global.consultar(pdata9, (err9, response9) => {
+            console.log('ALERTAS', response9);
+            this.Pines = this.users = response9;
+            console.log('id EXCEL', this.global.Id_Proyecto);                  
+            const pdata10 = {option: 'excela', Id_Proyecto: this.global.Id_Proyecto};
+            this.global.consultar(pdata10, (err10, response10) => {
+              console.log('ALERTAS EXCEL', response10);
+              this.Alertt = response10;
+              this.flag = true;
+            this.spinner.hide();  
+            });
+          }); 
         });
        }, 1000);
     }
@@ -92,19 +92,23 @@ export class ListalertaPage implements OnInit {
   Buscar() {
     if(this.usuario == '0') {
       this.Pines = new Array();
+      this.spinner.show();
       setTimeout(() => {
         const pdata8 = {option: 'MapaA', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
+          this.spinner.hide();
           this.Pines = response8;
         });
       }, 1500);
     } else {
       this.Pines = new Array();
+      this.spinner.show();
       setTimeout(() => {
         const pdata8 = {option: 'MapaA2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
+          this.spinner.hide();
           this.Pines = response8;
         });
       }, 1500);
@@ -136,6 +140,7 @@ export class ListalertaPage implements OnInit {
 
 
   exportAsXLSX() {
+    this.spinner.show();
     console.log('Excel', this.Alertt);
     this.Toexcel =  [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
     for (let p = 0; p < this.Alertt.length; p++) {
@@ -145,6 +150,7 @@ export class ListalertaPage implements OnInit {
       this.excelService.exportAsExcelFile2(this.Toexcel, 'Alertas', 'Alertas Registradas');
       setTimeout(() => {
         this.Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Encuestado', 'Municipio', 'Vereda', 'Alerta', 'Fecha Alerta', 'Telefono Encuestado']];
+        this.spinner.hide();
       }, 1000);
     }, 1500);
   }
