@@ -186,7 +186,12 @@ export class HomePage implements OnInit {
       this.db.ContarEncuestasE();*/
     }, 500);
   }
-
+  SeguimientoM() {
+    //this.loading.LoadingNormal('Cargando...', 3);
+    setTimeout(() => {
+      this.navCtrl.navigateRoot('/seguimiento-municipios');
+    }, 500);
+  }
 
   IAmbiental() {
     setTimeout(() => {

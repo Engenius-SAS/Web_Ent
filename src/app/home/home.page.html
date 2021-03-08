@@ -41,6 +41,12 @@
             </ion-card-header>
                <ion-button class="ion-text-wrap" color="blue" expand="full">Seguimiento a Encuestadores</ion-button>
           </ion-card> 
+          <ion-card class="col-xl-3 col-md-4 col-lg-5 col-sm-5" style="padding: 0px" (click)="this.navCtrl.navigateRoot('/seguimiento-municipios');">
+            <ion-card-header>
+               <ion-img src="assets/imgs/campo.png" style="width: 30%;max-width: 30%;;margin: auto"></ion-img>
+            </ion-card-header>
+               <ion-button class="ion-text-wrap" color="blue" expand="full">Seguimiento por Municipios</ion-button>
+          </ion-card>
           <ion-card class="col-xl-3 col-md-4 col-lg-5 col-sm-5" style="padding: 0px" (click)="this.navCtrl.navigateRoot('/transporte');" *ngIf="this.isTransporte">
             <ion-card-header>
                <ion-img src="assets/imgs/camion.png" style="width: 30%;max-width: 30%;;margin: auto"></ion-img>
