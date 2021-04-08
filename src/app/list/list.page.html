@@ -13,7 +13,7 @@
         <ion-icon slot="start" name="reload-circle-outline" color="success"></ion-icon> Actualizar
       </ion-button>
     </ion-buttons>
-  </ion-toolbar>  
+  </ion-toolbar>    
   <ion-item>
     <ion-label>Encuestador: </ion-label>
     <ion-select [(ngModel)]="usuario" (ionChange)="BuscarE()">
@@ -21,6 +21,13 @@
       <ion-select-option *ngFor="let item of Encuestadores" value={{item[0]}}>{{item[1]}}</ion-select-option>
     </ion-select>
   </ion-item>  
+  <ion-item>
+    <ion-label>Municipio: </ion-label>
+    <ion-select [(ngModel)]="municipio" (ionChange)="BuscarM()">
+      <ion-select-option value="0" selected>Todos</ion-select-option>
+      <ion-select-option *ngFor="let item of Muni" value={{item[0]}}>{{item[1]}}</ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar" (ionInput)="getItems($event)" animated="true" color="secondary"></ion-searchbar>  
 </ion-header>
 
@@ -65,6 +72,9 @@
     </tbody>
 </table>
 </ion-card>
+<div class="noView"  *ngIf="Pines.length == 0">
+  <p>No hay encuestas para mostrar</p>
+</div>
 </ion-content>
 <ion-footer *ngIf="this.Alertt != undefined">
   <div class="row justify-content-center" style="padding: 0% 5%">

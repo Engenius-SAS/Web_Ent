@@ -21,6 +21,13 @@
       <ion-select-option *ngFor="let item of Encuestadores" value={{item[0]}}>{{item[1]}}</ion-select-option>
     </ion-select>
   </ion-item>
+  <ion-item>
+    <ion-label>Municipio: </ion-label>
+    <ion-select [(ngModel)]="municipio" (ionChange)="BuscarM()">
+      <ion-select-option value="0" selected>Todos</ion-select-option>
+      <ion-select-option *ngFor="let item of Muni" value={{item[0]}}>{{item[1]}}</ion-select-option>
+    </ion-select>
+  </ion-item>
   <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar" (ionInput)="getItems($event)" animated="true" color="secondary"></ion-searchbar>
 </ion-header>
 
@@ -56,11 +63,13 @@
     </tbody>
 </table>
 </ion-card>
+<div class="noView"  *ngIf="Pines.length == 0">
+  <p>No hay encuestas para mostrar</p>
+</div>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true" [zIndex] = "1999999"><p style="color: white" > Cargando... </p></ngx-spinner>
 </ion-content>
 <ion-footer *ngIf = "Alertt != undefined">
   <div class="row justify-content-center" style="padding: 0% 5%">
     <ion-button color="success" (click)="exportAsXLSX()">Exportar a Excel</ion-button>
   </div>
 </ion-footer>
-
-<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true" [zIndex]="1999999"><p style="color: white" > Cargando... </p></ngx-spinner>

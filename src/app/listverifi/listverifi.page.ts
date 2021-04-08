@@ -17,6 +17,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ListverifiPage implements OnInit {
   Pines;
   Encuesta;
+Muni = new Array();
+municipio;
   usuario = '0';
   Encuestadores = new Array();
   users = new Array();
@@ -38,7 +40,13 @@ Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Enc
         this.navCtrl.navigateRoot('/login');
         this.spinner.hide();
       }else{
+        this.Pines = new Array();
         setTimeout(() => {
+          const pdata3 = {option: 'muniSM', Id_Proyecto: this.global.Id_Proyecto};
+          this.global.consultar(pdata3, (err3, response3) => {
+            console.log('MUNICIPIOS', response3);
+            this.Muni = response3;
+          });
           const pdata9 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
           this.global.consultar(pdata9, (err9, response9) => {
             console.log('ENCUESTADORES', response9);
@@ -120,5 +128,30 @@ Toexcel = [['Id Encuesta' , 'Fecha Encuesta' , 'Nombre Encuestador', 'Nombre Enc
           });
         }, 300);
       }
+    }
+    BuscarM() {
+      this.spinner.show();
+      if (this.municipio == '0') {
+        this.Pines = new Array();
+        setTimeout(() => {
+        const pdata8 = {option: 'MapaR', Id_Proyecto: this.global.Id_Proyecto};
+        this.global.consultar(pdata8, (err8, response8) => {
+          console.log('PINES MAPA', response8);
+          this.Pines = response8;
+          this.spinner.hide();
+        });
+      }, 300);
+      } else {
+        this.Pines = new Array();
+        setTimeout(() => {
+          console.log('Munici', this.municipio);
+          const pdata8 = {option: 'MapaRM', Id_Proyecto: this.global.Id_Proyecto, municipio: this.municipio};
+          this.global.consultar(pdata8, (err8, response8) => {
+            console.log('PINES MAPA', response8);
+            this.Pines = this.users = response8;
+            this.spinner.hide();
+          });
+        }, 300);
+     } 
     }
 }

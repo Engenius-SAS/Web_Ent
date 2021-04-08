@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'seguimiento', loadChildren: './seguimiento/seguimiento.module#SeguimientoPageModule' },
   { path: 'list-cienaga', loadChildren: './list-cienaga/list-cienaga.module#ListCienagaPageModule' },
   { path: 'listalerta', loadChildren: './listalerta/listalerta.module#ListalertaPageModule' },
-  { path: 'revision-alerta', loadChildren: './revision-alerta/revision-alerta.module#RevisionAlertaPageModule' }
+  { path: 'revision-alerta', loadChildren: './revision-alerta/revision-alerta.module#RevisionAlertaPageModule' },  { path: 'seguimiento-municipios', loadChildren: './seguimiento-municipios/seguimiento-municipios.module#SeguimientoMunicipiosPageModule' }
+
 
 
 

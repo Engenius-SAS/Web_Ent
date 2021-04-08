@@ -22,6 +22,13 @@
         <ion-select-option *ngFor="let item of Encuestadores" value={{item[0]}}>{{item[1]}}</ion-select-option>
       </ion-select>
     </ion-item>
+    <ion-item>
+      <ion-label>Municipio: </ion-label>
+      <ion-select [(ngModel)]="municipio" (ionChange)="BuscarM()">
+        <ion-select-option value="0" selected>Todos</ion-select-option>
+        <ion-select-option *ngFor="let item of Muni" value={{item[0]}}>{{item[1]}}</ion-select-option>
+      </ion-select>
+    </ion-item>
     <ion-searchbar [(ngModel)]="searchQuery" placeholder="Buscar" (ionInput)="getItems($event)" animated="true" color="secondary"></ion-searchbar>
   </ion-header>
   <ion-content>

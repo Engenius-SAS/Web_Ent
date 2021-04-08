@@ -18,7 +18,8 @@ export class ListalertaPage implements OnInit {
   Pines = new Array();
   id;
   txt;
-  municipio = '';
+Muni = new Array();
+municipio = '';
   comunidad = '';
   Alerta = new Array();
   Comu = new Array();
@@ -45,7 +46,13 @@ export class ListalertaPage implements OnInit {
     if( this.global.Id_Proyecto == undefined){
       this.navCtrl.navigateRoot('/login');
     }else{
+      this.Pines = new Array();
       setTimeout(() => {
+        const pdata3 = {option: 'muniSM', Id_Proyecto: this.global.Id_Proyecto};
+    this.global.consultar(pdata3, (err3, response3) => {
+      console.log('MUNICIPIOS', response3);
+      this.Muni = response3;
+    });
         const pdata8 = {option: 'encu', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('ENCUESTADORES', response8);
@@ -114,7 +121,31 @@ export class ListalertaPage implements OnInit {
       }, 1500);
     }
   }
-
+  BuscarM() {
+    this.spinner.show();
+    if (this.municipio == '0') {
+      this.Pines = new Array();
+      setTimeout(() => {
+      const pdata8 = {option: 'MapaA', Id_Proyecto: this.global.Id_Proyecto};
+      this.global.consultar(pdata8, (err8, response8) => {
+        console.log('PINES MAPA', response8);
+        this.Pines = response8;
+        this.spinner.hide();
+      });
+    }, 300);
+    } else {
+      this.Pines = new Array();
+      setTimeout(() => {
+        console.log('Munici', this.municipio);
+        const pdata8 = {option: 'MapaAM', Id_Proyecto: this.global.Id_Proyecto, municipio: this.municipio};
+        this.global.consultar(pdata8, (err8, response8) => {
+          console.log('PINES MAPA', response8);
+          this.Pines = this.users = response8;
+          this.spinner.hide();
+        });
+      }, 300);
+   } 
+  }
 
   RevisionA(item){
     setTimeout(() => {
