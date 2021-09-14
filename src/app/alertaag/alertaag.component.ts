@@ -8,11 +8,11 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
-  selector: 'app-popoverview',
-  templateUrl: './popoverview.component.html',
-  styleUrls: ['./popoverview.component.scss'],
+  selector: 'app-alertaag',
+  templateUrl: './alertaag.component.html',
+  styleUrls: ['./alertaag.component.scss'],
 })
-export class PopoverviewComponent implements OnInit {
+export class AlertaagComponent implements OnInit {
 
   idelemento;
   fecha;
@@ -54,7 +54,7 @@ export class PopoverviewComponent implements OnInit {
         if (err2 == null && response2 == true) {
           this.loading.HideLoading();
           this.alert.AlertOneButton('Información', 'Revisión exitosa, alerta enviada', 'Ok', () => {
-            this.navCtrl.navigateRoot('/listverifi');
+            this.navCtrl.navigateRoot('/listverifi-ag');
             this.popoverController.dismiss();
           });   
         } else {

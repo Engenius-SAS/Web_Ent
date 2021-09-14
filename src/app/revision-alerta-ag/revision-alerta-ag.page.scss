@@ -1,0 +1,87 @@
+.layerImg{
+    display: flex;
+    width: 100%;
+    border: solid 8px red;
+    padding: 1em;
+    &_title{
+        font-size: large;
+        font-weight: bold;
+    }
+    &_img{
+        margin: .5em;
+        display: flex;
+        flex-direction: row;
+        max-width: 221px;
+        border: 2px outset;
+    }
+    &_btn{
+        font-weight: bold;
+        height: 50%;
+        margin: 4em 0;
+    }
+}
+
+.closeLayer{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    &_bg{
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 10px;
+    left: 15px;
+    width: 92.5%;
+    height: 98%;
+    opacity: 0;
+    position: absolute;
+    transition: all 1s;
+    }
+  &_icon{   
+    position: absolute;
+    top: 40%;
+    left: 34%;
+        svg{
+        width: 100px;
+        height: 100px;       
+        color: #fff;
+        opacity: 0;
+        transition: all 1s;
+        }
+        p{
+            font-size: 1em;
+            font-weight: 300;
+            color: #fff;
+            opacity: 0;
+            transition: all 1s;
+        }
+    }
+    &:hover{
+        .closeLayer{
+        &_bg{
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 10px;
+            left: 15px;
+            width: 92.5%;
+            height: 98%;
+            opacity: 1;
+            position: absolute;
+            }
+        &_icon{   
+                position: absolute;
+                top: 40%;
+                left: 34%;
+                    svg{
+                    width: 100px;
+                    height: 100px;       
+                    color: #fff;
+                    opacity: 1;
+                    }
+                    p{
+                        font-size: 1em;
+                        font-weight: 300;
+                        color: #fff;
+                        opacity: 1;
+                    }
+                }
+            }
+    }
+}

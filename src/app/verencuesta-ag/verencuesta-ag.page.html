@@ -1,0 +1,211 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.navigateRoot('/listverifi-ag');">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+      Información de la Encuesta
+    </ion-title>
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          IDENTIFICACIÓN DE LA ENCUESTA
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Datos de la Encuesta
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">No. de formulario: </ion-label>
+              <ion-input type=text [(ngModel)]="data[3]" readonly=true></ion-input>
+            </ion-item>
+            
+            <ion-item-divider>
+              <ion-label color=primary>
+                Ubicación del Proyecto
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" text-wrap style="font-size:large">Localización:</ion-label>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Latitud: </ion-label>
+              <ion-input type=text [(ngModel)]="data[40]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Longitud: </ion-label>
+              <ion-input type=text [(ngModel)]="data[41]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Altitud: </ion-label>
+              <ion-input type=text [(ngModel)]="data[42]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Departamento: </ion-label>
+              <ion-input type=text [(ngModel)]="data[43]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Código departamento: </ion-label>
+              <ion-input type=text [(ngModel)]="data[44]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Municipio: </ion-label>
+              <ion-input type=text [(ngModel)]="data[45]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Código municipio: </ion-label>
+              <ion-input type=text [(ngModel)]="data[46]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Vereda: </ion-label>
+              <ion-input type=text [(ngModel)]="data[47]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Corregimiento</ion-label>
+              <ion-input type=text [(ngModel)]="data[48]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label color=primary>
+                ¿Qué tipo de proyecto es?
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-6 col-lg-6 col-sm-6">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Tipo de proyecto: </ion-label>
+              <ion-input type=text [(ngModel)]="data[49]" readonly=true></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          TRATAMIENTO DATOS PERSONALES
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+              <ion-label color=primary>
+                Autorización
+              </ion-label>
+            </ion-item-divider>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Nos autoriza a realizarle la encuesta?
+              </ion-label>
+              <ion-input type=text [(ngModel)]="data[29]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿La edificación corresponde a una?
+              </ion-label>
+              <ion-input type=text [(ngModel)]="data[30]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Qué tipo de institución es?
+              </ion-label>
+              <ion-input type=text [(ngModel)]="data[31]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál?: </ion-label>
+              <ion-input type=text [(ngModel)]="data[32]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-4 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">¿Cuál es el uso de la vivienda / institución? </ion-label>
+              <ion-input type=text [(ngModel)]="data[33]" readonly=true></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+         MÓDULO ENERGÍA
+        </ion-card-header>
+        <ion-card-content style="background: white!important">
+          <ion-list class="row justify-content-left">
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">1. ¿Ha tenido fallas en el servicio de energía?</ion-label>
+              <ion-input type=text [(ngModel)]="data[13]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[13]=='Si'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">1.1. ¿Cuándo fue la última vez?</ion-label>
+              <ion-input type=text [(ngModel)]="data[14]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">2. ¿Con qué frecuencia se presentan fallas en el servicio de energía?</ion-label>
+              <ion-input type=text [(ngModel)]="data[15]" readonly=true></ion-input>
+            </ion-item>   
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">3. ¿La estructura en la que están soportados los paneles se encuentra cimentada en el terreno de manera firme? </ion-label>
+              <ion-input type=text [(ngModel)]="data[16]" readonly=true></ion-input>
+             </ion-item>   
+             <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">3.1. ¿Muestra algún defecto? </ion-label>
+               <ion-input type=text [(ngModel)]="data[17]" readonly=true></ion-input>
+             </ion-item>  
+             <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">3.2. ¿Se observa inestable? </ion-label>
+               <ion-input type=text [(ngModel)]="data[18]" readonly=true></ion-input>
+             </ion-item>  
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">4. ¿Los paneles y la estructura que los soporta presentan algún tipo de daño visible? </ion-label>
+              <ion-input type=text [(ngModel)]="data[19]" readonly=true></ion-input>
+            </ion-item>
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12" *ngIf="data[19] == 'Otro(s)'">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">Otras, Mencione cuales </ion-label>
+               <ion-input type=text [(ngModel)]="data[20]" readonly=true></ion-input>
+             </ion-item>
+             <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">5. ¿Las conexiones eléctricas presentan sulfatación de color blanco o verde?</ion-label>
+               <ion-input type=text [(ngModel)]="data[21]" readonly=true></ion-input>
+            </ion-item> 
+            <ion-item class="col-xl-12 col-md-12 col-lg-12 col-sm-12">
+              <ion-label color="blue" position="floating" class="ion-text-wrap">6. ¿Qué elementos o equipos que integran el sistema fotovoltaico presentan fallas o deterioro? </ion-label>
+               <ion-input type=text [(ngModel)]="data[22]" readonly=true></ion-input>
+             </ion-item>                     
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="width: 100%">
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+          MÓDULO FIRMA
+        </ion-card-header>
+        <ion-card-content style="background: white!important;">
+          <ion-list class="row justify-content-left">
+            <ion-item-divider>
+                <ion-label color=primary>
+                  Firma:
+                </ion-label>
+              </ion-item-divider>
+              <ion-list style="padding: 10px" *ngIf="ImagesF.length!=0" class="row justify-content-center">
+                <ion-img class="col-6" *ngFor="let item of ImagesF" src='https://www.php.engenius.com.co/Fotos_ENT/fotos_firma/{{item[1]}}.jpg' style="margin-top: 10px;"></ion-img>         
+              </ion-list> 
+                  <div *ngIf="ImagesF.length==0" class="row justify-content-center">
+                    <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+                  </div>
+            </ion-list>          
+          </ion-card-content>
+        </ion-card>
+      <ion-card>
+        <ion-card-header color="blue" style="text-align: center;font-size:large">
+              MÓDULO FOTOGRAFIAS
+            </ion-card-header>
+            <ion-card-content style="background: white!important;">
+              <ion-list style="padding: 10px" *ngIf="Images.length!=0" class="row justify-content-center">
+                <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co{{item[4]}}' style="margin-top: 10px;"></ion-img>
+              </ion-list> 
+                  <div *ngIf="Images.length==0" class="row justify-content-center">
+                    <img src="http://demo.engenius.co/Icons/No.png" width="60%" class="col-6">
+                  </div>     
+            </ion-card-content>
+          </ion-card>      
+        </div>
+      </div>
+    </ion-content>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true" [zIndex]="1999999"><p style="color: white" > Cargando... </p></ngx-spinner>

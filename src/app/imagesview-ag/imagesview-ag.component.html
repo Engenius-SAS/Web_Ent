@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="Cerrar()">
+        <ion-icon slot="start" name="arrow-back-circle-outline" color="danger"></ion-icon> ATRAS
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center" class="ion-text-uppercase">
+     Imágenes de la Encuesta
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-list style="padding: 10px" *ngIf="Images.length!=0" class="row justify-content-center">
+    <ion-img class="col-6" *ngFor="let item of Images" src='https://www.php.engenius.com.co{{item[4]}}' style="margin-top: 10px;"></ion-img>
+  </ion-list> 
+  <!--
+  <ion-slides #slideWithNav pager="true" *ngIf="Images.length!=0" class="col-12">
+    <ion-slide *ngFor="let item of Images" style="width: 100%;">
+      <ion-img src='https://www.php.engenius.com.co/Fotos_ENT/fotos_enc/{{item[0]}}.jpg' style="width: 100%!important;"></ion-img>
+    </ion-slide>
+    
+  </ion-slides>-->
+      <div *ngIf="Images.length==0" class="row justify-content-center">
+        <img src="https://engenius.com.co/Icons/No.png" width="60%" class="col-6">
+      </div>
+</ion-content>

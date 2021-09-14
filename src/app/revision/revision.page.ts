@@ -75,6 +75,7 @@ export class RevisionPage implements OnInit {
       console.log('Datos Encuesta', response8);
       this.data = response8[0];
       this.global.FamiliaGlobal = JSON.parse(this.data[13]);
+      console.log('Daños', this.data[184]);
       // tslint:disable-next-line: max-line-length
       this.total = JSON.parse(this.data[141]) + JSON.parse(this.data[142]) + JSON.parse(this.data[143]) + JSON.parse(this.data[144]) + JSON.parse(this.data[145]) + JSON.parse(this.data[146]) + JSON.parse(this.data[147]) + JSON.parse(this.data[148]) + JSON.parse(this.data[149]) + JSON.parse(this.data[150]) + JSON.parse(this.data[151]) + JSON.parse(this.data[152]);
       setTimeout(() => {

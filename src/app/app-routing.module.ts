@@ -20,7 +20,13 @@ const routes: Routes = [
   { path: 'seguimiento', loadChildren: './seguimiento/seguimiento.module#SeguimientoPageModule' },
   { path: 'list-cienaga', loadChildren: './list-cienaga/list-cienaga.module#ListCienagaPageModule' },
   { path: 'listalerta', loadChildren: './listalerta/listalerta.module#ListalertaPageModule' },
-  { path: 'revision-alerta', loadChildren: './revision-alerta/revision-alerta.module#RevisionAlertaPageModule' },  { path: 'seguimiento-municipios', loadChildren: './seguimiento-municipios/seguimiento-municipios.module#SeguimientoMunicipiosPageModule' }
+  { path: 'revision-alerta', loadChildren: './revision-alerta/revision-alerta.module#RevisionAlertaPageModule' },  { path: 'seguimiento-municipios', loadChildren: './seguimiento-municipios/seguimiento-municipios.module#SeguimientoMunicipiosPageModule' },
+  { path: 'list-ag', loadChildren: './list-ag/list-ag.module#ListAgPageModule' },
+  { path: 'listalerta-ag', loadChildren: './listalerta-ag/listalerta-ag.module#ListalertaAgPageModule' },
+  { path: 'listverifi-ag', loadChildren: './listverifi-ag/listverifi-ag.module#ListverifiAgPageModule' },
+  { path: 'verencuesta-ag', loadChildren: './verencuesta-ag/verencuesta-ag.module#VerencuestaAgPageModule' },
+  { path: 'revision-ag', loadChildren: './revision-ag/revision-ag.module#RevisionAgPageModule' },
+  { path: 'revision-alerta-ag', loadChildren: './revision-alerta-ag/revision-alerta-ag.module#RevisionAlertaAgPageModule' }
 
 
 

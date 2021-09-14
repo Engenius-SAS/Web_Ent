@@ -63,13 +63,14 @@ municipio;
       this.navCtrl.navigateRoot('/login');
       this.spinner.hide();
     }else{
-    this.cargarEnc();
+    
     this.Pines = new Array();
     const pdata9 = {option: 'muniSM', Id_Proyecto: this.global.Id_Proyecto};
     this.global.consultar(pdata9, (err9, response9) => {
       console.log('MUNICIPIOS', response9);
       this.Muni = response9;
-    });
+    });    
+    this.cargarEnc();
     setTimeout(() => { 
       const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
       this.global.consultar(pdata8, (err8, response8) => {
@@ -77,7 +78,6 @@ municipio;
         this.Pines = this.users = response8;
         this.spinner.hide();
       });
-
       const pdata10 = {option: 'excell', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata10, (err10, response10) => {
           console.log('LISTADO EXCEL', response10);
@@ -95,7 +95,7 @@ municipio;
       if (val && val.trim() != '') {
         this.Pines = this.users.filter((item) => {
           // tslint:disable-next-line: max-line-length
-          return (item[40].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[1].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[13].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[38].toLowerCase().indexOf(val.toLowerCase()) > -1);
+          return (item[2].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[0].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[1].toLowerCase().indexOf(val.toLowerCase()) > -1 || item[3].toLowerCase().indexOf(val.toLowerCase()) > -1);
         });
       }
     }
@@ -155,51 +155,52 @@ cargarEnc() {
   BuscarE() {
     this.spinner.show();
     if (this.usuario == '0') {
-      this.Pines = new Array();
-      setTimeout(() => {
-      const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
-      this.global.consultar(pdata8, (err8, response8) => {
-        console.log('PINES MAPA', response8);
-        this.Pines = response8;
-        this.spinner.hide();
-      });
-    }, 300);
-    } else {
-      this.Pines = new Array();
-      setTimeout(() => {
-        const pdata8 = {option: 'Mapa2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
-        console.log(pdata8);
+      this.Pines = new Array();      
+        setTimeout(() => {
+        const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
         this.global.consultar(pdata8, (err8, response8) => {
           console.log('PINES MAPA', response8);
           this.Pines = response8;
           this.spinner.hide();
-        });
-      }, 300);
-   } }
+          });
+        }, 300);
+    } else {
+      this.Pines = new Array();      
+        setTimeout(() => {
+          const pdata8 = {option: 'Mapa2', userpro: this.usuario, Id_Proyecto: this.global.Id_Proyecto};
+          console.log(pdata8);
+          this.global.consultar(pdata8, (err8, response8) => {
+            console.log('PINES MAPA', response8);
+            this.Pines = response8;
+            this.spinner.hide();
+          });
+        }, 300);
+    } 
+  }
 
    BuscarM() {
     this.spinner.show();
     if (this.municipio == '0') {
-      this.Pines = new Array();
-      setTimeout(() => {
-      const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
-      this.global.consultar(pdata8, (err8, response8) => {
-        console.log('PINES MAPA', response8);
-        this.Pines = response8;
-        this.spinner.hide();
-      });
-    }, 300);
+      this.Pines = new Array();      
+        setTimeout(() => {
+          const pdata8 = {option: 'Mapa', Id_Proyecto: this.global.Id_Proyecto};
+          this.global.consultar(pdata8, (err8, response8) => {
+            console.log('PINES MAPA', response8);
+            this.Pines = response8;
+            this.spinner.hide();
+          });
+        }, 300);
     } else {
-      this.Pines = new Array();
-      setTimeout(() => {
-        console.log('Munici', this.municipio);
-        const pdata8 = {option: 'MapaM', Id_Proyecto: this.global.Id_Proyecto, municipio: this.municipio};
-        this.global.consultar(pdata8, (err8, response8) => {
-          console.log('PINES MAPA', response8);
-          this.Pines = this.users = response8;
-          this.spinner.hide();
-        });
-      }, 300);
+      this.Pines = new Array();      
+        setTimeout(() => {
+          console.log('Munici', this.municipio);
+          const pdata8 = {option: 'MapaM', Id_Proyecto: this.global.Id_Proyecto, municipio: this.municipio};
+          this.global.consultar(pdata8, (err8, response8) => {
+            console.log('PINES MAPA', response8);
+            this.Pines = this.users = response8;
+            this.spinner.hide();
+          });
+        }, 300);
    } 
   }
     /*BuscarM() {
@@ -256,25 +257,25 @@ cargarEnc() {
         this.Encuesta = response8[0];
         const doc = new jsPDF('p', 'mm', 'legal');
         doc.setFontSize(9);
-        const NumForm = item[0];
-        const Dia = item[4];
-        const Mes = item[5];
-        const Ano = item[6];
-        if (item[35] == '0' || item[35] == 0  || item[35] == null  || item[35] == 'null') {
+        const NumForm = this.Encuesta[3];
+        const Dia = this.Encuesta[4];
+        const Mes = this.Encuesta[5];
+        const Ano = this.Encuesta[6];
+        if (this.Encuesta[294] == '0' || this.Encuesta[294] == 0  || this.Encuesta[294] == null  || this.Encuesta[294] == 'null') {
           Lat = ['0', '0'];
           Lon = ['0', '0'];
           Alt = ['0', '0'];
         } else {
-          Lat = item[35].split('.');
-          Lon = item[36].split('.');
-          Alt = item[37].split('.');
+          Lat = this.Encuesta[294].split('.');
+          Lon = this.Encuesta[295].split('.');
+          Alt = this.Encuesta[296].split('.');
         }
-        const Dept = item[38].toUpperCase();
-        const Codept = item[39];
-        const Mun = item[40].toUpperCase();
-        const Comun = item[41];
-        const Ver = item[42].toUpperCase();
-        const Cor = item[43].toUpperCase();
+        const Dept = this.Encuesta[297].toUpperCase();
+        const Codept = this.Encuesta[298];
+        const Mun = this.Encuesta[299].toUpperCase();
+        const Comun = this.Encuesta[300];
+        const Ver = this.Encuesta[301].toUpperCase();
+        const Cor = this.Encuesta[302].toUpperCase();
         const Pag1 = new Image();
         Pag1.crossOrigin = '';
         Pag1.src = 'assets/imgs/encuesta/p1.png';
